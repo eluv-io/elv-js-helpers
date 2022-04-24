@@ -1,0 +1,28 @@
+const either = require('crocks/pointfree/either')
+const {T,F} = require('ramda')
+
+const isResult = require('./isResult')
+
+/**
+ * Returns `true` if passed a [Crocks Ok](https://crocks.dev/docs/crocks/Result.html#ok) instance.
+ * Returns `false` if passed anything else
+ *
+ * @function
+ * @since v0.0.1
+ * @category Logic
+ * @sig a -> Boolean
+ * @param {Any} x - The value to test
+ * @returns {Boolean}
+ *
+ * @example
+ *
+ * isOk(Err(['invalid query'])) //=> false
+ *
+ * isOk(Ok(42)) //=> true
+ *
+ * isOk('foo') //=> false
+ *
+ */
+const isOk = x => isResult(x) && either(F, T, x)
+
+module.exports = isOk

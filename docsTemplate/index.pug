@@ -1,0 +1,132 @@
+doctype html
+html.docs-page(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    title Documentation: #{name}
+    link(rel='shortcut icon' href='./images/favicon.png')
+    link(rel='stylesheet' type='text/css' href='./styles/style.css')
+  body
+    input#open-nav(type='checkbox')
+    header.navbar.navbar-fixed-top.navbar-inverse.container-fluid
+      .container-fluid
+        .navbar-header
+          label.open-nav(for='open-nav')
+          a.navbar-brand(href='#')
+            strong= name
+            span.version v#{version}
+        ul.nav.navbar-nav.navbar-left
+          li
+            a(href='.') Home
+          li.active
+            a(href='#') Documentation
+        ul.nav.navbar-nav.navbar-right
+          li
+            a(href=homepage) GitHub
+    aside.sidebar.container-fluid
+      .filter
+        .has-feedback
+            input.form-control#name-filter(
+              tabindex='1'
+              placeholder='Filter'
+              type='text'
+              data-bind='textInput: filter'
+              autocomplete='false'
+              autofocus
+            )
+            span.form-control-feedback
+              span.glyphicon.glyphicon-search
+        .has-feedback
+            .form-check#show-private-group
+              input.form-check-input#show-private(
+                tabindex='2'
+                type='checkbox'
+                data-bind='textInput: showPrivate'
+              )
+              label.form-check-label#show-private-label(for='show-private') Show private
+
+      ul.nav.nav-pills.nav-stacked.toc
+        each doc in docs
+          li.toc-entry(
+            data-name=doc.name
+            data-category=doc.category
+            data-access=doc.access
+            display=doc.access==='private' ? 'none': ''
+          )
+            a(href=`#${doc.name}`)= doc.name
+              span.label.label-category.pull-right(data-category=doc.category)= doc.category
+    main.container-fluid
+      each doc in docs
+        .section-id(id=doc.name)
+        section.card(
+          data-name=doc.name
+          data-access=doc.access
+          data-category=doc.category
+          display=doc.access==='private' ? 'none': ''
+        )
+          h2
+            a.name(tabindex='3' href=`#${doc.name}`)= doc.name
+            span.pull-right
+              span.label.label-category= doc.category
+              a(target='_blank'
+                title='View source on GitHub'
+                href=`https://github.com/eluv-io/elv-abr-profile/tree/v${version}/src/${doc.name}.js`
+              )
+                small.glyphicon.glyphicon-new-window
+
+          if doc.deprecated
+            .deprecated Deprecated #{doc.deprecated}
+
+          each sig in doc.sigs
+            div: code #{sig}
+
+          each typedefn in doc.typedefns
+            div: code #{typedefn}
+
+          if doc.returns.type
+            .params(data-expanded='false')
+              a.toggle-params(href='#expand') Parameters
+              .details.panel.panel-default
+                ul.list-group
+                  each param in doc.params
+                    li.list-group-item
+                      span.type
+                        each t, index in param.type
+                          = t
+                      span.name= param.name
+                      span.description !{param.description}
+                .panel-body
+                  span.returns Returns
+                  span.type= doc.returns.type
+                  span.description !{doc.returns.description}
+
+          if doc.since
+            p: small Added in #{doc.since}
+
+          .description !{doc.description}
+
+          if doc.symb
+            table.table.table-sm
+              thead
+                tr
+                  th Input
+                  th Output
+              tbody
+                each sym in doc.symb
+                  tr
+                    td
+                      pre.symbol= sym.input
+                    td
+                      pre.symbol= sym.output
+
+          if doc.see && doc.see.length > 0
+            .see
+              = JSON.stringify(doc.see)
+              See also
+              each s in doc.see
+                a(href=s)=s
+
+          if doc.example
+            pre: code.hljs.javascript !{doc.example}
+    script(src='./js/ramda.0.28.0.min.js')
+    script(src='./js/main.js')
