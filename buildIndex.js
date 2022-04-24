@@ -97,13 +97,13 @@ const srcFiles = dirFileList({pathStr:'src'})
 
 for(const f of srcInternalFiles){
   const basename = path.basename(f.name,'.js')
-  lines.push(`  ${basename}: require('./src/internal/${basename}')`)
+  lines.push(`  ${basename}: require('./internal/${basename}')`)
 }
 for(const f of srcFiles){
   const basename = path.basename(f.name,'.js')
-  lines.push(`  ${basename}: require('./src/${basename}')`)
+  lines.push(`  ${basename}: require('./${basename}')`)
 }
 
 const fileContents = `module.exports = {\n${lines.join(',\n')}\n}\n`
 
-writeFile(fileContents,'index.js')
+writeFile(fileContents,'src/index.js')

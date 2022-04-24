@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A collection of Javascript helper functions used by several Eluvio libraries.",
   "homepage": "https://github.com/eluv-io/elv-js-helpers",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
     "build-docs": "npm run lessc && npm run jsdoc",
     "build-index-js": "node buildIndex.js",
