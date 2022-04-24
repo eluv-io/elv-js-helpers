@@ -19,4 +19,5 @@ npm install --save @eluvio/elv-js-helpers
 const Helpers = require('@eluvio/elv-js-helpers');
 ```
 
-## [API Documentation](./docs/index.html)
+## [API Documentation](https://eluv-io.github.io/elv-js-helpers/)
+
