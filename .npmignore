@@ -1,0 +1,12 @@
+*.test.js
+.npmignore
+test/
+
+*.log
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+thumbs.db
+Thumbs.db
+docs

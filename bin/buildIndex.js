@@ -1,13 +1,11 @@
 // builds (or rebuilds) the index.js file
-
-
 const path = require('path')
 const fs = require('fs')
 
 const ifElse = require('crocks/logic/ifElse')
 const R = require('ramda')
 
-const throwError = require('./src/throwError')
+const throwError = require('../src/throwError')
 
 const newPathStruct = (pathStr, workingDir = '.') => new Object({
   fullPathStr: absPath(pathStr, workingDir),
@@ -85,11 +83,6 @@ const writeFile = (contents, filePath, workingDir = '.', logger) => {
   if (logger) logger.log(`Writing file ${fullPath}...`)
   fs.writeFileSync(fullPath, contents)
 }
-
-
-
-
-
 
 const lines = []
 const srcInternalFiles = dirFileList({pathStr:'src/internal'})

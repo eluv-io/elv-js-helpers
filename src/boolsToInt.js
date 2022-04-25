@@ -14,6 +14,8 @@
  *
  * boolsToInt([true, false]) //=> 2
  *
+ * boolsToInt([true, true, true]) //=> 7
+ *
  */
 const boolsToInt = boolArray =>
   boolArray.reduce(
