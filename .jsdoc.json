@@ -1,6 +1,6 @@
 {
   "tags": {
-    "allowUnknownTags": true,
+    "allowUnknownTags": ["category","sig"],
     "dictionaries": ["jsdoc"]
   },
   "source": {
