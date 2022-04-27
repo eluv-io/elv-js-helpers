@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "A collection of Javascript helper functions used by several Eluvio libraries.",
   "homepage": "https://github.com/eluv-io/elv-js-helpers",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eluv-io/elv-js-helpers"
+  },
   "main": "./index.js",
   "sideEffects": false,
   "scripts": {
@@ -11,9 +15,10 @@
     "build": "npm run build-index-js && rimraf build && buble -i src -o build && npm run build:dist",
     "build-index-js": "node ./bin/buildIndex.js",
     "eslint": "eslint --ext .js ./src",
-    "jsdoc": "rimraf docs && jsdoc -c .jsdoc.json",
+    "generate-docs": "jsdoc --readme README.md --configure .jsdoc.json",
     "test": "mocha --recursive \"./test/**/*.test.js\"",
-    "test-coverage": "nyc --reporter=html --reporter=text mocha --recursive \"./test/**/*.test.js\""
+    "test-coverage": "nyc --reporter=html --reporter=text mocha --recursive \"./test/**/*.test.js\"",
+    "version": "npm run generate-docs && git add docs && git commit -m 'Update docs'"
   },
   "keywords": [
     "Eluvio",
@@ -23,7 +28,7 @@
   "author": "Eluvio, Inc.",
   "license": "MIT",
   "devDependencies": {
-    "@eluvio/elv-ramdoc": "^0.0.1",
+    "@eluvio/elv-ramdoc": "^0.0.6",
     "buble": "^0.20.0",
     "chai": "^4.3.6",
     "eslint": "^8.13.0",
