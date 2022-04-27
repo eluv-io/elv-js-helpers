@@ -1,5 +1,7 @@
 const either = require('crocks/pointfree/either')
-const {T,F} = require('ramda')
+
+const F = require('ramda/src/F')
+const T = require('ramda/src/T')
 
 const isResult = require('./isResult')
 

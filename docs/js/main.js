@@ -1,35 +1,63 @@
 /* global document, window, R */
 // noinspection DuplicatedCode,ThisExpressionReferencesGlobalObjectJS,SillyAssignmentJS
 
-(function() {
+(function () {
+
+  const cards = toArray(document.querySelectorAll('.card'))
+  const clearFilterIcon = document.getElementById('clear-filter-icon')
+  const entries = toArray(document.querySelectorAll('.toc-entry'))
+  const textFilter = document.getElementById('filter-text')
+  const privateFilter = document.getElementById('show-private')
 
   const findFirst = R.find(R.prop('offsetParent'))
 
-  function toArray(xs) {
-    return Array.prototype.slice.call(xs)
+  function clearFilter() {
+    filterStringSet('')
   }
 
-  // handle user click on category name in ToC
-  function filterTocType(category) {
-    // set text filter
-    nameFilter.value = category
-    // refilter
-    filterToc()
+  function dispatchEvent(event) {
+    const target = event.target
+
+    const category = target.tagName === 'SPAN' && target.getAttribute('data-category')
+
+    // did user click on a category name?
+    if (category) {
+      filterStringSet(category)
+    }
+
+    // did user click on space between ToC entry name and category?
+    if (target.tagName === 'LI' && target.classList.contains('toc-entry')) {
+      window.location = target.getElementsByTagName('a')[0].href
+    }
+
+    if (isTopLink(target)) {
+      scrollToTop(target)
+    }
   }
 
-  function filterToc() {
-    const f = filterElement.bind(null, nameFilter.value, privateFilter.checked)
+  // toggle visibility of items based on filter UI
+  function filter() {
+    const f = filterElement.bind(null, textFilter.value, privateFilter.checked)
     entries.forEach(f)
     cards.forEach(f)
   }
 
+  // toggle visibility for one DOM element
   function filterElement(nameFilter, privateFilter, elem) {
     elem.style.display =
       (privateFilter || elem.getAttribute('data-access') === 'public') &&
       (strIn(nameFilter, elem.getAttribute('data-name')) ||
-      R.toLower(nameFilter) === R.toLower(elem.getAttribute('data-category'))) ?
+        R.toLower(nameFilter) === R.toLower(elem.getAttribute('data-category'))) ?
         '' :
         'none'
+  }
+
+  // set filter to a specific string
+  function filterStringSet(str) {
+    // set text filter
+    textFilter.value = str
+    // refilter
+    filter()
   }
 
   function gotoFirst(e) {
@@ -39,7 +67,7 @@
 
     const entry = findFirst(entries)
     if (entry) {
-      const onHashChange = function() {
+      const onHashChange = function () {
         e.target.focus()
         window.removeEventListener('hashchange', onHashChange)
       }
@@ -50,79 +78,44 @@
     }
   }
 
-  function strIn(a, b) {
-    a = a.toLowerCase()
-    b = b.toLowerCase()
-    return b.indexOf(a) >= 0
-  }
-
-  function scrollToTop() {
-    const main = document.querySelector('main')
-    main.scrollTop = 0
-  }
-
   function isTopLink(elem) {
     return elem.getAttribute('href') === '#'
   }
 
-  function isAnchorLink(elem) {
-    return elem.tagName === 'A' && elem.getAttribute('href').charAt(0) === '#'
-  }
-
-  function closeNav() {
-    document.getElementById('open-nav').checked = false
-  }
-
-  function dispatchEvent(event) {
-    const target = event.target
-    const category = target.getAttribute('data-category')
-
-    if (isAnchorLink(target)) {
-      closeNav()
-    }
-    if (category) {
-      filterTocType(category)
-    }
-    if (isTopLink(target)) {
-      scrollToTop(target)
-    }
-  }
-
   function keypress(e) {
-    if (e.which === 13) {
+    if (e.key === 13) {
       e.target.dispatchEvent(new window.CustomEvent('enter', {
         detail: e.target.value
       }))
     }
   }
 
-  // https://goo.gl/Zbejtc
-  // function fixedEncodeURIComponent (str) {
-  //   return encodeURIComponent(str).replace(/[!'()*]/g, function(c) {
-  //     return '%' + c.charCodeAt(0).toString(16);
-  //   });
-  // }
+  function scrollToTop() {
+    const main = document.querySelector('#detail-entries')
+    main.scrollTop = 0
+  }
 
-  const nameFilter = document.getElementById('name-filter')
-  const privateFilter = document.getElementById('show-private')
-  const entries = toArray(document.querySelectorAll('.toc .toc-entry'))
-  const cards = toArray(document.querySelectorAll('section.card'))
+  function strIn(a, b) {
+    a = a.toLowerCase()
+    b = b.toLowerCase()
+    return b.indexOf(a) >= 0
+  }
 
-  filterToc()
+  function toArray(xs) {
+    return Array.prototype.slice.call(xs)
+  }
+
+  // executed after rest of document loaded
+  filter()
 
   document.body.addEventListener('click', dispatchEvent, false)
-  nameFilter.addEventListener('input', filterToc, false)
-  nameFilter.addEventListener('keypress', keypress, false)
-  nameFilter.addEventListener('enter', gotoFirst)
-  privateFilter.addEventListener('change', filterToc, false)
+  clearFilterIcon.addEventListener('click', clearFilter, false)
+  textFilter.addEventListener('input', filter, false)
+  textFilter.addEventListener('keypress', keypress, false)
+  textFilter.addEventListener('enter', gotoFirst)
+  privateFilter.addEventListener('change', filter, false)
 
-  // add event listener for slash key up (move focus to filter text input)
-  document.body.addEventListener('keyup', function(event) {
-    if (event.key === '/')
-      document.getElementById('name-filter').focus()
-  })
-
-  document.body.addEventListener('click', function(event) {
+  document.body.addEventListener('click', function (event) {
     if (event.target.className.split(' ').indexOf('toggle-params') >= 0) {
       const expanded = event.target.parentNode.getAttribute('data-expanded')
       event.target.parentNode.setAttribute(
@@ -133,7 +126,7 @@
   }, false)
 
   // back-button hack
-  window.addEventListener('hashchange', function() {
+  window.addEventListener('hashchange', function () {
     // eslint-disable-next-line no-self-assign
     window.location.href = window.location.href
   }, false)

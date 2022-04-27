@@ -1,5 +1,5 @@
 const ifElse = require('crocks/logic/ifElse')
-const {T} = require('ramda')
+const T = require('ramda/src/T')
 
 const assertionErrMsg = require('../assertionErrMsg')
 const test = require('../test')

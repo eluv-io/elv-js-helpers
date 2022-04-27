@@ -1,5 +1,5 @@
 const either = require('crocks/pointfree/either')
-const {uniq} = require('ramda')
+const uniq = require('ramda/src/uniq')
 
 const _throwIfFalse = require('./internal/_throwIfFalse')
 const kindOf = require('kind-of')

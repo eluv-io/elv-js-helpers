@@ -4,7 +4,15 @@ const isEmpty = require('crocks/predicates/isEmpty')
 const pipe = require('crocks/helpers/pipe')
 const when = require('crocks/logic/when')
 
-const {equals, join, last, not, reverse, splitWhen, startsWith, tail, zipWith} = require('ramda')
+const equals = require('ramda/src/equals')
+const join = require('ramda/src/join')
+const last = require('ramda/src/last')
+const not = require('ramda/src/not')
+const reverse = require('ramda/src/reverse')
+const splitWhen = require('ramda/src/splitWhen')
+const startsWith = require('ramda/src/startsWith')
+const tail = require('ramda/src/tail')
+const zipWith = require('ramda/src/zipWith')
 
 const {Duration} = require('luxon')
 

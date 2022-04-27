@@ -1,4 +1,4 @@
-const {isNil} = require('ramda')
+const isNil = require('ramda/src/isNil')
 
 const _assertBoundedBetween = require('./internal/_assertBoundedBetween')
 const _assertBoundedLower = require('./internal/_assertBoundedLower')

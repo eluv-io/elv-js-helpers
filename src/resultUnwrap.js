@@ -15,6 +15,7 @@ const _throwIfNotResult = require('./internal/_throwIfNotResult')
  * @sig Result e a -> e | a
  * @param {Any} x - The Crocks Result instance to unwrap
  * @returns {Any}
+ * @see resultToPOJO
  *
  * @example
  *

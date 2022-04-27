@@ -1,5 +1,7 @@
 const curry = require('crocks/helpers/curry')
-const {F, T} = require('ramda')
+
+const F = require('ramda/src/F')
+const T = require('ramda/src/T')
 
 const validator = require('./validator')
 
