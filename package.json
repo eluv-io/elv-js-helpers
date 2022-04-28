@@ -1,6 +1,6 @@
 {
   "name": "@eluvio/elv-js-helpers",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A collection of Javascript helper functions used by several Eluvio libraries.",
   "homepage": "https://github.com/eluv-io/elv-js-helpers",
   "repository": {
