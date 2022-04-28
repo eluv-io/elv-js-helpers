@@ -16,7 +16,7 @@
     "build-index-js": "node ./bin/buildIndex.js",
     "eslint": "eslint --ext .js ./src",
     "generate-docs": "jsdoc --readme README.md --configure .jsdoc.json",
-    "release": "np",
+    "release": "cp package.json ./build/package.json && np",
     "test": "mocha --recursive \"./test/**/*.test.js\"",
     "test-coverage": "nyc --reporter=html --reporter=text mocha --recursive \"./test/**/*.test.js\"",
     "update-dependencies": "npx npm-check-updates -u && npm install",
