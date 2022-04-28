@@ -20,7 +20,7 @@
     "test": "mocha --recursive \"./test/**/*.test.js\"",
     "test-coverage": "nyc --reporter=html --reporter=text mocha --recursive \"./test/**/*.test.js\"",
     "update-dependencies": "npx npm-check-updates -u && npm install",
-    "version": "npm run generate-docs && npm run build && ./bin/publish.sh && git add docs && git commit -m 'Update docs'"
+    "version": "npm run generate-docs && npm run build && ./bin/publish.sh && git add docs || git commit -m 'Update docs' || true"
   },
   "keywords": [
     "Eluvio",
