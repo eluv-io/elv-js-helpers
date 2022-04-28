@@ -30,7 +30,7 @@
   "author": "Eluvio, Inc.",
   "license": "MIT",
   "devDependencies": {
-    "@eluvio/elv-ramdoc": "^0.0.8",
+    "@eluvio/elv-ramdoc": "^0.0.9",
     "buble": "^0.20.0",
     "chai": "^4.3.6",
     "eslint": "^8.14.0",

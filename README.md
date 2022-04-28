@@ -14,7 +14,7 @@ npm install --save @eluvio/elv-js-helpers
 
 It is possible to import individual items or the entire library, depending on whether code size is a concern.
 
-### Entire `elv-js-helpers` library (CommonJS)
+### Entire library (CommonJS)
 
 ```javascript
 // namespace entire suite to a const
@@ -27,7 +27,7 @@ const { etaDurationStr, etaTimeStr } = H
 const { etaDurationStr, etaTimeStr } = require('crocks')
 ```
 
-### Entire `elv-js-helpers` library (JS Modules)
+### Entire library (JS Modules)
 
 ```javascript
 // namespace entire suite to H
@@ -56,7 +56,7 @@ import etaDurationStr from '@eluvio/elv-js-helpers/etaDurationStr'
 import etaTimeStr from '@eluvio/elv-js-helpers/etaTimeStr'
 ```
 
-### Entire `elv-js-helpers` library (browser)
+### Entire library (browser)
 
 Although not recommended, it is also possible to import the entire library directly into a browser via a `<script>` tag 
 pointing to either `dist/elv-js-helpers.js` or `dist/elv-js-helpers.min.js`. This will create a variable named 
@@ -71,5 +71,6 @@ is expected that browser apps would be built using a bundling tool like Webpack/
 ```
 
 
-## [API Documentation](https://eluv-io.github.io/elv-js-helpers/)
+## API Documentation
+[https://eluv-io.github.io/elv-js-helpers/](https://eluv-io.github.io/elv-js-helpers/)
 
