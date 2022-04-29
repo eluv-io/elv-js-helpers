@@ -19,6 +19,7 @@ module.exports = {
   _typeWithOkErr: require('./internal/_typeWithOkErr'),
   BoundedIntegerModel: require('./BoundedIntegerModel'),
   BoundedNumberModel: require('./BoundedNumberModel'),
+  DatetimeModel: require('./DatetimeModel'),
   IntegerModel: require('./IntegerModel'),
   NonNegativeNumberModel: require('./NonNegativeNumberModel'),
   NumberModel: require('./NumberModel'),

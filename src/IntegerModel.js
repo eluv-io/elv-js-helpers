@@ -16,7 +16,7 @@ const NumberModel = require('./NumberModel')
  * @class
  * @since v0.0.1
  * @category Model
- * @sig * -> * | THROW
+ * @sig * -> Integer | THROW
  * @param {Any} - The input to validate
  * @returns {Integer} The validated input, proxied by ObjectModel
  *

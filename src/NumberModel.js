@@ -11,7 +11,7 @@ const {BasicModel} = require('objectmodel')
  * @class
  * @since v0.0.1
  * @category Model
- * @sig * -> * | THROW
+ * @sig * -> Number | THROW
  * @param {Any} - The input to validate
  * @returns {Number} The validated input, proxied by ObjectModel
  *
