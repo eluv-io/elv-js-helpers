@@ -72,5 +72,5 @@ is expected that browser apps would be built using a bundling tool like Webpack/
 
 
 ## API Documentation
-[https://eluv-io.github.io/elv-js-helpers/](https://eluv-io.github.io/elv-js-helpers/)
+[https://eluv-io.github.io/elv-js-helpers/api.html](https://eluv-io.github.io/elv-js-helpers/api.html)
 
