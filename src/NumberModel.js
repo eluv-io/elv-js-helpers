@@ -19,7 +19,7 @@ const {BasicModel} = require('objectmodel')
  *
  * NumberModel(42) //=> 42 (proxied by ObjectModel)
  *
- * PositiveNumberModel('foo') //=> EXCEPTION: 'Number: expecting Number, got String "foo"'
+ * NumberModel('foo') //=> EXCEPTION: 'expecting Number, got String "foo"'
  *
  */
 const NumberModel = BasicModel(Number).as('Number')

@@ -4,7 +4,7 @@ const BoundedNumberModel = require('./BoundedNumberModel')
  * An [ObjectModel](http://objectmodel.js.org/) which validates that an input is:
  *
  *  * A [Javascript Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
- *  * Is greater than zero
+ *  * Greater than zero
  *
  * If input passes validations, will return the input (proxied by ObjectModel)
  *
@@ -19,13 +19,19 @@ const BoundedNumberModel = require('./BoundedNumberModel')
  *
  * @example
  *
- * PositiveNumberModel(42) //=> 42 (
+ * PositiveNumberModel(42) //=> 42 // Proxied by ObjectModel
  *
  * PositiveNumberModel(0) //=> EXCEPTION: 'Value must be > 0 (got: 0)'
  *
  * PositiveNumberModel('foo') //=> EXCEPTION: 'expecting Number, got String "foo"'
  *
  */
-const PositiveNumberModel = BoundedNumberModel('PositiveNumber', 0, null, false, null)
+const PositiveNumberModel = BoundedNumberModel(
+  'PositiveNumber',
+  0,
+  null,
+  false,
+  null
+)
 
 module.exports = PositiveNumberModel

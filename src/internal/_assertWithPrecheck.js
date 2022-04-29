@@ -31,8 +31,16 @@ const test = require('../test')
  * @returns {Array} 2-element array [Function, Function | String]. See description for details.
  * @example
  *
- * foo
- *
+ * const IntegerModel = NumberModel
+ *   .extend()
+ *   .assert(
+ *     ..._assertWithPrecheck(
+ *       NumberModel,
+ *       n => Number.isInteger(n),
+ *       'must be an integer'
+ *     )
+ *   )
+ *   .as('Integer')
  *
  */
 const _assertWithPrecheck = (model, assertFn, msg) =>
