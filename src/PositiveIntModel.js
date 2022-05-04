@@ -1,4 +1,4 @@
-const BoundedIntegerModel = require('./BoundedIntegerModel')
+const defBoundedIntModel = require('./defBoundedIntModel')
 
 // PositiveIntegerModel :: a -> PositiveIntegerModel a | *exception*
 // Returns either an ObjectModel containing a positive integer or throws an exception
@@ -31,7 +31,7 @@ const BoundedIntegerModel = require('./BoundedIntegerModel')
  * PositiveIntegerModel('foo') //=> EXCEPTION: 'expecting Number, got String "foo"'
  *
  */
-const PositiveIntegerModel = BoundedIntegerModel(
+const PositiveIntModel = defBoundedIntModel(
   'PositiveInteger',
   0,
   null,
@@ -39,4 +39,4 @@ const PositiveIntegerModel = BoundedIntegerModel(
   null
 )
 
-module.exports = PositiveIntegerModel
+module.exports = PositiveIntModel

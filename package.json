@@ -11,13 +11,14 @@
   "sideEffects": false,
   "scripts": {
     "build:publish": "npm test && ./bin/publish.sh",
+    "build:analyze": "webpack --env analyze && uglifyjs build/dist/elv-js-helpers.js -m -o build/dist/elv-js-helpers.min.js",
     "build:dist": "webpack && uglifyjs build/dist/elv-js-helpers.js -m -o build/dist/elv-js-helpers.min.js",
     "build": "npm run build-index-js && rimraf build && buble -i src -o build && npm run build:dist",
     "build-index-js": "node ./bin/buildIndex.js",
     "eslint": "eslint --ext .js ./src",
     "generate-docs": "jsdoc --readme README.md --configure .jsdoc.json",
     "release": "cp package.json ./build/package.json && np",
-    "test": "mocha --recursive \"./test/**/*.test.js\"",
+    "test": "npm run build-index-js && mocha --recursive \"./test/**/*.test.js\"",
     "test-coverage": "npm run build-index-js && nyc --reporter=html --reporter=text mocha --recursive \"./test/**/*.test.js\" && echo 'open ./coverage/index.html for coverage details'",
     "update-dependencies": "npx npm-check-updates -u && npm install",
     "version": "npm run generate-docs && npm run build && ./bin/publish.sh && git add docs || git commit -m 'Update docs' || true"
@@ -33,6 +34,7 @@
     "@eluvio/elv-ramdoc": "^0.0.10",
     "buble": "^0.20.0",
     "chai": "^4.3.6",
+    "dependency-cruiser": "^11.7.0",
     "eslint": "^8.14.0",
     "jsdoc": "^3.6.10",
     "marked": "^4.0.14",

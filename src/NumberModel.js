@@ -1,5 +1,6 @@
 const {BasicModel} = require('objectmodel')
 
+// noinspection JSValidateTypes
 /**
  * An [ObjectModel](http://objectmodel.js.org/) which validates that an input
  * is a [Javascript Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)

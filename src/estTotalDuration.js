@@ -1,12 +1,14 @@
-const BoundedNumberModel = require('./BoundedNumberModel')
-const ObjectModel = require('./ObjectModel')
-const PositiveNumberModel = require('./PositiveNumberModel')
+const defBoundedNumModel = require('./defBoundedNumModel')
+const defObjModel = require('./defObjModel')
+const PositiveNumModel = require('./PositiveNumModel')
 const validator = require('./validator')
 
-const _paramsModel = ObjectModel({
-  portionComplete: BoundedNumberModel('portionComplete', 0, 1, false, true),
-  timeElapsed: PositiveNumberModel
-}).as('estTotalDuration')
+const _paramsModel = defObjModel(
+  'estTotalDurationParams',
+  {
+    portionComplete: defBoundedNumModel('portionComplete', 0, 1, false, true),
+    timeElapsed: PositiveNumModel
+  })
 
 /**
  * Estimates total duration based on portion completed expressed as a number between 0 and 1 and time elapsed

@@ -1,4 +1,4 @@
-const BoundedNumberModel = require('./BoundedNumberModel')
+const defBoundedNumModel = require('./defBoundedNumModel')
 
 /**
  * An [ObjectModel](http://objectmodel.js.org/) which validates that an input is:
@@ -19,14 +19,14 @@ const BoundedNumberModel = require('./BoundedNumberModel')
  *
  * @example
  *
- * PositiveNumberModel(42) //=> 42 // Proxied by ObjectModel
+ * PositiveNumModel(42) //=> 42 // Proxied by ObjectModel
  *
- * PositiveNumberModel(0) //=> EXCEPTION: 'Value must be > 0 (got: 0)'
+ * PositiveNumModel(0) //=> EXCEPTION: 'Value must be > 0 (got: 0)'
  *
- * PositiveNumberModel('foo') //=> EXCEPTION: 'expecting Number, got String "foo"'
+ * PositiveNumModel('foo') //=> EXCEPTION: 'expecting Number, got String "foo"'
  *
  */
-const PositiveNumberModel = BoundedNumberModel(
+const PositiveNumModel = defBoundedNumModel(
   'PositiveNumber',
   0,
   null,
@@ -34,4 +34,4 @@ const PositiveNumberModel = BoundedNumberModel(
   null
 )
 
-module.exports = PositiveNumberModel
+module.exports = PositiveNumModel

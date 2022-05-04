@@ -1,15 +1,15 @@
 const assertBounded = require('./assertBounded')
-const IntegerModel = require('./IntegerModel')
+const NumberModel = require('./NumberModel')
 
 /**
  * Returns an [ObjectModel](http://objectmodel.js.org/) which will validate that an input is:
  *
- *  * An integer
+ *  * A [Javascript Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
  *  * Greater than a specified lower bound (if specified) or equal to the lower bound (if lower inclusivity is specified)
  *  * Less than a specified upper bound (if specified) or equal to the upper bound (if upper inclusivity is specified)
  *
  * Note that it is possible to specify no bounds at all, in which case the returned model will only check that input is
- * an integer.
+ * a number.
  *
  * @function
  * @since v0.0.1
@@ -23,26 +23,23 @@ const IntegerModel = require('./IntegerModel')
  * @returns {Model}
  * @example
  *
- * const CartonEggCountModel = BoundedIntegerModel('CartonEggCount', 0, 12, true, true)
+ * const HumanHeightMetersModel = defBoundedNumModel('HumanHeightMeters', 0, 3, false, true)
  *
- * CartonEggCountModel(-1)     //=> EXCEPTION: 'Value must be >= 0 (got: -1)'
+ * HumanHeightMetersModel(0)     //=> EXCEPTION: 'HumanHeightMeters: Value must be > 0 (got: 0)'
  *
- * CartonEggCountModel(0)      //=> 0 // Proxied by ObjectModel
+ * HumanHeightMetersModel(1.5)   //=> 1.5 // Proxied by ObjectModel
  *
- * CartonEggCountModel(4.2)    //=> EXCEPTION: 'Value must be an integer (got: 4.2)'
+ * HumanHeightMetersModel(4)     //=> EXCEPTION: 'HumanHeightMeters: Value must be <= 3 (got: 4)'
  *
- * CartonEggCountModel(6)      //=> 6 // Proxied by ObjectModel
+ * HumanHeightMetersModel('foo') //=> EXCEPTION: 'HumanHeightMeters: expecting Number, got String "foo"'
  *
- * CartonEggCountModel(42)     //=> EXCEPTION: 'Value must be <= 12 (got: 42)'
- *
- * CartonEggCountModel('foo')  //=> EXCEPTION: 'expecting Number, got String "foo"'
- *
- */const BoundedIntegerModel = (name, lowerBound, upperBound, lowerInclusive, upperInclusive) =>
-  IntegerModel
+ */
+const defBoundedNumModel = (name, lowerBound, upperBound, lowerInclusive, upperInclusive) =>
+  NumberModel
     .extend()
     .assert(
       ...assertBounded(
-        IntegerModel,
+        NumberModel,
         lowerBound,
         upperBound,
         lowerInclusive,
@@ -51,4 +48,4 @@ const IntegerModel = require('./IntegerModel')
     )
     .as(name)
 
-module.exports = BoundedIntegerModel
+module.exports = defBoundedNumModel

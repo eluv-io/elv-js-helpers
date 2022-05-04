@@ -1,4 +1,4 @@
-const BoundedNumberModel = require('./BoundedNumberModel')
+const defBoundedNumModel = require('./defBoundedNumModel')
 
 /**
  * An [ObjectModel](http://objectmodel.js.org/) which validates that an input is:
@@ -19,15 +19,15 @@ const BoundedNumberModel = require('./BoundedNumberModel')
  *
  * @example
  *
- * NumberZeroToOneModel(0) //=> 0
+ * NumZeroToOneModel(0) //=> 0
  *
- * NumberZeroToOneModel(1) //=> 1
+ * NumZeroToOneModel(1) //=> 1
  *
- * NumberZeroToOneModel(42) //=> EXCEPTION: 'Value must be >= 0 and <= 1 (got: 42)'
+ * NumZeroToOneModel(42) //=> EXCEPTION: 'Value must be >= 0 and <= 1 (got: 42)'
  *
- * NumberZeroToOneModel('foo') //=> EXCEPTION: 'expecting Number, got String "foo"'
+ * NumZeroToOneModel('foo') //=> EXCEPTION: 'expecting Number, got String "foo"'
  *
  */
-const NumberZeroToOneModel = BoundedNumberModel('NumberZeroToOne', 0, 1, true, true)
+const NumZeroToOneModel = defBoundedNumModel('NumberZeroToOne', 0, 1, true, true)
 
-module.exports = NumberZeroToOneModel
+module.exports = NumZeroToOneModel

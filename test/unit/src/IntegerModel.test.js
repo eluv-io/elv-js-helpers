@@ -1,8 +1,3 @@
-// * IntegerModel(42)    //=> 42 (proxied by ObjectModel)
-// *
-// * IntegerModel(4.2)   //=> EXCEPTION: 'Value must be an integer (got: 4.2)'
-// *
-// * IntegerModel('foo') //=> EXCEPTION: 'expecting Number, got String "foo"'
 const chai = require('chai')
 chai.should()
 const expect = chai.expect

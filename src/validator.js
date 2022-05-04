@@ -21,9 +21,9 @@ const {Ok, Err} = require('crocks/Result')
  *
  * @example
  *
- * const PositiveNumberModel = require('@eluvio/elv-js-helpers/PositiveNumberModel')
+ * const PositiveNumModel = require('@eluvio/elv-js-helpers/PositiveNumModel')
  *
- * const validatePositiveNumber = validator(PositiveNumberModel)
+ * const validatePositiveNumber = validator(PositiveNumModel)
  *
  * validatePositiveNumber(42) //=> Ok 42
  *
