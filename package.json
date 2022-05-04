@@ -13,7 +13,7 @@
     "build:publish": "npm test && ./bin/publish.sh",
     "build:analyze": "webpack --env analyze && uglifyjs build/dist/elv-js-helpers.js -m -o build/dist/elv-js-helpers.min.js",
     "build:dist": "webpack && uglifyjs build/dist/elv-js-helpers.js -m -o build/dist/elv-js-helpers.min.js",
-    "build": "npm run build-index-js && rimraf build && buble -i src -o build && npm run build:dist",
+    "build": "npm run build-index-js && rimraf build && cp ./src/* ./build/ && cp ./src/internal/* ./build/internal && npm run build:dist",
     "build-index-js": "node ./bin/buildIndex.js",
     "eslint": "eslint --ext .js ./src",
     "generate-docs": "jsdoc --readme README.md --configure .jsdoc.json",
