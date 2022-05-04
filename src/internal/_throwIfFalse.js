@@ -7,6 +7,7 @@ const throwError = require('../throwError')
  * Otherwise returns the [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) value unchanged.
  *
  * @function
+ * @curried
  * @private
  * @since v0.0.1
  * @category Validation
@@ -22,6 +23,8 @@ const throwError = require('../throwError')
  * _throwIfFalse('password must be 42 upper-case letters', PASSWORD_REGEX.test(password)) //=> EXCEPTION: 'password must be 42 upper-case letters'
  *
  */
-const _throwIfFalse = curry((message, value) => value || throwError(message))
+const _throwIfFalse = curry(
+  (message, value) => value || throwError(message)
+)
 
 module.exports = _throwIfFalse

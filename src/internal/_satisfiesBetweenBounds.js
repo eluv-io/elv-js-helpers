@@ -6,9 +6,12 @@ const _satisfiesUpperBound = require('./_satisfiesUpperBound')
 /**
  * Returns `true` if `value` satisfies specified bounds, `false` otherwise
  *
- * If called with fewer than 4 arguments, will return a [partially applied function](https://mostly-adequate.gitbook.io/mostly-adequate-guide/ch04)
+ * Note that this function performs no type checking and relies on `comparatorFn` to determine if input satisfies bounds.
+ *
+ * If called with fewer than 6 arguments, will return a [partially applied function](https://mostly-adequate.gitbook.io/mostly-adequate-guide/ch04)
  *
  * @function
+ * @curried
  * @private
  * @since v0.0.1
  * @category Logic
@@ -34,6 +37,15 @@ const _satisfiesUpperBound = require('./_satisfiesUpperBound')
  * _satisfiesBetweenBounds(0, 42, true, true, compare, -1)    //=> false
  *
  * _satisfiesBetweenBounds(0, 42, false, false, compare, 0)   //=> false
+ *
+ * // function is curried: call with fewer params to obtain a narrower function
+ * const isFromZeroToOne = _satisfiesBetweenBounds(0, 1, true, true, compare)
+ *
+ * isFromZeroToOne(0.5) //=> true
+ *
+ * isFromZeroToOne(1)   //=> true
+ *
+ * isFromZeroToOne(1.5) //=> false
  *
  */
 const _satisfiesBetweenBounds = curry(

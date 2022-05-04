@@ -8,6 +8,7 @@ const boolsToInt = require('./boolsToInt')
  * Used to express multilevel if-then control flows in a more functional style.
  *
  * @function
+ * @curried
  * @since v0.0.1
  * @category Functional
  * @sig [*] -> [Boolean] -> *

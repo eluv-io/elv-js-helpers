@@ -3,9 +3,12 @@ const curry = require('crocks/helpers/curry')
 /**
  * Returns `true` if `value` satisfies specified bound, `false` otherwise
  *
+ * Note that this function performs no type checking and relies on `comparatorFn` to determine if input satisfies bound.
+ *
  * If called with fewer than 4 arguments, will return a [partially applied function](https://mostly-adequate.gitbook.io/mostly-adequate-guide/ch04)
  *
  * @function
+ * @curried
  * @private
  * @since v0.0.1
  * @category Logic
@@ -30,6 +33,14 @@ const curry = require('crocks/helpers/curry')
  *
  * _satisfiesUpperBound(42, false, compare, 42)  //=> false
  *
+ * // function is curried: call with fewer params to obtain a narrower function
+ * const isNegative = _satisfiesUpperBound(0, false, compare)
+ *
+ * isNegative(-1)  //=> true
+ *
+ * isNegative(0)   //=> false
+ *
+ * isNegative(1)   //=> false
  */
 const _satisfiesUpperBound = curry(
   (upperBound, inclusive, comparatorFn, value) => comparatorFn(value, upperBound) < (inclusive ? 1 : 0)

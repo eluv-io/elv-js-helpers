@@ -11,6 +11,7 @@ const validator = require('./validator')
  * Used when the caller does not care about the details of why the input failed validation.
  *
  * @function
+ * @curried
  * @since v0.0.1
  * @category Validation
  * @sig Model -> * -> Boolean
@@ -20,17 +21,20 @@ const validator = require('./validator')
  *
  * @example
  *
- * test(PositiveIntegerModel, -1) //=> false
+ * checkVsModel(PositiveIntegerModel, -1) //=> false
  *
- * const isPositive = test(PositiveIntegerModel)
+ * // function is curried: call with just first param to obtain a narrower function
+ * const isPositiveInt = checkVsModel(PositiveIntegerModel)
  *
- * isPositive(1) //=> true
+ * isPositiveInt(1)     //=> true
  *
- * isPositive(0) //=> false
+ * isPositiveInt(0)     //=> false
+ *
+ * isPositiveInt('foo') //=> false
  *
  */
-const test = curry(
+const checkVsModel = curry(
   (model, input) => validator(model)(input).either(F, T)
 )
 
-module.exports = test
+module.exports = checkVsModel

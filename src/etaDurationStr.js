@@ -1,3 +1,5 @@
+// TODO remove dependence on luxon
+
 const compose = require('crocks/helpers/compose')
 const constant = require('crocks/combinators/constant')
 const isEmpty = require('crocks/predicates/isEmpty')

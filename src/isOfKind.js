@@ -8,6 +8,7 @@ const kindOf = require('kind-of')
  * The type is determined using the [kind-of](https://github.com/jonschlinkert/kind-of) package.
  *
  * @function
+ * @curried
  * @since v0.0.1
  * @category Logic
  * @sig String -> * -> Boolean

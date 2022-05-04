@@ -7,6 +7,7 @@ const throwError = require('../throwError')
  * Otherwise returns the [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) value unchanged.
  *
  * @function
+ * @curried
  * @private
  * @since v0.0.1
  * @category Validation
@@ -20,6 +21,8 @@ const throwError = require('../throwError')
  * _throwIfTrue('division by zero', x === 0) /=> EXCEPTION: "division by zero"
  *
  */
-const _throwIfTrue = curry((message, value) => value && throwError(message))
+const _throwIfTrue = curry(
+  (message, value) => value && throwError(message)
+)
 
 module.exports = _throwIfTrue

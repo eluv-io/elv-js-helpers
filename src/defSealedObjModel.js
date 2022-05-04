@@ -29,7 +29,7 @@ const defObjModel = require('./defObjModel')
  *
  * const PersonNameModel = defSealedObjModel('PersonName', {first: String, last: String})
  *
- * PersonNameModel(-1)                                        //=> EXCEPTION: 'Value must be >= 0 (got: -1)'
+ * PersonNameModel(-1)                                        //=> EXCEPTION: 'expecting Object, got Number -1'
  *
  * PersonNameModel({first: 'Arthur', last: 'Dent'})           //=> {"first":"Arthur","last":"Dent"} // proxied by ObjectModel
  *

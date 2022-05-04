@@ -2,7 +2,7 @@ const ifElse = require('crocks/logic/ifElse')
 const T = require('ramda/src/T')
 
 const assertionErrMsg = require('../assertionErrMsg')
-const test = require('../test')
+const checkVsModel = require('../checkVsModel')
 
 /**
  * Returns a 2-element array for use in an [ObjectModel assertion](http://objectmodel.js.org/#doc-assertions)
@@ -46,7 +46,7 @@ const test = require('../test')
 const _assertWithPrecheck = (model, assertFn, msg) =>
   [
     ifElse(
-      test(model),
+      checkVsModel(model),
       assertFn,
       T
     ),

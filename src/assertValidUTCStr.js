@@ -31,15 +31,15 @@ const NonBlankStrModel = require('./NonBlankStrModel')
  *
  * // Note use of spread operator (...) to unpack the array returned by _assertBoundedUpper()
  * const UTCDateTimeStringModel = StringModel.extend()
- *   .assert(...assertValidUTCString())
+ *   .assert(...assertValidUTCStr())
  *   .as('UTCDateTimeString')
  *
  */
-const assertValidUTCString = () =>
+const assertValidUTCStr = () =>
   _assertWithPrecheck(
     NonBlankStrModel,
     str => (DateTime.fromISO(str).isValid === true),
     'is not a valid UTC datetime string'
   )
 
-module.exports = assertValidUTCString
+module.exports = assertValidUTCStr

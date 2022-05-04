@@ -1,11 +1,11 @@
 const chai = require('chai')
 chai.should()
 
-const assertValidUTCString = require('../../../src/assertValidUTCString')
+const assertValidUTCStr = require('../../../src/assertValidUTCStr')
 
-describe('assertValidUTCString', () => {
+describe('assertValidUTCStr', () => {
 
-  const [assertFn, assertErrMsgFn] = assertValidUTCString()
+  const [assertFn, assertErrMsgFn] = assertValidUTCStr()
 
   it('should generate an assertion that returns true for good values', () => {
     assertFn('2022-05-03T00:26:07Z').should.be.true

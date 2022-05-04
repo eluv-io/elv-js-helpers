@@ -1,4 +1,4 @@
-const assertValidUTCString = require('./assertValidUTCString')
+const assertValidUTCStr = require('./assertValidUTCStr')
 const defRegexMatchedStrModel = require('./defRegexMatchedStrModel')
 
 const _REGEX_UTC_TIMESTAMP = /^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$/
@@ -23,20 +23,20 @@ const _REGEX_UTC_TIMESTAMP = /^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9
  *
  * @example
  *
- * UTCTimestampStrModel('2022-01-01T14:00:00Z') //=> '2022-01-01T14:00:00Z' (proxied by ObjectModel)
+ * UTCStrModel('2022-01-01T14:00:00Z') //=> '2022-01-01T14:00:00Z' (proxied by ObjectModel)
  *
- * UTCTimestampStrModel('2022-13-01T14:00:00Z') //=> EXCEPTION: 'Value is not a valid ISO 8601 datetime string (got: 2022-13-01T14:00:00Z)'
+ * UTCStrModel('2022-13-01T14:00:00Z') //=> EXCEPTION: 'Value is not a valid ISO 8601 datetime string (got: 2022-13-01T14:00:00Z)'
  *
- * UTCTimestampStrModel(42) //=> EXCEPTION: 'expecting String, got Number 42'
+ * UTCStrModel(42) //=> EXCEPTION: 'expecting String, got Number 42'
  *
  */
-const UTCTimestampStrModel =
+const UTCStrModel =
   defRegexMatchedStrModel(
     'UTCTimestampRegexMatchString', // intermediate name for the model that only checks regex
     _REGEX_UTC_TIMESTAMP
   )
     .extend()
-    .assert(...assertValidUTCString())
+    .assert(...assertValidUTCStr())
     .as('UTCTimestampString') // final name for model that also checks that string is a valid datetime
 
-module.exports = UTCTimestampStrModel
+module.exports = UTCStrModel

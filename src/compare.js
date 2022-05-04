@@ -13,6 +13,7 @@ const lt = require('ramda/src/lt')
  * Used as an input into sorting and validation functions.
  *
  * @function
+ * @curried
  * @since v0.0.1
  * @category Functional
  * @sig a -> b -> -1 | 0 | 1
