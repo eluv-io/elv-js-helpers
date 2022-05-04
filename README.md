@@ -2,6 +2,8 @@
 
 A collection of Javascript helper functions used by several Eluvio libraries.
 
+**THIS LIBRARY IS CURRENTLY IN PRE-RELEASE: FUNCTION NAMES AND SIGNATURES ARE STILL IN FLUX.** 
+
 ## Installation
 
 #### Install from NPM:
