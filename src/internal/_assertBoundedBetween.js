@@ -18,7 +18,6 @@ const _satisfiesBetweenBounds = require('./_satisfiesBetweenBounds')
  *
  * @function
  * @private
- * @since v0.0.1
  * @category ModelAssertion
  * @sig ((Boolean, *, String) -> String) ObjectModelErrMsgFn => Model -> a -> a -> Boolean -> Boolean -> [(* -> Boolean), ObjectModelErrMsgFn | String]
  * @param {Model} model - The model to be bounded
@@ -38,7 +37,7 @@ const _satisfiesBetweenBounds = require('./_satisfiesBetweenBounds')
  *
  * const compare = require('@eluvio/elv-js-helpers/compare')
  *
- * // Note use of spread operator (...) to unpack the array returned by _assertBoundedLower()
+ * // Note use of spread operator (...) to unpack the array returned by _assertBoundedBetween()
  * const CartonEggCountModel = IntegerModel.extend()
  *   .assert(..._assertBoundedBetween(IntegerModel, 0, 12, true, true, compare)
  *   .as('CartonEggCount')

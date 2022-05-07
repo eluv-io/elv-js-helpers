@@ -19,7 +19,6 @@ const NonBlankStrModel = require('./NonBlankStrModel')
  *
  * @function
  * @private
- * @since v0.0.1
  * @category ModelAssertion
  * @sig ((Boolean, *, String) -> String) ObjectModelErrMsgFn => () -> [(* -> Boolean), ObjectModelErrMsgFn]
  *

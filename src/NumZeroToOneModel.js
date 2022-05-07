@@ -11,7 +11,6 @@ const defBoundedNumModel = require('./defBoundedNumModel')
  * Throws an exception if passed in an invalid value.
  *
  * @class
- * @since v0.0.1
  * @category Model
  * @sig * -> Number | THROW
  * @param {Any} - The input to validate
@@ -19,11 +18,11 @@ const defBoundedNumModel = require('./defBoundedNumModel')
  *
  * @example
  *
- * NumZeroToOneModel(0) //=> 0
+ * NumZeroToOneModel(0)     //=> 0
  *
- * NumZeroToOneModel(1) //=> 1
+ * NumZeroToOneModel(1)     //=> 1
  *
- * NumZeroToOneModel(42) //=> EXCEPTION: 'Value must be >= 0 and <= 1 (got: 42)'
+ * NumZeroToOneModel(42)    //=> EXCEPTION: 'Value must be >= 0 and <= 1 (got: 42)'
  *
  * NumZeroToOneModel('foo') //=> EXCEPTION: 'expecting Number, got String "foo"'
  *

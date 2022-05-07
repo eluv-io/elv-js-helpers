@@ -1,11 +1,5 @@
 const defObjModel = require('./defObjModel')
 
-
-// defSealedObjModel :: String, Object(object -> SealedObjectModel o | *exception*)
-// Returns a function that can be used as a model that refuses unrecognized properties
-// (i.e. only fields defined within ObjectModelDefinition)
-// Note that ramda's assoc function (among others) will return a plain object rather than an objectmodel instance,
-// and so will not preserve this protection on the object it returns.
 /**
  * Returns an [ObjectModel](http://objectmodel.js.org/) which will validate that an input is:
  *
@@ -19,7 +13,6 @@ const defObjModel = require('./defObjModel')
  * NOTE: Copying the object using a function like Ramda's `assoc` function will not preserve this protection for the copy.
  *
  * @function
- * @since v0.0.1
  * @category ModelFactory
  * @sig String -> Object -> (* -> Object | THROW)
  * @param {String} name - the name of the generated model

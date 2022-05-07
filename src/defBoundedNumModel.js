@@ -12,7 +12,6 @@ const NumberModel = require('./NumberModel')
  * a number.
  *
  * @function
- * @since v0.0.1
  * @category ModelFactory
  * @sig String -> (Number | null) -> (Number | null) -> (Boolean | null) ->  (Boolean | null) -> (* -> Model | THROW)
  * @param {String} name - the name of the generated model

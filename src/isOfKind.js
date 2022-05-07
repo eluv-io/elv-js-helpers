@@ -9,7 +9,6 @@ const kindOf = require('kind-of')
  *
  * @function
  * @curried
- * @since v0.0.1
  * @category Logic
  * @sig String -> * -> Boolean
  * @param {String} kindName - Lower case string expected when value is passed to [kind-of](https://github.com/jonschlinkert/kind-of).
@@ -20,9 +19,9 @@ const kindOf = require('kind-of')
  *
  * isOfKind('array', [1, 2, 3]) //=> true
  *
- * isOfKind('array', 1, 2, 3) //=> false
+ * isOfKind('array', 1, 2, 3)   //=> false
  *
- * isOfKind('array', 'foo') //=> false
+ * isOfKind('array', 'foo')     //=> false
  *
  */
 const isOfKind = curry(

@@ -13,7 +13,6 @@ const _satisfiesUpperBound = require('./_satisfiesUpperBound')
  * @function
  * @curried
  * @private
- * @since v0.0.1
  * @category Logic
  * @sig a -> Boolean -> ((a, a) -> Integer) -> a -> Boolean
  * @param {Any} lowerBound - the lower bound to be satisfied

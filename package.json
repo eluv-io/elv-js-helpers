@@ -31,11 +31,10 @@
   "author": "Eluvio, Inc.",
   "license": "MIT",
   "devDependencies": {
-    "@eluvio/elv-ramdoc": "^0.0.13",
-    "buble": "^0.20.0",
+    "@eluvio/elv-ramdoc": "^0.1.0",
     "chai": "^4.3.6",
     "dependency-cruiser": "^11.7.0",
-    "eslint": "^8.14.0",
+    "eslint": "^8.15.0",
     "jsdoc": "^3.6.10",
     "marked": "^4.0.15",
     "mocha": "^10.0.0",

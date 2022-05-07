@@ -5,7 +5,6 @@ const kindOf = require('kind-of')
  * Returns `false` if passed anything else
  *
  * @function
- * @since v0.0.1
  * @category Logic
  * @sig a -> Boolean
  * @param {Any} x - The value to test
@@ -15,9 +14,9 @@ const kindOf = require('kind-of')
  *
  * isArray([1, 2, 3]) //=> true
  *
- * isArray(1, 2, 3) //=> false
+ * isArray(1, 2, 3)   //=> false
  *
- * isArray('foo') //=> false
+ * isArray('foo')     //=> false
  *
  */
 const isArray = x => kindOf(x) === 'array'

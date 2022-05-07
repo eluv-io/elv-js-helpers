@@ -15,7 +15,6 @@ const _REGEX_UTC_TIMESTAMP = /^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9
  * Throws an exception if passed in an invalid value.
  *
  * @class
- * @since v0.0.1
  * @category Model
  * @sig * -> String | THROW
  * @param {Any} - The input to validate
@@ -25,18 +24,21 @@ const _REGEX_UTC_TIMESTAMP = /^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9
  *
  * UTCStrModel('2022-01-01T14:00:00Z') //=> '2022-01-01T14:00:00Z' (proxied by ObjectModel)
  *
- * UTCStrModel('2022-13-01T14:00:00Z') //=> EXCEPTION: 'Value is not a valid ISO 8601 datetime string (got: 2022-13-01T14:00:00Z)'
+ * UTCStrModel('2022-13-01T14:00:00Z') //=> EXCEPTION: 'Value is not a valid UTC datetime string (got: 2022-13-01T14:00:00Z)'
  *
- * UTCStrModel(42) //=> EXCEPTION: 'expecting String, got Number 42'
+ * UTCStrModel('foo')                  //=> EXCEPTION: 'Value is not in UTC format 'yyyy-mm-ddThh:mm:ssZ' (got: foo)'
+ *
+ * UTCStrModel(42)                     //=> EXCEPTION: 'expecting String, got Number 42'
  *
  */
 const UTCStrModel =
   defRegexMatchedStrModel(
-    'UTCTimestampRegexMatchString', // intermediate name for the model that only checks regex
-    _REGEX_UTC_TIMESTAMP
+    'UTCTimestampRegexMatchStr', // intermediate name for the model that only checks regex
+    _REGEX_UTC_TIMESTAMP,
+    'is not in UTC format \'yyyy-mm-ddThh:mm:ssZ\''
   )
     .extend()
     .assert(...assertValidUTCStr())
-    .as('UTCTimestampString') // final name for model that also checks that string is a valid datetime
+    .as('UTCStr') // final name for model that also checks that string is a valid datetime
 
 module.exports = UTCStrModel

@@ -7,7 +7,6 @@ const invoker = require('ramda/src/invoker')
  *
  * @function
  * @private
- * @since v0.0.1
  * @category Time
  * @sig String -> (DateTime -> String)
  * @param {String} - The Luxon DateTime format to use when invoking `DateTime#toLocaleString()`

@@ -14,7 +14,6 @@ const _assertObjValuesValid = require('./internal/_assertObjValuesValid')
  *  but the resulting model accepts a Javascript object as input and returns a (proxied) Javascript object as output.
  *
  * @function
- * @since v0.0.1
  * @category ModelFactory
  * @sig String -> Model -> Model -> (* -> Object | THROW)
  * @param {String} name - the name of the generated model

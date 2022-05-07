@@ -13,7 +13,6 @@ const resultUnwrap = require('../resultUnwrap')
  *
  * @function
  * @private
- * @since v0.0.1
  * @category Validation
  * @sig * -> Err e | THROW
  * @param {*} x - the value to check (should be an Err instance)

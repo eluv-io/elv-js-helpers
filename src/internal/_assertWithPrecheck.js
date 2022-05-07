@@ -22,7 +22,6 @@ const checkVsModel = require('../checkVsModel')
  *
  * @function
  * @private
- * @since v0.0.1
  * @category ModelAssertion
  * @sig ((Boolean, *, String) -> String) ObjectModelErrMsgFn => Model -> (a -> Boolean) -> String -> [(* -> Boolean), ObjectModelErrMsgFn | String]
  * @param {Model} model - The model to be bounded

@@ -22,7 +22,6 @@ const util = require('util')
  * e.g. 'Value must equal 42 (got: 43)'
  *
  * @function
- * @since v0.0.1
  * @category ModelAssertion
  * @sig String -> ((Boolean, *, String) -> String)
  * @param {String} msg - Error message describing the assertion condition that was not met

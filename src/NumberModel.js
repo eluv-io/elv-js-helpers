@@ -10,7 +10,6 @@ const {BasicModel} = require('objectmodel')
  * Throws an exception if passed in an invalid value.
  *
  * @class
- * @since v0.0.1
  * @category Model
  * @sig * -> Number | THROW
  * @param {Any} - The input to validate
@@ -18,7 +17,7 @@ const {BasicModel} = require('objectmodel')
  *
  * @example
  *
- * NumberModel(42) //=> 42 (proxied by ObjectModel)
+ * NumberModel(42)    //=> 42 (proxied by ObjectModel)
  *
  * NumberModel('foo') //=> EXCEPTION: 'expecting Number, got String "foo"'
  *

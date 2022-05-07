@@ -9,7 +9,6 @@ const throwError = require('../throwError')
  * @function
  * @curried
  * @private
- * @since v0.0.1
  * @category Validation
  * @sig String -> a -> a | THROW
  * @param {String} message - the error message to use in the exception

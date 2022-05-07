@@ -16,11 +16,11 @@ const _assertWithPrecheck = require('./internal/_assertWithPrecheck')
  *
  * @function
  * @private
- * @since v0.0.1
  * @category ModelAssertion
  * @sig ((Boolean, *, String) -> String) ObjectModelErrMsgFn => Model -> RegExp -> [(* -> Boolean), ObjectModelErrMsgFn]
  * @param {Model} model - The model to add regex validation to
  * @param {RegExp} regex - The regex that must be matched.
+ * @param {String} [errMsg] - Optional custom error message
  *
  * @returns {Array} 2-element array [Function, Function]. See description for details.
  *
@@ -34,11 +34,11 @@ const _assertWithPrecheck = require('./internal/_assertWithPrecheck')
  *   .as('UUIDString')
  *
  */
-const assertMatchesRegex = (model, regex) =>
+const assertMatchesRegex = (model, regex, errMsg) =>
   _assertWithPrecheck(
     model,
     regex.test.bind(regex), // need to bind (this), see https://stackoverflow.com/a/20579046
-    `is not in valid format or contains illegal characters (must match regular expression: ${regex})`
+    errMsg || `is not in valid format or contains illegal characters (must match regular expression: ${regex})`
   )
 
 module.exports = assertMatchesRegex

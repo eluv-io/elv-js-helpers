@@ -14,7 +14,6 @@ const lt = require('ramda/src/lt')
  *
  * @function
  * @curried
- * @since v0.0.1
  * @category Functional
  * @sig a -> b -> -1 | 0 | 1
  * @returns {Integer} -1 | 0 | 1

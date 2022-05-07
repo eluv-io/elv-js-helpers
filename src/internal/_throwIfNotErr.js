@@ -8,7 +8,6 @@ const isErr = require('../isErr')
  *
  * @function
  * @private
- * @since v0.0.1
  * @category Validation
  * @sig Err a | b -> Err a | THROW
  * @param {Any} x - the value to check

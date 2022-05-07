@@ -5,7 +5,6 @@ const type = require('crocks/core/type')
  * Returns `false` if passed anything else
  *
  * @function
- * @since v0.0.1
  * @category Logic
  * @sig a -> Boolean
  * @param {Any} x - The value to test
@@ -15,9 +14,9 @@ const type = require('crocks/core/type')
  *
  * isResult(Err(['invalid query'])) //=> true
  *
- * isResult(Ok(42)) //=> true
+ * isResult(Ok(42))                 //=> true
  *
- * isResult('foo') //=> false
+ * isResult('foo')                  //=> false
  *
  */
 const isResult = x => type(x) === 'Result'

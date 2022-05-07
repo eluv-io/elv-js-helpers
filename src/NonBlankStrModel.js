@@ -14,7 +14,6 @@ const StringModel = require('./StringModel')
  * Throws an exception if passed in an invalid value.
  *
  * @class
- * @since v0.0.1
  * @category Model
  * @sig * -> String | THROW
  * @param {Any} - The input to validate
@@ -24,9 +23,9 @@ const StringModel = require('./StringModel')
  *
  * NonBlankStrModel('foo') //=> 'foo' // Proxied by ObjectModel
  *
- * NonBlankStrModel('  ') //=> EXCEPTION: 'Value must not be a blank string (got:    )'
+ * NonBlankStrModel('  ')  //=> EXCEPTION: 'Value must not be a blank string (got:    )'
  *
- * NonBlankStrModel(42) //=> EXCEPTION: 'expecting String, got Number 42'
+ * NonBlankStrModel(42)    //=> EXCEPTION: 'expecting String, got Number 42'
  *
  */
 const NonBlankStrModel = StringModel

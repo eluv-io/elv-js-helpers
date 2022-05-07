@@ -14,7 +14,6 @@ const NumberModel = require('./NumberModel')
  * Throws an exception if passed in an invalid value.
  *
  * @class
- * @since v0.0.1
  * @category Model
  * @sig * -> Integer | THROW
  * @param {Any} - The input to validate

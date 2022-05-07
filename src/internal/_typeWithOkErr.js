@@ -16,8 +16,7 @@ const isOk = require('../isOk')
  *
  * @function
  * @private
- * @since v0.0.1
- * @category Functional
+ * @category Miscellaneous
  * @sig a -> Boolean
  * @returns {Boolean}
  *
@@ -25,9 +24,9 @@ const isOk = require('../isOk')
  *
  * _typeWithOkErr(Err(['invalid query'])) //=> "Err"
  *
- * _typeWithOkErr(Ok(42)) //=> "Ok"
+ * _typeWithOkErr(Ok(42))                 //=> "Ok"
  *
- * _typeWithOkErr('foo') //=> "String"
+ * _typeWithOkErr('foo')                  //=> "String"
  *
  */
 const _typeWithOkErr = x =>

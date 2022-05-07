@@ -24,7 +24,6 @@ const truthTable = require('./truthTable')
  * the failing value, and any attribute name(s) that were traversed to access the value.
  *
  * @function
- * @since v0.0.1
  * @category ModelAssertion
  * @sig ((Boolean, *, String) -> String) ObjectModelErrMsgFn => Model -> a -> a -> Boolean -> Boolean -> [(* -> Boolean), ObjectModelErrMsgFn | String]
  * @param {Model} model - The model to be bounded

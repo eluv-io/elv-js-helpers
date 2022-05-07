@@ -18,12 +18,6 @@ const zipWith = require('ramda/src/zipWith')
 
 const {Duration} = require('luxon')
 
-// Converts seconds to string in "##d ##h ##m ##s " format
-// Unneeded larger units are omitted, and zero padding is suppressed for first number e.g.
-//
-// seconds must be >= 0, else 'n/a' is returned
-
-
 /**
  * Returns an ETA expressed as number of days/hours/minutes/seconds remaining, based on a supplied value for how many seconds are left.
  *
@@ -32,7 +26,6 @@ const {Duration} = require('luxon')
  * If `secondsLeft` is negative, returns `'--'`
  *
  * @function
- * @since v0.0.1
  * @category Time
  * @sig Number -> String
  * @param {number} secondsLeft The number of seconds remaining until completion

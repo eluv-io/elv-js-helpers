@@ -12,7 +12,6 @@ const validator = require('./validator')
  *
  * @function
  * @curried
- * @since v0.0.1
  * @category Validation
  * @sig Model -> * -> Boolean
  * @param {Model} model - The model to test against

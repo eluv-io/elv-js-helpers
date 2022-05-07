@@ -1,3 +1,4 @@
+const curry = require('crocks/helpers/curry')
 const {Ok, Err} = require('crocks/Result')
 /**
  * An ObjectModel definition.
@@ -6,34 +7,43 @@ const {Ok, Err} = require('crocks/Result')
  */
 
 /**
- * Returns a function that will validate an input against a [Model](http://objectmodel.js.org/).
- * When the returned function is called with an input, it will return a [Crocks Result](https://crocks.dev/docs/crocks/Result.html)
- * instance. This returned instance will be an [Ok](https://crocks.dev/docs/crocks/Result.html#ok) wrapping the input
- * data if it passed the Model's validations, or an [Err](https://crocks.dev/docs/crocks/Result.html#err) wrapping
- * an array of validation error message strings.
+ * Validates `input` against a [Model](http://objectmodel.js.org/) and returns a
+ * [Crocks Result](https://crocks.dev/docs/crocks/Result.html) instance. This returned instance will be an
+ * [Ok](https://crocks.dev/docs/crocks/Result.html#ok) wrapping the input data if it passed the Model's validations,
+ * or an [Err](https://crocks.dev/docs/crocks/Result.html#err) wrapping an array of validation error message strings.
+ *
+ * Function is curried, it can be called with just `model` to return a validation function.
  *
  * @function
- * @since v0.0.1
+ * @curried
  * @category Validation
  * @sig Model -> (a -> Result [String] a)
- * @param {Model} model An ObjectModel definition to validate against
+ * @param {Model} model - An ObjectModel definition to validate against
+ * @param {Any} input - The input to validate
  * @returns {function}
  *
  * @example
  *
  * const PositiveNumModel = require('@eluvio/elv-js-helpers/PositiveNumModel')
  *
+ * validator(PositiveNumModel, 42)    //=> Ok 42
+ *
+ * validator(PositiveNumModel, 0)     //=> Err ['PositiveNumber: Value must be > 0 (got: 0)']
+ *
+ * validator(PositiveNumModel, 'foo') //=> Err ['PositiveNumber: expecting Number, got String "foo"']
+ *
+ * // function is curried, call with just 1 argument to return a more specific validation function
  * const validatePositiveNumber = validator(PositiveNumModel)
  *
- * validatePositiveNumber(42) //=> Ok 42
+ * validatePositiveNumber(42)         //=> Ok 42
  *
- * validatePositiveNumber(0) //=> Err ['PositiveNumber: Value must be > 0 (got: 0)']
+ * validatePositiveNumber(0)          //=> Err ['PositiveNumber: Value must be > 0 (got: 0)']
  *
- * validatePositiveNumber('foo') //=> Err ['PositiveNumber: expecting Number, got String "foo"']
+ * validatePositiveNumber('foo')      //=> Err ['PositiveNumber: expecting Number, got String "foo"']
  *
  */
-const validator = model =>
-  input => {
+const validator = curry(
+  (model, input) => {
     let foundErrors = []
     const errorCollector = errors => errors.forEach(
       e => foundErrors.push(`${model.name}: ${e.message}`)
@@ -43,5 +53,6 @@ const validator = model =>
       Ok(model(input)) :
       Err(foundErrors)
   }
+)
 
 module.exports = validator

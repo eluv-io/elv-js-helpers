@@ -1,17 +1,48 @@
+const curry = require('crocks/helpers/curry')
 const kindOf = require('kind-of')
 
 const _objBadVal = require('./_objBadVal')
 
-// isNotObjectWithBadValue :: (a -> Boolean) -> (Object -> Boolean)
-// Returns false (failing validation) ONLY if x is an object AND x has a bad value (checkFn(value) is falsy)
-// Returns true if x is an object and all values are good (checkFn(value) is truthy).
-// Returns true if x is not an object
-//
-// Used to short circuit value validation if a non-object is passed in.
-// Cannot use validateThenAssertTrue(ObjectModel, checkFn) due to idiosyncrasies of objectmodel's ObjectModel constructor
-// (ObjectModel(undefined) is a valid call)
-// Also this allows checkFn to be defined to check only a single value and not need to handle iteration
-const _satisfiesObjValCheck = valueModel => x =>
-  !(kindOf(x) === 'object' && _objBadVal(valueModel, x) !== undefined)
-
+/**
+ * Returns
+ * * `true` if the input is an object and all the object's values are valid instances of the specified model OR **the input is not a Javascript object**
+ * * `false` if **the input IS a Javascript object** AND has a value that violates specified model
+ *
+ * Intended for use in an [ObjectModel assertion](http://objectmodel.js.org/#doc-assertions).
+ *
+ * Note that `true` is returned for non-object inputs.
+ *
+ * If called with fewer than 2 arguments, will return a [partially applied function](https://mostly-adequate.gitbook.io/mostly-adequate-guide/ch04)
+ *
+ * @function
+ * @curried
+ * @private
+ * @category Logic
+ * @sig Model -> * -> Boolean
+ * @param {Model} valueModel - the model to check values against
+ * @param {Any} obj - The item to check
+ * @returns {Boolean}
+ *
+ * @example
+ *
+ * _satisfiesObjValCheck(NonBlankStrModel, {foo: ' '})   //=> false
+ *
+ * _satisfiesObjValCheck(NonBlankStrModel, {foo: 42})    //=> true
+ *
+ * _satisfiesObjValCheck(NonBlankStrModel, 3)            //=> true
+ *
+ * // function is curried: call with fewer params to obtain a narrower function
+ *
+ * const hasNoBlankVals = _satisfiesObjValCheck(NonBlankStrModel)
+ *
+ * hasNoBlankVals({foo: ' '})    //=> false
+ *
+ * hasNoBlankVals({foo: 42})     //=> true
+ *
+ * hasNoBlankVals(3)             //=> true
+ */
+const _satisfiesObjValCheck = curry(
+  (valueModel, obj) =>
+    !(kindOf(obj) === 'object' && _objBadVal(valueModel, obj) !== undefined)
+)
 module.exports = _satisfiesObjValCheck

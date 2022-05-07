@@ -2,7 +2,6 @@
  * Returns time zone string from current environment
  *
  * @function
- * @since v0.0.1
  * @category Time
  * @sig () -> String
  * @returns {String}

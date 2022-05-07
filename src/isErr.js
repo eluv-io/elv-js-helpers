@@ -10,7 +10,6 @@ const isResult = require('./isResult')
  * Returns `false` if passed anything else
  *
  * @function
- * @since v0.0.1
  * @category Logic
  * @sig a -> Boolean
  * @param {Any} x - The value to test
@@ -20,9 +19,9 @@ const isResult = require('./isResult')
  *
  * isErr(Err(['invalid query'])) //=> true
  *
- * isErr(Ok(42)) //=> false
+ * isErr(Ok(42))                 //=> false
  *
- * isErr('foo') //=> false
+ * isErr('foo')                  //=> false
  *
  */
 const isErr = x => isResult(x) && either(T, F, x)

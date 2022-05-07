@@ -11,7 +11,6 @@ const {ObjectModel} = require('objectmodel')
  *  Extra fields are allowed.
  *
  * @function
- * @since v0.0.1
  * @category ModelFactory
  * @sig String -> Object -> (* -> Object | THROW)
  * @param {String} name - the name of the generated model

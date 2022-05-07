@@ -10,8 +10,7 @@ const _throwIfNotResult = require('./internal/_throwIfNotResult')
  * Throws an exception if not passed a Result.
  *
  * @function
- * @since v0.0.1
- * @category Functional
+ * @category Conversion
  * @sig Result e a -> e | a
  * @param {Any} x - The Crocks Result instance to unwrap
  * @returns {Any}
@@ -21,7 +20,7 @@ const _throwIfNotResult = require('./internal/_throwIfNotResult')
  *
  * resultUnwrap(Err(['invalid query'])) //=> ['invalid query']
  *
- * resultUnwrap(Ok(42)) //=> 42
+ * resultUnwrap(Ok(42))                 //=> 42
  *
  */
 const resultUnwrap = x => _throwIfNotResult(x) && either(identity,identity, x)

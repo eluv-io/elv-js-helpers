@@ -20,14 +20,13 @@ const isArray = require('./isArray')
  * function `wrapNonArray`, e.g. `Err(wrapNonArray(extLibValidationErr()))`
  *
  * @function
- * @since v0.0.1
  * @category Conversion
  * @sig Result [e] a -> Object
  * @param {Result} result - The Crocks Result instance to convert
  * @returns {Object}
  * @example
  *
- * resultToPOJO(Ok(42)) //=> {ok: true, result: 42}
+ * resultToPOJO(Ok(42))                 //=> {ok: true, result: 42}
  *
  * resultToPOJO(Err(['query invalid'])) //=> {ok: false, errors: ["query invalid"]}
  *

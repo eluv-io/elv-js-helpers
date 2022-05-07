@@ -3,7 +3,6 @@
  *
  * @function
  * @private
- * @since v0.0.1
  * @category Miscellaneous
  * @sig a -> Boolean -> String
  * @param {Any} lowerBound

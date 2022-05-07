@@ -1,7 +1,5 @@
 const defBoundedIntModel = require('./defBoundedIntModel')
 
-// PositiveIntegerModel :: a -> PositiveIntegerModel a | *exception*
-// Returns either an ObjectModel containing a positive integer or throws an exception
 /**
  * An [ObjectModel](http://objectmodel.js.org/) which validates that an input is:
  *
@@ -14,7 +12,6 @@ const defBoundedIntModel = require('./defBoundedIntModel')
  * Throws an exception if passed in an invalid value.
  *
  * @class
- * @since v0.0.1
  * @category Model
  * @sig * -> * | THROW
  * @param {Any} - The input to validate

@@ -10,7 +10,6 @@ const {BasicModel} = require('objectmodel')
  * Throws an exception if passed in an invalid value.
  *
  * @class
- * @since v0.0.1
  * @category Model
  * @sig * -> Date | THROW
  * @param {Any} - The input to validate
@@ -20,7 +19,7 @@ const {BasicModel} = require('objectmodel')
  *
  * DatetimeModel(new Date) //=> current datetime (proxied by ObjectModel)
  *
- * DatetimeModel('foo') //=> EXCEPTION: 'expecting Date, got String "foo"'
+ * DatetimeModel('foo')    //=> EXCEPTION: 'expecting Date, got String "foo"'
  *
  */
 const DatetimeModel = BasicModel(Date).as('Javascript Date object')

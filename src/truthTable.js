@@ -9,7 +9,6 @@ const boolsToInt = require('./boolsToInt')
  *
  * @function
  * @curried
- * @since v0.0.1
  * @category Functional
  * @sig [*] -> [Boolean] -> *
  * @param {Array} choiceArray An array of items to choose from
@@ -31,8 +30,6 @@ const boolsToInt = require('./boolsToInt')
  * truthTable(['woman','man','girl','boy'],[isChild, isMale]) //=> "woman"
  *
  * // For comparison - expressed using if/then
- * let isChild = false
- * let isMale = false
  * if(isChild) {
  *   if(isMale) {
  *     return 'boy'

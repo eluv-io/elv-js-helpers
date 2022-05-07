@@ -9,7 +9,6 @@ const isResult = require('../isResult')
  *
  * @function
  * @private
- * @since v0.0.1
  * @category Validation
  * @sig Result a | b -> Result a | THROW
  * @param {Any} x - the value to check

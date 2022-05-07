@@ -12,7 +12,6 @@ const defBoundedIntModel = require('./defBoundedIntModel')
  * Throws an exception if passed in an invalid value.
  *
  * @class
- * @since v0.0.1
  * @category Model
  * @sig * -> * | THROW
  * @param {Any} - The input to validate

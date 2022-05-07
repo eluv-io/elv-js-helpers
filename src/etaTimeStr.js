@@ -25,7 +25,6 @@ const sysTimezone = require('./sysTimezone')
  * * Passing in a value of incorrect type for `locales` will cause an exception.
  *
  * @function
- * @since v0.0.1
  * @category Time
  * @sig Date -> Number -> String
  * @param {Date} currentTime Javascript Date object to use as current time.
@@ -37,13 +36,13 @@ const sysTimezone = require('./sysTimezone')
  *
  * const currentTime = new Date('2022-01-01T07:30:00Z')
  *
- * etaTimeStr(currentTime, 10, 'America/Los_Angeles', 'en-US') //=> "11:30:10 PM PST"
+ * etaTimeStr(currentTime, 10, 'America/Los_Angeles', 'en-US')   //=> "11:30:10 PM PST"
  *
  * etaTimeStr(currentTime, 3600, 'America/Los_Angeles', 'en-US') //=> "Jan 1, 12:30:00 AM PST"
  *
- * etaTimeStr(currentTime, -10, 'America/Los_Angeles', 'en-US') //=> "--"
+ * etaTimeStr(currentTime, -10, 'America/Los_Angeles', 'en-US')  //=> "--"
  *
- * etaTimeStr(currentTime, 10, 'foo', 'en-US') //=> "Invalid DateTime"
+ * etaTimeStr(currentTime, 10, 'foo', 'en-US')                   //=> "Invalid DateTime"
  */
 const etaTimeStr = (currentTime, secondsLeft, zone = sysTimezone(), locales = sysLocale()) =>
   secondsLeft < 0 ?

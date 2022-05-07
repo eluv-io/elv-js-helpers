@@ -10,7 +10,6 @@ const T = require('ramda/src/T')
  *
  * @function
  * @private
- * @since v0.0.1
  * @category ModelAssertion
  * @sig () -> [(* -> Boolean), String]
  *
