@@ -44,6 +44,12 @@ describe('resultToPOJO', function () {
     tripleErrRetVal.ok.should.be.false
   })
 
+  it('should return a value with an "errors" attribute that is a single element array when given an Err with a single element array', () => {
+    simpleErrRetVal.errors.length.should.equal(1)
+    simpleErrRetVal.errors[0].should.equal('first error')
+    console.log(JSON.stringify(simpleErrRetVal.errors))
+  })
+
   it('should return a value with an "errors" attribute that is an array when given an Err', () => {
     simpleErrRetVal.hasOwnProperty('errors').should.be.true
     doubleErrRetVal.hasOwnProperty('errors').should.be.true

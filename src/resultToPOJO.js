@@ -35,7 +35,7 @@ const resultToPOJO = result => either(
   errVal => _throwIfFalse(
     `Err instance does not contain an array, instead contains: ${kindOf(errVal)} (${errVal})`,
     isArray(errVal)
-  ) && Object({ok: false, errors: errVal.map(uniq)}),
+  ) && Object({ok: false, errors: uniq(errVal)}),
   okVal => Object({ok: true, result: okVal}),
   result
 )
