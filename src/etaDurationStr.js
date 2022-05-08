@@ -1,8 +1,7 @@
-// TODO remove dependence on luxon
-
 const compose = require('crocks/helpers/compose')
 const constant = require('crocks/combinators/constant')
 const isEmpty = require('crocks/predicates/isEmpty')
+const Pair = require('crocks/Pair')
 const pipe = require('crocks/helpers/pipe')
 const when = require('crocks/logic/when')
 
@@ -16,7 +15,17 @@ const startsWith = require('ramda/src/startsWith')
 const tail = require('ramda/src/tail')
 const zipWith = require('ramda/src/zipWith')
 
-const {Duration} = require('luxon')
+
+const _divMod = (pair, divisor) => Pair(
+  pair.fst().concat([Math.floor(pair.snd() / divisor)]),
+  pair.snd() % divisor
+)
+
+const _dhms = seconds => [86400, 3600, 60, 1].reduce(
+  _divMod,
+  Pair([], seconds)
+).fst().map(s=>s.toString().padStart(2, '0'))
+
 
 /**
  * Returns an ETA expressed as number of days/hours/minutes/seconds remaining, based on a supplied value for how many seconds are left.
@@ -60,7 +69,7 @@ const etaDurationStr = secondsLeft =>
       reverse, // put back in normal order
       join(' '),
       when(startsWith('0'), tail) // remove leading zero if found
-    )(Duration.fromMillis(secondsLeft * 1000, {numberingSystem: 'latn'}).toFormat('dd hh mm ss').split(' '))
+    )(_dhms(secondsLeft))
 
 
 module.exports = etaDurationStr

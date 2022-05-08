@@ -4,10 +4,9 @@ const map = require('crocks/pointfree/map')
 const pipe = require('crocks/helpers/pipe')
 const snd = require('crocks/Pair/snd')
 
-const {DateTime} = require('luxon')
-
 const _toLocaleString = require('./internal/_toLocaleString')
 
+const addSeconds = require('./addSeconds')
 const sysLocale = require('./sysLocale')
 const sysTimezone = require('./sysTimezone')
 
@@ -42,31 +41,48 @@ const sysTimezone = require('./sysTimezone')
  *
  * etaTimeStr(currentTime, -10, 'America/Los_Angeles', 'en-US')  //=> "--"
  *
- * etaTimeStr(currentTime, 10, 'foo', 'en-US')                   //=> "Invalid DateTime"
+ * etaTimeStr(currentTime, 10, 'foo', 'en-US')                   //=> EXCEPTION: "Invalid time zone specified: foo"
  */
 const etaTimeStr = (currentTime, secondsLeft, zone = sysTimezone(), locales = sysLocale()) =>
   secondsLeft < 0 ?
     '--' :
     pipe(
       branch, // convert currentTime to a Pair of identical values, original will be preserved in first value
-      map(dt => dt.plus({seconds: secondsLeft})), // increment the Pair's second value
+      map(addSeconds(secondsLeft)), // increment the Pair's second value
       ifElse( // see if the date part (in specified time zone) is still the same between the two
         pipe(
           x => x.toArray(),
-          map(_toLocaleString(DateTime.DATE_FULL)),
-          x => x[0]===x[1]
+          map(_toLocaleString(locales, {timeZone: zone, day: 'numeric'})),
+          x => x[0] === x[1]
         ),
-        map(_toLocaleString(DateTime.TIME_WITH_SHORT_OFFSET)), // if so, convert second value to just time string
-        map(_toLocaleString({ // otherwise convert second value to a date + time string
-          hour: 'numeric',
-          day: 'numeric',
-          minute: 'numeric',
-          month: 'short',
-          second: 'numeric',
-          timeZoneName: 'short'
-        }))
+        map( // if so, convert second value to just time string
+          _toLocaleString(
+            locales,
+            {
+              hour: 'numeric',
+              minute: 'numeric',
+              second: 'numeric',
+              timeZone: zone,
+              timeZoneName: 'short'
+            }
+          )
+        ),
+        map( // otherwise convert second value to a date + time string
+          _toLocaleString(
+            locales,
+            {
+              hour: 'numeric',
+              day: 'numeric',
+              minute: 'numeric',
+              month: 'short',
+              second: 'numeric',
+              timeZone: zone,
+              timeZoneName: 'short'
+            }
+          )
+        )
       ),
       snd // return the second value
-    )(DateTime.fromJSDate(currentTime, {zone}).setLocale(locales))
+    )(currentTime)
 
 module.exports = etaTimeStr

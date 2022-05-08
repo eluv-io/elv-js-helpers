@@ -1,5 +1,6 @@
 const chai = require('chai')
 chai.should()
+const expect = chai.expect
 
 const etaTimeStr = require('../../../src/etaTimeStr')
 
@@ -24,9 +25,9 @@ describe('etaTimeStr', () => {
     timeString.should.equal('--')
   })
 
-  it('should return "Invalid DateTime" for invalid time zone', () => {
-    const timeString = etaTimeStr(currentTime, 10, 'foo', 'en-US')
-    timeString.should.equal('Invalid DateTime')
+  it('should throw an exception for invalid time zone', () => {
+    expect(()=> etaTimeStr(currentTime, 10, 'foo', 'en-US'))
+      .to.throw('Invalid time zone specified: foo')
   })
 
 })

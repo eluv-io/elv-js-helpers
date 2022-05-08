@@ -1,12 +1,8 @@
-*.test.js
-.npmignore
-test/
-
 *.log
+*.ignore.*
 .DS_Store
 .DS_Store?
 .Spotlight-V100
 .Trashes
 thumbs.db
 Thumbs.db
-docs

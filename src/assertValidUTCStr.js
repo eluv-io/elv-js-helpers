@@ -1,4 +1,4 @@
-const {DateTime} = require('luxon')
+const date = require('date-and-time')
 
 const _assertWithPrecheck = require('./internal/_assertWithPrecheck')
 const NonBlankStrModel = require('./NonBlankStrModel')
@@ -37,7 +37,14 @@ const NonBlankStrModel = require('./NonBlankStrModel')
 const assertValidUTCStr = () =>
   _assertWithPrecheck(
     NonBlankStrModel,
-    str => (DateTime.fromISO(str).isValid === true),
+    utcString =>
+      !isNaN(
+        date.parse(
+          utcString,
+          'YYYY MM DD HH:mm:ss ',
+          true
+        )
+      ),
     'is not a valid UTC datetime string'
   )
 

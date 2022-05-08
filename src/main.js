@@ -1,4 +1,4 @@
-module.exports = {
+const internal = {
   _assertBoundedBetween: require('./internal/_assertBoundedBetween'),
   _assertBoundedLower: require('./internal/_assertBoundedLower'),
   _assertBoundedUpper: require('./internal/_assertBoundedUpper'),
@@ -24,7 +24,11 @@ module.exports = {
   _throwIfNotResult: require('./internal/_throwIfNotResult'),
   _throwIfTrue: require('./internal/_throwIfTrue'),
   _toLocaleString: require('./internal/_toLocaleString'),
-  _typeWithOkErr: require('./internal/_typeWithOkErr'),
+  _typeWithOkErr: require('./internal/_typeWithOkErr')
+}
+
+module.exports = {
+  internal,
   DatetimeModel: require('./DatetimeModel'),
   IntegerModel: require('./IntegerModel'),
   NonBlankStrModel: require('./NonBlankStrModel'),
@@ -36,6 +40,7 @@ module.exports = {
   PositiveNumModel: require('./PositiveNumModel'),
   StringModel: require('./StringModel'),
   UTCStrModel: require('./UTCStrModel'),
+  addSeconds: require('./addSeconds'),
   assertBounded: require('./assertBounded'),
   assertMatchesRegex: require('./assertMatchesRegex'),
   assertValidUTCStr: require('./assertValidUTCStr'),
@@ -54,7 +59,7 @@ module.exports = {
   estTotalDur: require('./estTotalDur'),
   etaDurationStr: require('./etaDurationStr'),
   etaTimeStr: require('./etaTimeStr'),
-  index: require('./index'),
+  format: require('./format'),
   isArray: require('./isArray'),
   isErr: require('./isErr'),
   isOfKind: require('./isOfKind'),
@@ -62,6 +67,7 @@ module.exports = {
   isResult: require('./isResult'),
   liftA2Join: require('./liftA2Join'),
   listPush: require('./listPush'),
+  main: require('./main'),
   mapWithIndex: require('./mapWithIndex'),
   resultToPOJO: require('./resultToPOJO'),
   resultUnwrap: require('./resultUnwrap'),
@@ -69,6 +75,7 @@ module.exports = {
   sysTimezone: require('./sysTimezone'),
   throwError: require('./throwError'),
   truthTable: require('./truthTable'),
+  utcStrToDate: require('./utcStrToDate'),
   validator: require('./validator'),
   wrapNonArray: require('./wrapNonArray')
 }

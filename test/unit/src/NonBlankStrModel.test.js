@@ -13,8 +13,8 @@ describe('NonBlankStrModel', () => {
   })
 
   it('should throw an exception for blank strings', () => {
-    expect(() => NonBlankStrModel('')).to.throw('Value must not be a blank string (got: )')
-    expect(() => NonBlankStrModel(' ')).to.throw('Value must not be a blank string (got:  )')
+    expect(() => NonBlankStrModel('')).to.throw('Value must not be a blank string (got: "")')
+    expect(() => NonBlankStrModel(' ')).to.throw('Value must not be a blank string (got: " ")')
   })
 
   it('should throw an exception for non-strings', () => {

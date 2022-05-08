@@ -1,4 +1,4 @@
-const util = require('util')
+const format = require('./format')
 
 // assertionErrMsg :: String -> (String -> a -> String -> String)
 // Returns a function that can be used in .assert() to construct a validation error message containing the bad value
@@ -29,6 +29,9 @@ const util = require('util')
  *
  * @example
  *
+ * const NumberModel = require('@eluvio/elv-js-helpers/NumberModel')
+ * const assertionErrMsg = require('@eluvio/elv-js-helpers/assertionErrMsg')
+ *
  * const AnswerToEverythingModel = NumberModel.extend()
  *   .assert(
  *     x => x === 42,
@@ -36,14 +39,14 @@ const util = require('util')
  *   )
  *   .as('AnswerToEverything')
  *
- * const myAnswer = AnswerToEverythingModel(43)  //=> EXCEPTION: 'Value must equal 42 (got: 43)'
+ * AnswerToEverythingModel(43)  //=> EXCEPTION: 'Value must equal 42 (got: 43)'
  *
  */
 const assertionErrMsg = msg =>
   (result, value, name) => [
     name === null ? 'Value' : name,
     msg,
-    `(got: ${util.format(value)})`
+    `(got: ${format(value)})`
   ].join(' ')
 
 module.exports = assertionErrMsg

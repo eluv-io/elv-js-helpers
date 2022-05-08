@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Test</title>
+</head>
+<body  onload="populateList()">
+  <ul>
+      <li id="sysLocale"></li>
+      <li id="_boundDescLower"></li>
+  </ul>
+<script src="../../build/dist/elv-js-helpers.js"></script>
+<script type="application/javascript">
+  function populateList() {
+    document.getElementById("sysLocale").innerText = 'System locale is: ' + ElvJsHelpers.sysLocale()
+    document.getElementById("_boundDescLower").innerText = '_boundDescLower(0,true)= "' + ElvJsHelpers.internal._boundDescLower(0,true) + '"'
+  }
+</script>
+</body>
+</html>

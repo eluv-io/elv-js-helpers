@@ -45,4 +45,3 @@ const estTotalDur = (timeElapsed, portionComplete) =>
     p => p.timeElapsed / p.portionComplete
   )
 module.exports = estTotalDur
-console.log(estTotalDur(0, 0).inspect())

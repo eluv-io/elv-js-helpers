@@ -24,9 +24,10 @@ const H = require('@eluvio/elv-js-helpers')
 
 // create references to particular items in order to avoid needing to use H. prefix
 const { etaDurationStr, etaTimeStr } = H
+const {_boundDescLower} = H.internal
 
 // Note that the following syntax still causes entire library to be bundled into your project
-const { etaDurationStr, etaTimeStr } = require('crocks')
+const { etaDurationStr, etaTimeStr } = require('@eluvio/elv-js-helpers')
 ```
 
 ### Entire library (JS Modules)
@@ -37,6 +38,7 @@ import H from '@eluvio/elv-js-helpers'
 
 // create references to particular items in order to avoid needing to use H. prefix
 const { etaDurationStr, etaTimeStr } = H
+const {_boundDescLower} = H.internal
 
 // Note that the following syntax still causes entire library to be bundled into your project
 import { etaDurationStr, etaTimeStr }  from '@eluvio/elv-js-helpers'
@@ -48,6 +50,7 @@ import { etaDurationStr, etaTimeStr }  from '@eluvio/elv-js-helpers'
 // require in each item directly
 const etaDurationStr = require('@eluvio/elv-js-helpers/etaDurationStr')
 const etaTimeStr = require('@eluvio/elv-js-helpers/etaTimeStr')
+const _boundDescLower = require('@eluvio/elv-js-helpers/internal/_boundDescLower')
 ```
 
 ### Individual items (JS Modules)
@@ -56,6 +59,7 @@ const etaTimeStr = require('@eluvio/elv-js-helpers/etaTimeStr')
 // import in each item directly
 import etaDurationStr from '@eluvio/elv-js-helpers/etaDurationStr'
 import etaTimeStr from '@eluvio/elv-js-helpers/etaTimeStr'
+import _boundDescLower from '@eluvio/elv-js-helpers/internal/_boundDescLower'
 ```
 
 ### Entire library (browser)
@@ -69,6 +73,7 @@ is expected that browser apps would be built using a bundling tool like Webpack/
 <script src="./build/dist/elv-js-helpers.js"></script>
 <script type="application/javascript">
     console.log('System locale is: ' + ElvJsHelpers.sysLocale())
+    console.log('_boundDescLower(0,true)= "' + ElvJsHelpers.internal._boundDescLower(0,true) + '"')
 </script>
 ```
 

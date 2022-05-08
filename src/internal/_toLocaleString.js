@@ -21,6 +21,6 @@ const invoker = require('ramda/src/invoker')
  * fullDateString(myDate) //=> "January 1, 2022"
  *
  */
-const _toLocaleString = invoker(1, 'toLocaleString')
+const _toLocaleString = invoker(2, 'toLocaleString')
 
 module.exports = _toLocaleString

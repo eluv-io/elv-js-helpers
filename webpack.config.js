@@ -3,8 +3,8 @@ const webpack = require('webpack')
 
 module.exports = function (env) {
   const config = {
-    mode: 'none',
-    entry: './build/index.js',
+    mode: 'production',
+    entry: './build/main.js',
     optimization: {
       usedExports: true,
     },
@@ -26,5 +26,6 @@ module.exports = function (env) {
     const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
     config.plugins.push(new BundleAnalyzerPlugin())
   }
+
   return config
 }
