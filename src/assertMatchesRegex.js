@@ -30,8 +30,19 @@ const _assertWithPrecheck = require('./internal/_assertWithPrecheck')
  *
  * // Note use of spread operator (...) to unpack the array returned by _assertBoundedUpper()
  * const UUIDStringModel = StringModel.extend()
- *   .assert(...assertMatchesRegex(StringModel, /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/)
- *   .as('UUIDString')
+ *   .assert(
+ *     ...assertMatchesRegex(
+ *       StringModel,
+ *       /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/,
+ *       'is not in UUID format xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx')
+ *     )
+ *   ).as('UUIDString')
+ *
+ * UUIDStringModel('12345678-1234-1234-1234-123456789abc')  //=> '12345678-1234-1234-1234-123456789abc' (proxied by ObjectModel)
+ *
+ * UUIDStringModel('foo')                                   //=> EXCEPTION: 'Value is not in UUID format xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (got: "foo")'
+ *
+ * UUIDStringModel(42)                                      //=> EXCEPTION: 'expecting String, got Number 42'
  *
  */
 const assertMatchesRegex = (model, regex, errMsg) =>

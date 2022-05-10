@@ -46,7 +46,14 @@ const validator = curry(
   (model, input) => {
     let foundErrors = []
     const errorCollector = errors => errors.forEach(
-      e => foundErrors.push(`${model.name}: ${e.message}`)
+      e => foundErrors.push(
+        Object.assign(
+          {
+            toString: () => `${model.name}: ${e.message}`
+          },
+          e
+        )
+      )
     )
     // noinspection JSValidateTypes
     return model.test(input, errorCollector) ?

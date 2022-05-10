@@ -21,6 +21,8 @@ const {BasicModel} = require('objectmodel')
  *
  * NumberModel('foo') //=> EXCEPTION: 'expecting Number, got String "foo"'
  *
+ * NumberModel(NaN) //=> EXCEPTION: 'expecting Number, got Number NaN'  // not the greatest error message :-P
+ *
  */
 const NumberModel = BasicModel(Number).as('Number')
 

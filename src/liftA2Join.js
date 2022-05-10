@@ -8,15 +8,18 @@ const nAry = require('crocks/helpers/nAry')
  * Converts a function which accepts 2 'normal' values and returns a wrapped value into a
  * function that takes 2 wrapped values and returns a wrapped value.
  *
+ * This is similar to the `liftA2` function, except that it works with functions that return a wrapped data type, instead
+ * of functions that return a 'normal' value.
+ *
  * NOTE: The original function must be curried.
  *
  * Note that the type of the wrapped inputs must be the same as the type of the wrapped output of the function.
  *
- * For example, if the original function returns a Maybe, then the inputs fed into the converted function must also be
- * Maybes (i.e. Just or Nothing)
+ * For example, if the original function returns a `Maybe`, then the inputs fed into the converted function must also be
+ * `Maybe`s (i.e. `Just` or `Nothing`)
  *
- * If the original function returns a Result, then the inputs fed into the converted function must also be
- * Results (i.e. Ok or Err)
+ * If the original function returns a `Result`, then the inputs fed into the converted function must also be
+ * `Result`s (i.e. `Ok` or `Err`)
  *
  * @function
  * @curried

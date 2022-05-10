@@ -2,6 +2,7 @@ const either = require('crocks/pointfree/either')
 const uniq = require('ramda/src/uniq')
 
 const _throwIfFalse = require('./internal/_throwIfFalse')
+const format=require('./format')
 const kindOf = require('kind-of')
 const isArray = require('./isArray')
 
@@ -10,8 +11,9 @@ const isArray = require('./isArray')
  *
  * If the `Result` is an `Ok`, returns `{ok: true, result: a}`, where `a` is the value wrapped by the `Ok`
  *
- * If the `Result` is an `Err`, returns `{ok: false, errors: uniqErrArray}` where `uniqErrArray` is a de-duplicated
- * version of the value wrapped by the `Err`.
+ * If the `Result` is an `Err`, returns `{ok: false, errors: uniqErrStringArray, errorDetails: arrayErrVal}`
+ * where `errorDetails` is the array value wrapped by the `Err`, and `errors` is the result of calling toString() on
+ * each item in that array and then removing duplicate strings.
  *
  * If an `Err` result does not contain an array, an exception will be thrown
  *
@@ -26,16 +28,33 @@ const isArray = require('./isArray')
  * @returns {Object}
  * @example
  *
+ * const resultToPOJO = require('@eluvio/elv-js-helpers/resultToPOJO')
+ * const {Err} = require('@eluvio/elv-js-helpers/Result')
+ *
  * resultToPOJO(Ok(42))                 //=> {ok: true, result: 42}
  *
- * resultToPOJO(Err(['query invalid'])) //=> {ok: false, errors: ["query invalid"]}
+ * resultToPOJO(Err(['query invalid'])) //=> {ok: false, errors: ["query invalid"], error_details: ["query invalid"]}
+ *
+ * resultToPOJO(Err('foo'))             //=> EXCEPTION: 'Err instance does not contain an array, instead contains: string ("foo")'
+ *
+ * const e = RangeError('value too large')
+ * console.log(resultToPOJO(Err([e])))
+ * `{
+ *   ok: false,
+ *   errors: [ 'RangeError: value too large' ],
+ *   errorDetails: [
+ *     RangeError: value too large
+ *         at Object.<anonymous>
+ *         (stack trace)
+ *   ]
+ * }`
  *
  */
 const resultToPOJO = result => either(
   errVal => _throwIfFalse(
-    `Err instance does not contain an array, instead contains: ${kindOf(errVal)} (${errVal})`,
+    `Err instance does not contain an array, instead contains: ${kindOf(errVal)} (${format(errVal)})`,
     isArray(errVal)
-  ) && Object({ok: false, errors: uniq(errVal)}),
+  ) && Object({ok: false, errors: uniq(errVal.map(e => e.toString())), errorDetails: errVal}),
   okVal => Object({ok: true, result: okVal}),
   result
 )
