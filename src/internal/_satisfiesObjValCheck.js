@@ -1,5 +1,5 @@
 const curry = require('crocks/helpers/curry')
-const kindOf = require('kind-of')
+const kindOf = require('../kindOf')
 
 const _objBadVal = require('./_objBadVal')
 
@@ -20,7 +20,7 @@ const _objBadVal = require('./_objBadVal')
  * @category Logic
  * @sig Model -> * -> Boolean
  * @param {Model} valueModel - the model to check values against
- * @param {Any} obj - The item to check
+ * @param {*} obj - The item to check
  * @returns {Boolean}
  *
  * @example

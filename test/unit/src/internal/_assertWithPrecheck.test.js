@@ -1,13 +1,19 @@
 const chai = require('chai')
 chai.should()
 
+const checkVsModel = require('../../../../src/checkVsModel')
 const NumberModel = require('../../../../src/NumberModel')
 
 const _assertWithPrecheck = require('../../../../src/internal/_assertWithPrecheck')
 
 describe('_assertWithPrecheck', () => {
 
-  const [assertEvenNumberFn, assertEvenErrMsgFn] = _assertWithPrecheck(NumberModel, x=>x%2===0, 'must be an even number')
+  const [assertEvenNumberFn, assertEvenErrMsgFn] =
+    _assertWithPrecheck(
+      checkVsModel(NumberModel),
+      x => x % 2 === 0,
+      'must be an even number'
+    )
 
   it('should generate an assertion that returns true for good values', () => {
     assertEvenNumberFn(0).should.be.true

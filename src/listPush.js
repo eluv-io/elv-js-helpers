@@ -9,7 +9,7 @@ const List = require('crocks/List')
  * @category Functional
  * @sig List -> * -> List
  * @param {List} list - A Crocks List object
- * @param {Any} element - The item to add to end of list
+ * @param {*} element - The item to add to end of list
  * @returns {List} New Crocks List containing original list elements plus new element at end
  *
  * @example

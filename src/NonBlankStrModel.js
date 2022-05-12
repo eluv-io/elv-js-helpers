@@ -1,5 +1,5 @@
 const _assertWithPrecheck = require('./internal/_assertWithPrecheck')
-
+const checkVsModel = require('./checkVsModel')
 const StringModel = require('./StringModel')
 
 /**
@@ -16,7 +16,7 @@ const StringModel = require('./StringModel')
  * @class
  * @category Model
  * @sig * -> String | THROW
- * @param {Any} - The input to validate
+ * @param {*} - The input to validate
  * @returns {String} The validated input, proxied by ObjectModel
  *
  * @example
@@ -32,7 +32,7 @@ const NonBlankStrModel = StringModel
   .extend()
   .assert(
     ..._assertWithPrecheck(
-      StringModel,
+      checkVsModel(StringModel),
       s => s.trim().length > 0,
       'must not be a blank string'
     )

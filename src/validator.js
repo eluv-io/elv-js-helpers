@@ -19,7 +19,7 @@ const {Ok, Err} = require('crocks/Result')
  * @category Validation
  * @sig Model -> (a -> Result [String] a)
  * @param {Model} model - An ObjectModel definition to validate against
- * @param {Any} input - The input to validate
+ * @param {*} input - The input to validate
  * @returns {function}
  *
  * @example

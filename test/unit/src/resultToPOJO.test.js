@@ -6,7 +6,7 @@ const expect = chai.expect
 const liftA2 = require('crocks/helpers/liftA2')
 const {Ok, Err} = require('crocks/Result')
 
-const kindOf = require('kind-of')
+const kindOf = require('../../../src/kindOf')
 const {multiply} = require('ramda')
 
 const resultToPOJO = require('../../../src/resultToPOJO')

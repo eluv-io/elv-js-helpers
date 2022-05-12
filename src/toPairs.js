@@ -1,5 +1,5 @@
 /**
- * Passthrough for the `toPairs()` [Crocks](https://crocks.dev/) function.
+ * Passthrough for the `toPairs()` [Crocks](https://crocks.dev/) function (Copyright © 2016, Ian Hofmann-Hicks, ISC license)
  *
  * See [https://crocks.dev/docs/crocks/Pair.html#topairs](https://crocks.dev/docs/crocks/Pair.html#topairs) for more details.
  *

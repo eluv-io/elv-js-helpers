@@ -3,7 +3,7 @@ const Result = require('crocks/Result')
 const wrapNonArray = require('./wrapNonArray')
 
 /**
- * Passthrough for the `Err` variety of the `Result` [Crocks Algebraic Data Type](https://crocks.dev/docs/crocks/), with
+ * Passthrough for the `Err` variety of the `Result` [Crocks Algebraic Data Type](https://crocks.dev/docs/crocks/) (Copyright © 2016, Ian Hofmann-Hicks, ISC license), with
  * automatic wrapping of non-array values to ensure proper concatenation of Err objects.
  *
  * See [https://crocks.dev/docs/crocks/Result.html](https://crocks.dev/docs/crocks/Result.html) for more details.

@@ -1,6 +1,7 @@
 const _assertWithPrecheck = require('./_assertWithPrecheck')
 const _boundDescBetween = require('./_boundDescBetween')
 const _satisfiesBetweenBounds = require('./_satisfiesBetweenBounds')
+const checkVsModel = require('../checkVsModel')
 
 /**
  * Returns a 2-element array for use in an [ObjectModel assertion](http://objectmodel.js.org/#doc-assertions)
@@ -21,8 +22,8 @@ const _satisfiesBetweenBounds = require('./_satisfiesBetweenBounds')
  * @category ModelAssertion
  * @sig ((Boolean, *, String) -> String) ObjectModelErrMsgFn => Model -> a -> a -> Boolean -> Boolean -> [(* -> Boolean), ObjectModelErrMsgFn | String]
  * @param {Model} model - The model to be bounded
- * @param {Any} lowerBound - The lower bound that must be satisfied.
- * @param {Any} upperBound - The upper bound that must be satisfied.
+ * @param {*} lowerBound - The lower bound that must be satisfied.
+ * @param {*} upperBound - The upper bound that must be satisfied.
  * @param {Boolean} lowerInclusive - If `true` then input is allowed to equal `lowerBound`.
  * @param {Boolean} upperInclusive - If `true` then input is allowed to equal `upperBound`.
  * @param {Function} comparatorFn - Function used to compare input against `lowerBound` and `upperBound`.
@@ -45,7 +46,7 @@ const _satisfiesBetweenBounds = require('./_satisfiesBetweenBounds')
  */
 const _assertBoundedBetween = (model, lowerBound,upperBound, lowerInclusive,upperInclusive, comparatorFn) =>
   _assertWithPrecheck(
-    model,
+    checkVsModel(model),
     _satisfiesBetweenBounds(lowerBound, upperBound, lowerInclusive, upperInclusive, comparatorFn),
     _boundDescBetween(lowerBound,upperBound, lowerInclusive,upperInclusive)
   )

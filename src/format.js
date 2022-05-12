@@ -1,5 +1,5 @@
 const formatUtil = require('@ladjs/format-util')
-const kindOf = require('kind-of')
+const kindOf = require('./kindOf')
 
 /**
  * Converts input to a string for use in error messages and log statements.

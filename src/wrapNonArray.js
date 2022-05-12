@@ -1,4 +1,4 @@
-const kindOf = require('kind-of')
+const kindOf = require('./kindOf')
 
 /**
  * If value is not an array, returns an array containing the value,
@@ -7,7 +7,7 @@ const kindOf = require('kind-of')
  * @function
  * @category Conversion
  * @sig Non-array n => n | [a] -> [n] | [a]
- * @param {Any} x - The value to wrap in an array (if it is not already an array)
+ * @param {*} x - The value to wrap in an array (if it is not already an array)
  * @returns {array}
  * @example
  *

@@ -6,15 +6,21 @@ chai.should()
 
 const equals = require('ramda/src/equals')
 
-const _objBadKey = require('../../../../src/internal/_objBadKey')
-const StringModel = require('../../../../src/StringModel')
 const _assertWithPreCheck = require('../../../../src/internal/_assertWithPrecheck')
+const _objBadKey = require('../../../../src/internal/_objBadKey')
+const checkVsModel = require('../../../../src/checkVsModel')
+const StringModel = require('../../../../src/StringModel')
 
 describe('_objBadKey', () => {
 
-  const ThreeCharStringModel = StringModel.extend().assert(
-    ..._assertWithPreCheck(StringModel, x=>x.length===3,'string must be 3 characters long' )
-  ).as('ThreeCharString')
+  const ThreeCharStringModel = StringModel.extend()
+    .assert(
+      ..._assertWithPreCheck(
+        checkVsModel(StringModel),
+        x => x.length === 3,
+        'string must be 3 characters long'
+      )
+    ).as('ThreeCharString')
 
   it('should returned undefined for good objects', () => {
     equals(
@@ -22,5 +28,4 @@ describe('_objBadKey', () => {
       undefined
     ).should.be.true
   })
-
 })

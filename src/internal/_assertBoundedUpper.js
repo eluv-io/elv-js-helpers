@@ -1,6 +1,7 @@
 const _boundDescUpper = require('./_boundDescUpper')
 const _satisfiesUpperBound = require('./_satisfiesUpperBound')
 const _assertWithPrecheck = require('./_assertWithPrecheck')
+const checkVsModel = require('../checkVsModel')
 
 /**
  * Returns a 2-element array for use in an [ObjectModel assertion](http://objectmodel.js.org/#doc-assertions)
@@ -21,7 +22,7 @@ const _assertWithPrecheck = require('./_assertWithPrecheck')
  * @category ModelAssertion
  * @sig ((Boolean, *, String) -> String) ObjectModelErrMsgFn => Model -> a -> Boolean -> [(* -> Boolean), ObjectModelErrMsgFn | String]
  * @param {Model} model - The model to be bounded
- * @param {Any} upperBound - The upper bound that must be satisfied.
+ * @param {*} upperBound - The upper bound that must be satisfied.
  * @param {Boolean} inclusive - If `true` (and `upperBound` is not `null`) then input is allowed to equal `upperBound`.
  * @param {Function} comparatorFn - Function used to compare input against `upperBound`.
  * Must accept two values and return -1 if first value is less than the second,
@@ -43,7 +44,7 @@ const _assertWithPrecheck = require('./_assertWithPrecheck')
  */
 const _assertBoundedUpper = (model, upperBound, inclusive, comparatorFn) =>
   _assertWithPrecheck(
-    model,
+    checkVsModel(model),
     _satisfiesUpperBound(upperBound, inclusive, comparatorFn),
     _boundDescUpper(upperBound, inclusive)
   )

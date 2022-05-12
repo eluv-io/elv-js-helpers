@@ -3,7 +3,7 @@ const uniq = require('ramda/src/uniq')
 
 const _throwIfFalse = require('./internal/_throwIfFalse')
 const format=require('./format')
-const kindOf = require('kind-of')
+const kindOf = require('./kindOf')
 const isArray = require('./isArray')
 
 /**

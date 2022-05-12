@@ -2,6 +2,8 @@ const {BasicModel} = require('objectmodel')
 
 const _assertObjKeysValid = require('./internal/_assertObjKeysValid')
 const _assertObjValuesValid = require('./internal/_assertObjValuesValid')
+const _assertWithPrecheck = require('./internal/_assertWithPrecheck')
+const isObject = require('./isObject')
 
 /**
  * Returns an [ObjectModel](http://objectmodel.js.org/) which will validate that an input is:
@@ -29,8 +31,18 @@ const _assertObjValuesValid = require('./internal/_assertObjValuesValid')
 const defCheckedKVObjModel = (name, keyModel, valueModel) =>
   BasicModel(Object)
     .extend()
-    .assert(..._assertObjKeysValid(keyModel))
-    .assert(..._assertObjValuesValid(valueModel))
+    .assert(
+      ..._assertWithPrecheck(
+        isObject,
+        ..._assertObjKeysValid(keyModel)
+      )
+    )
+    .assert(
+      ..._assertWithPrecheck(
+        isObject,
+        ..._assertObjValuesValid(valueModel)
+      )
+    )
     .as(name)
 
 module.exports = defCheckedKVObjModel

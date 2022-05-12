@@ -1,5 +1,5 @@
 /**
- * Passthrough for the `Pair` [Crocks Algebraic Data Type](https://crocks.dev/docs/crocks/).
+ * Passthrough for the `Pair` [Crocks Algebraic Data Type](https://crocks.dev/docs/crocks/) (Copyright © 2016, Ian Hofmann-Hicks, ISC license)
  *
  * See [https://crocks.dev/docs/crocks/Pair.html](https://crocks.dev/docs/crocks/Pair.html) for more details.
  *

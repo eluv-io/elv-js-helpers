@@ -1,5 +1,5 @@
 const _assertWithPrecheck = require('./internal/_assertWithPrecheck')
-
+const checkVsModel = require('./checkVsModel')
 const NumberModel = require('./NumberModel')
 
 /**
@@ -16,7 +16,7 @@ const NumberModel = require('./NumberModel')
  * @class
  * @category Model
  * @sig * -> Integer | THROW
- * @param {Any} - The input to validate
+ * @param {*} - The input to validate
  * @returns {Integer} The validated input, proxied by ObjectModel
  *
  * @example
@@ -32,7 +32,7 @@ const IntegerModel = NumberModel
   .extend()
   .assert(
     ..._assertWithPrecheck(
-      NumberModel,
+      checkVsModel(NumberModel),
       n => Number.isInteger(n),
       'must be an integer'
     )

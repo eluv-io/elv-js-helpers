@@ -1,5 +1,5 @@
 /**
- * Passthrough for the `List` [Crocks Algebraic Data Type](https://crocks.dev/docs/crocks/) .
+ * Passthrough for the `List` [Crocks Algebraic Data Type](https://crocks.dev/docs/crocks/) (Copyright © 2016, Ian Hofmann-Hicks, ISC license)
  *
  * Allows users of `elv-js-helpers` to create `List` objects without adding the [Crocks](https://www.npmjs.com/package/crocks)
  * package as a dependency.

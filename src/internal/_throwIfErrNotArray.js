@@ -1,4 +1,4 @@
-const kindOf = require('kind-of')
+const kindOf = require('../kindOf')
 
 const _throwIfNotErr = require('./_throwIfNotErr')
 const _throwIfFalse = require('./_throwIfFalse')

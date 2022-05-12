@@ -1,4 +1,5 @@
 const _assertWithPrecheck = require('./internal/_assertWithPrecheck')
+const checkVsModel = require('./checkVsModel')
 
 /**
  * Returns a 2-element array for use in an [ObjectModel assertion](http://objectmodel.js.org/#doc-assertions)
@@ -47,7 +48,7 @@ const _assertWithPrecheck = require('./internal/_assertWithPrecheck')
  */
 const assertMatchesRegex = (model, regex, errMsg) =>
   _assertWithPrecheck(
-    model,
+    checkVsModel(model),
     regex.test.bind(regex), // need to bind (this), see https://stackoverflow.com/a/20579046
     errMsg || `is not in valid format or contains illegal characters (must match regular expression: ${regex})`
   )

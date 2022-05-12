@@ -1,5 +1,5 @@
 /**
- * Passthrough for the `fromPairs()` [Crocks](https://crocks.dev/) function.
+ * Passthrough for the `fromPairs()` [Crocks](https://crocks.dev/) function (Copyright © 2016, Ian Hofmann-Hicks, ISC license)
  *
  * See [https://crocks.dev/docs/functions/helpers.html#frompairs](https://crocks.dev/docs/functions/helpers.html#frompairs)
  * for more details.

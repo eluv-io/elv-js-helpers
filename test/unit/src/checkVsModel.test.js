@@ -11,7 +11,11 @@ const _assertWithPreCheck = require('../../../src/internal/_assertWithPrecheck')
 describe('checkVsModel', () => {
 
   const ThreeCharStringModel = StringModel.extend().assert(
-    ..._assertWithPreCheck(StringModel, x=>x.length===3,'string must be 3 characters long' )
+    ..._assertWithPreCheck(
+      checkVsModel(StringModel),
+      x => x.length === 3,
+      'string must be 3 characters long'
+    )
   ).as('ThreeCharString')
 
   it('should return true good input', () => {

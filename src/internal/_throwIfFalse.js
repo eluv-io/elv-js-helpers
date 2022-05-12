@@ -12,7 +12,7 @@ const throwError = require('../throwError')
  * @category Validation
  * @sig String -> a -> a | THROW
  * @param {String} message - the error message to use in the exception
- * @param {Any} value - the value to check for falsiness
+ * @param {*} value - the value to check for falsiness
  * @returns {Any}
  *
  * @example

@@ -17,7 +17,7 @@ const _REGEX_UTC_TIMESTAMP = /^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9
  * @class
  * @category Model
  * @sig * -> String | THROW
- * @param {Any} - The input to validate
+ * @param {*} - The input to validate
  * @returns {String} The validated input, proxied by ObjectModel
  *
  * @example

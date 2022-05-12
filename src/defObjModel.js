@@ -3,6 +3,9 @@
 const {ObjectModel} = require('objectmodel')
 
 /**
+ * Passthrough for `ObjectModel()` function from [ObjectModel](http://objectmodel.js.org/) (Copyright © 2015 Sylvain Pollet-Villard, MIT license)
+ * with name assignment added
+ *
  * Returns an [ObjectModel](http://objectmodel.js.org/) which will validate that an input is:
  *
  *  * A [Javascript Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)

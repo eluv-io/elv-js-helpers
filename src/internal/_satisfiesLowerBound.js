@@ -12,12 +12,12 @@ const curry = require('crocks/helpers/curry')
  * @private
  * @category Logic
  * @sig a -> Boolean -> ((a, a) -> Integer) -> a -> Boolean
- * @param {Any} lowerBound - the lower bound to be satisfied
+ * @param {*} lowerBound - the lower bound to be satisfied
  * @param {Boolean} inclusive - if `true`, then `value` is allowed equal `lowerBound`
  * @param {Function} comparatorFn - The function to be used to compare `value` and `lowerBound`.
  * Must accept two values and return -1 if first value is less than the second,
  * 1 if the second value is less than the first, and zero otherwise.
- * @param {Any} value - The item to check against `lowerBound`
+ * @param {*} value - The item to check against `lowerBound`
  * @returns {Boolean}
  *
  * @example

@@ -5,7 +5,7 @@
  * @private
  * @category Miscellaneous
  * @sig a -> Boolean -> String
- * @param {Any} lowerBound
+ * @param {*} lowerBound
  * @param {Boolean} inclusive - Whether values are allowed to equal `lowerBound`
  * @returns {String}
  * @example

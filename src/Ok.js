@@ -1,7 +1,7 @@
 const Result = require('crocks/Result')
 
 /**
- * Passthrough for the `Ok` variety of the `Result` [Crocks Algebraic Data Type](https://crocks.dev/docs/crocks/).
+ * Passthrough for the `Ok` variety of the `Result` [Crocks Algebraic Data Type](https://crocks.dev/docs/crocks/) (Copyright © 2016, Ian Hofmann-Hicks, ISC license)
  *
  * See [https://crocks.dev/docs/crocks/Result.html](https://crocks.dev/docs/crocks/Result.html) for more details.
  *

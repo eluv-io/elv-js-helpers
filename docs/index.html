@@ -47,7 +47,7 @@ pointing to either <code>dist/elv-js-helpers.js</code> or <code>dist/elv-js-help
 <code>ElvJsHelpers</code> in the global namespace. There is no support for importing individual items via a <code>&lt;script&gt;</code> tag. (It
 is expected that browser apps would be built using a bundling tool like Webpack/Rollup/Parcel)</p>
 <pre class="prettyprint source lang-html"><code>&lt;!-- Import entire library as ElvJsHelper -->
-&lt;script src=&quot;./build/dist/elv-js-helpers.js&quot;>&lt;/script>
+&lt;script src=&quot;./node_modules/@eluvio/elv-js-helpers/dist/elv-js-helpers.js&quot;>&lt;/script>
 &lt;script type=&quot;application/javascript&quot;>
     console.log('System locale is: ' + ElvJsHelpers.sysLocale())
     console.log('_boundDescLower(0,true)= &quot;' + ElvJsHelpers.internal._boundDescLower(0,true) + '&quot;')

@@ -1,5 +1,7 @@
 const defObjModel = require('./defObjModel')
 
+// TODO: add defaults clause
+
 /**
  * Returns an [ObjectModel](http://objectmodel.js.org/) which will validate that an input is:
  *

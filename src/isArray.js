@@ -1,4 +1,4 @@
-const kindOf = require('kind-of')
+const kindOf = require('./kindOf')
 
 /**
  * Returns `true` if passed an array.
@@ -7,7 +7,7 @@ const kindOf = require('kind-of')
  * @function
  * @category Logic
  * @sig a -> Boolean
- * @param {Any} x - The value to test
+ * @param {*} x - The value to test
  * @returns {Boolean}
  *
  * @example

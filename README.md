@@ -70,7 +70,7 @@ pointing to either `dist/elv-js-helpers.js` or `dist/elv-js-helpers.min.js`. Thi
 is expected that browser apps would be built using a bundling tool like Webpack/Rollup/Parcel)
 ```html
 <!-- Import entire library as ElvJsHelper -->
-<script src="./build/dist/elv-js-helpers.js"></script>
+<script src="./node_modules/@eluvio/elv-js-helpers/dist/elv-js-helpers.js"></script>
 <script type="application/javascript">
     console.log('System locale is: ' + ElvJsHelpers.sysLocale())
     console.log('_boundDescLower(0,true)= "' + ElvJsHelpers.internal._boundDescLower(0,true) + '"')

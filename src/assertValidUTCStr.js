@@ -1,6 +1,7 @@
 const date = require('date-and-time')
 
 const _assertWithPrecheck = require('./internal/_assertWithPrecheck')
+const checkVsModel = require('./checkVsModel')
 const NonBlankStrModel = require('./NonBlankStrModel')
 
 /**
@@ -36,7 +37,7 @@ const NonBlankStrModel = require('./NonBlankStrModel')
  */
 const assertValidUTCStr = () =>
   _assertWithPrecheck(
-    NonBlankStrModel,
+    checkVsModel(NonBlankStrModel),
     utcString =>
       !isNaN(
         date.parse(

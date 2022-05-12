@@ -11,7 +11,7 @@ const isResult = require('../isResult')
  * @private
  * @category Validation
  * @sig Result a | b -> Result a | THROW
- * @param {Any} x - the value to check
+ * @param {*} x - the value to check
  * @returns {Result}
  *
  * @example

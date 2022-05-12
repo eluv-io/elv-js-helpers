@@ -1,5 +1,5 @@
 /**
- * Passthrough for the `liftA2()` [Crocks](https://crocks.dev/) function.
+ * Passthrough for the `liftA2()` [Crocks](https://crocks.dev/) function (Copyright © 2016, Ian Hofmann-Hicks, ISC license)
  *
  * See [https://crocks.dev/docs/functions/helpers.html#lifta2](https://crocks.dev/docs/functions/helpers.html#lifta2)
  * for more details.

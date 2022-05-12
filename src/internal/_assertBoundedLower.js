@@ -1,6 +1,7 @@
 const _boundDescLower = require('./_boundDescLower')
 const _satisfiesLowerBound = require('./_satisfiesLowerBound')
 const _assertWithPrecheck = require('./_assertWithPrecheck')
+const checkVsModel = require('../checkVsModel')
 
 /**
  * Returns a 2-element array for use in an [ObjectModel assertion](http://objectmodel.js.org/#doc-assertions)
@@ -43,7 +44,7 @@ const _assertWithPrecheck = require('./_assertWithPrecheck')
  */
 const _assertBoundedLower = (model, lowerBound, inclusive, comparatorFn) =>
   _assertWithPrecheck(
-    model,
+    checkVsModel(model),
     _satisfiesLowerBound(lowerBound, inclusive, comparatorFn),
     _boundDescLower(lowerBound, inclusive)
   )

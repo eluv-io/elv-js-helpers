@@ -15,7 +15,7 @@ const validator = require('./validator')
  * @category Validation
  * @sig Model -> * -> Boolean
  * @param {Model} model - The model to test against
- * @param {Any} input - The value to test
+ * @param {*} input - The value to test
  * @returns {Boolean}
  *
  * @example

@@ -14,7 +14,7 @@ const defBoundedIntModel = require('./defBoundedIntModel')
  * @class
  * @category Model
  * @sig * -> * | THROW
- * @param {Any} - The input to validate
+ * @param {*} - The input to validate
  * @returns {Number} The validated input, proxied by ObjectModel
  *
  * @example

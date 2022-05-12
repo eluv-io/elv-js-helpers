@@ -7,7 +7,7 @@ const type = require('crocks/core/type')
  * @function
  * @category Logic
  * @sig a -> Boolean
- * @param {Any} x - The value to test
+ * @param {*} x - The value to test
  * @returns {Boolean}
  *
  * @example

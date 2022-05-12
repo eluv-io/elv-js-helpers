@@ -10,7 +10,7 @@ const isErr = require('../isErr')
  * @private
  * @category Validation
  * @sig Err a | b -> Err a | THROW
- * @param {Any} x - the value to check
+ * @param {*} x - the value to check
  * @returns {Err}
  *
  * @example
