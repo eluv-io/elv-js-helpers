@@ -1,6 +1,6 @@
 const _parseUTCStr = require('./internal/_parseUTCStr')
 
-const _assertWithPrecheck = require('./internal/_assertWithPrecheck')
+const assertAfterCheck = require('./assertAfterCheck')
 const checkVsModel = require('./checkVsModel')
 const NonBlankStrModel = require('./NonBlankStrModel')
 
@@ -36,7 +36,7 @@ const NonBlankStrModel = require('./NonBlankStrModel')
  *
  */
 const assertValidUTCStr = () =>
-  _assertWithPrecheck(
+  assertAfterCheck(
     checkVsModel(NonBlankStrModel),
     utcString =>
       !isNaN(_parseUTCStr(utcString)),

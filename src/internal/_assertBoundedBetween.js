@@ -1,4 +1,4 @@
-const _assertWithPrecheck = require('./_assertWithPrecheck')
+const assertAfterCheck = require('../assertAfterCheck')
 const _boundDescBetween = require('./_boundDescBetween')
 const _satisfiesBetweenBounds = require('./_satisfiesBetweenBounds')
 const checkVsModel = require('../checkVsModel')
@@ -45,7 +45,7 @@ const checkVsModel = require('../checkVsModel')
  *
  */
 const _assertBoundedBetween = (model, lowerBound,upperBound, lowerInclusive,upperInclusive, comparatorFn) =>
-  _assertWithPrecheck(
+  assertAfterCheck(
     checkVsModel(model),
     _satisfiesBetweenBounds(lowerBound, upperBound, lowerInclusive, upperInclusive, comparatorFn),
     _boundDescBetween(lowerBound,upperBound, lowerInclusive,upperInclusive)

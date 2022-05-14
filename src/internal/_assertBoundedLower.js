@@ -1,6 +1,6 @@
 const _boundDescLower = require('./_boundDescLower')
 const _satisfiesLowerBound = require('./_satisfiesLowerBound')
-const _assertWithPrecheck = require('./_assertWithPrecheck')
+const assertAfterCheck = require('../assertAfterCheck')
 const checkVsModel = require('../checkVsModel')
 
 /**
@@ -43,7 +43,7 @@ const checkVsModel = require('../checkVsModel')
  *
  */
 const _assertBoundedLower = (model, lowerBound, inclusive, comparatorFn) =>
-  _assertWithPrecheck(
+  assertAfterCheck(
     checkVsModel(model),
     _satisfiesLowerBound(lowerBound, inclusive, comparatorFn),
     _boundDescLower(lowerBound, inclusive)

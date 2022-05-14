@@ -1,8 +1,8 @@
-const {BasicModel} = require('objectmodel')
 
 const _assertObjKeysValid = require('./internal/_assertObjKeysValid')
 const _assertObjValuesValid = require('./internal/_assertObjValuesValid')
-const _assertWithPrecheck = require('./internal/_assertWithPrecheck')
+const assertAfterCheck = require('./assertAfterCheck')
+const defBasicModel = require('./defBasicModel')
 const isObject = require('./isObject')
 
 /**
@@ -29,20 +29,19 @@ const isObject = require('./isObject')
  */
 // noinspection JSCheckFunctionSignatures
 const defCheckedKVObjModel = (name, keyModel, valueModel) =>
-  BasicModel(Object)
+  defBasicModel(name, Object)
     .extend()
     .assert(
-      ..._assertWithPrecheck(
+      ...assertAfterCheck(
         isObject,
         ..._assertObjKeysValid(keyModel)
       )
     )
     .assert(
-      ..._assertWithPrecheck(
+      ...assertAfterCheck(
         isObject,
         ..._assertObjValuesValid(valueModel)
       )
     )
-    .as(name)
 
 module.exports = defCheckedKVObjModel

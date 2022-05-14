@@ -15,6 +15,7 @@ const startsWith = require('ramda/src/startsWith')
 const tail = require('ramda/src/tail')
 const zipWith = require('ramda/src/zipWith')
 
+// TODO: refactor?
 
 const _divMod = (pair, divisor) => Pair(
   pair.fst().concat([Math.floor(pair.snd() / divisor)]),

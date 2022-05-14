@@ -1,4 +1,4 @@
-const _assertWithPrecheck = require('./internal/_assertWithPrecheck')
+const assertAfterCheck = require('./assertAfterCheck')
 const checkVsModel = require('./checkVsModel')
 const NumberModel = require('./NumberModel')
 
@@ -31,7 +31,7 @@ const NumberModel = require('./NumberModel')
 const IntegerModel = NumberModel
   .extend()
   .assert(
-    ..._assertWithPrecheck(
+    ...assertAfterCheck(
       checkVsModel(NumberModel),
       n => Number.isInteger(n),
       'must be an integer'
