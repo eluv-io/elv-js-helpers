@@ -20,8 +20,8 @@
  * @function
  * @curried
  * @category Functional
- * @sig ((a, b, ...) -> z) -> a -> b -> ... -> z
- * @param {Function} - The function to lift
+ * @sig Applicative m => (a -> b -> c) -> m a -> m b -> m c
+ * @param {Function} - The 2-input curried function to lift
  * @returns {Function} The lifted function
  * @example
  *

@@ -17,7 +17,7 @@ const IntegerModel = require('./IntegerModel')
  * @sig String -> (Number | null) -> (Number | null) -> (Boolean | null) ->  (Boolean | null) -> (* -> Integer | THROW)
  * @param {String} name - the name of the generated model
  * @param {(Number | null)} lowerBound - The lower bound that must be satisfied. If `null`, no lower bound will be checked.
- * @param {(Number | null)} upperBound - The upper bound that must be satisfied. If `null`, no lower bound will be checked.
+ * @param {(Number | null)} upperBound - The upper bound that must be satisfied. If `null`, no upper bound will be checked.
  * @param {(Boolean | null)} lowerInclusive - If `true` (and `lowerBound` is not `null`) then input is allowed to equal `lowerBound`.
  * @param {(Boolean | null)} upperInclusive - If `true` (and `upperBound` is not `null`) then input is allowed to equal `upperBound`.
  * @returns {Function} Returns an [ObjectModel](http://objectmodel.js.org/) that can be called with an input

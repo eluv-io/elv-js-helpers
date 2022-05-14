@@ -6,12 +6,12 @@ chai.should()
 
 const checkVsModel = require('../../../src/checkVsModel')
 const StringModel = require('../../../src/StringModel')
-const _assertWithPreCheck = require('../../../src/internal/_assertWithPrecheck')
+const assertAfterCheck = require('../../../src/assertAfterCheck')
 
 describe('checkVsModel', () => {
 
   const ThreeCharStringModel = StringModel.extend().assert(
-    ..._assertWithPreCheck(
+    ...assertAfterCheck(
       checkVsModel(StringModel),
       x => x.length === 3,
       'string must be 3 characters long'

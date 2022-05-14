@@ -1,7 +1,7 @@
 // noinspection JSValidateTypes
 
 const _assertNotEmpty = require('./internal/_assertNotEmpty')
-const _assertWithPrecheck = require('./internal/_assertWithPrecheck')
+const assertAfterCheck = require('./assertAfterCheck')
 const defArrModel = require('./defArrModel')
 const isArray = require('./isArray')
 
@@ -39,7 +39,7 @@ const isArray = require('./isArray')
 const defNonEmptyArrModel = (name, def) => defArrModel(name, def)
   .extend()
   .assert(
-    ..._assertWithPrecheck(
+    ...assertAfterCheck(
       isArray,
       ..._assertNotEmpty
     )

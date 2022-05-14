@@ -1,4 +1,4 @@
-const _assertWithPrecheck = require('./internal/_assertWithPrecheck')
+const assertAfterCheck = require('./assertAfterCheck')
 const checkVsModel = require('./checkVsModel')
 const StringModel = require('./StringModel')
 
@@ -31,7 +31,7 @@ const StringModel = require('./StringModel')
 const NonBlankStrModel = StringModel
   .extend()
   .assert(
-    ..._assertWithPrecheck(
+    ...assertAfterCheck(
       checkVsModel(StringModel),
       s => s.trim().length > 0,
       'must not be a blank string'

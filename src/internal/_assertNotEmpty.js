@@ -22,14 +22,14 @@ const assertionErrMsg = require('../assertionErrMsg')
  * @example
  *
  * const _assertNotEmpty = require('@eluvio/elv-js-helpers/internal/_assertNotEmpty')
- * const _assertWithPrecheck = require('@eluvio/elv-js-helpers/internal/_assertWithPrecheck')
+ * const assertAfterCheck = require('@eluvio/elv-js-helpers/assertAfterCheck')
  * const isString = require('@eluvio/elv-js-helpers/isString')
  * const StringModel = require('@eluvio/elv-js-helpers/StringModel')
  *
- * // Note use of spread operator (...) to unpack the arrays returned by _assertWithPrecheck() and _assertNotEmpty()
+ * // Note use of spread operator (...) to unpack the arrays returned by assertAfterCheck() and _assertNotEmpty()
  * const NonEmptyStringModel = StringModel.extend()
  *   .assert(
- *     ..._assertWithPrecheck(
+ *     ...assertAfterCheck(
  *       isString,
  *       ..._assertNotEmpty
  *     )

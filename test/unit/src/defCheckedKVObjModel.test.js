@@ -6,7 +6,7 @@ const expect = chai.expect
 
 const equals = require('@eluvio/ramda-fork/src/equals')
 
-const _assertWithPreCheck = require('../../../src/internal/_assertWithPrecheck')
+const assertAfterCheck = require('../../../src/assertAfterCheck')
 const checkVsModel = require('../../../src/checkVsModel')
 const defCheckedKVObjModel = require('../../../src/defCheckedKVObjModel')
 const StringModel = require('../../../src/StringModel')
@@ -15,7 +15,7 @@ const PositiveIntModel = require('../../../src/PositiveIntModel')
 describe('defCheckedKVObjModel', () => {
 
   const ThreeCharStringModel = StringModel.extend().assert(
-    ..._assertWithPreCheck(
+    ...assertAfterCheck(
       checkVsModel(StringModel),
       x => x.length === 3,
       'string must be 3 characters long'

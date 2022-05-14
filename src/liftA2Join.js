@@ -5,11 +5,11 @@ const liftA2 = require('crocks/helpers/liftA2')
 const nAry = require('crocks/helpers/nAry')
 
 /**
- * Converts a function which accepts 2 'normal' values and returns a wrapped value into a
- * function that takes 2 wrapped values and returns a wrapped value.
+ * Converts a function which accepts 2 'normal' values and returns a wrapped value into a  function that takes 2
+ * wrapped values and returns a wrapped value.
  *
- * This is similar to the `liftA2` function, except that it works with functions that return a wrapped data type, instead
- * of functions that return a 'normal' value.
+ * This is similar to the `liftA2` function, except that it works with functions that return a wrapped data type,
+ * instead of functions that return a 'normal' value.
  *
  * NOTE: The original function must be curried.
  *

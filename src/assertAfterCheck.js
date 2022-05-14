@@ -1,8 +1,8 @@
 const ifElse = require('crocks/logic/ifElse')
 const T = require('@eluvio/ramda-fork/src/T')
 
-const assertionErrMsg = require('../assertionErrMsg')
-const isFunction = require('../isFunction')
+const assertionErrMsg = require('./assertionErrMsg')
+const isFunction = require('./isFunction')
 
 /**
  * Returns a 2-element array for use in an [ObjectModel assertion](http://objectmodel.js.org/#doc-assertions)
@@ -22,23 +22,22 @@ const isFunction = require('../isFunction')
  * attribute name(s) that were traversed to access the value.
  *
  * @function
- * @private
  * @category ModelAssertion
  * @sig ((Boolean, *, String) -> String) ObjectModelErrMsgFn => Model -> (a -> Boolean) -> String -> [(* -> Boolean), ObjectModelErrMsgFn | String]
- * @param {Function} preCheckFn - The preliminary check that must pass in order for `asserFn` to be checked.
+ * @param {Function} preCheckFn - The preliminary check that must pass in order for `assertFn` to be checked.
  * @param {Function} assertFn - The assertion to check.
  * @param {(String | Function)} msgStrOrFn - An error message string or message generating function to use if assertFn returns `false`.
  * @returns {Array} 2-element array [Function, Function]. See description for details.
  * @example
  *
- * const _assertWithPrecheck = require('@eluvio/elv-js-helpers/internal/_assertWithPrecheck')
+ * const assertAfterCheck = require('@eluvio/elv-js-helpers/assertAfterCheck')
  * const checkVsModel = require('@eluvio/elv-js-helpers/checkVsModel')
  * const NumberModel = require('@eluvio/elv-js-helpers/NumberModel')
  *
  * const IntegerModel = NumberModel
  *   .extend()
  *   .assert(
- *     ..._assertWithPrecheck(
+ *     ...assertAfterCheck(
  *       checkVsModel(NumberModel),
  *       n => Number.isInteger(n),
  *       'must be an integer'
@@ -52,7 +51,7 @@ const isFunction = require('../isFunction')
  *
  * IntegerModel('foo')     //=> EXCEPTION: 'expecting Number, got String "foo"'
  *
- * // Compare vs. case where _assertWithPrecheck is not used:
+ * // Compare vs. case where assertAfterCheck is not used:
  *
  * const assertionErrMsg = require('@eluvio/elv-js-helpers/assertionErrMsg')
  *
@@ -67,7 +66,7 @@ const isFunction = require('../isFunction')
  * IntegerModelNoPrecheck('foo')  //=> EXCEPTION: 'expecting Number, got String "foo"\nValue must be an integer (got: "foo")'
  *
  */
-const _assertWithPrecheck = (preCheckFn, assertFn, msgStrOrFn) =>
+const assertAfterCheck = (preCheckFn, assertFn, msgStrOrFn) =>
   [
     ifElse(
       preCheckFn,
@@ -77,4 +76,4 @@ const _assertWithPrecheck = (preCheckFn, assertFn, msgStrOrFn) =>
     isFunction(msgStrOrFn) ? msgStrOrFn : assertionErrMsg(msgStrOrFn)
   ]
 
-module.exports = _assertWithPrecheck
+module.exports = assertAfterCheck

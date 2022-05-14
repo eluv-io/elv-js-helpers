@@ -1,4 +1,4 @@
-const _assertWithPrecheck = require('./internal/_assertWithPrecheck')
+const assertAfterCheck = require('./assertAfterCheck')
 const checkVsModel = require('./checkVsModel')
 
 /**
@@ -16,7 +16,6 @@ const checkVsModel = require('./checkVsModel')
  * by [ObjectModel](http://objectmodel.js.org/) to construct an error message if the bounds validation fails.
  *
  * @function
- * @private
  * @category ModelAssertion
  * @sig ((Boolean, *, String) -> String) ObjectModelErrMsgFn => Model -> RegExp -> [(* -> Boolean), ObjectModelErrMsgFn]
  * @param {Model} model - The model to add regex validation to
@@ -47,7 +46,7 @@ const checkVsModel = require('./checkVsModel')
  *
  */
 const assertMatchesRegex = (model, regex, errMsg) =>
-  _assertWithPrecheck(
+  assertAfterCheck(
     checkVsModel(model),
     regex.test.bind(regex), // need to bind (this), see https://stackoverflow.com/a/20579046
     errMsg || `is not in valid format or contains illegal characters (must match regular expression: ${regex})`

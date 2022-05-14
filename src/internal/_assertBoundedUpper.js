@@ -1,6 +1,6 @@
 const _boundDescUpper = require('./_boundDescUpper')
 const _satisfiesUpperBound = require('./_satisfiesUpperBound')
-const _assertWithPrecheck = require('./_assertWithPrecheck')
+const assertAfterCheck = require('../assertAfterCheck')
 const checkVsModel = require('../checkVsModel')
 
 /**
@@ -43,7 +43,7 @@ const checkVsModel = require('../checkVsModel')
  *
  */
 const _assertBoundedUpper = (model, upperBound, inclusive, comparatorFn) =>
-  _assertWithPrecheck(
+  assertAfterCheck(
     checkVsModel(model),
     _satisfiesUpperBound(upperBound, inclusive, comparatorFn),
     _boundDescUpper(upperBound, inclusive)

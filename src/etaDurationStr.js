@@ -15,6 +15,7 @@ const startsWith = require('@eluvio/ramda-fork/src/startsWith')
 const tail = require('@eluvio/ramda-fork/src/tail')
 const zipWith = require('@eluvio/ramda-fork/src/zipWith')
 
+// TODO: refactor?
 
 const _divMod = (pair, divisor) => Pair(
   pair.fst().concat([Math.floor(pair.snd() / divisor)]),
