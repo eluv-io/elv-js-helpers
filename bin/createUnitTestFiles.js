@@ -62,4 +62,4 @@ describe('${jsFile}', () => {
   }
 }
 
-mirror('../src/ADT', '../test/unit/src/ADT')
+mirror('../src', '../test/unit/src')
