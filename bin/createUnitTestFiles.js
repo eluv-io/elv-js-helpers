@@ -1,4 +1,4 @@
-// Creates placeholders for unit tests
+// Creates placeholders for missing unit tests
 // Also mirrors directory structure of /src to test/unit/src
 
 const fs = require('fs')
@@ -54,7 +54,7 @@ describe('${jsFile}', () => {
 })
 
 /**
-` + exampleJSDoc[1]
+` + (exampleJSDoc ? exampleJSDoc[1] : '')
 
       console.log(JSON.stringify(exampleJSDoc,null,2))
       fs.writeFileSync(targetFile, contents)
