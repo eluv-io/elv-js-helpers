@@ -13,7 +13,7 @@ const H = require('@eluvio/elv-js-helpers')
 
 // create references to particular items in order to avoid needing to use H. prefix
 const { etaDurationStr, etaTimeStr } = H
-const {_boundDescLower} = H.internal
+const {_boundLowerErrMsg} = H.internal
 
 // Note that the following syntax still causes entire library to be bundled into your project
 const { etaDurationStr, etaTimeStr } = require('@eluvio/elv-js-helpers')
@@ -24,7 +24,7 @@ import H from '@eluvio/elv-js-helpers'
 
 // create references to particular items in order to avoid needing to use H. prefix
 const { etaDurationStr, etaTimeStr } = H
-const {_boundDescLower} = H.internal
+const {_boundLowerErrMsg} = H.internal
 
 // Note that the following syntax still causes entire library to be bundled into your project
 import { etaDurationStr, etaTimeStr }  from '@eluvio/elv-js-helpers'
@@ -33,13 +33,13 @@ import { etaDurationStr, etaTimeStr }  from '@eluvio/elv-js-helpers'
 <pre class="prettyprint source lang-javascript"><code>// require in each item directly
 const etaDurationStr = require('@eluvio/elv-js-helpers/etaDurationStr')
 const etaTimeStr = require('@eluvio/elv-js-helpers/etaTimeStr')
-const _boundDescLower = require('@eluvio/elv-js-helpers/internal/_boundDescLower')
+const _boundLowerErrMsg = require('@eluvio/elv-js-helpers/internal/_boundLowerErrMsg')
 </code></pre>
 <h3>Individual items (JS Modules)</h3>
 <pre class="prettyprint source lang-javascript"><code>// import in each item directly
 import etaDurationStr from '@eluvio/elv-js-helpers/etaDurationStr'
 import etaTimeStr from '@eluvio/elv-js-helpers/etaTimeStr'
-import _boundDescLower from '@eluvio/elv-js-helpers/internal/_boundDescLower'
+import _boundLowerErrMsg from '@eluvio/elv-js-helpers/internal/_boundLowerErrMsg'
 </code></pre>
 <h3>Entire library (browser)</h3>
 <p>Although not recommended, it is also possible to import the entire library directly into a browser via a <code>&lt;script&gt;</code> tag
@@ -50,7 +50,7 @@ is expected that browser apps would be built using a bundling tool like Webpack/
 &lt;script src=&quot;./node_modules/@eluvio/elv-js-helpers/dist/elv-js-helpers.js&quot;>&lt;/script>
 &lt;script type=&quot;application/javascript&quot;>
     console.log('System locale is: ' + ElvJsHelpers.sysLocale())
-    console.log('_boundDescLower(0,true)= &quot;' + ElvJsHelpers.internal._boundDescLower(0,true) + '&quot;')
+    console.log('_boundLowerErrMsg(0,true)= &quot;' + ElvJsHelpers.internal._boundLowerErrMsg(0,true) + '&quot;')
 &lt;/script>
 </code></pre>
 <h2>API Documentation</h2>
