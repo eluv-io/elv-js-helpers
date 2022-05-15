@@ -1,4 +1,5 @@
 const assertAfterCheck = require('./assertAfterCheck')
+
 const passesModelCheck = require('../Boolean/passesModelCheck')
 
 /**

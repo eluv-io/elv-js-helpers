@@ -1,20 +1,10 @@
 // builds (or rebuilds) the main.js file
-const path = require('path')
 const fs = require('fs')
+const path = require('path')
 
-const dirList = pathStr =>
-  fs.readdirSync(pathStr, {withFileTypes: true})
-    .filter(dirEnt => dirEnt.isDirectory() && !dirEnt.name.startsWith('.'))
-    .map(dirEnt => path.basename(dirEnt.name))
-
-
-const jsFileBasenamesList = pathStr =>
-  fs.readdirSync(pathStr, {withFileTypes: true})
-    .filter(dirEnt => dirEnt.isFile() && dirEnt.name.endsWith('.js'))
-    .map(dirEnt => path.basename(dirEnt.name, '.js'))
+const {dirList, jsFileBasenamesList} = require('./dirUtils')
 
 const codeBlocksAndFileList = (rootPath, pathStr) => {
-  // const currentRelPath = pathStr.replace(rootPath, '.')
   const currentDirName = path.basename(pathStr)
   let codeBlocks = []
   let fileList = []

@@ -1,4 +1,4 @@
-const {BasicModel} = require('objectmodel')
+const defBasicModel = require('../ModelFactory/defBasicModel')
 
 // noinspection JSValidateTypes
 /**
@@ -23,6 +23,6 @@ const {BasicModel} = require('objectmodel')
  * StringModel(42)    //=> EXCEPTION: 'expecting String, got Number 42'
  *
  */
-const StringModel = BasicModel(String).as('String')
+const StringModel = defBasicModel('String', String)
 
 module.exports = StringModel

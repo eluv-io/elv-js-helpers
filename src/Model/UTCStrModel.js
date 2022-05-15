@@ -1,4 +1,5 @@
 const assertValidUTCStr = require('../ModelAssertion/assertValidUTCStr')
+
 const defRegexMatchedStrModel = require('../ModelFactory/defRegexMatchedStrModel')
 
 const _REGEX_UTC_TIMESTAMP = /^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$/

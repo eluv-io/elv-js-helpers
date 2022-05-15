@@ -1,7 +1,10 @@
 const assertAfterCheck = require('./assertAfterCheck')
-const curry = require('../Functional/curry')
-const format = require('../Conversion/format')
+
 const isObject = require('../Boolean/isObject')
+
+const format = require('../Conversion/format')
+
+const curry = require('../Functional/curry')
 
 /**
  * Returns a 2-element array for use in an [ObjectModel assertion](http://objectmodel.js.org/#doc-assertions)

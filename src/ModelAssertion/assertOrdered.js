@@ -1,4 +1,5 @@
 const assertAfterCheck = require('./assertAfterCheck')
+
 const isArray = require('../Boolean/isArray')
 const passesPairwiseCheck = require('../Boolean/passesPairwiseCheck')
 

@@ -1,5 +1,6 @@
 const assertionErrMsg = require('./assertionErrMsg')
-const checkOnlyIf = require('../Functional/checkOnlyIf')
+
+const conditionalCheck = require('../Boolean/conditionalCheck')
 const isFunction = require('../Boolean/isFunction')
 
 /**
@@ -68,7 +69,7 @@ const isFunction = require('../Boolean/isFunction')
  */
 const assertAfterCheck = (preCheckFn, assertFn, msgStrOrFn) =>
   [
-    checkOnlyIf(preCheckFn, assertFn),
+    conditionalCheck(preCheckFn, assertFn),
     isFunction(msgStrOrFn) ? msgStrOrFn : assertionErrMsg(msgStrOrFn)
   ]
 

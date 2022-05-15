@@ -1,9 +1,10 @@
-
-const _assertObjKeysValid = require('../ModelAssertion/assertObjKeysValid')
-const _assertObjValuesValid = require('../ModelAssertion/assertObjValuesValid')
-const assertAfterCheck = require('../ModelAssertion/assertAfterCheck')
 const defBasicModel = require('./defBasicModel')
+
 const isObject = require('../Boolean/isObject')
+
+const assertAfterCheck = require('../ModelAssertion/assertAfterCheck')
+const assertObjKeysValid = require('../ModelAssertion/assertObjKeysValid')
+const assertObjValuesValid = require('../ModelAssertion/assertObjValuesValid')
 
 /**
  * Returns an [ObjectModel](http://objectmodel.js.org/) which will validate that an input is:
@@ -36,13 +37,13 @@ const defCheckedKVObjModel = (name, keyModel, valueModel) =>
     .assert(
       ...assertAfterCheck(
         isObject,
-        ..._assertObjKeysValid(keyModel)
+        ...assertObjKeysValid(keyModel)
       )
     )
     .assert(
       ...assertAfterCheck(
         isObject,
-        ..._assertObjValuesValid(valueModel)
+        ...assertObjValuesValid(valueModel)
       )
     )
 

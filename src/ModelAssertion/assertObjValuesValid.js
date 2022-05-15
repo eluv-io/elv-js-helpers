@@ -2,6 +2,7 @@ const isNil = require('@eluvio/ramda-fork/src/isNil')
 const T = require('@eluvio/ramda-fork/src/T')
 
 const _objBadValErrMsg = require('./_objBadValErrMsg')
+
 const _satisfiesObjValCheck = require('../Boolean/passesObjValCheck')
 
 // assertObjectValuesValid :: ObjectModel -> [(a -> Boolean), String | (Object -> Object -> String)]

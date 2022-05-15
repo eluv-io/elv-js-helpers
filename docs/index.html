@@ -12,45 +12,45 @@
 const H = require('@eluvio/elv-js-helpers')
 
 // create references to particular items in order to avoid needing to use H. prefix
-const { etaDurationStr, etaTimeStr } = H
-const {_boundLowerErrMsg} = H.internal
+const { etaDurStr, etaTimeStr } = H
+const {_boundLowerErrMsg} = H
 
 // Note that the following syntax still causes entire library to be bundled into your project
-const { etaDurationStr, etaTimeStr } = require('@eluvio/elv-js-helpers')
+const { etaDurStr, etaTimeStr } = require('@eluvio/elv-js-helpers')
 </code></pre>
 <h3>Entire library (JS Modules)</h3>
 <pre class="prettyprint source lang-javascript"><code>// namespace entire suite to H
 import H from '@eluvio/elv-js-helpers'
 
 // create references to particular items in order to avoid needing to use H. prefix
-const { etaDurationStr, etaTimeStr } = H
-const {_boundLowerErrMsg} = H.internal
+const { etaDurStr, etaTimeStr } = H
+const {_boundLowerErrMsg} = H
 
 // Note that the following syntax still causes entire library to be bundled into your project
-import { etaDurationStr, etaTimeStr }  from '@eluvio/elv-js-helpers'
+import { etaDurStr, etaTimeStr }  from '@eluvio/elv-js-helpers'
 </code></pre>
 <h3>Individual items (CommonJS)</h3>
 <pre class="prettyprint source lang-javascript"><code>// require in each item directly
-const etaDurationStr = require('@eluvio/elv-js-helpers/etaDurationStr')
-const etaTimeStr = require('@eluvio/elv-js-helpers/etaTimeStr')
-const _boundLowerErrMsg = require('@eluvio/elv-js-helpers/internal/_boundLowerErrMsg')
+const etaDurStr = require('@eluvio/elv-js-helpers/Datetime/etaDurStr')
+const etaTimeStr = require('@eluvio/elv-js-helpers/Datetime/etaTimeStr')
+const _boundLowerErrMsg = require('@eluvio/elv-js-helpers/ModelAssertion/_boundLowerErrMsg')
 </code></pre>
 <h3>Individual items (JS Modules)</h3>
 <pre class="prettyprint source lang-javascript"><code>// import in each item directly
-import etaDurationStr from '@eluvio/elv-js-helpers/etaDurationStr'
-import etaTimeStr from '@eluvio/elv-js-helpers/etaTimeStr'
-import _boundLowerErrMsg from '@eluvio/elv-js-helpers/internal/_boundLowerErrMsg'
+import etaDurStr from '@eluvio/elv-js-helpers/Datetime/etaDurStr'
+import etaTimeStr from '@eluvio/elv-js-helpers/Datetime/etaTimeStr'
+import _boundLowerErrMsg from '@eluvio/elv-js-helpers/ModelAssertion/_boundLowerErrMsg'
 </code></pre>
 <h3>Entire library (browser)</h3>
 <p>Although not recommended, it is also possible to import the entire library directly into a browser via a <code>&lt;script&gt;</code> tag
-pointing to either <code>dist/elv-js-helpers.js</code> or <code>dist/elv-js-helpers.min.js</code>. This will create a variable named
+pointing to a copy of either <code>dist/elv-js-helpers.js</code> or <code>dist/elv-js-helpers.min.js</code>. This will create a variable named
 <code>ElvJsHelpers</code> in the global namespace. There is no support for importing individual items via a <code>&lt;script&gt;</code> tag. (It
 is expected that browser apps would be built using a bundling tool like Webpack/Rollup/Parcel)</p>
 <pre class="prettyprint source lang-html"><code>&lt;!-- Import entire library as ElvJsHelper -->
-&lt;script src=&quot;./node_modules/@eluvio/elv-js-helpers/dist/elv-js-helpers.js&quot;>&lt;/script>
+&lt;script src=&quot;elv-js-helpers.js&quot;>&lt;/script>
 &lt;script type=&quot;application/javascript&quot;>
-    console.log('System locale is: ' + ElvJsHelpers.sysLocale())
-    console.log('_boundLowerErrMsg(0,true)= &quot;' + ElvJsHelpers.internal._boundLowerErrMsg(0,true) + '&quot;')
+    console.log('System locale is: ' + ElvJsHelpers.Datetime.sysLocale())
+    console.log('_boundLowerErrMsg(0,true)= &quot;' + ElvJsHelpers.ModelAssertion._boundLowerErrMsg(0,true) + '&quot;')
 &lt;/script>
 </code></pre>
 <h2>API Documentation</h2>

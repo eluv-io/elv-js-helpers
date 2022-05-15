@@ -2,6 +2,7 @@ const isNil = require('@eluvio/ramda-fork/src/isNil')
 const T = require('@eluvio/ramda-fork/src/T')
 
 const _objBadKeyErrMsg = require('./_objBadKeyErrMsg')
+
 const _satisfiesObjKeyCheck = require('../Boolean/passesObjKeyCheck')
 
 /**

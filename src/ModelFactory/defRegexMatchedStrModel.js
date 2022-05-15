@@ -1,5 +1,6 @@
-const assertMatchesRegex = require('../ModelAssertion/assertMatchesRegex')
 const StringModel = require('../Model/StringModel')
+
+const assertMatchesRegex = require('../ModelAssertion/assertMatchesRegex')
 
 /**
  * Returns an [ObjectModel](http://objectmodel.js.org/) which will validate that an input is:

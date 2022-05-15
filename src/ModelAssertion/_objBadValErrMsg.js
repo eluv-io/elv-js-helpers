@@ -2,7 +2,6 @@ const identity = require('crocks/combinators/identity')
 const join = require('@eluvio/ramda-fork/src/join')
 
 const _objBadVal = require('../Validation/objBadVal')
-
 const validator = require('../Validation/validator')
 
 /**

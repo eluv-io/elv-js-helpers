@@ -1,5 +1,6 @@
 const assertAfterCheck = require('./assertAfterCheck')
 const _boundDescBetween = require('./_boundBetweenErrMsg')
+
 const _satisfiesBetweenBounds = require('../Boolean/satisfiesBetweenBounds')
 const passesModelCheck = require('../Boolean/passesModelCheck')
 

@@ -6,6 +6,7 @@ const ADT = {
 }
 
 const Boolean = {
+  conditionalCheck: require('./Boolean/conditionalCheck'),
   isArray: require('./Boolean/isArray'),
   isErr: require('./Boolean/isErr'),
   isFunction: require('./Boolean/isFunction'),
@@ -53,7 +54,6 @@ const Functional = {
   addPreproccessFn2: require('./Functional/addPreproccessFn2'),
   assocComputed: require('./Functional/assocComputed'),
   chain: require('./Functional/chain'),
-  checkOnlyIf: require('./Functional/checkOnlyIf'),
   compare: require('./Functional/compare'),
   compareFracStr: require('./Functional/compareFracStr'),
   constant: require('./Functional/constant'),

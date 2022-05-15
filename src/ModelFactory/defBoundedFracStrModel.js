@@ -1,9 +1,13 @@
-const _throwIfFalse = require('../Validation/throwIfFalse')
-const assertBounded = require('../ModelAssertion/assertBounded')
-const passesModelCheck = require('../Boolean/passesModelCheck')
-const compareFracStr = require('../Functional/compareFracStr')
-const FractionStrModel = require('../Model/FractionStrModel')
 const isNull = require('../Boolean/isNull')
+const passesModelCheck = require('../Boolean/passesModelCheck')
+
+const compareFracStr = require('../Functional/compareFracStr')
+
+const FractionStrModel = require('../Model/FractionStrModel')
+
+const assertBounded = require('../ModelAssertion/assertBounded')
+
+const _throwIfFalse = require('../Validation/throwIfFalse')
 
 /**
  * Returns an [ObjectModel](http://objectmodel.js.org/) which will validate that an input is:

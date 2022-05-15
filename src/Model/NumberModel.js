@@ -1,4 +1,4 @@
-const {BasicModel} = require('objectmodel')
+const defBasicModel = require('../ModelFactory/defBasicModel')
 
 // noinspection JSValidateTypes
 /**
@@ -25,6 +25,6 @@ const {BasicModel} = require('objectmodel')
  * NumberModel(NaN) //=> EXCEPTION: 'expecting Number, got Number NaN'  // not the greatest error message :-P
  *
  */
-const NumberModel = BasicModel(Number).as('Number')
+const NumberModel = defBasicModel('Number', Number)
 
 module.exports = NumberModel

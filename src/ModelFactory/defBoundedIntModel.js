@@ -1,5 +1,6 @@
-const assertBounded = require('../ModelAssertion/assertBounded')
 const IntegerModel = require('../Model/IntegerModel')
+
+const assertBounded = require('../ModelAssertion/assertBounded')
 
 /**
  * Returns an [ObjectModel](http://objectmodel.js.org/) which will validate that an input is:
