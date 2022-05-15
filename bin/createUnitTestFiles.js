@@ -6,7 +6,7 @@ const path = require('path')
 
 const {dirList, jsFileBasenamesList} = require('./dirUtils')
 
-const REGEXP_EXAMPLE = /(^ \* @example(.|\n)+^)(const Err )/m
+const REGEXP_EXAMPLE = /(^ \* @example(.|\n)+^)(const )/m
 
 const mirror = (sourcePathStr, destPathStr) => {
   const subDirs = dirList(sourcePathStr)
@@ -32,7 +32,7 @@ const mirror = (sourcePathStr, destPathStr) => {
     } else {
       const scriptCode = fs.readFileSync(scriptFile).toString()
       const exampleJSDoc = scriptCode.match(REGEXP_EXAMPLE)
-      if(!exampleJSDoc) console.warn('@example not found in ' + scriptFile)
+      if (!exampleJSDoc) console.warn('@example not found in ' + scriptFile)
       const requirePath = path.join(path.relative(destPathStr, sourcePathStr), jsFile)
       const contents = `// unit test for ${jsFile}.js
       
@@ -55,8 +55,6 @@ describe('${jsFile}', () => {
 
 /**
 ` + (exampleJSDoc ? exampleJSDoc[1] : '')
-
-      console.log(JSON.stringify(exampleJSDoc,null,2))
       fs.writeFileSync(targetFile, contents)
     }
   }
