@@ -2,6 +2,7 @@ const isNil = require('ramda/src/isNil')
 const T = require('ramda/src/T')
 
 const _objBadKeyErrMsg = require('./_objBadKeyErrMsg')
+
 const _satisfiesObjKeyCheck = require('../Boolean/passesObjKeyCheck')
 
 /**

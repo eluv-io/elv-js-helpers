@@ -1,9 +1,11 @@
 // noinspection JSValidateTypes
 
-const _assertNotEmpty = require('../ModelAssertion/assertNotEmpty')
-const assertAfterCheck = require('../ModelAssertion/assertAfterCheck')
 const defArrModel = require('./defArrModel')
+
 const isArray = require('../Boolean/isArray')
+
+const assertAfterCheck = require('../ModelAssertion/assertAfterCheck')
+const assertNotEmpty = require('../ModelAssertion/assertNotEmpty')
 
 /**
  * Returns an [ObjectModel](http://objectmodel.js.org/) which will validate that an input is:
@@ -43,7 +45,7 @@ const defNonEmptyArrModel = (name, def) => defArrModel(name, def)
   .assert(
     ...assertAfterCheck(
       isArray,
-      ..._assertNotEmpty
+      ...assertNotEmpty
     )
   )
 

@@ -1,6 +1,7 @@
 const _boundDescUpper = require('./_boundUpperErrMsg')
-const _satisfiesUpperBound = require('../Boolean/satisfiesUpperBound')
 const assertAfterCheck = require('./assertAfterCheck')
+
+const _satisfiesUpperBound = require('../Boolean/satisfiesUpperBound')
 const passesModelCheck = require('../Boolean/passesModelCheck')
 
 /**

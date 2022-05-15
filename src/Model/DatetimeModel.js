@@ -1,4 +1,4 @@
-const {BasicModel} = require('objectmodel')
+const defBasicModel = require('../ModelFactory/defBasicModel')
 
 // noinspection JSValidateTypes
 /**
@@ -23,6 +23,6 @@ const {BasicModel} = require('objectmodel')
  * DatetimeModel('foo')    //=> EXCEPTION: 'expecting Date, got String "foo"'
  *
  */
-const DatetimeModel = BasicModel(Date).as('Javascript Date object')
+const DatetimeModel = defBasicModel('Javascript Date object', Date)
 
 module.exports=DatetimeModel

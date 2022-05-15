@@ -1,6 +1,8 @@
-const assertAfterCheck = require('../ModelAssertion/assertAfterCheck')
-const passesModelCheck = require('../Boolean/passesModelCheck')
 const StringModel = require('./StringModel')
+
+const passesModelCheck = require('../Boolean/passesModelCheck')
+
+const assertAfterCheck = require('../ModelAssertion/assertAfterCheck')
 
 /**
  * An [ObjectModel](http://objectmodel.js.org/) which validates that an input is:
