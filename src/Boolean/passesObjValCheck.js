@@ -29,19 +29,23 @@ const _objBadVal = require('../Validation/objBadVal')
  *
  * passesObjValCheck(NonBlankStrModel, {foo: ' '})   //=> false
  *
- * passesObjValCheck(NonBlankStrModel, {foo: 42})    //=> true
+ * passesObjValCheck(NonBlankStrModel, {foo: 'bar'}) //=> true
  *
- * passesObjValCheck(NonBlankStrModel, 3)            //=> true
+ * passesObjValCheck(NonBlankStrModel, {foo: 42})    //=> false (value is not a non-blank string)
+ *
+ * passesObjValCheck(NonBlankStrModel, 3)            //=> true (test input not an object, check skipped)
  *
  * // function is curried: call with fewer params to obtain a narrower function
  *
- * const hasNoBlankVals = passesObjValCheck(NonBlankStrModel)
+ * const allValsNonBlankString = passesObjValCheck(NonBlankStrModel)
  *
- * hasNoBlankVals({foo: ' '})    //=> false
+ * allValsNonBlankString({foo: ' '})                 //=> false
  *
- * hasNoBlankVals({foo: 42})     //=> true
+ * allValsNonBlankString({foo: 'bar'})               //=> true
  *
- * hasNoBlankVals(3)             //=> true
+ * allValsNonBlankString({foo: 42})                  //=> false (value is not a non-blank string)
+ *
+ * allValsNonBlankString(3)                          //=> true (test input not an object, check skipped)
  */
 const passesObjValCheck = curry(
   (valueModel, obj) =>

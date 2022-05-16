@@ -20,7 +20,7 @@
  *
  * myList.head()                   //=> Just 1 (instance of the Maybe ADT)
  *
- * myList.tail()                   //=> Just List [2, 3] (instance of the Maybe ADT, wrapping a List)
+ * myList.tail()                   //=> Just List [ 2, 3 ] (instance of the Maybe ADT, wrapping a List)
  *
  * List([[1,2,3]])                 //=> List [ [ 1, 2, 3 ] ] (List with 1 element which itself is a 3-item array)
  *

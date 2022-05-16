@@ -24,7 +24,7 @@ const curry = require('crocks/helpers/curry')
  *
  * const compare = require('@eluvio/elv-js-helpers/Functional/compare')
  *
- * satisfiesUpperBound(42, true, compare, 42)   //=> false
+ * satisfiesUpperBound(42, true, compare, 42)   //=> true
  *
  * satisfiesUpperBound(42, true, compare, 0)    //=> true
  *

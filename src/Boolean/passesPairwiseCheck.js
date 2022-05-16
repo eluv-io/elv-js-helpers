@@ -19,22 +19,30 @@ const curry = require('../Functional/curry')
  *
  * const passesPairwiseCheck = require('@eluvio/elv-js-helpers/Boolean/passesPairwiseCheck')
  *
- * const is(0, true, compare, [1, 2, 3])   //=> true
+ * const xGTEy = (x,y) => x <= y
  *
- * _satisfiesOrdering(0, true, compare, 0)    //=> true
+ * passesPairwiseCheck(xGTEy, [1, 2, 2, 3])   //=> true
  *
- * _satisfiesOrdering(0, true, compare, -1)   //=> false
+ * passesPairwiseCheck(xGTEy, [1])            //=> true (single element, has no pairs to check)
  *
- * _satisfiesOrdering(0, false, compare, 0)   //=> false
+ * passesPairwiseCheck(xGTEy, [3, 2, 2, 1])   //=> false
  *
- * // function is curried: call with fewer params to obtain a narrower function
- * const isPositive = _satisfiesLowerBound(0, false, compare)
+ * passesPairwiseCheck(xGTEy, 'abcde')        //=> true (strings support indexed access via [])
  *
- * isPositive(-1)  //=> false
+ * passesPairwiseCheck(xGTEy, 5)              //=> true (non-array, has no pairs to check)
  *
- * isPositive(0)   //=> false
+ * // function is curried: call with 1 arg to obtain a narrower function
+ * const isOrdered = passesPairwiseCheck(xGTEy)
  *
- * isPositive(1)   //=> true
+ * isOrdered([1, 2, 2, 3])                    //=> true
+ *
+ * isOrdered([1])                             //=> true
+ *
+ * isOrdered([3, 2, 2, 1])                    //=> false
+ *
+ * isOrdered('abcde')                         //=> true (strings support indexed access via [])
+ *
+ * isOrdered(5)                               //=> true (non-array, has no pairs to check)
  */
 const passesPairwiseCheck = curry(
   (checkFn, array) => find(

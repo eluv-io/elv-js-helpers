@@ -21,12 +21,12 @@ const validator = require('../Validation/validator')
  *
  * const passesModelCheck = require('@eluvio/elv-js-helpers/Boolean/passesModelCheck')
  *
- * const PositiveIntegerModel = require('@eluvio/elv-js-helpers/Model/PositiveIntegerModel')
+ * const PositiveIntModel = require('@eluvio/elv-js-helpers/Model/PositiveIntModel')
  *
- * passesModelCheck(PositiveIntegerModel, -1) //=> false
+ * passesModelCheck(PositiveIntModel, -1) //=> false
  *
  * // function is curried: call with just first param to obtain a narrower function
- * const isPositiveInt = passesModelCheck(PositiveIntegerModel)
+ * const isPositiveInt = passesModelCheck(PositiveIntModel)
  *
  * isPositiveInt(1)     //=> true
  *

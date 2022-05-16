@@ -19,7 +19,7 @@ const kindOf = require('../Validation/kindOf')
  *
  * isObject('foo')             //=> false
  *
- * isObject({})                //=> true (extra argument ignored)
+ * isObject({})                //=> true
  *
  * isObject({foo: 'bar'}, 3)   //=> true (extra argument ignored)
  *
