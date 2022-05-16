@@ -31,15 +31,15 @@ const _paramsModel = defObjModel(
  *
  * estRemainingDur(42, 1)     //=> Ok 0
  *
- * estRemainingDur(42, 0)     //=> Err ['estRemainingDur: portionComplete must be > 0 and <= 1 (got: 0)']
+ * estRemainingDur(42, 0)     //=> Err [(ObjectModel error, message="portionComplete must be > 0 and <= 1 (got: 0)")]
  *
- * estRemainingDur(0, .1)     //=> Err ['estRemainingDur: timeElapsed must be > 0 (got: 0)']
+ * estRemainingDur(0, .1)     //=> Err [(ObjectModel error, message="timeElapsed must be > 0 (got: 0)")]
  *
- * estRemainingDur(0, 0)      //=> Err ['estRemainingDur: timeElapsed must be > 0 (got: 0)', 'estRemainingDur: portionComplete must be > 0 and <= 1 (got: 0)' ]
+ * estRemainingDur(0, 0)      //=> Err [(ObjectModel error, message="portionComplete must be > 0 and <= 1 (got: 0)"), (ObjectModel error, message="timeElapsed must be > 0 (got: 0)")]
  *
- * estRemainingDur(-1, .1)    //=> Err ['estRemainingDur: timeElapsed must be > 0 (got: -1)']
+ * estRemainingDur(-1, .1)    //=> Err [(ObjectModel error, message="timeElapsed must be > 0 (got: -1)")]
  *
- * estRemainingDur(42, 42)    //=> Err ['estRemainingDur: portionComplete must be > 0 and <= 1 (got: 42)']
+ * estRemainingDur(42, 42)    //=> Err [(ObjectModel error, message="portionComplete must be > 0 and <= 1 (got: 42)")]
  *
  */
 const estRemainingDur = (timeElapsed, portionComplete) =>
