@@ -13,7 +13,7 @@ const kindOf = require('../Validation/kindOf')
  *
  * const isFunction = require('@eluvio/elv-js-helpers/Boolean/isFunction')
  *
- * isFunction([1, 2, 3])   //=> true
+ * isFunction([1, 2, 3])   //=> false
  *
  * isFunction(1, 2, 3)     //=> false
  *

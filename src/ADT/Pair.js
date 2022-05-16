@@ -21,7 +21,7 @@
  *
  * const Pair = require('@eluvio/elv-js-helpers/ADT/Pair')
  *
- * const p = Pair(1,2)    //=> Pair(1, 2)
+ * const p = Pair(1,2)    //=> Pair( 1, 2 )
  *
  * p.fst()                //=> 1
  *

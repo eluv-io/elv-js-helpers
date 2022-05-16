@@ -23,9 +23,9 @@ const kindOf = require('../Validation/kindOf')
  *
  * isNull(1, null, null)     //=> false (extra arguments ignored)
  *
- * isString('foo')           //=> false
+ * isNull('foo')             //=> false
  *
- * isString(null, 3)         //=> true (extra argument ignored)
+ * isNull(null, 3)           //=> true (extra argument ignored)
  *
  */
 const isNull = x => kindOf(x) === 'null'

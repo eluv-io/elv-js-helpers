@@ -29,10 +29,10 @@ const wrapNonArray = require('../Conversion/wrapNonArray')
  * const Err = require('@eluvio/elv-js-helpers/ADT/Err')
  * const Ok = require('@eluvio/elv-js-helpers/ADT/Ok')
  *
+ * const resultToPOJO = require('@eluvio/elv-js-helpers/Conversion/resultToPOJO')
+ *
  * const curry = require('@eluvio/elv-js-helpers/Functional/curry')
  * const liftA2 = require('@eluvio/elv-js-helpers/Functional/liftA2')
- *
- * const resultToPOJO = require('@eluvio/elv-js-helpers/Conversion/resultToPOJO')
  *
  * const okObject = Ok(42)                                   //=> Ok 42
  *
