@@ -17,7 +17,7 @@
  *
  * const fraction = require('@eluvio/elv-js-helpers/Conversion/fraction')
  *
- * fraction(4.2).toFraction(true)   //=> '4 1/5`
+ * fraction(4.2).toFraction(true)   //=> '4 1/5'
  *
  * fraction('22/7').valueOf()       //=> 3.142857142857143
  *

@@ -35,7 +35,7 @@ const _paramsModel = defObjModel(
  *
  * estTotalDur(0, .1)     //=> Err ['estTotalDur: timeElapsed must be > 0 (got: 0)']
  *
- * estTotalDur(0, 0)      //=> Err ['estTotalDur: timeElapsed must be > 0 (got: 0)', 'estTotalDur: portionComplete must be > 0 and <= 1 (got: 0)' ]
+ * estTotalDur(0, 0)      //=> Err ['estTotalDur: portionComplete must be > 0 and <= 1 (got: 0)', 'estTotalDur: timeElapsed must be > 0 (got: 0)']
  *
  * estTotalDur(-1, .1)    //=> Err ['estTotalDur: timeElapsed must be > 0 (got: -1)']
  *
