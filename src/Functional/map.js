@@ -25,7 +25,6 @@
  * const Err = require('@eluvio/elv-js-helpers/ADT/Err')
  * const Ok = require('@eluvio/elv-js-helpers/ADT/Ok')
  *
- * const curry = require('@eluvio/elv-js-helpers/Functional/curry')
  * const map = require('@eluvio/elv-js-helpers/Functional/map')
  *
  * // function has only one input, not need to curry
@@ -34,9 +33,9 @@
  * const ok21 = Ok(21)
  * const badNum = Err(['failed to read input'])
  *
- * double(21)                 //=> Ok 21
+ * double(21)                 //=> 42
  *
- * double(ok21)               //=> Ok NaN (double does not know to unwrap value before use)
+ * double(ok21)               //=> NaN (double does not know to unwrap value before use)
  *
  * map(double, ok21)          //=> Ok 42 (map asks input wrapper to remove wrapping and pass value to function, and then re-wrap the return value)
  *

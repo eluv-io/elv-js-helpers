@@ -17,7 +17,7 @@ const assoc = require('ramda/src/assoc')
  *
  * const assocComputed = require('@eluvio/elv-js-helpers/Functional/assocComputed')
  *
- * assocComputed('bar', x => x * 2, {foo: 2}) //=> {foo: 2, bar: 4}
+ * assocComputed('bar', x => x.foo * 2, {foo: 2}) //=> {foo: 2, bar: 4}
  *
  * // function is curried: call with fewer than 3 args to obtain a narrower function
  * const addTax = assocComputed('tax', x => x.price * 0.05)

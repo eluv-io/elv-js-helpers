@@ -51,7 +51,7 @@ const Datetime = {
 }
 
 const Functional = {
-  addPreproccessFn2: require('./Functional/addPreproccessFn2'),
+  addPreprocessFn2: require('./Functional/addPreprocessFn2'),
   assocComputed: require('./Functional/assocComputed'),
   chain: require('./Functional/chain'),
   compare: require('./Functional/compare'),

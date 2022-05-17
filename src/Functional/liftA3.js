@@ -34,9 +34,9 @@
  * const curry = require('@eluvio/elv-js-helpers/Functional/curry')
  * const liftA3 = require('@eluvio/elv-js-helpers/Functional/liftA3')
  *
- * const mult3 = (a, b, c) => a * b * c                            // function that takes and returns 'normal' values
+ * const mult3 = (a, b, c) => a * b * c                            //=> function that takes and returns 'normal' values
  *
- * mult3(42, 42, 42)                                               // 74088
+ * mult3(42, 42, 42)                                               //=> 74088
  *
  * const liftedMult3 = liftA3(curry(mult3))                        //=> convert function 'mult3' into one that works with values wrapped in Functional data types
  *
@@ -46,18 +46,16 @@
  *
  * const errObject2 = Err(['failed to obtain second input'])       //=> Err ['failed to obtain second input']
  *
- * const errObject3 = Err(['failed to obtain third input'])        //=> Err ['failed to obtain third input']
- *
  * const goodResult = liftedMult3(okObject, okObject, okObject)    //=> Ok 74088
  *
  * console.log(resultToPOJO(goodResult))
  * '{ ok: true, result: 74088 }'
  *
- * const badResult1 = liftedMult(errObject1, okObject, okObject)   //=> Err ['failed to obtain first input']
+ * const badResult1 = liftedMult3(errObject1, okObject, okObject)   //=> Err ['failed to obtain first input']
  *
- * const badResult2 = liftedMult(okObject, errObject2, okObject)   //=> Err ['failed to obtain second input']
+ * const badResult2 = liftedMult3(okObject, errObject2, okObject)   //=> Err ['failed to obtain second input']
  *
- * const badResult3 = liftedMult(errObject1, errObject2, okObject) //=> Err ['failed to obtain first input', 'failed to obtain second input']
+ * const badResult3 = liftedMult3(errObject1, errObject2, okObject) //=> Err ['failed to obtain first input', 'failed to obtain second input']
  *
  * console.log(resultToPOJO(badResult3))
  * `{
@@ -68,7 +66,7 @@
  *
  * // liftA3 itself is curried, it can be called with 1-4 arguments as desired. If called with 4 arguments, it will
  * // immediately return the final result instead of returning a function.
- * liftA3(curry(mult), okObject, okObject, okObject)               //=> Ok 74088
+ * liftA3(curry(mult3), okObject, okObject, okObject)               //=> Ok 74088
  *
  */
 const liftA3 = require('crocks/helpers/liftA3')
