@@ -24,7 +24,6 @@
  * const Ok = require('@eluvio/elv-js-helpers/ADT/Ok')
  *
  * const chain = require('@eluvio/elv-js-helpers/Functional/chain')
- * const curry = require('@eluvio/elv-js-helpers/Functional/curry')
  *
  * // function has only one input, not need to curry
  * const reciprocal = a => a === 0 ? Err(['division by zero']) : Ok(1/a)
@@ -35,15 +34,15 @@
  *
  * reciprocal(4)              //=> Ok 0.25
  *
- * reciprocal(0)              //=> Ok 0.25
+ * reciprocal(0)              //=> Err [ "division by zero" ]
  *
  * reciprocal(ok4)            //=> Ok NaN (reciprocal does not know to unwrap value before use)
  *
  * chain(reciprocal, ok4)     //=> Ok 0.25 (chain asks input wrapper to remove wrapping and pass value to function, and not re-wrap the return value)
  *
- * chain(reciprocal, ok0)     //=> Err ['division by zero'] (reciprocal gets value 0 and returns Err)
+ * chain(reciprocal, ok0)     //=> Err [ "division by zero" ] (reciprocal gets value 0 and returns Err)
  *
- * chain(reciprocal, badNum)  //=> Err ['failed to read input'] (badNum ignores request to apply reciprocal)
+ * chain(reciprocal, badNum)  //=> Err [ "failed to read input" ] (badNum ignores request to apply reciprocal)
  *
  * // compare vs map, which does not specify that result should not be re-wrapped
  * const map = require('@eluvio/elv-js-helpers/Functional/map')

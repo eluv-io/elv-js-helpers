@@ -41,7 +41,7 @@ const nAry = require('crocks/helpers/nAry')
  *     Ok(x / y)
  * )
  *
- * divWrapped = liftA2Join(div)
+ * const divWrapped = liftA2Join(div)
  *
  * divWrapped(
  *   Ok(42),

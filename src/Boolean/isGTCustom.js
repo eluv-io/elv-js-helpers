@@ -1,4 +1,4 @@
-const addPreproccessFn2 = require('../Functional/addPreproccessFn2')
+const addPreprocessFn2 = require('../Functional/addPreprocessFn2')
 const flip = require('../Functional/flip')
 
 const isGT = require('./isGT')
@@ -53,12 +53,12 @@ const isGT = require('./isGT')
  * isGTCustom(strLength, 'foo', 'foobar')                //=> true
  */
 // const isGTCustom = curry(
-//   preprocessFn => addPreproccessFn2(preprocessFn, isGT)
+//   preprocessFn => addPreprocessFn2(preprocessFn, isGT)
 // )
-const isGTCustom = flip(addPreproccessFn2)(isGT)
+const isGTCustom = flip(addPreprocessFn2)(isGT)
 // Above is pointfree shorthand for:
 // curry(
-//   preprocessFn => addPreproccessFn2(preprocessFn, isGT)
+//   preprocessFn => addPreprocessFn2(preprocessFn, isGT)
 // )
 
 module.exports = isGTCustom
