@@ -20,6 +20,9 @@ describe('utcStrToDate', () => {
     expect(() => utcStrToDate('2022-99-01T14:00:00Z'))
       .to.throw('Value is not a valid UTC datetime string (got: "2022-99-01T14:00:00Z")')
 
+    expect(() => utcStrToDate('2022-02-30T14:00:00Z'))
+      .to.throw('Value is not a valid UTC datetime string (got: "2022-02-30T14:00:00Z")')
+
     expect(() => utcStrToDate(42))
       .to.throw('expecting String, got Number 42')
 

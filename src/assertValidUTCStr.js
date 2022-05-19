@@ -1,4 +1,4 @@
-const date = require('date-and-time')
+const _parseUTCStr = require('./internal/_parseUTCStr')
 
 const _assertWithPrecheck = require('./internal/_assertWithPrecheck')
 const checkVsModel = require('./checkVsModel')
@@ -39,13 +39,7 @@ const assertValidUTCStr = () =>
   _assertWithPrecheck(
     checkVsModel(NonBlankStrModel),
     utcString =>
-      !isNaN(
-        date.parse(
-          utcString,
-          'YYYY MM DD HH:mm:ss ',
-          true
-        )
-      ),
+      !isNaN(_parseUTCStr(utcString)),
     'is not a valid UTC datetime string'
   )
 

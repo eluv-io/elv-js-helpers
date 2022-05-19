@@ -1,4 +1,4 @@
-const date = require('date-and-time')
+const _parseUTCStr = require('./internal/_parseUTCStr')
 
 const UTCStrModel = require('./UTCStrModel')
 
@@ -22,10 +22,6 @@ const UTCStrModel = require('./UTCStrModel')
  * utcStrToDate(42)                      //=> EXCEPTION: expecting String, got Number 42
  */
 const utcStrToDate = utcString =>
-  date.parse(
-    UTCStrModel(utcString),
-    'YYYY MM DD HH:mm:ss ',
-    true
-  )
+  _parseUTCStr(UTCStrModel(utcString))
 
 module.exports = utcStrToDate

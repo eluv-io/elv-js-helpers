@@ -14,6 +14,7 @@ const internal = {
   _objBadKeyErrMsg: require('./internal/_objBadKeyErrMsg'),
   _objBadVal: require('./internal/_objBadVal'),
   _objBadValErrMsg: require('./internal/_objBadValErrMsg'),
+  _parseUTCStr: require('./internal/_parseUTCStr'),
   _satisfiesBetweenBounds: require('./internal/_satisfiesBetweenBounds'),
   _satisfiesLowerBound: require('./internal/_satisfiesLowerBound'),
   _satisfiesObjKeyCheck: require('./internal/_satisfiesObjKeyCheck'),
