@@ -1,4 +1,4 @@
-const _REGEX_UTC_TIMESTAMP = /^([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{2}):([0-9]{2}):([0-9]{2})Z$/
+const REGEX_UTC_TIMESTAMP = require('./REGEX_UTC_TIMESTAMP')
 
 const _MONTH_LENGTHS = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
 
@@ -6,24 +6,27 @@ const _MONTH_LENGTHS = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
  * Converts a string in UTC format (e.g. '2022-01-01T14:00:00Z') to a
  * [Javascript Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
  *
- * Returns a NaN date if string is an invalid date
+ * Returns a NaN date if string is an invalid date or is not in format: YYYY-MM-DDThh:mm:ssZ
+ *
+ * Use `utcStrToDate` or `UTCStrModel` instead to generate an error on invalid date strings.
  *
  * @function
  * @category Conversion
  * @sig String -> Date
  * @param {String} utcString - The UTC timestamp to convert
  * @returns {Date}
+ * @see utcStrToDate
  * @example
  *
- * _parseUTCStr('2022-01-01T14:00:00Z')  //=> 2022-01-01T14:00:00.000Z (Date object)
+ * parseUTCStr('2022-01-01T14:00:00Z')  //=> 2022-01-01T14:00:00.000Z (Date object)
  *
- * _parseUTCStr('2022-99-01T14:00:00Z')  //=> NaN (Date object containing NaN)
+ * parseUTCStr('2022-99-01T14:00:00Z')  //=> NaN (Date object containing NaN)
  *
- * _parseUTCStr(42)                      //=> NaN (Date object containing NaN)
+ * parseUTCStr(42)                      //=> NaN (Date object containing NaN)
  *
  */
-const _parseUTCStr = utcString => {
-  const match = utcString.match(_REGEX_UTC_TIMESTAMP)
+const parseUTCStr = utcString => {
+  const match = utcString.match(REGEX_UTC_TIMESTAMP)
   if (!match) return new Date(NaN)
 
   const year = parseInt(match[1], 10)
@@ -62,4 +65,4 @@ const _parseUTCStr = utcString => {
   return result
 }
 
-module.exports = _parseUTCStr
+module.exports = parseUTCStr

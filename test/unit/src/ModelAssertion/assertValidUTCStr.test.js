@@ -25,7 +25,7 @@ describe('assertValidUTCStr', () => {
   })
 
   it('should generate an assertion error message function that returns message with bad value and (if available) attribute name', () => {
-    assertErrMsgFn(false, 0, null).should.equal('Value is not a valid UTC Datetime string (got: 0)')
-    assertErrMsgFn(false, -1, 'startTime').should.equal('startTime is not a valid UTC Datetime string (got: -1)')
+    assertErrMsgFn(false, 0, null).should.equal('Value is not a valid UTC datetime string (got: 0)')
+    assertErrMsgFn(false, -1, 'startTime').should.equal('startTime is not a valid UTC datetime string (got: -1)')
   })
 })

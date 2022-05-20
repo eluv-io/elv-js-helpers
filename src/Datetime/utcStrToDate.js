@@ -1,4 +1,4 @@
-const _parseUTCStr = require('./internal/_parseUTCStr')
+const parseUTCStr = require('./parseUTCStr')
 
 const UTCStrModel = require('../Model/UTCStrModel')
 
@@ -24,6 +24,6 @@ const UTCStrModel = require('../Model/UTCStrModel')
  * utcStrToDate(42)                      //=> EXCEPTION: expecting String, got Number 42
  */
 const utcStrToDate = utcString =>
-  _parseUTCStr(UTCStrModel(utcString))
+  parseUTCStr(UTCStrModel(utcString))
 
 module.exports = utcStrToDate

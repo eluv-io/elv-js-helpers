@@ -1,8 +1,8 @@
-const _parseUTCStr = require('./internal/_parseUTCStr')
+const parseUTCStr = require('../Datetime/parseUTCStr')
 
 const assertAfterCheck = require('./assertAfterCheck')
-const checkVsModel = require('./checkVsModel')
-const NonBlankStrModel = require('./NonBlankStrModel')
+const passesModelCheck = require('../Boolean/passesModelCheck')
+const NonBlankStrModel = require('../Model/NonBlankStrModel')
 
 /**
  * Returns a 2-element array for use in an [ObjectModel assertion](http://objectmodel.js.org/#doc-assertions)
@@ -37,9 +37,9 @@ const NonBlankStrModel = require('./NonBlankStrModel')
  */
 const assertValidUTCStr = () =>
   assertAfterCheck(
-    checkVsModel(NonBlankStrModel),
+    passesModelCheck(NonBlankStrModel),
     utcString =>
-      !isNaN(_parseUTCStr(utcString)),
+      !isNaN(parseUTCStr(utcString)),
     'is not a valid UTC datetime string'
   )
 
