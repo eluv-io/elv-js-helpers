@@ -24,25 +24,46 @@ const curry = require('../Functional/curry')
  * @function
  * @curried
  * @category ModelAssertion
- * @sig ((Boolean, *, String) -> String) ObjectModelErrMsgFn => Model -> ((a, b) -> Boolean) -> String -> String -> String -> [(* -> Boolean), ObjectModelErrMsgFn | String]
- * @param {Function} checkFn -
- * @param {String} reqDesc - description of required relation, e.g. 'must be greater than'
- * @param {String} propertyName1 -
- * @param {String} propertyName2 -
+ * @sig ((Boolean, *, String) -> String) ObjectModelErrMsgFn => Model -> ((b, a) -> Boolean) -> String -> String -> String -> [(* -> Boolean), ObjectModelErrMsgFn | String]
+ * @param {Function} checkFn - A 2-input function taking value of object's **propertyName2** FIRST, then object's **propertyName1** SECOND (this is to allow more intuitive use with the way isGT / isGTE etc are curried)
+ * @param {String} reqDesc - Description of required relation, e.g. 'must be greater than' - this will be used in error messages e.g. 'propertyName1 must be greater than propertyName2'
+ * @param {String} propertyName1 - Name of attribute to check against `propertyName2`
+ * @param {String} propertyName2 - Name of attribute to check against `propertyName1`
  * @returns {Array} 2-element array [Function, Function | String]. See description for details.
  * @example
  *
+ * const isGTE = require('../Boolean/isGTE')
+ *
  * const assertPropRel = require('@eluvio/elv-js-helpers/ModelAssertion/assertPropRel')
  *
- * TODO add example
+ * const defObjModel = require('../ModelFactory/defObjModel')
+ *
+ * const NumLimitsModel = defObjModel(
+ *   'NumberLimits',
+ *   {
+ *     min: Number,
+ *     max: Number
+ *   }
+ * ).extend().assert(
+ *   ...assertPropRel(
+ *     isGTE,
+ *     'must be greater than or equal to',
+ *     'max',
+ *     'min'
+ *   )
+ * )
+ *
+ * NumLimitsModel({min:1, max:2})  //=> {min:1, max:2} (proxied by ObjectModel)
+ *
+ * NumLimitsModel({min:2, max:1})  //=> EXCEPTION: 'max (1) must be greater than or equal to min (2)'
  *
  */
 const assertPropRel = curry(
   (checkFn, reqDesc, propertyName1, propertyName2) =>
     assertAfterCheck(
       isObject,
-      x => checkFn(x[propertyName1], x[propertyName2]),
-      x => `${propertyName1} (${format(x[propertyName1])}) ${reqDesc} ${propertyName2} (${format(x[propertyName2])})`
+      x => checkFn(x[propertyName2], x[propertyName1]),
+      (result, x) => `${propertyName1} (${format(x[propertyName1])}) ${reqDesc} ${propertyName2} (${format(x[propertyName2])})`
     )
 )
 

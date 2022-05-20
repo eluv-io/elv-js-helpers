@@ -33,7 +33,24 @@ const passesPairwiseCheck = require('../Boolean/passesPairwiseCheck')
  *
  * const assertOrdered = require('@eluvio/elv-js-helpers/ModelAssertion/assertOrdered')
  *
- * // Note use of spread operator (...) to unpack the array returned by assertOrdered()
+ * const defArrModel = require('@eluvio/elv-js-helpers/ModelFactory/defArrModel')
+ *
+ * // Note use of spread operator (...) to unpack the array returned by _assertBoundedUpper()
+ * const OrderedNumArrayModel = defArrModel('OrderedArray', Number).extend()
+ *   .assert(
+ *     ...assertOrdered(
+ *       (x, y) => x <= y,
+ *       'is not in ascending order')
+ *     )
+ *   )
+ *
+ * OrderedNumArrayModel([1, 2, 3])     //=> [1, 2, 3] (proxied by ObjectModel)
+ *
+ * OrderedNumArrayModel([])            //=> [] (proxied by ObjectModel)
+ *
+ * OrderedNumArrayModel([3, 2])        //=>  EXCEPTION: 'Value is not in ascending order (got: [3,2])'
+ *
+ * OrderedNumArrayModel('foo')         //=> EXCEPTION: 'expecting Array of Number, got String "foo"'
  *
  */
 const assertOrdered = (orderingFn, errStrOrFn) =>

@@ -25,5 +25,15 @@ describe('assertMatchesRegex', () => {
     expect(() => UUIDStringModel(42))
       .to.throw('expecting String, got Number 42')
 
+    const HexStringModel = StringModel.extend()
+      .assert(
+        ...assertMatchesRegex(
+          StringModel,
+          /^[0-9a-f]+$/
+        )
+      ).as('HexString')
+
+    expect(() => HexStringModel('xyz'))
+      .to.throw('Value is not in valid format or contains illegal characters (must match regular expression: /^[0-9a-f]+$/) (got: "xyz")')
   })
 })

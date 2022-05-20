@@ -39,10 +39,21 @@ const passesModelCheck = require('../Boolean/passesModelCheck')
  * const assertBoundedLower = require('@eluvio/elv-js-helpers/ModelAssertion/assertBoundedLower')
  *
  * // Note use of spread operator (...) to unpack the array returned by assertBoundedLower()
- * const BaseballTeamSizeModel = IntegerModel.extend()
- *   .assert(...assertBoundedLower(IntegerModel, 9, true, compare)
- *   .as('BaseballTeamSize')
+ * const PositiveIntegerModel = IntegerModel
+ *   .extend()
+ *   .assert(
+ *     ...assertBoundedLower(
+ *       IntegerModel,
+ *       0,
+ *       false,
+ *       compare
+ *     )
+ *   )
+ *   .as('PositiveInteger')
  *
+ *  PositiveIntegerModel(1)       \\=> 1 (proxied by objectModel)
+ *  PositiveIntegerModel(0)       \\=> EXCEPTION: 'Value must be > 0 (got: 0)'
+ *  PositiveIntegerModel('foo')   \\=> EXCEPTION: 'expecting Number, got String "foo"' *
  */
 const assertBoundedLower = (model, lowerBound, inclusive, comparatorFn) =>
   assertAfterCheck(

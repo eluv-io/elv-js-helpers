@@ -2,30 +2,23 @@
 
 const chai = require('chai')
 chai.should()
-
-const equals = require('ramda/src/equals')
-
-const assertAfterCheck = require('../../../../src/ModelAssertion/assertAfterCheck')
-const checkVsModel = require('../../../../src/Boolean/passesModelCheck')
-const StringModel = require('../../../../src/Model/StringModel')
+const expect = chai.expect
 
 const objBadKey = require('../../../../src/Validation/objBadKey')
 
+const NonBlankStrModel = require('../../../../src/Model/NonBlankStrModel')
+
+
 describe('objBadKey', () => {
 
-  const ThreeCharStringModel = StringModel.extend()
-    .assert(
-      ...assertAfterCheck(
-        checkVsModel(StringModel),
-        x => x.length === 3,
-        'string must be 3 characters long'
-      )
-    ).as('ThreeCharString')
+  it('should work as expected', () => {
+    expect(objBadKey(NonBlankStrModel, {foo: 'bar'}) === undefined).to.be.true
+    objBadKey(NonBlankStrModel, {'  ': 'bar'}).should.equal('  ')
+  })
 
-  it('should returned undefined for good objects', () => {
-    equals(
-      objBadKey(ThreeCharStringModel, {'foo': 1}),
-      undefined
-    ).should.be.true
+  it('should be curried', () => {
+    const findBlankKey = objBadKey(NonBlankStrModel)
+    expect(findBlankKey( {foo: 'bar'}) === undefined).to.be.true
+    findBlankKey({'  ': 'bar'}).should.equal('  ')
   })
 })

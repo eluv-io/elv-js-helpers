@@ -12,6 +12,7 @@ const Boolean = {
   isFunction: require('./Boolean/isFunction'),
   isGT: require('./Boolean/isGT'),
   isGTCustom: require('./Boolean/isGTCustom'),
+  isGTE: require('./Boolean/isGTE'),
   isNull: require('./Boolean/isNull'),
   isObject: require('./Boolean/isObject'),
   isOfKind: require('./Boolean/isOfKind'),

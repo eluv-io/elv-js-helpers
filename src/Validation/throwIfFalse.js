@@ -17,10 +17,17 @@ const throwError = require('../Misc/throwError')
  *
  * const throwIfFalse = require('@eluvio/elv-js-helpers/Validation/throwIfFalse')
  *
- * const PASSWORD_REGEX = /[A-Z]{42}/
- * const password = 'foo'
+ * const PASSWORD_REGEX_4 = /[A-Z]{4}/
+ * const PASSWORD_REGEX_42 = /[A-Z]{42}/
+ * const password = 'foobar'
  *
- * throwIfFalse('password must be 42 upper-case letters', PASSWORD_REGEX.test(password)) //=> EXCEPTION: 'password must be 42 upper-case letters'
+ * throwIfFalse('password must be 42 upper-case letters', PASSWORD_REGEX_42.test(password)) //=> EXCEPTION: 'password must be 42 upper-case letters'
+ *
+ * throwIfFalse('password must be 4 upper-case letters', PASSWORD_REGEX_4.test(password))   //=> true
+ *
+ * throwIfFalse('foo', 42)                                                                  //=> 42
+ *
+ * throwIfFalse('foo', [])                                                                  //=> []
  *
  */
 const throwIfFalse = curry(

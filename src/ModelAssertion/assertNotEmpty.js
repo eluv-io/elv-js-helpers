@@ -20,7 +20,7 @@ const assertionErrMsg = require('./assertionErrMsg')
  * @returns {Array} 2-element array [Function, String]. See description for details.
  * @example
  *
- *  const isString = require('@eluvio/elv-js-helpers/Boolean/isString')
+ * const isString = require('@eluvio/elv-js-helpers/Boolean/isString')
  *
  * const StringModel = require('@eluvio/elv-js-helpers/Model/StringModel')
  *
@@ -34,11 +34,14 @@ const assertionErrMsg = require('./assertionErrMsg')
  *       isString,
  *       ...assertNotEmpty
  *     )
+ *   )
  *   .as('NonEmptyString')
  *
- * NonEmptyStringModel('')   //=> EXCEPTION: 'Value must not be empty (got: "")'
+ * NonEmptyStringModel('foo')  //=> 'foo' (proxied by ObjectModel)
  *
- * NonEmptyStringModel([])   //=> EXCEPTION: 'expecting String, got Array []'
+ * NonEmptyStringModel('')     //=> EXCEPTION: 'Value must not be empty (got: "")'
+ *
+ * NonEmptyStringModel([])     //=> EXCEPTION: 'expecting String, got Array []'
  *
  */
 const assertNotEmpty = [

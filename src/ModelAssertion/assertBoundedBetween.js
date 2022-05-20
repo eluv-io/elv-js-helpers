@@ -41,9 +41,25 @@ const passesModelCheck = require('../Boolean/passesModelCheck')
  * const assertBoundedBetween = require('@eluvio/elv-js-helpers/ModelAssertion/assertBoundedBetween')
  *
  * // Note use of spread operator (...) to unpack the array returned by assertBoundedBetween()
- * const CartonEggCountModel = IntegerModel.extend()
- *   .assert(...assertBoundedBetween(IntegerModel, 0, 12, true, true, compare)
+ * const CartonEggCountModel = IntegerModel
+ *   .extend()
+ *   .assert(
+ *     ...assertBoundedBetween(
+ *       IntegerModel,
+ *       0,
+ *       12,
+ *       true,
+ *       true,
+ *       compare
+ *     )
+ *   )
  *   .as('CartonEggCount')
+ *
+ * CartonEggCountModel(0)       \\=> 0 (proxied by ObjectModel)
+ * CartonEggCountModel(6)       \\=> 6 (proxied by ObjectModel)
+ * CartonEggCountModel(12)      \\=> 12 (proxied by ObjectModel)
+ * CartonEggCountModel(42)      \\=> EXCEPTION: 'Value must be >= 0 and <= 12 (got: 42)'
+ * CartonEggCountModel('foo')   \\=> EXCEPTION: 'expecting Number, got String "foo"'
  *
  */
 const assertBoundedBetween = (model, lowerBound, upperBound, lowerInclusive, upperInclusive, comparatorFn) =>

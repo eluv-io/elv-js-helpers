@@ -18,15 +18,15 @@ const defBoundedIntModel = require('../ModelFactory/defBoundedIntModel')
  * @returns {Number} The validated input, proxied by ObjectModel
  * @example
  *
- * const PositiveIntegerModel = require('@eluvio/elv-js-helpers/Model/PositiveIntegerModel')
+ * const PositiveIntModel = require('@eluvio/elv-js-helpers/Model/PositiveIntModel')
  *
- * PositiveIntegerModel(42)    //=> 42 // Proxied by ObjectModel
+ * PositiveIntModel(42)    //=> 42 // Proxied by ObjectModel
  *
- * PositiveIntegerModel(0)     //=> EXCEPTION: 'Value must be > 0 (got: 0)'
+ * PositiveIntModel(0)     //=> EXCEPTION: 'Value must be > 0 (got: 0)'
  *
- * PositiveIntegerModel(4.2)   //=> EXCEPTION: 'Value must be an integer (got: 4.2)'
+ * PositiveIntModel(4.2)   //=> EXCEPTION: 'Value must be an integer (got: 4.2)'
  *
- * PositiveIntegerModel('foo') //=> EXCEPTION: 'expecting Number, got String "foo"'
+ * PositiveIntModel('foo') //=> EXCEPTION: 'expecting Number, got String "foo"'
  *
  */
 const PositiveIntModel = defBoundedIntModel(

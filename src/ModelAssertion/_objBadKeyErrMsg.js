@@ -16,14 +16,15 @@ const _objBadKey = require('../Validation/objBadKey')
  *
  * const _objBadKeyErrMsg = require('@eluvio/elv-js-helpers/ModelAssertion/_objBadKeyErrMsg')
  *
+ * const NonBlankStrModel = require('@eluvio/elv-js-helpers/Model/NonBlankStrModel')
+ *
  * const defBasicModel = require('@eluvio/elv-js-helpers/ModelFactory/defBasicModel')
  *
- * const NoBlankKeysObjModel = defBasicModel(Object).extend()
+ * const NoBlankKeysObjModel = defBasicModel('NoBlankKeysObj', Object).extend()
  *   .assert(
  *     passesModelCheck(NonBlankStrModel),
  *     _objBadKeyErrMsg(NonBlankStrModel)
  *   )
- *   .as('NoBlankKeysObj')
  *
  * NoBlankKeysObjModel({'  ': 3}) //=>  EXCEPTION: 'invalid property name '  ' (is not a valid NonBlankString)'
  *
