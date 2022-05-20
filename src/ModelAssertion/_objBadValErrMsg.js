@@ -20,16 +20,17 @@ const validator = require('../Validation/validator')
  *
  * const _objBadValErrMsg = require('@eluvio/elv-js-helpers/ModelAssertion/_objBadValErrMsg')
  *
+ * const NonBlankStrModel = require('@eluvio/elv-js-helpers/Model/NonBlankStrModel')
+ *
  * const defBasicModel = require('@eluvio/elv-js-helpers/ModelFactory/defBasicModel')
  *
- * const NoBlankValuesObjModel = defBasicModel(Object).extend()
+ * const NoBlankValuesObjModel = defBasicModel('NoBlankValuesObj', Object).extend()
  *   .assert(
  *     passesModelCheck(NonBlankStrModel),
  *     _objBadValErrMsg(NonBlankStrModel)
  *   )
- *   .as('NoBlankValuesObj')
  *
- * NoBlankValuesObjModel({foo: '  '}) //=>  EXCEPTION: 'key 'foo' points to a value that is an invalid NonBlankString (NonBlankString: Value must not be a blank string (got:   ))'
+ * NoBlankValuesObjModel({foo: '  '}) //=>  EXCEPTION: 'key 'foo' points to a value that is an invalid NonBlankString (NonBlankString: Value must not be a blank string (got: "  "))'
  *
  */
 const _objBadValErrMsg = valueModel =>

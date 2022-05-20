@@ -12,7 +12,7 @@ describe('isGTCustom', () => {
     isLongerThan('a', 'ab').should.be.true
     isLongerThan('ab', 'a').should.be.false
     isLongerThan(42, 42).should.be.false
-    expect(() => isLongerThan(null, undefined)).to.throw('Cannot read properties of null (reading \'length\')')
+    expect(() => isLongerThan(null, undefined)).to.throw('Cannot read property \'length\' of null')
   })
 
   it('should work when called with 2 args', () => {

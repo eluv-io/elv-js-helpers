@@ -17,7 +17,7 @@
  *
  * kindOf(null)                     //=> 'null'
  *
- * kindOf(true)                     //=> 'Boolean'
+ * kindOf(true)                     //=> 'boolean'
  *
  * kindOf(new Buffer(''))           //=> 'buffer'
  *
@@ -30,8 +30,6 @@
  * kindOf({})                       //=> 'object'
  *
  * kindOf(Object.create(null))      //=> 'object'
- *
- * kindOf(new Test())               //=> 'object'
  *
  * kindOf(new Date())               //=> 'date'
  *

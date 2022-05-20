@@ -17,7 +17,16 @@ const throwError = require('../Misc/throwError')
  *
  * const throwIfTrue = require('@eluvio/elv-js-helpers/Validation/throwIfTrue')
  *
- * throwIfTrue('division by zero', x === 0) /=> EXCEPTION: "division by zero"
+ * const x = 0
+ * const y = 42
+ *
+ * throwIfTrue('division by zero', x === 0) //=> EXCEPTION: "division by zero"
+ *
+ * throwIfTrue('division by zero', y === 0) //=> false
+ *
+ * throwIfTrue('foo', null)                 //=> null
+ *
+ * throwIfTrue('foo', 0)                    //=> 0
  *
  */
 const throwIfTrue = curry(

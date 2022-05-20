@@ -38,9 +38,9 @@ const _satisfiesObjValCheck = require('../Boolean/passesObjValCheck')
  * const defBasicModel = require('@eluvio/elv-js-helpers/ModelFactory/defBasicModel')
  *
  * // Note use of spread operator (...) to unpack the array returned by assertObjValuesValid()
- * const NoBlankStringValsObjModel = BasicModel(Object).extend()
+ * const NoBlankStringValsObjModel = defBasicModel('NoBlankStringValsObj', Object)
+ *   .extend()
  *   .assert(...assertObjValuesValid(NonBlankStrModel))
- *   .as('NoBlankStringValsObj')
  *
  * NoBlankStringValsObjModel({foo: '  '}) //=>  EXCEPTION: 'key 'foo' points to a value that is an invalid NonBlankString (NonBlankString: Value must not be a blank string (got:   ))'
  *

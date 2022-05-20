@@ -33,9 +33,9 @@ const _satisfiesObjKeyCheck = require('../Boolean/passesObjKeyCheck')
  * const defBasicModel = require('@eluvio/elv-js-helpers/ModelFactory/defBasicModel')
  *
  * // Note use of spread operator (...) to unpack the array returned by assertObjKeysValid()
- * const NoBlankKeysObjModel = defBasicModel(Object).extend()
+ * const NoBlankKeysObjModel = defBasicModel('NoBlankKeysObj', Object)
+ *   .extend()
  *   .assert(...assertObjKeysValid(NonBlankStrModel))
- *   .as('NoBlankKeysObj')
  *
  * NoBlankKeysObjModel({'  ': 3}) //=>  EXCEPTION: 'invalid property name '  ' (is not a valid NonBlankString)'
  *

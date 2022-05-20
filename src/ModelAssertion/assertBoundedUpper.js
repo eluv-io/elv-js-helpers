@@ -39,9 +39,21 @@ const passesModelCheck = require('../Boolean/passesModelCheck')
  * const assertBoundedUpper = require('@eluvio/elv-js-helpers/ModelAssertion/assertBoundedUpper')
  *
  * // Note use of spread operator (...) to unpack the array returned by assertBoundedUpper()
- * const NegativeIntegerModel = IntegerModel.extend()
- *   .assert(...assertBoundedUpper(IntegerModel, 0, false, compare)
+ * const NegativeIntegerModel = IntegerModel
+ *   .extend()
+ *   .assert(
+ *     ...assertBoundedUpper(
+ *       IntegerModel,
+ *       0,
+ *       false,
+ *       compare
+ *     )
+ *   )
  *   .as('NegativeInteger')
+ *
+ *  NegativeIntegerModel(-1)      \\=> -1 (proxied by objectModel)
+ *  NegativeIntegerModel(0)       \\=> EXCEPTION: 'Value must be < 0 (got: 0)'
+ *  NegativeIntegerModel('foo')   \\=> EXCEPTION: 'expecting Number, got String "foo"'
  *
  */
 const assertBoundedUpper = (model, upperBound, inclusive, comparatorFn) =>
