@@ -40,11 +40,13 @@ const Conversion = {
 }
 
 const Datetime = {
+  REGEX_UTC_TIMESTAMP: require('./Datetime/REGEX_UTC_TIMESTAMP'),
   addSeconds: require('./Datetime/addSeconds'),
   estRemainingDur: require('./Datetime/estRemainingDur'),
   estTotalDur: require('./Datetime/estTotalDur'),
   etaDurStr: require('./Datetime/etaDurStr'),
   etaTimeStr: require('./Datetime/etaTimeStr'),
+  parseUTCStr: require('./Datetime/parseUTCStr'),
   sysLocale: require('./Datetime/sysLocale'),
   sysTimezone: require('./Datetime/sysTimezone'),
   toLocaleString: require('./Datetime/toLocaleString'),
@@ -128,6 +130,7 @@ const ModelFactory = {
 }
 
 const Validation = {
+  REGEX_RATIONAL: require('./Validation/REGEX_RATIONAL'),
   _throwIfErrNotArray: require('./Validation/_throwIfErrNotArray'),
   _throwIfNotErr: require('./Validation/_throwIfNotErr'),
   _throwIfNotResult: require('./Validation/_throwIfNotResult'),

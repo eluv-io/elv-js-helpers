@@ -1,12 +1,14 @@
 const defRegexMatchedStrModel = require('../ModelFactory/defRegexMatchedStrModel')
 
-const _REGEX_FRACTION = /^-?[0-9]+(\/[0-9]*[1-9][0-9]*)?$/
+const REGEX_RATIONAL = require('../Validation/REGEX_RATIONAL')
 
 /**
  * An [ObjectModel](http://objectmodel.js.org/) which validates that an input is:
  *
  *  * A [Javascript String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
  *  * Is in the form 'x/y', '-x/y', 'x', or '-x' where x and y are integers and y != 0
+ *
+ * Leading zeroes are allowed, e.g. '001/002'
  *
  * If input passes validations, will return the input (proxied by ObjectModel)
  *
@@ -40,7 +42,7 @@ const _REGEX_FRACTION = /^-?[0-9]+(\/[0-9]*[1-9][0-9]*)?$/
  */
 const FractionStrModel = defRegexMatchedStrModel(
   'FractionString',
-  _REGEX_FRACTION,
+  REGEX_RATIONAL,
   'must be a string in the form of a whole number or a fraction'
 )
 

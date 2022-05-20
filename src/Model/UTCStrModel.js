@@ -2,7 +2,7 @@ const assertValidUTCStr = require('../ModelAssertion/assertValidUTCStr')
 
 const defRegexMatchedStrModel = require('../ModelFactory/defRegexMatchedStrModel')
 
-const _REGEX_UTC_TIMESTAMP = /^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$/
+const REGEX_UTC_TIMESTAMP = require('../Datetime/REGEX_UTC_TIMESTAMP')
 
 /**
  * An [ObjectModel](http://objectmodel.js.org/) which validates that an input is:
@@ -36,7 +36,7 @@ const _REGEX_UTC_TIMESTAMP = /^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9
 const UTCStrModel =
   defRegexMatchedStrModel(
     'UTCTimestampRegexMatchStr', // intermediate name for the Model that only checks regex
-    _REGEX_UTC_TIMESTAMP,
+    REGEX_UTC_TIMESTAMP,
     'is not in UTC format \'yyyy-mm-ddThh:mm:ssZ\''
   )
     .extend()
