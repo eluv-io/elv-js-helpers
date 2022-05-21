@@ -24,7 +24,7 @@ const assertAfterCheck = require('../ModelAssertion/assertAfterCheck')
  *
  * const NonBlankStrModel = require('@eluvio/elv-js-helpers/Model/NonBlankStrModel')
  *
- * NonBlankStrModel('foo') //=> 'foo' // Proxied by ObjectModel
+ * NonBlankStrModel('foo') //=> 'foo' (proxied by ObjectModel)
  *
  * NonBlankStrModel('  ')  //=> EXCEPTION: 'Value must not be a blank string (got:    )'
  *

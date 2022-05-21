@@ -28,7 +28,7 @@ const defObjModel = require('./defObjModel')
  *
  * PersonNameModel(-1)                                        //=> EXCEPTION: 'expecting Object, got Number -1'
  *
- * PersonNameModel({first: 'Arthur', last: 'Dent'})           //=> {"first":"Arthur","last":"Dent"} // proxied by ObjectModel
+ * PersonNameModel({first: 'Arthur', last: 'Dent'})           //=> {"first":"Arthur","last":"Dent"} (proxied by ObjectModel)
  *
  * PersonNameModel({first: 'Arthur'})                         //=> EXCEPTION: 'expecting last to be String, got undefined'
  *

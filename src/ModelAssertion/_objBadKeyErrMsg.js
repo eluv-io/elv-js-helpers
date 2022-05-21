@@ -26,11 +26,11 @@ const _objBadKey = require('../Validation/objBadKey')
  *     _objBadKeyErrMsg(NonBlankStrModel)
  *   )
  *
- * NoBlankKeysObjModel({'  ': 3}) //=>  EXCEPTION: 'invalid property name '  ' (is not a valid NonBlankString)'
+ * NoBlankKeysObjModel({'  ': 3}) //=>  EXCEPTION: 'invalid property name "  " (is not a valid NonBlankString)'
  *
  */
 const _objBadKeyErrMsg = keyModel =>
   // eslint-disable-next-line no-unused-vars
-  (result, value) => `invalid property name '${_objBadKey(keyModel, value)}' (is not a valid ${keyModel.name})`
+  (result, value) => `invalid property name "${_objBadKey(keyModel, value)}" (is not a valid ${keyModel.name})`
 
 module.exports = _objBadKeyErrMsg

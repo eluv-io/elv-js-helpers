@@ -34,6 +34,12 @@ const NonBlankStrModel = require('../Model/NonBlankStrModel')
  *   .assert(...assertValidUTCStr())
  *   .as('UTCDateTimeString')
  *
+ * UTCDateTimeStringModel('2022-05-03T00:26:07Z')    //=> '2022-05-03T00:26:07Z' (proxied by ObjectModel)
+ *
+ * UTCDateTimeStringModel('2022-99-03T00:26:07Z')    //=> EXCEPTION: 'Value is not a valid UTC datetime string (got: "2022-99-03T00:26:07Z")'
+ *
+ * UTCDateTimeStringModel('foo')    //=> EXCEPTION: 'Value is not a valid UTC datetime string (got: "foo")'
+ *
  */
 const assertValidUTCStr = () =>
   assertAfterCheck(

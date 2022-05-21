@@ -21,7 +21,7 @@ describe('assertObjKeysValid', () => {
 
     equals(NoBlankKeysObjModel({foo: 3}), {foo:3}).should.be.true
 
-    expect(()=>NoBlankKeysObjModel({'  ': 3})).to.throw('invalid property name \'  \' (is not a valid NonBlankString)')
+    expect(()=>NoBlankKeysObjModel({'  ': 3})).to.throw('invalid property name "  " (is not a valid NonBlankString)')
 
     const AnyKeyModel = defBasicModel('AnyKey', Object)
       .extend()

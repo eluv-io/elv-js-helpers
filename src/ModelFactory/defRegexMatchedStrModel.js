@@ -21,20 +21,20 @@ const assertMatchesRegex = require('../ModelAssertion/assertMatchesRegex')
  *
  * const UUIDStringModel = defRegexMatchedStrModel('UUIDString', /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/)
  *
- * UUIDStringModel('12345678-90ab-cdef-0123-4567890abcde')  //=> '12345678-90ab-cdef-0123-4567890abcde' // Proxied by ObjectModel
+ * UUIDStringModel('12345678-90ab-cdef-0123-4567890abcde')  //=> '12345678-90ab-cdef-0123-4567890abcde' (proxied by ObjectModel)
  *
- * UUIDStringModel('foo')                                   //=> EXCEPTION: 'Value is not in valid format or contains illegal characters (must match regular expression: /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/) (got: foo)'
+ * UUIDStringModel('foo')                                   //=> EXCEPTION: 'Value is not in valid format or contains illegal characters (must match regular expression: /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/) (got: "foo")'
  *
- * UUIDStringModel(42)                                      //=> EXCEPTION: 'Expecting String, got Number 42'
+ * UUIDStringModel(42)                                      //=> EXCEPTION: 'expecting String, got Number 42'
  *
  * // supply a nicer error message
  * const UUIDStringModel2 = defRegexMatchedStrModel(
  *    'UUIDString',
  *    /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/,
- *    'is not in UUID format \'xxxxxxxx-xxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\''
+ *    'is not in UUID format "xxxxxxxx-xxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"'
  *  )
  *
- * UUIDStringModel2('foo')  //=> EXCEPTION: 'Value is not in UUID format 'xxxxxxxx-xxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' (got: foo)'
+ * UUIDStringModel2('foo')  //=> EXCEPTION: 'Value is not in UUID format "xxxxxxxx-xxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" (got: "foo")'
  */
 const defRegexMatchedStrModel = (name, regex, errMsg) =>
   StringModel

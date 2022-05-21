@@ -20,7 +20,7 @@ const defBoundedIntModel = require('../ModelFactory/defBoundedIntModel')
  *
  * const PositiveIntModel = require('@eluvio/elv-js-helpers/Model/PositiveIntModel')
  *
- * PositiveIntModel(42)    //=> 42 // Proxied by ObjectModel
+ * PositiveIntModel(42)    //=> 42 (proxied by ObjectModel)
  *
  * PositiveIntModel(0)     //=> EXCEPTION: 'Value must be > 0 (got: 0)'
  *

@@ -8,7 +8,7 @@ const passesObjKeyCheck = require('../../../../src/Boolean/passesObjKeyCheck')
 const NonBlankStrModel = require('../../../../src/Model/NonBlankStrModel')
 
 describe('passesObjKeyCheck', () => {
-  it('should ', () => {
+  it('should work as expected', () => {
     passesObjKeyCheck(NonBlankStrModel, {' ': 42}).should.be.false
     passesObjKeyCheck(NonBlankStrModel, {'foo': 42}).should.be.true
     passesObjKeyCheck(NonBlankStrModel, 3).should.be.true // test input not an object, check skipped

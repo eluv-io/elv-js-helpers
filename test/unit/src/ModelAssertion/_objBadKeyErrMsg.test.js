@@ -19,6 +19,6 @@ describe('_objBadKeyErrMsg', () => {
         passesModelCheck(NonBlankStrModel),
         _objBadKeyErrMsg(NonBlankStrModel)
       )
-    expect(() => NoBlankKeysObjModel({'  ': 3})).to.throw('invalid property name \'  \' (is not a valid NonBlankString)')
+    expect(() => NoBlankKeysObjModel({'  ': 3})).to.throw('invalid property name "  " (is not a valid NonBlankString)')
   })
 })

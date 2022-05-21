@@ -2,7 +2,7 @@ const invoker = require('ramda/src/invoker')
 
 /**
  * Takes two inputs (for `locales` and `options` and returns a function that will accept a
- * [Javascrpt Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+ * [Javascript Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
  * object and return a string obtained by invoking its `toLocaleString()` method with the
  * specified `locales` and `options` arguments.
  *

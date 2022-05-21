@@ -7,7 +7,7 @@ const expect = chai.expect
 const NumZeroToOneXModel = require('../../../../src/Model/NumZeroToOneXModel')
 
 describe('NumZeroToOneXModel', () => {
-  it('should ', () => {
+  it('should work as expected', () => {
     NumZeroToOneXModel(0).should.equal(0)
     NumZeroToOneXModel(0.5).should.equal(0.5)
     expect(() => NumZeroToOneXModel(1)).to.throw('Value must be >= 0 and < 1 (got: 1)')

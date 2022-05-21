@@ -1,5 +1,3 @@
-// '2022-05-03T00:26:07Z'
-
 const chai = require('chai')
 chai.should()
 const expect = chai.expect

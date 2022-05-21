@@ -33,12 +33,27 @@ describe('defCheckedKVObjModel', () => {
   })
 
   it('should throw an exception for bad objects', () => {
-    expect(() => Test1Model({'foo': -1})).to.throw('key \'foo\' points to a value that is an invalid PositiveInteger (PositiveInteger: Value must be > 0 (got: -1))')
-    expect(() => Test1Model({'foobar': 1})).to.throw('invalid property name \'foobar\' (is not a valid ThreeCharString)')
+    expect(() => Test1Model({'foo': -1})).to.throw('key "foo" points to a value that is an invalid PositiveInteger (PositiveInteger: Value must be > 0 (got: -1))')
+    expect(() => Test1Model({'foobar': 1})).to.throw('invalid property name "foobar" (is not a valid ThreeCharString)')
   })
 
   it('should throw an exception for non-objects', () => {
     expect(() => Test1Model(Infinity)).to.throw('expecting Object, got Number Infinity')
   })
 
+  it('should have a JSDoc example that works', () => {
+    const NonBlankStrModel = require('../../../../src/Model/NonBlankStrModel')
+
+    const NoBlankStrKVObjectModel = defCheckedKVObjModel(
+      'ObjectWithNonBlankStringKeysAndValues',
+      NonBlankStrModel,
+      NonBlankStrModel
+    )
+
+    equals(NoBlankStrKVObjectModel({foo: 'bar'}), {foo: 'bar'}).should.be.true
+    expect(() => NoBlankStrKVObjectModel({foo: '   '})).to.throw('key "foo" points to a value that is an invalid NonBlankString (NonBlankString: Value must not be a blank string (got: "   "))')
+    expect(() => NoBlankStrKVObjectModel({'  ': 'bar'})).to.throw('invalid property name "  " (is not a valid NonBlankString)')
+    expect(() => NoBlankStrKVObjectModel({foo: 42})).to.throw('key "foo" points to a value that is an invalid NonBlankString (NonBlankString: expecting String, got Number 42)')
+    expect(() => NoBlankStrKVObjectModel(42)).to.throw('expecting Object, got Number 42')
+  })
 })

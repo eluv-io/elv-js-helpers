@@ -19,6 +19,6 @@ describe('_objBadValErrMsg', () => {
         passesModelCheck(NonBlankStrModel),
         _objBadValErrMsg(NonBlankStrModel)
       )
-    expect(() => NoBlankValuesObjModel({foo: '  '})).to.throw( 'key \'foo\' points to a value that is an invalid NonBlankString (NonBlankString: Value must not be a blank string (got: "  "))')
+    expect(() => NoBlankValuesObjModel({foo: '  '})).to.throw( 'key "foo" points to a value that is an invalid NonBlankString (NonBlankString: Value must not be a blank string (got: "  "))')
   })
 })

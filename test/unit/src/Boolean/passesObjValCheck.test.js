@@ -8,7 +8,7 @@ const passesObjValCheck = require('../../../../src/Boolean/passesObjValCheck')
 const NonBlankStrModel = require('../../../../src/Model/NonBlankStrModel')
 
 describe('passesObjValCheck', () => {
-  it('should ', () => {
+  it('should work as expected', () => {
     passesObjValCheck(NonBlankStrModel, {foo: ' '}).should.be.false
     passesObjValCheck(NonBlankStrModel, {foo: 'bar'}).should.be.true
     passesObjValCheck(NonBlankStrModel, {foo: 42}).should.be.false

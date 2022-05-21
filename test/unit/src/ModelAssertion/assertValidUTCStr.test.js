@@ -1,11 +1,25 @@
 const chai = require('chai')
 chai.should()
+const expect = chai.expect
 
 const assertValidUTCStr = require('../../../../src/ModelAssertion/assertValidUTCStr')
+
+const StringModel = require('../../../../src/Model/StringModel')
 
 describe('assertValidUTCStr', () => {
 
   const [assertFn, assertErrMsgFn] = assertValidUTCStr()
+
+  it('should work when used in an ObjectModel definition', () => {
+    const UTCDateTimeStringModel = StringModel.extend()
+      .assert(...assertValidUTCStr())
+      .as('UTCDateTimeString')
+
+    UTCDateTimeStringModel('2022-05-03T00:26:07Z').should.equal('2022-05-03T00:26:07Z')
+    expect(()=> UTCDateTimeStringModel('2022-99-03T00:26:07Z')).to.throw('Value is not a valid UTC datetime string (got: "2022-99-03T00:26:07Z")')
+    expect(()=> UTCDateTimeStringModel('foo')).to.throw('Value is not a valid UTC datetime string (got: "foo")')
+
+  })
 
   it('should generate an assertion that returns true for good values', () => {
     assertFn('2022-05-03T00:26:07Z').should.be.true

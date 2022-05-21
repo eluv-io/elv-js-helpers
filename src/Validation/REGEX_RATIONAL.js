@@ -31,18 +31,19 @@
  *
  * REGEX_RATIONAL.test('9 1/2')                          //=> false
  *
- * REGEX_RATIONAL.test('19/2')                           //=> false
+ * REGEX_RATIONAL.test('19/2')                           //=> true
  *
  * REGEX_RATIONAL.test('007')                            //=> true
  *
  * const fracString = '22/7'
- * const match = utcString.match(_REGEX_RATIONAL)
+ * const match = fracString.match(REGEX_RATIONAL)
  * if (!match) throw Error('Rational number string not in proper format')
  *
  * const numerator = parseInt(match[1], 10)              //=> 22
  * const slashDenominator = match[2]                     //=> '/7'
  * const denominator = parseInt(match[2].slice(1), 10)   //=> 7
  *
- */const REGEX_RATIONAL = /^(-?[0-9]+)(\/[0-9]*[1-9][0-9]*)?$/
+ */
+const REGEX_RATIONAL = /^(-?[0-9]+)(\/[0-9]*[1-9][0-9]*)?$/
 
 module.exports = REGEX_RATIONAL

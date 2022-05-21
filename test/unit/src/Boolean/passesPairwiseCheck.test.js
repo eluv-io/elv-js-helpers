@@ -10,7 +10,7 @@ describe('passesPairwiseCheck', () => {
 
   passesPairwiseCheck(xGTEy, 5)
 
-  it('should ', () => {
+  it('should work as expected', () => {
     passesPairwiseCheck(xGTEy, [1, 2, 2, 3]).should.be.true
     passesPairwiseCheck(xGTEy, [1]).should.be.true
     passesPairwiseCheck(xGTEy, [3, 2, 2, 1]).should.be.false
