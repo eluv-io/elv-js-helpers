@@ -11,7 +11,7 @@ const {ObjectModel} = require('objectmodel')
  *  * A [Javascript Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
  *  * Satisfies the specified field definitions
  *
- *  Extra fields are allowed.
+ *  Extra (i.e. unrecognized) fields are discarded.
  *
  * @function
  * @category ModelFactory
@@ -27,11 +27,11 @@ const {ObjectModel} = require('objectmodel')
  *
  * PersonNameModel(-1)                                        //=> EXCEPTION: 'expecting Object, got Number -1'
  *
- * PersonNameModel({first: 'Arthur', last: 'Dent'})           //=> {"first":"Arthur","last":"Dent"} // proxied by ObjectModel
+ * PersonNameModel({first: 'Arthur', last: 'Dent'})           //=> {"first":"Arthur","last":"Dent"} (proxied by ObjectModel)
  *
  * PersonNameModel({first: 'Arthur'})                         //=> EXCEPTION: 'expecting last to be String, got undefined'
  *
- * PersonNameModel({first: 'A', last: 'D', species: 'human'}) //=> {first: 'A', last: 'D', species: 'human'} // proxied by ObjectModel
+ * PersonNameModel({first: 'A', last: 'D', species: 'human'}) //=> {first: 'A', last: 'D'} (proxied by ObjectModel - 'species' property discarded)
  *
  */
 const defObjModel = (name, def)=> ObjectModel(def).as(name)

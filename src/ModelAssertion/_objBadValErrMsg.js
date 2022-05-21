@@ -30,13 +30,13 @@ const validator = require('../Validation/validator')
  *     _objBadValErrMsg(NonBlankStrModel)
  *   )
  *
- * NoBlankValuesObjModel({foo: '  '}) //=>  EXCEPTION: 'key 'foo' points to a value that is an invalid NonBlankString (NonBlankString: Value must not be a blank string (got: "  "))'
+ * NoBlankValuesObjModel({foo: '  '}) //=>  EXCEPTION: 'key "foo" points to a value that is an invalid NonBlankString (NonBlankString: Value must not be a blank string (got: "  "))'
  *
  */
 const _objBadValErrMsg = valueModel =>
   (result, value) => { // Note: objectmodel.js err msg call actually passes 3 args (result, value, name)
     const [k, v] = _objBadVal(valueModel, value)
-    return `key '${k}' points to a value that is an invalid ${valueModel.name} (${
+    return `key "${k}" points to a value that is an invalid ${valueModel.name} (${
       validator(valueModel)(v).either(join('\n'), identity)
     })`
   }

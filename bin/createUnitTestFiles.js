@@ -44,7 +44,7 @@ const ${jsFile} = require('${requirePath}')
 
 describe('${jsFile}', () => {
 
-  it('should ', () => {
+  it('should work as expected', () => {
   
   })
 

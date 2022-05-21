@@ -18,7 +18,9 @@ const _throwIfFalse = require('../Validation/throwIfFalse')
  *  * Less than a specified upper bound (if specified) or equal to the upper bound (if upper inclusivity is specified)
  *
  * Note that it is possible to specify no bounds at all, in which case the returned Model will only check that input is
- * a number.
+ * a string representing a whole number or fraction.
+ *
+ * Also note that bounds must be **strings**, e.g. `'0'`, `'22/7'`, `'-42'`.
  *
  * @function
  * @category ModelFactory
@@ -31,9 +33,53 @@ const _throwIfFalse = require('../Validation/throwIfFalse')
  * @returns {Model}
  * @example
  *
- * // TODO - supply example
  * const defBoundedFracStrModel = require('@eluvio/elv-js-helpers/ModelFactory/defBoundedFracStrModel')
  *
+ * const PositiveFracModel = defBoundedFracStrModel(
+ *   'PositiveFraction',
+ *   '0',
+ *   null,
+ *   false,
+ *   null
+ * )
+ *
+ * PositiveFracModel('42')       //=> '42'
+ *
+ * PositiveFracModel('22/7')     //=> '22/7'
+ *
+ * PositiveFracModel('0')        //=> EXCEPTION: 'Value must be > 0 (got: "0")'
+ *
+ * PositiveFracModel('-42')      //=> EXCEPTION: 'Value must be > 0 (got: "-42")'
+ *
+ * PositiveFracModel('foo')      //=> EXCEPTION: 'Value must be a string in the form of a whole number or a fraction (got: "foo")'
+ *
+ * PositiveFracModel(42)         //=> EXCEPTION: 'expecting String, got Number 42'
+ *
+ * const NegativeFracModel = defBoundedFracStrModel(
+ *   'NegativeFraction',
+ *   null,
+ *   '0',
+ *   null,
+ *   false
+ * )
+ *
+ * NegativeFracModel('42')       //=> EXCEPTION: 'Value must be < 0 (got: "42")'
+ *
+ * NegativeFracModel('0')        //=> EXCEPTION: 'Value must be < 0 (got: "0")'
+ *
+ * NegativeFracModel('-22/7')    //=> '-22/7'
+ *
+ * NegativeFracModel('-42')      //=> '-42'
+ *
+ * const FracZeroToOneModel = defBoundedFracStrModel(
+ *   'FractionZeroToOne',
+ *   '0',
+ *   '1',
+ *   true,
+ *   true
+ * )
+ *
+ * FracZeroToOneModel('1/2')     //=> '1/2'
  *
  */
 const defBoundedFracStrModel = (name, lowerBound, upperBound, lowerInclusive, upperInclusive) => {

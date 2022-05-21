@@ -42,7 +42,7 @@ const _satisfiesObjValCheck = require('../Boolean/passesObjValCheck')
  *   .extend()
  *   .assert(...assertObjValuesValid(NonBlankStrModel))
  *
- * NoBlankStringValsObjModel({foo: '  '}) //=>  EXCEPTION: 'key 'foo' points to a value that is an invalid NonBlankString (NonBlankString: Value must not be a blank string (got:   ))'
+ * NoBlankStringValsObjModel({foo: '  '}) //=>  EXCEPTION: 'key "foo" points to a value that is an invalid NonBlankString (NonBlankString: Value must not be a blank string (got:   ))'
  *
  */
 const assertObjValuesValid = valueModel =>

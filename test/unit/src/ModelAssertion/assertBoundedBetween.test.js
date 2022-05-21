@@ -12,7 +12,7 @@ const IntegerModel = require('../../../../src/Model/IntegerModel')
 
 describe('assertBoundedBetween', () => {
 
-  it('should ', () => {
+  it('should work as expected', () => {
     const CartonEggCountModel = IntegerModel
       .extend()
       .assert(

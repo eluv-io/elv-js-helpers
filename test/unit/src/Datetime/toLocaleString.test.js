@@ -50,25 +50,3 @@ describe('toLocaleString', () => {
     ).should.equal('3/1/22, 9:00 AM')
   })
 })
-
-/**
- * @example
- *
- * const toLocaleString = require('@eluvio/elv-js-helpers/Datetime/toLocaleString')
- * const utcStrToDate = require('@eluvio/elv-js-helpers/Datetime/utcStrToDate')
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- * // function is curried, it is possible to pass all arguments at once to define/invoke in one step
- *
- *
- *
- */

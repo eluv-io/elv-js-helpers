@@ -18,6 +18,11 @@ const {BasicModel} = require('objectmodel')
  *
  * const defBasicModel = require('@eluvio/elv-js-helpers/ModelFactory/defBasicModel')
  *
+ * const StringModel = defBasicModel('String', String)
+ *
+ * StringModel(42)      //=> EXCEPTION: 'expecting String, got Number 42'
+ * StringModel('foo')   //=> 'foo' (proxied by ObjectModel)
+ *
  */
 const defBasicModel = (name, def)=> BasicModel(def).as(name)
 
