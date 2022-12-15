@@ -1,8 +1,7 @@
-const compose = require('@eluvio/ramda-fork/src/compose')
-const isEmpty = require('@eluvio/ramda-fork/src/isEmpty')
-const not = require('@eluvio/ramda-fork/src/not')
-
 const assertionErrMsg = require('./assertionErrMsg')
+
+const isEmpty = require('../Boolean/isEmpty')
+const negate = require('../Functional/negate')
 
 /**
  * Returns a 2-element array for use in an [ObjectModel assertion](http://objectmodel.js.org/#doc-assertions)
@@ -45,7 +44,7 @@ const assertionErrMsg = require('./assertionErrMsg')
  *
  */
 const assertNotEmpty = [
-  compose(not, isEmpty),
+  negate(isEmpty),
   assertionErrMsg('must not be empty')
 ]
 

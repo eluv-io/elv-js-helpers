@@ -1,5 +1,5 @@
-const isNil = require('@eluvio/ramda-fork/src/isNil')
-const T = require('@eluvio/ramda-fork/src/T')
+const isNil = require('ramda/src/isNil')
+const T = require('../Functional/T')
 
 const _objBadValErrMsg = require('./_objBadValErrMsg')
 
@@ -22,7 +22,7 @@ const _satisfiesObjValCheck = require('../Boolean/passesObjValCheck')
  * of this is to prevent redundant errors, e.g. input is not an Object, property name 'foo' points to a value that is invalid
  *
  * The second element is a function to be [called](https://github.com/sylvainpolletvillard/ObjectModel/blob/9e890fc5ed5ad98e477a2144f1a925d740687ee3/src/object-model.js#L164)
- * by [ObjectModel](http://objectmodel.js.org/) to construct an error message if the bounds Validation fails.
+ * by [ObjectModel](http://objectmodel.js.org/) to construct an error message if the bounds validation fails.
  *
  * @function
  * @category ModelAssertion

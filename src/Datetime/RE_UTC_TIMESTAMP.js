@@ -10,15 +10,15 @@
  * @category Constant
  * @example
  *
- * const REGEX_UTC_TIMESTAMP = require('@eluvio/elv-js-helpers/Datetime/REGEX_UTC_TIMESTAMP')
+ * const RE_UTC_TIMESTAMP = require('@eluvio/elv-js-helpers/Datetime/RE_UTC_TIMESTAMP')
  *
- * REGEX_UTC_TIMESTAMP.test('2022-01-02T03:45:00Z')  //=> true
+ * RE_UTC_TIMESTAMP.test('2022-01-02T03:45:00Z')  //=> true
  *
- * REGEX_UTC_TIMESTAMP.test('foo')                   //=> false
+ * RE_UTC_TIMESTAMP.test('foo')                   //=> false
  *
  * const utcString = '2022-01-02T03:45:00Z'
  *
- * const match = utcString.match(REGEX_UTC_TIMESTAMP)
+ * const match = utcString.match(RE_UTC_TIMESTAMP)
  * if (!match) throw Error('UTC timestamp not in proper format')
  *
  * const year = parseInt(match[1], 10)               //=> 2022
@@ -29,6 +29,6 @@
  * const second = parseInt(match[6], 10)             //=> 0
  *
  */
-const REGEX_UTC_TIMESTAMP = /^([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{2}):([0-9]{2}):([0-9]{2})Z$/
+const RE_UTC_TIMESTAMP = /^([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{2}):([0-9]{2}):([0-9]{2})Z$/
 
-module.exports = REGEX_UTC_TIMESTAMP
+module.exports = RE_UTC_TIMESTAMP

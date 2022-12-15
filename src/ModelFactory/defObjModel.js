@@ -2,6 +2,8 @@
 
 const {ObjectModel} = require('objectmodel')
 
+const assocComputed = require('../Functional/assocComputed')
+
 /**
  * Passthrough for `ObjectModel()` function from [ObjectModel](http://objectmodel.js.org/)
  * _(Copyright © 2015 Sylvain Pollet-Villard, MIT license)_ with name assignment added
@@ -11,7 +13,7 @@ const {ObjectModel} = require('objectmodel')
  *  * A [Javascript Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
  *  * Satisfies the specified field definitions
  *
- *  Extra (i.e. unrecognized) fields are discarded.
+ *  Extra (i.e. unrecognized) fields are allowed. Use `defSealedObjModel()` instead if you wish to disallow.
  *
  * @function
  * @category ModelFactory
@@ -31,9 +33,23 @@ const {ObjectModel} = require('objectmodel')
  *
  * PersonNameModel({first: 'Arthur'})                         //=> EXCEPTION: 'expecting last to be String, got undefined'
  *
- * PersonNameModel({first: 'A', last: 'D', species: 'human'}) //=> {first: 'A', last: 'D'} (proxied by ObjectModel - 'species' property discarded)
+ * PersonNameModel({first: 'A', last: 'D', species: 'human'}) //=> {first: 'A', last: 'D', species: 'human'} (proxied by ObjectModel)
  *
  */
-const defObjModel = (name, def)=> ObjectModel(def).as(name)
+const defObjModel = (name, def) => {
+  const newModel = ObjectModel(def).as(name)
+  newModel.errorCollector = errors => {
+    ObjectModel.prototype.errorCollector(
+      errors.map(
+        assocComputed(
+          'message',
+          e => e.message.replace(/^expecting {[^$}]+^}/gm, 'expecting Object')
+        )
+      )
+    )
+  }
+
+  return newModel
+}
 
 module.exports = defObjModel

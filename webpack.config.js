@@ -1,6 +1,11 @@
 const path = require('path')
 const webpack = require('webpack')
 
+const PACKAGE_JSON = require('./package.json')
+const removeDashAndCapitalize = text => text.replace(/-/, '').toUpperCase()
+const kebabCaseToPascalCase = text => text.replace(/(^\w|-\w)/g, removeDashAndCapitalize)
+const packageBasename = PACKAGE_JSON.name.split('/').slice(-1)[0]
+
 module.exports = function (env) {
   const config = {
     mode: 'production',
@@ -9,10 +14,10 @@ module.exports = function (env) {
       usedExports: true,
     },
     output: {
-      filename: 'elv-js-helpers.js',
+      filename: packageBasename + '.js',
       path: path.resolve(__dirname, 'build', 'dist'),
       library: {
-        name: 'ElvJsHelpers',
+        name: kebabCaseToPascalCase(packageBasename),
         type: 'var',
       }
     },

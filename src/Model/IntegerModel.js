@@ -11,7 +11,7 @@ const assertAfterCheck = require('../ModelAssertion/assertAfterCheck')
  * * A [Javascript Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
  * * An integer
  *
- * If input passes Validation, will return the input (proxied by ObjectModel)
+ * If input passes validation, will return the input (proxied by ObjectModel)
  *
  * Throws an exception if passed in an invalid value.
  *

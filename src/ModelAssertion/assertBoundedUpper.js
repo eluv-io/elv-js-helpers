@@ -1,7 +1,7 @@
 const _boundDescUpper = require('./_boundUpperErrMsg')
 const assertAfterCheck = require('./assertAfterCheck')
 
-const _satisfiesUpperBound = require('../Boolean/satisfiesUpperBound')
+const satisfiesUpperBound = require('../Boolean/satisfiesUpperBound')
 const passesModelCheck = require('../Boolean/passesModelCheck')
 
 /**
@@ -16,7 +16,7 @@ const passesModelCheck = require('../Boolean/passesModelCheck')
  * of this is to prevent redundant errors, e.g. 'foo' is not a Number, 'foo' must be < 42.
  *
  * The second element is a function to be [called](https://github.com/sylvainpolletvillard/ObjectModel/blob/9e890fc5ed5ad98e477a2144f1a925d740687ee3/src/object-model.js#L164)
- * by [ObjectModel](http://objectmodel.js.org/) to construct an error message if the bounds Validation fails.
+ * by [ObjectModel](http://objectmodel.js.org/) to construct an error message if the bounds validation fails.
  *
  * @function
  * @category ModelAssertion
@@ -59,7 +59,7 @@ const passesModelCheck = require('../Boolean/passesModelCheck')
 const assertBoundedUpper = (model, upperBound, inclusive, comparatorFn) =>
   assertAfterCheck(
     passesModelCheck(model),
-    _satisfiesUpperBound(upperBound, inclusive, comparatorFn),
+    satisfiesUpperBound(upperBound, inclusive, comparatorFn),
     _boundDescUpper(upperBound, inclusive)
   )
 

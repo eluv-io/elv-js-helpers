@@ -2,6 +2,8 @@ const Result = require('crocks/Result')
 
 const wrapNonArray = require('../Conversion/wrapNonArray')
 
+const throwIfTrue = require('../Validation/throwIfTrue')
+
 /**
  * Passthrough for the `Err` variety of the `Result` [Crocks Algebraic Data Type](https://crocks.dev/docs/crocks/)
  * _(Copyright © 2016, Ian Hofmann-Hicks, ISC license)_, with automatic wrapping of non-array values to ensure proper
@@ -10,7 +12,7 @@ const wrapNonArray = require('../Conversion/wrapNonArray')
  * See [https://crocks.dev/docs/crocks/Result.html](https://crocks.dev/docs/crocks/Result.html) for more details.
  *
  * Allows users of `elv-js-helpers` to create `Err` objects without adding the [Crocks](https://www.npmjs.com/package/crocks)
- * package as a dependency.
+ * package as a dependency, and following conventions of the `elv-js-helpers` package:
  *
  * There are 2 kinds of `Result` objects, `Ok` and `Err`, that wrap successful and failed computations, respectively.
  *
@@ -62,7 +64,22 @@ const wrapNonArray = require('../Conversion/wrapNonArray')
  *   errorDetails: [ 'failed to obtain first input', 'failed to obtain second input' ]
  * }`
  *
+ * Err([])                                                   //=> EXCEPTION: 'Err cannot wrap an empty array'
+ *
+ * Err([undefined])                                          //=> Err [undefined]
+ *
+ * console.log(resultToPOJO(Err([undefined])))
+ * `{
+ *   ok: false,
+ *   errors: [ 'undefined' ],
+ *   errorDetails: [ undefined ]
+ * }`
  */
-const Err = x => Result.Err(wrapNonArray(x))
+const Err = x => {
+  const arr = wrapNonArray(x)
+  throwIfTrue('Err cannot wrap an empty array', arr.length === 0)
+  arr.map(x => String(x))
+  return Result.Err(arr)
+}
 
 module.exports = Err

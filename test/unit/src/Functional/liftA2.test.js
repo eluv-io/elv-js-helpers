@@ -3,7 +3,6 @@
 const chai = require('chai')
 chai.should()
 
-const equals = require('ramda/src/equals')
 
 const liftA2 = require('../../../../src/Functional/liftA2')
 
@@ -27,19 +26,18 @@ describe('liftA2', () => {
     mult(42, 42).should.equal(1764)
     const liftedMult = liftA2(curry(mult))
     const goodResult = liftedMult(okObject, okObject)
-    equals(resultToPOJO(goodResult), {ok: true, result: 1764}).should.be.true
+    resultToPOJO(goodResult).should.eql({ok: true, value: 1764})
     liftedMult(errObject1, okObject).inspect().should.equal('Err [ "failed to obtain first input" ]')
     liftedMult(okObject, errObject2).inspect().should.equal('Err [ "failed to obtain second input" ]')
     const badResult3 = liftedMult(errObject1, errObject2)
     badResult3.inspect().should.equal('Err [ "failed to obtain first input", "failed to obtain second input" ]')
-    equals(
-      resultToPOJO(badResult3),
+    resultToPOJO(badResult3).should.eql(
       {
         ok: false,
         errors: ['failed to obtain first input', 'failed to obtain second input'],
         errorDetails: ['failed to obtain first input', 'failed to obtain second input']
       }
-    ).should.be.true
+    )
   })
 
   it('should be curried', () => {

@@ -1,4 +1,4 @@
-const kindOf = require('../Validation/kindOf')
+const kind = require('../Validation/kind')
 
 /**
  * Returns `true` if passed an object.
@@ -24,6 +24,6 @@ const kindOf = require('../Validation/kindOf')
  * isObject({foo: 'bar'}, 3)   //=> true (extra argument ignored)
  *
  */
-const isObject = x => kindOf(x) === 'object'
+const isObject = x => kind(x) === 'Object'
 
 module.exports = isObject

@@ -1,4 +1,4 @@
-const kindOf = require('../Validation/kindOf')
+const kind = require('../Validation/kind')
 
 /**
  * Returns `true` if passed `null`.
@@ -28,6 +28,6 @@ const kindOf = require('../Validation/kindOf')
  * isNull(null, 3)           //=> true (extra argument ignored)
  *
  */
-const isNull = x => kindOf(x) === 'null'
+const isNull = x => kind(x) === 'null'
 
 module.exports = isNull

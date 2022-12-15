@@ -1,13 +1,13 @@
 {
   "name": "@eluvio/elv-js-helpers",
-  "version": "3.2.3",
+  "version": "3.2.1",
   "description": "A collection of Javascript helper functions used by several Eluvio libraries.",
   "homepage": "https://eluv-io.github.io/elv-ramdoc",
   "repository": {
     "type": "git",
     "url": "https://github.com/eluv-io/elv-js-helpers"
   },
-  "main": "./main.js",
+  "main": "main.js",
   "sideEffects": false,
   "scripts": {
     "build": "echo 'Deleting and recreating ./build directory...' && npm run build-main-js && rimraf build && ./bin/publish.sh && npm run build:dist",
@@ -19,7 +19,7 @@
     "generate-docs-debug": "echo 'Regenerating documentation in ./docs (with debug output)...' && export ELV_RAMDOC_DEBUG=1;jsdoc --readme README.md --configure .jsdoc.json",
     "release": "echo 'Incrementing version and publishing to npmjs.com...' && cp package.json ./build/package.json && np",
     "test": "echo 'Running all tests in ./test...' && npm run build-main-js && mocha --recursive \"./test/**/*.test.js\"",
-    "test-coverage": "echo 'Running all tests in ./test... (with test coverage report)' && npm run build-main-js && nyc --reporter=html --reporter=text mocha --recursive \"./test/**/*.test.js\" && echo 'open ./coverage/index.html for coverage details'",
+    "test-coverage": "echo 'Running all tests in ./test... (with test coverage report)' && npm run build-main-js && nyc --reporter=html --reporter=text mocha --recursive \"./test/**/*.test.js\" || echo 'open ./coverage/index.html for coverage details'",
     "update-dependencies": "echo 'Updating dependencies in package.json and installing any new version(s)...' && npx npm-check-updates -u && npm install",
     "version": "echo 'Executing npm publish hook: version... (rebuilds docs with new version number and rebuilds ./build/dist)' && npm run generate-docs && npm run build && git add docs || git commit -m 'Update docs' || true"
   },
@@ -31,34 +31,34 @@
   "author": "Eluvio, Inc.",
   "license": "MIT",
   "devDependencies": {
-    "@eluvio/elv-ramdoc": "^0.1.2",
-    "chai": "^4.3.6",
-    "dependency-cruiser": "^11.7.1",
-    "eslint": "^8.15.0",
-    "jsdoc": "^3.6.10",
+    "@eluvio/elv-ramdoc": "^0.3.0",
+    "chai": "^4.3.7",
+    "dependency-cruiser": "^12.1.0",
+    "eslint": "^8.29.0",
+    "jsdoc": "^4.0.0",
     "madge": "^5.0.1",
-    "marked": "^4.0.15",
-    "mocha": "^10.0.0",
+    "marked": "^4.2.4",
+    "mocha": "^10.2.0",
     "mocha-sinon": "^2.1.2",
-    "np": "^7.6.1",
-    "npm-check-updates": "^13.0.1",
+    "np": "^7.6.2",
+    "npm-check-updates": "^16.6.0",
     "nyc": "^15.1.0",
     "process": "^0.11.10",
     "rimraf": "^3.0.2",
-    "sinon": "^14.0.0",
+    "sinon": "^15.0.0",
     "sinon-chai": "^3.7.0",
-    "uglify-js": "^3.15.5",
-    "util": "^0.12.4",
-    "webpack": "^5.72.1",
-    "webpack-bundle-analyzer": "^4.5.0",
-    "webpack-cli": "^4.9.2"
+    "uglify-js": "^3.17.4",
+    "util": "^0.12.5",
+    "webpack": "^5.75.0",
+    "webpack-bundle-analyzer": "^4.7.0",
+    "webpack-cli": "^5.0.1"
   },
   "dependencies": {
-    "@eluvio/ramda-fork": "^0.28.1",
     "@ladjs/format-util": "^1.0.4",
     "crocks": "^0.12.4",
     "fraction.js": "^4.2.0",
     "kind-of": "^6.0.3",
-    "objectmodel": "^4.3.0"
+    "objectmodel": "^4.4.1",
+    "ramda": "^0.28.0"
   }
 }

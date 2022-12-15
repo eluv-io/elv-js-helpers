@@ -36,23 +36,21 @@ const defObjModel = require('./defObjModel')
  *
  */
 const defSealedObjModel = (name, def) => {
-  let model = defObjModel(name, def)
+  const model = defObjModel(name, def)
   model.sealed = true
   model.extend = () => {
-    throw new Error('Sealed Model cannot be extended')
+    throw new Error('Sealed models cannot be extended')
   }
 
+  const isPlainObject = obj => typeof obj === 'object' && Object.getPrototypeOf(obj) === Object.prototype
   const checkUndeclaredProps = (obj, def, undeclaredProps, path) => {
+    if(typeof obj !== 'object') return
     Object.keys(obj).forEach(key => {
       let val = obj[key],
         subpath = path ? path + '.' + key : key
-      if (!Object.prototype.hasOwnProperty.call(def, key)) {
+      if(isPlainObject(def) && !Object.prototype.hasOwnProperty.call(def, key)) {
         undeclaredProps.push(subpath)
-      } else if (
-        val &&
-        typeof val === 'object' &&
-        Object.getPrototypeOf(val) === Object.prototype
-      ) {
+      } else if (isPlainObject(val) && isPlainObject(def)) {
         checkUndeclaredProps(val, def[key], undeclaredProps, subpath)
       }
     })
@@ -65,7 +63,8 @@ const defSealedObjModel = (name, def) => {
       checkUndeclaredProps(obj, this.definition, undeclaredProps)
       return undeclaredProps.length === 0 ? true : undeclaredProps
     },
-    undeclaredProps => `Unrecognized property name(s): ${undeclaredProps}`
+    undeclaredProps =>
+      `Unrecognized property name(s): ${undeclaredProps}`
   )
 }
 

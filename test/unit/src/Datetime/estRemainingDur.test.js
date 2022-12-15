@@ -20,5 +20,7 @@ describe('estRemainingDur', () => {
 
     resultUnwrap(estRemainingDur(-1, .1))[0].toString().should.equal('estRemainingDur: timeElapsed must be > 0 (got: -1)')
     resultUnwrap(estRemainingDur(42, 42))[0].toString().should.equal('estRemainingDur: portionComplete must be > 0 and <= 1 (got: 42)')
+
+    resultUnwrap(estRemainingDur(42, undefined))[0].toString().should.equal('estRemainingDur: expecting portionComplete to be Number, got undefined')
   })
 })

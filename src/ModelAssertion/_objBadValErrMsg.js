@@ -1,8 +1,7 @@
 const identity = require('crocks/combinators/identity')
-const join = require('@eluvio/ramda-fork/src/join')
-
+const join = require('ramda/src/join')
 const _objBadVal = require('../Validation/objBadVal')
-const validator = require('../Validation/validator')
+const validateWithModel = require('../Validation/validateWithModel')
 
 /**
  * Returns a function to be [called](https://github.com/sylvainpolletvillard/ObjectModel/blob/9e890fc5ed5ad98e477a2144f1a925d740687ee3/src/object-model.js#L164)
@@ -37,7 +36,7 @@ const _objBadValErrMsg = valueModel =>
   (result, value) => { // Note: objectmodel.js err msg call actually passes 3 args (result, value, name)
     const [k, v] = _objBadVal(valueModel, value)
     return `key "${k}" points to a value that is an invalid ${valueModel.name} (${
-      validator(valueModel)(v).either(join('\n'), identity)
+      validateWithModel(valueModel)(v).either(join('\n'), identity)
     })`
   }
 

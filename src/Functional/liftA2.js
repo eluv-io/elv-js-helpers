@@ -14,7 +14,7 @@
  * also return a value wrapped in a Functional data type.
  *
  * This adapts the function to be able to compose into Functional workflows, making it easier to add things like
- * input Validation, error collection, and asynchronous event handling to the function cleanly.
+ * input validation, error collection, and asynchronous event handling to the function cleanly.
  *
  * `liftA2` specifically converts 2-input curried functions.
  *

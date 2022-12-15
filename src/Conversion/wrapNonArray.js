@@ -1,4 +1,4 @@
-const kindOf = require('../Validation/kindOf')
+const isArray = require('../Boolean/isArray')
 
 /**
  * If value is not an array, returns an array containing the value,
@@ -21,7 +21,7 @@ const kindOf = require('../Validation/kindOf')
  *
  */
 const wrapNonArray = x =>
-  kindOf(x) === 'array' ?
+  isArray(x) ?
     x :
     [x]
 

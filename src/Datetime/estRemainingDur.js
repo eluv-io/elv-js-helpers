@@ -1,7 +1,7 @@
 const defBoundedNumModel = require('../ModelFactory/defBoundedNumModel')
 const defObjModel = require('../ModelFactory/defObjModel')
 const PositiveNumModel = require('../Model/PositiveNumModel')
-const validator = require('../Validation/validator')
+const validateWithModel = require('../Validation/validateWithModel')
 
 const _paramsModel = defObjModel(
   'estRemainingDur',
@@ -12,7 +12,7 @@ const _paramsModel = defObjModel(
 
 /**
  * Estimates remaining duration based on portion completed expressed as a number between 0 and 1 and Datetime elapsed
- * The function is unit-agnostic, but for most uses timeElapsed is in seconds.
+ * The function is unit-agnostic, but for most uses timeElapsed would be in seconds.
  *
  * Returns a [Crocks Ok](https://crocks.dev/docs/crocks/Result.html#ok) instance wrapping a number if calculation succeeds.
  * Returns a [Crocks Err](https://crocks.dev/docs/crocks/Result.html#err) instance wrapping an array containing error string(s) if passed bad inputs.
@@ -41,9 +41,11 @@ const _paramsModel = defObjModel(
  *
  * estRemainingDur(42, 42)    //=> Err [(ObjectModel error, message="portionComplete must be > 0 and <= 1 (got: 42)")]
  *
+ * estRemainingDur(42, undefined)    //=> Err [(ObjectModel error, message="expecting portionComplete to be Number, got undefined")]
+ *
  */
 const estRemainingDur = (timeElapsed, portionComplete) =>
-  validator(_paramsModel)({timeElapsed, portionComplete}).map(
+  validateWithModel(_paramsModel)({timeElapsed, portionComplete}).map(
     p => p.timeElapsed / p.portionComplete - p.timeElapsed
   )
 module.exports = estRemainingDur

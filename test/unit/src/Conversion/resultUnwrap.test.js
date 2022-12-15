@@ -2,7 +2,7 @@ const chai = require('chai')
 chai.should()
 const expect = chai.expect
 
-const equals = require('ramda/src/equals')
+
 
 const Err = require('../../../../src/ADT/Err')
 const Ok = require('../../../../src/ADT/Ok')
@@ -15,7 +15,7 @@ describe('resultUnwrap', () => {
   })
 
   it('should return array contained value for Err', () => {
-    equals(resultUnwrap(Err(42)), [42]).should.be.true
+    resultUnwrap(Err(42)).should.eql( [42])
   })
 
   it('should throw an error for non-Result values', () => {

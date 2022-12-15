@@ -4,7 +4,7 @@ const chai = require('chai')
 chai.should()
 const expect = chai.expect
 
-const equals = require('ramda/src/equals')
+
 
 const assertPropRel = require('../../../../src/ModelAssertion/assertPropRel')
 
@@ -28,7 +28,7 @@ describe('assertPropRel', () => {
       )
     )
 
-    equals(NumLimitsModel({min: 1, max: 2}), {min: 1, max: 2}).should.be.true
+    NumLimitsModel({min: 1, max: 2}).should.eql({min: 1, max: 2})
     expect(() => NumLimitsModel({min: 2, max: 1})).to.throw('max (1) must be greater than or equal to min (2)')
   })
 })

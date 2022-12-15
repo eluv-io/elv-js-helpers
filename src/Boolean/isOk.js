@@ -1,7 +1,7 @@
 const either = require('crocks/pointfree/either')
 
-const F = require('@eluvio/ramda-fork/src/F')
-const T = require('@eluvio/ramda-fork/src/T')
+const F = require('../Functional/F')
+const T = require('../Functional/T')
 
 const isResult = require('./isResult')
 

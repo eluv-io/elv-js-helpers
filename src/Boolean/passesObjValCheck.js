@@ -1,5 +1,5 @@
-const curry = require('crocks/helpers/curry')
-const kindOf = require('../Validation/kindOf')
+const curry = require('../Functional/curry')
+const isObject = require('../Boolean/isObject')
 
 const _objBadVal = require('../Validation/objBadVal')
 
@@ -49,6 +49,6 @@ const _objBadVal = require('../Validation/objBadVal')
  */
 const passesObjValCheck = curry(
   (valueModel, obj) =>
-    !(kindOf(obj) === 'object' && _objBadVal(valueModel, obj) !== undefined)
+    !(isObject(obj) && _objBadVal(valueModel, obj) !== undefined)
 )
 module.exports = passesObjValCheck

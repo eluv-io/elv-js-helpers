@@ -4,12 +4,12 @@
 const fs = require('fs')
 const path = require('path')
 
-const {dirList, jsFileBasenamesList} = require('./dirUtils')
+const {subdirNameList, jsFileBasenamesList} = require('./dirUtils')
 
-const REGEXP_EXAMPLE = /(^ \* @example(.|\n)+^)(const )/m
+const RE_EXAMPLE = /(^ \* @example(.|\n)+^)(const )/m
 
 const mirror = (sourcePathStr, destPathStr) => {
-  const subDirs = dirList(sourcePathStr)
+  const subDirs = subdirNameList(sourcePathStr)
   for (const subDir of subDirs) {
     const targetSubdir = path.join(destPathStr, subDir)
     const existing = fs.lstatSync(targetSubdir, {throwIfNoEntry: false})
@@ -31,10 +31,13 @@ const mirror = (sourcePathStr, destPathStr) => {
       if (!existing.isFile()) throw targetFile + ' already exists but is not a file.'
     } else {
       const scriptCode = fs.readFileSync(scriptFile).toString()
-      const exampleJSDoc = scriptCode.match(REGEXP_EXAMPLE)
-      if (!exampleJSDoc) console.warn('@example not found in ' + scriptFile)
-      const requirePath = path.join(path.relative(destPathStr, sourcePathStr), jsFile)
-      const contents = `// unit test for ${jsFile}.js
+      const exampleJSDoc = scriptCode.match(RE_EXAMPLE)
+      if (!exampleJSDoc) {
+        console.warn('  @example not found in ' + scriptFile + ', skipping...')
+      } else {
+        console.log('Creating ' + targetFile + '...')
+        const requirePath = path.join(path.relative(destPathStr, sourcePathStr), jsFile)
+        const contents = `// unit test for ${jsFile}.js
       
 const chai = require('chai')
 chai.should()
@@ -43,7 +46,6 @@ const expect = chai.expect
 const ${jsFile} = require('${requirePath}')
 
 describe('${jsFile}', () => {
-
   it('should work as expected', () => {
   
   })
@@ -53,11 +55,18 @@ describe('${jsFile}', () => {
   })
 })
 
-/**
-` + (exampleJSDoc ? exampleJSDoc[1] : '')
-      fs.writeFileSync(targetFile, contents)
+` + (exampleJSDoc ? '/**\n' + exampleJSDoc[1] : '')
+        fs.writeFileSync(targetFile, contents)
+      }
     }
   }
 }
+
+// TODO: add processing: replace '@eluvio/PROJECT_NAME/   with '../../../../src/
+// remove leading asterisks
+// remove blank lines
+// replace ... //=> EXCEPTION: ... with expect(() => ...).to.throw(...)
+// replace //=> ...  with .should.equal(...)
+// wrap in test 'should have good JSDoc example'?
 
 mirror('../src', '../test/unit/src')

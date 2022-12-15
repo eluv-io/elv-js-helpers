@@ -1,4 +1,4 @@
-const curry = require('crocks/helpers/curry')
+const curry = require('../Functional/curry')
 
 /**
  * Adds a specified number of seconds to a Javascript Date object and returns a new Date

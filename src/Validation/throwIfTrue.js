@@ -1,4 +1,4 @@
-const curry = require('crocks/helpers/curry')
+const curry = require('../Functional/curry')
 const throwError = require('../Misc/throwError')
 
 /**

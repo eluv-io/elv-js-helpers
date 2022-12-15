@@ -4,7 +4,6 @@ const chai = require('chai')
 chai.should()
 const expect = chai.expect
 
-const equals = require('@eluvio/ramda-fork/src/equals')
 
 const assertAfterCheck = require('../../../../src/ModelAssertion/assertAfterCheck')
 const passesModelCheck = require('../../../../src/Boolean/passesModelCheck')
@@ -26,10 +25,7 @@ describe('defCheckedKVObjModel', () => {
   const Test1Model = defCheckedKVObjModel('Test1', ThreeCharStringModel, PositiveIntModel)
 
   it('should pass for good objects', () => {
-    equals(
-      Test1Model({'foo': 1}),
-      {'foo': 1}
-    ).should.be.true
+    Test1Model({'foo': 1}).should.eql({'foo': 1})
   })
 
   it('should throw an exception for bad objects', () => {
@@ -50,7 +46,7 @@ describe('defCheckedKVObjModel', () => {
       NonBlankStrModel
     )
 
-    equals(NoBlankStrKVObjectModel({foo: 'bar'}), {foo: 'bar'}).should.be.true
+    NoBlankStrKVObjectModel({foo: 'bar'}).should.eql( {foo: 'bar'})
     expect(() => NoBlankStrKVObjectModel({foo: '   '})).to.throw('key "foo" points to a value that is an invalid NonBlankString (NonBlankString: Value must not be a blank string (got: "   "))')
     expect(() => NoBlankStrKVObjectModel({'  ': 'bar'})).to.throw('invalid property name "  " (is not a valid NonBlankString)')
     expect(() => NoBlankStrKVObjectModel({foo: 42})).to.throw('key "foo" points to a value that is an invalid NonBlankString (NonBlankString: expecting String, got Number 42)')

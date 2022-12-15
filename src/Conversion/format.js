@@ -1,5 +1,5 @@
 const formatUtil = require('@ladjs/format-util')
-const kindOf = require('../Validation/kindOf')
+const kind = require('../Validation/kind')
 
 /**
  * Converts input to a string for use in error messages and log statements.
@@ -25,10 +25,10 @@ const kindOf = require('../Validation/kindOf')
  * format(format)   //=> '[Function: format]'
  */
 const format = value => {
-  switch (kindOf(value)) {
-    case 'function':
+  switch (kind(value)) {
+    case 'Function':
       return formatUtil(value)
-    case 'number':
+    case 'Number':
       return formatUtil('%d', value)
     default:
       return formatUtil('%j', value)

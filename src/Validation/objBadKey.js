@@ -1,11 +1,9 @@
-const compose = require('crocks/helpers/compose')
 const curry = require('crocks/helpers/curry')
 
-const find = require('@eluvio/ramda-fork/src/find')
-const keys = require('@eluvio/ramda-fork/src/keys')
-const not = require('@eluvio/ramda-fork/src/not')
+const find = require('ramda/src/find')
+const keys = require('ramda/src/keys')
 
-const passesModelCheck = require('../Boolean/passesModelCheck')
+const failsModelCheck = require('../Boolean/failsModelCheck')
 
 /**
  * Iterates over object properties and returns first property name (key) where passesModelCheck(keyModel) returns false
@@ -38,10 +36,7 @@ const passesModelCheck = require('../Boolean/passesModelCheck')
  */
 const objBadKey = curry(
   (keyModel, obj) => find(
-    compose(
-      not,
-      passesModelCheck(keyModel)
-    ),
+    failsModelCheck(keyModel),
     keys(obj)
   )
 )

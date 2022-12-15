@@ -1,6 +1,6 @@
 const defRegexMatchedStrModel = require('../ModelFactory/defRegexMatchedStrModel')
 
-const REGEX_RATIONAL = require('../Validation/REGEX_RATIONAL')
+const REGEX_RATIONAL = require('../Validation/RE_RATIONAL')
 
 /**
  * An [ObjectModel](http://objectmodel.js.org/) which validates that an input is:

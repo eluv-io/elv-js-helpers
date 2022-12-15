@@ -1,4 +1,4 @@
-const curry = require('crocks/helpers/curry')
+const curry = require('./curry')
 const List = require('crocks/List')
 
 /**

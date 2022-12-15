@@ -10,7 +10,7 @@ const isOk = require('../Boolean/isOk')
  *
  * Enables distinguishing between 'Err' and 'Ok' when examining `Result` instances.
  *
- * **NOTE:** Use `kindOf()` if you need to check type of anything other than a
+ * **NOTE:** Use `kind()` if you need to check type of anything other than a
  * [Crocks Result](https://crocks.dev/docs/crocks/Result.html) instance
  * (i.e. anything other than an `Ok` or `Err`).
  *
@@ -32,7 +32,7 @@ const isOk = require('../Boolean/isOk')
  *
  * _typeWithOkErr(Ok(42))                 //=> "Ok"
  *
- * _typeWithOkErr('foo')                  //=> "String" (use kindOf() instead!)
+ * _typeWithOkErr('foo')                  //=> "String" (use kind() instead!)
  *
  */
 const _typeWithOkErr = x =>

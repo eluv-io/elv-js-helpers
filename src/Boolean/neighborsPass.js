@@ -17,22 +17,22 @@ const curry = require('../Functional/curry')
  * @returns {Boolean}
  * @example
  *
- * const passesPairwiseCheck = require('@eluvio/elv-js-helpers/Boolean/passesPairwiseCheck')
+ * const neighborsPass = require('@eluvio/elv-js-helpers/Boolean/neighborsPass')
  *
  * const xGTEy = (x,y) => x <= y
  *
- * passesPairwiseCheck(xGTEy, [1, 2, 2, 3])   //=> true
+ * neighborsPass(xGTEy, [1, 2, 2, 3])   //=> true
  *
- * passesPairwiseCheck(xGTEy, [1])            //=> true (single element, has no pairs to check)
+ * neighborsPass(xGTEy, [1])            //=> true (single element, has no pairs to check)
  *
- * passesPairwiseCheck(xGTEy, [3, 2, 2, 1])   //=> false
+ * neighborsPass(xGTEy, [3, 2, 2, 1])   //=> false
  *
- * passesPairwiseCheck(xGTEy, 'abcde')        //=> true (strings support indexed access via [])
+ * neighborsPass(xGTEy, 'abcde')        //=> true (strings support indexed access via [])
  *
- * passesPairwiseCheck(xGTEy, 5)              //=> true (non-array, has no pairs to check)
+ * neighborsPass(xGTEy, 5)              //=> true (non-array, has no pairs to check)
  *
  * // function is curried: call with 1 arg to obtain a narrower function
- * const isOrdered = passesPairwiseCheck(xGTEy)
+ * const isOrdered = neighborsPass(xGTEy)
  *
  * isOrdered([1, 2, 2, 3])                    //=> true
  *
@@ -44,11 +44,11 @@ const curry = require('../Functional/curry')
  *
  * isOrdered(5)                               //=> true (non-array, has no pairs to check)
  */
-const passesPairwiseCheck = curry(
+const neighborsPass = curry(
   (checkFn, array) => find(
     pair => !checkFn(pair[0], pair[1]),
     aperture(2, array)
   ) === undefined
 )
 
-module.exports = passesPairwiseCheck
+module.exports = neighborsPass

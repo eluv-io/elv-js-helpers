@@ -1,7 +1,7 @@
 // noinspection JSUnusedLocalSymbols
 /* eslint-disable no-unused-vars */
 
-const T = require('@eluvio/ramda-fork/src/T')
+const T = require('../Functional/T')
 
 /**
  * Returns a 2-element array for use in an [ObjectModel assertion](http://objectmodel.js.org/#doc-assertions)

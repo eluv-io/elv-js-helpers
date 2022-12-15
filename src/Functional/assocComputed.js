@@ -1,9 +1,12 @@
-const curry = require('crocks/helpers/curry')
+const curry = require('./curry')
 
 const assoc = require('@eluvio/ramda-fork/src/assoc')
 
 /**
  * Returns a shallow copy of object with a specified property set to computeFn(obj)
+ *
+ * Note that if `obj` is an [ObjectModel](http://objectmodel.js.org/) instance the return value will be a plain
+ * Javascript object without model constraints.
  *
  * @function
  * @curried

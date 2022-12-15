@@ -1,9 +1,9 @@
-// unit test for REGEX_RATIONAL.js
+// unit test for RE_RATIONAL.js
 
 const chai = require('chai')
 chai.should()
 
-const REGEX_RATIONAL = require('../../../../src/Validation/REGEX_RATIONAL')
+const REGEX_RATIONAL = require('../../../../src/Validation/RE_RATIONAL')
 
 describe('REGEX_RATIONAL', () => {
   it('should have JSDoc example that works', () => {

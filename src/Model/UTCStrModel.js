@@ -2,7 +2,7 @@ const assertValidUTCStr = require('../ModelAssertion/assertValidUTCStr')
 
 const defRegexMatchedStrModel = require('../ModelFactory/defRegexMatchedStrModel')
 
-const REGEX_UTC_TIMESTAMP = require('../Datetime/REGEX_UTC_TIMESTAMP')
+const REGEX_UTC_TIMESTAMP = require('../Datetime/RE_UTC_TIMESTAMP')
 
 /**
  * An [ObjectModel](http://objectmodel.js.org/) which validates that an input is:
@@ -11,7 +11,7 @@ const REGEX_UTC_TIMESTAMP = require('../Datetime/REGEX_UTC_TIMESTAMP')
  * * In UTC timestamp format e.g. '2022-01-01T14:00:00Z'
  * * A valid Datetime
  *
- * If input passes Validation, will return the input (proxied by ObjectModel)
+ * If input passes validation, will return the input (proxied by ObjectModel)
  *
  * Throws an exception if passed in an invalid value.
  *

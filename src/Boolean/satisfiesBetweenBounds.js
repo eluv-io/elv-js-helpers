@@ -1,4 +1,4 @@
-const curry = require('crocks/helpers/curry')
+const curry = require('../Functional/curry')
 
 const _satisfiesLowerBound = require('./satisfiesLowerBound')
 const _satisfiesUpperBound = require('./satisfiesUpperBound')

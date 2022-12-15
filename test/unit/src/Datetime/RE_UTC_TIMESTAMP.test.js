@@ -1,9 +1,9 @@
-// unit test for REGEX_UTC_TIMESTAMP.js
+// unit test for RE_UTC_TIMESTAMP.js
 
 const chai = require('chai')
 chai.should()
 
-const REGEX_UTC_TIMESTAMP = require('../../../../src/Datetime/REGEX_UTC_TIMESTAMP')
+const REGEX_UTC_TIMESTAMP = require('../../../../src/Datetime/RE_UTC_TIMESTAMP')
 
 describe('REGEX_UTC_TIMESTAMP', () => {
 

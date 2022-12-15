@@ -9,15 +9,15 @@ const isOfKind = require('../../../../src/Boolean/isOfKind')
 describe('isOfKind', () => {
 
   it('should return true if kind matches', () => {
-    isOfKind('array', [1, 2, 3]).should.be.true
+    isOfKind('Array', [1, 2, 3]).should.be.true
   })
 
   it('should return false if kind does not match', () => {
-    isOfKind('array', 'foo').should.be.false
-    isOfKind('array', 1, 2, 3).should.be.false
-    isOfKind('array', undefined).should.be.false
-    isOfKind('array', null).should.be.false
-    isOfKind('array', Ok([1,2,3])).should.be.false
-    isOfKind('array', Err([1,2,3])).should.be.false
+    isOfKind('Array', 'foo').should.be.false
+    isOfKind('Array', 1, 2, 3).should.be.false
+    isOfKind('Array', undefined).should.be.false
+    isOfKind('Array', null).should.be.false
+    isOfKind('Array', Ok([1,2,3])).should.be.false
+    isOfKind('Array', Err([1,2,3])).should.be.false
   })
 })
