@@ -1,4 +1,4 @@
-const curry = require('crocks/helpers/curry')
+const curry = require('./curry')
 
 const boolsToInt = require('../Conversion/boolsToInt')
 

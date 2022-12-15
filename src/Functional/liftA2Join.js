@@ -1,8 +1,9 @@
 const chain = require('crocks/pointfree/chain')
 const compose = require('crocks/helpers/compose')
 const identity = require('crocks/combinators/identity')
-const liftA2 = require('crocks/helpers/liftA2')
 const nAry = require('crocks/helpers/nAry')
+
+const liftA2 = require('./liftA2')
 
 /**
  * Converts a function which accepts 2 'normal' values and returns a wrapped value into a  function that takes 2

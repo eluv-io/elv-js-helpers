@@ -1,6 +1,6 @@
 
-const curry = require('crocks/helpers/curry')
-const kindOf = require('../Validation/kindOf')
+const curry = require('../Functional/curry')
+const kind = require('../Validation/kind')
 
 /**
  * Returns `true` if value is of the specified type, `false` otherwise.
@@ -18,15 +18,15 @@ const kindOf = require('../Validation/kindOf')
  *
  * const isOfKind = require('@eluvio/elv-js-helpers/Boolean/isOfKind')
  *
- * isOfKind('array', [1, 2, 3]) //=> true
+ * isOfKind('Array', [1, 2, 3]) //=> true
  *
- * isOfKind('array', 1, 2, 3)   //=> false
+ * isOfKind('Array', 1, 2, 3)   //=> false
  *
- * isOfKind('array', 'foo')     //=> false
+ * isOfKind('Array', 'foo')     //=> false
  *
  */
 const isOfKind = curry(
-  (kindName, x) => kindOf(x) === kindName
+  (kindName, x) => kind(x) === kindName
 )
 
 module.exports = isOfKind

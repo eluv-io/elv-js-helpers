@@ -5,7 +5,7 @@ const defBasicModel = require('../ModelFactory/defBasicModel')
  * An [ObjectModel](http://objectmodel.js.org/) which validates that an input
  * is a [Javascript Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
  *
- * If input passes Validation, will return the input (proxied by ObjectModel)
+ * If input passes validation, will return the input (proxied by ObjectModel)
  *
  * Throws an exception if passed in an invalid value.
  *

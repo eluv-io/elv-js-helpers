@@ -3,7 +3,6 @@
 const chai = require('chai')
 chai.should()
 
-const equals = require('ramda/src/equals')
 
 const fromPairs = require('../../../../src/Conversion/fromPairs')
 
@@ -14,6 +13,6 @@ describe('fromPairs', () => {
 
   it('should work as expected', () => {
     const kvPairs = List([Pair('a', 1), Pair('b', 2)])
-    equals(fromPairs(kvPairs), {a: 1, b: 2}).should.be.true
+    fromPairs(kvPairs).should.eql({a: 1, b: 2})
   })
 })

@@ -1,4 +1,4 @@
-const kindOf = require('../Validation/kindOf')
+const kind = require('../Validation/kind')
 
 /**
  * Returns `true` if passed a function.
@@ -22,6 +22,6 @@ const kindOf = require('../Validation/kindOf')
  * isFunction(isFunction)  //=> true
  *
  */
-const isFunction = x => kindOf(x) === 'function'
+const isFunction = x => kind(x) === 'Function'
 
 module.exports = isFunction

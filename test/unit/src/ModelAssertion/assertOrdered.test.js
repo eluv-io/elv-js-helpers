@@ -4,7 +4,7 @@ const chai = require('chai')
 chai.should()
 const expect = chai.expect
 
-const equals = require('ramda/src/equals')
+
 
 const assertOrdered = require('../../../../src/ModelAssertion/assertOrdered')
 
@@ -20,8 +20,8 @@ describe('assertOrdered', () => {
         )
       )
 
-    equals(OrderedNumArrayModel([1, 2, 3]),[1,2,3]).should.be.true
-    equals(OrderedNumArrayModel([]) ,[]).should.be.true
+    OrderedNumArrayModel([1, 2, 3]).should.eql([1,2,3])
+    OrderedNumArrayModel([]).should.eql([])
     expect(() => OrderedNumArrayModel([3, 2])).to.throw('Value is not in ascending order (got: [3,2])')
     expect(() => OrderedNumArrayModel('foo')).to.throw('expecting Array of Number, got String "foo"')
   })

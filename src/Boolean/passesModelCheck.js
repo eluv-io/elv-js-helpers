@@ -1,14 +1,13 @@
-const curry = require('crocks/helpers/curry')
+const curry = require('../Functional/curry')
+const F = require('../Functional/F')
+const T = require('../Functional/T')
 
-const F = require('ramda/src/F')
-const T = require('ramda/src/T')
-
-const validator = require('../Validation/validator')
+const validateWithModel = require('../Validation/validateWithModel')
 
 /**
  * Returns `true` if the specified Model successfully validates an input, `false` otherwise.
  *
- * Used when the caller does not care about the details of why the input failed Validation.
+ * Used when the caller does not care about the details of why the input failed validation.
  *
  * @function
  * @curried
@@ -36,7 +35,7 @@ const validator = require('../Validation/validator')
  *
  */
 const passesModelCheck = curry(
-  (model, input) => validator(model)(input).either(F, T)
+  (model, input) => validateWithModel(model)(input).either(F, T)
 )
 
 module.exports = passesModelCheck

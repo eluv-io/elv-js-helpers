@@ -6,14 +6,14 @@ const expect = chai.expect
 const multiply = require('ramda/src/multiply')
 
 const Err = require('../../../../src/ADT/Err')
-const kindOf = require('../../../../src/Validation/kindOf')
+const kind = require('../../../../src/Validation/kind')
 const liftA2 = require('../../../../src/Functional/liftA2')
 const Ok = require('../../../../src/ADT/Ok')
 
 const resultToPOJO = require('../../../../src/Conversion/resultToPOJO')
 
 describe('resultToPOJO', function () {
-  const okRetVal = resultToPOJO(Ok(42))
+  const result = resultToPOJO(Ok(42))
 
   const malformedErr = Err('error val not wrapped in an array')
 
@@ -31,12 +31,12 @@ describe('resultToPOJO', function () {
     () => expect(() => resultToPOJO(malformedErr)).to.throw
   )
 
-  it('should return a value with ok: true when given an Ok', () => okRetVal.ok.should.be.true)
-  it('should return a value with a "result" attribute when given an Ok',
-    () => okRetVal.result.should.equal(42)
+  it('should return a value with ok: true when given an Ok', () => result.ok.should.be.true)
+  it('should return a value with a "value" attribute when given an Ok',
+    () => result.value.should.equal(42)
   )
   it('should not return a value with an "errors" attribute when given an Ok',
-    () => okRetVal.hasOwnProperty('errors').should.be.false
+    () => result.hasOwnProperty('errors').should.be.false
   )
 
   it('should return a value with ok: false when given an Err', () => {
@@ -56,9 +56,9 @@ describe('resultToPOJO', function () {
     doubleErrRetVal.hasOwnProperty('errors').should.be.true
     tripleErrRetVal.hasOwnProperty('errors').should.be.true
 
-    kindOf(simpleErrRetVal.errors).should.equal('array')
-    kindOf(doubleErrRetVal.errors).should.equal('array')
-    kindOf(tripleErrRetVal.errors).should.equal('array')
+    kind(simpleErrRetVal.errors).should.equal('Array')
+    kind(doubleErrRetVal.errors).should.equal('Array')
+    kind(tripleErrRetVal.errors).should.equal('Array')
   })
 
   it('should not return a value with a "result" attribute when given an Err', () => {

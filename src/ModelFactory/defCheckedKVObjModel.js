@@ -13,7 +13,7 @@ const assertObjValuesValid = require('../ModelAssertion/assertObjValuesValid')
  *  * Has keys that validate against a Model
  *  * Has values that validate against a Model
  *
- *  It offers similar Validation capabilities as [ObjectModel's MapModel](http://objectmodel.js.org/#doc-map-models)
+ *  It offers similar validation capabilities as [ObjectModel's MapModel](http://objectmodel.js.org/#doc-map-models)
  *  but the resulting Model accepts a Javascript object as input and returns a (proxied) Javascript object as output.
  *
  * @function

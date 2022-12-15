@@ -2,8 +2,6 @@ const chai = require('chai')
 chai.should()
 const expect = chai.expect
 
-const equals = require('ramda/src/equals')
-
 const throwIfFalse = require('../../../../src/Validation/throwIfFalse')
 
 describe('throwIfFalse', () => {
@@ -19,8 +17,8 @@ describe('throwIfFalse', () => {
   it('should return original value when passed a truthy value', () => {
     throwIfFalse('foo',true).should.equal(true)
     throwIfFalse('foo',1).should.equal(1)
-    equals(throwIfFalse('foo',[]),[]).should.be.true
+    throwIfFalse('foo',[]).should.eql([])
     throwIfFalse('foo','a').should.equal('a')
-    equals(throwIfFalse('foo',{}),{}).should.be.true
+    throwIfFalse('foo',{}).should.eql({})
   })
 })

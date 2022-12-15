@@ -1,6 +1,4 @@
-const compose = require('crocks/helpers/compose')
 const constant = require('crocks/combinators/constant')
-const isEmpty = require('crocks/predicates/isEmpty')
 const Pair = require('crocks/Pair')
 const pipe = require('crocks/helpers/pipe')
 const when = require('crocks/logic/when')
@@ -8,12 +6,14 @@ const when = require('crocks/logic/when')
 const equals = require('ramda/src/equals')
 const join = require('ramda/src/join')
 const last = require('ramda/src/last')
-const not = require('ramda/src/not')
 const reverse = require('ramda/src/reverse')
 const splitWhen = require('ramda/src/splitWhen')
 const startsWith = require('ramda/src/startsWith')
 const tail = require('ramda/src/tail')
 const zipWith = require('ramda/src/zipWith')
+
+const isEmpty = require('../Boolean/isEmpty')
+const negate = require('../Functional/negate')
 
 // TODO: refactor?
 
@@ -64,7 +64,7 @@ const etaDurStr = secondsLeft =>
   secondsLeft < 0 ?
     '--' :
     pipe(
-      splitWhen(compose(not, equals('00'))),  // split list in 2 - [leading '00' entries] and [first non-'00' entry plus rest]
+      splitWhen(negate(equals('00'))),  // split list in 2 - [leading '00' entries] and [first non-'00' entry plus rest]
       last, // discard leading '00' entries
       when(isEmpty, constant(['00'])), // if nothing is left, use a single entry ['00'] so we end up with '0s'
       reverse, // reverse to put seconds first, minutes next, etc. because zipWith() operates from beginning of array to end

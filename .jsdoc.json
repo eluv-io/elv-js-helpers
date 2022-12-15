@@ -25,6 +25,7 @@
     "pedantic": true,
     "private": true,
     "recurse": true,
-    "template": "./node_modules/@eluvio/elv-ramdoc"
+    "template-bak": "./node_modules/@eluvio/elv-ramdoc",
+    "template": "../elv-ramdoc"
   }
 }

@@ -21,7 +21,7 @@
  *
  * const pipe = require('@eluvio/elv-js-helpers/Functional/pipe')
  *
- * // function has only one input, not need to curry
+ * // function has only one input, no need to curry
  * const trim = str => str.trim()
  *
  * // function has only one input, not need to curry

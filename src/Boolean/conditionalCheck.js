@@ -1,7 +1,7 @@
-const not = require('crocks/logic/not')
 const or = require('crocks/logic/or')
 
 const curry = require('../Functional/curry')
+const negate = require('../Functional/negate')
 
 /**
  * Creates a function that:
@@ -19,8 +19,8 @@ const curry = require('../Functional/curry')
  * @function
  * @category Boolean
  * @sig (* -> Boolean) -> (* -> Boolean) -> (* -> Boolean)
- * @param {Function} preCheckFn - The precondition for `checkFn` to take place
- * @param {Function} checkFn - The actual check to perform
+ * @param {Function} preCheckFn - A 1-input function - the precondition for `checkFn` to take place
+ * @param {Function} checkFn - A 1-input function - the actual check to perform
  * @returns {Function}
  * @example
  *
@@ -37,7 +37,7 @@ const curry = require('../Functional/curry')
  * stringStartsWithF('bar')    //=> false
  *
  */const conditionalCheck = curry(
-  (preCheckFn, mainCheckFn) => or(not(preCheckFn), mainCheckFn)
+  (preCheckFn, mainCheckFn) => or(negate(preCheckFn), mainCheckFn)
 )
 
 module.exports = conditionalCheck

@@ -1,7 +1,7 @@
 const defBoundedNumModel = require('../ModelFactory/defBoundedNumModel')
 const defObjModel = require('../ModelFactory/defObjModel')
 const PositiveNumModel = require('../Model/PositiveNumModel')
-const validator = require('../Validation/validator')
+const validateWithModel = require('../Validation/validateWithModel')
 
 const _paramsModel = defObjModel(
   'estTotalDur',
@@ -43,7 +43,7 @@ const _paramsModel = defObjModel(
  *
  */
 const estTotalDur = (timeElapsed, portionComplete) =>
-  validator(_paramsModel)({timeElapsed, portionComplete}).map(
+  validateWithModel(_paramsModel)({timeElapsed, portionComplete}).map(
     p => p.timeElapsed / p.portionComplete
   )
 module.exports = estTotalDur

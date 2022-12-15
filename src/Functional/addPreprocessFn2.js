@@ -5,7 +5,8 @@ const flip = require('./flip')
 
 /**
  * Given a 1-input preprocessing function `p` and a 2-input function `f`, returns a new function that will apply the
- * preprocessing function to each input before executing `f`, i.e. `(arg1, arg2) => f(p(arg1), p(arg2))`
+ * preprocessing function to each input before executing `f`, i.e. `(arg1, arg2) => f(p(arg1), p(arg2))`.
+ * Useful for cleaning up inputs to a function.
  *
  * @function
  * @curried

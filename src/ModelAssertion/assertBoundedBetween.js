@@ -16,7 +16,7 @@ const passesModelCheck = require('../Boolean/passesModelCheck')
  * of this is to prevent redundant errors, e.g. 'foo' is not a Number, 'foo' must be > 0 and < 42.
  *
  * The second element is a function to be [called](https://github.com/sylvainpolletvillard/ObjectModel/blob/9e890fc5ed5ad98e477a2144f1a925d740687ee3/src/object-model.js#L164)
- * by [ObjectModel](http://objectmodel.js.org/) to construct an error message if the bounds Validation fails.
+ * by [ObjectModel](http://objectmodel.js.org/) to construct an error message if the bounds validation fails.
  *
  * @function
  * @category ModelAssertion

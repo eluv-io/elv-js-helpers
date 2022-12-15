@@ -4,7 +4,6 @@ const chai = require('chai')
 chai.should()
 const expect = chai.expect
 
-const equals = require('ramda/src/equals')
 
 const assertObjKeysValid = require('../../../../src/ModelAssertion/assertObjKeysValid')
 
@@ -19,15 +18,15 @@ describe('assertObjKeysValid', () => {
       .extend()
       .assert(...assertObjKeysValid(NonBlankStrModel))
 
-    equals(NoBlankKeysObjModel({foo: 3}), {foo:3}).should.be.true
+    NoBlankKeysObjModel({foo: 3}).should.eql({foo: 3})
 
-    expect(()=>NoBlankKeysObjModel({'  ': 3})).to.throw('invalid property name "  " (is not a valid NonBlankString)')
+    expect(() => NoBlankKeysObjModel({'  ': 3})).to.throw('invalid property name "  " (is not a valid NonBlankString)')
 
     const AnyKeyModel = defBasicModel('AnyKey', Object)
       .extend()
       .assert(...assertObjKeysValid(null))
 
-    equals(AnyKeyModel({foo: 3}), {foo:3}).should.be.true
-    equals(AnyKeyModel({'  ': 3}), {'  ':3}).should.be.true
+    AnyKeyModel({foo: 3}).should.eql({foo: 3})
+    AnyKeyModel({'  ': 3}).should.eql({'  ': 3})
   })
 })

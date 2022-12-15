@@ -2,18 +2,18 @@ const either = require('crocks/pointfree/either')
 const uniq = require('ramda/src/uniq')
 
 const _throwIfFalse = require('../Validation/throwIfFalse')
-const format=require('./format')
-const kindOf = require('../Validation/kindOf')
+const format = require('./format')
+const kind = require('../Validation/kind')
 const isArray = require('../Boolean/isArray')
 
 /**
  * Converts a [Crocks Result](https://crocks.dev/docs/crocks/Result.html) to a Plain Old Javascript Object.
  *
- * If the `Result` is an `Ok`, returns `{ok: true, result: a}`, where `a` is the value wrapped by the `Ok`
+ * If the `Result` is an `Ok`, returns `{ok: true, value: a}`, where `a` is the value wrapped by the `Ok`
  *
  * If the `Result` is an `Err`, returns `{ok: false, errors: uniqErrStringArray, errorDetails: arrayErrVal}`
- * where `errorDetails` is the array value wrapped by the `Err`, and `errors` is the result of calling toString() on
- * each item in that array and then removing duplicate strings.
+ * where `errorDetails` is the array value wrapped by the `Err`, and `errors` is the result of passing each item in
+ * that array to `String()` then removing duplicates.
  *
  * If an `Err` result does not contain an array, an exception will be thrown
  *
@@ -33,7 +33,7 @@ const isArray = require('../Boolean/isArray')
  *
  * const resultToPOJO = require('@eluvio/elv-js-helpers/Conversion/resultToPOJO')
  *
- * resultToPOJO(Ok(42))                 //=> {ok: true, result: 42}
+ * resultToPOJO(Ok(42))                 //=> {ok: true, value: 42}
  *
  * resultToPOJO(Err(['query invalid'])) //=> {ok: false, errors: ["query invalid"], error_details: ["query invalid"]}
  *
@@ -54,10 +54,12 @@ const isArray = require('../Boolean/isArray')
  */
 const resultToPOJO = result => either(
   errVal => _throwIfFalse(
-    `Err instance does not contain an array, instead contains: ${kindOf(errVal)} (${format(errVal)})`,
+    `Err instance does not contain an array, instead contains: ${kind(errVal)} (${format(errVal)})`,
     isArray(errVal)
-  ) && Object({ok: false, errors: uniq(errVal.map(e => e.toString())), errorDetails: errVal}),
-  okVal => Object({ok: true, result: okVal}),
+  ) && Object({ok: false, errors: uniq(errVal.map(e => String(e))), errorDetails: errVal}),
+
+  okVal => Object({ok: true, value: okVal}),
+
   result
 )
 

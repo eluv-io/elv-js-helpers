@@ -1,4 +1,4 @@
-const kindOf = require('../Validation/kindOf')
+const kind = require('../Validation/kind')
 
 /**
  * Returns `true` if passed an array.
@@ -20,7 +20,7 @@ const kindOf = require('../Validation/kindOf')
  * isArray('foo')     //=> false
  *
  */
-const isArray = x => kindOf(x) === 'array'
+const isArray = x => kind(x) === 'Array'
 
 module.exports = isArray
 

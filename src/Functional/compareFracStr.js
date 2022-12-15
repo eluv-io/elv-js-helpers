@@ -11,13 +11,14 @@ const FractionStrModel = require('../Model/FractionStrModel')
  * * `0` if `x == y` (more specifically, if neither `x < y` nor `y < x` are `true`)
  * * `1` if `y < x`
  *
- * Used as an input into sorting and Validation functions.
+ * Used as an input into sorting and validation functions.
  *
  * @function
  * @curried
  * @category Functional
  * @sig a -> b -> -1 | 0 | 1
- * @param {String} str1 - A string
+ * @param {String} str1 - A string representing a fraction or whole number
+ * @param {String} str2 - A string representing a fraction or whole number
  * @returns {Integer} -1 | 0 | 1
  * @example
  *

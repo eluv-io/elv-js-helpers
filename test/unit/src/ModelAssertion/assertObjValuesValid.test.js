@@ -9,7 +9,7 @@ const assertObjValuesValid = require('../../../../src/ModelAssertion/assertObjVa
 const NonBlankStrModel = require('../../../../src/Model/NonBlankStrModel')
 
 const defBasicModel = require('../../../../src/ModelFactory/defBasicModel')
-const equals = require('ramda/src/equals')
+
 
 describe('assertObjValuesValid', () => {
 
@@ -24,7 +24,7 @@ describe('assertObjValuesValid', () => {
       .extend()
       .assert(...assertObjValuesValid(null))
 
-    equals(AnyValueModel({foo: 3}), {foo:3}).should.be.true
-    equals(AnyValueModel({foo: '  '}), {foo:'  '}).should.be.true
+    AnyValueModel({foo: 3}).should.eql( {foo:3})
+    AnyValueModel({foo: '  '}).should.eql( {foo:'  '})
   })
 })

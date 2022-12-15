@@ -1,7 +1,7 @@
 const format = require('../Conversion/format')
 
 // assertionErrMsg :: String -> (String -> a -> String -> String)
-// Returns a function that can be used in .assert() to construct a Validation error message containing the bad value
+// Returns a function that can be used in .assert() to construct a validation error message containing the bad value
 // and (if available) field name
 //
 // In ObjectModel, the 3 params are called (result, obj, path)
@@ -9,7 +9,7 @@ const format = require('../Conversion/format')
 /**
  * Returns a function to be [called](https://github.com/sylvainpolletvillard/ObjectModel/blob/9e890fc5ed5ad98e477a2144f1a925d740687ee3/src/object-model.js#L164)
  * by [ObjectModel](http://objectmodel.js.org/) to construct an error message when a particular assertion fails during
- * Validation.
+ * validation.
  *
  * Pass in a string describing the condition that was not met, e.g. 'must equal 42', and you will
  * get back a function can be used to generate a full error message at runtime.

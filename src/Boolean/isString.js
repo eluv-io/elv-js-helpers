@@ -1,4 +1,4 @@
-const kindOf = require('../Validation/kindOf')
+const kind = require('../Validation/kind')
 
 /**
  * Returns `true` if passed a string.
@@ -22,6 +22,6 @@ const kindOf = require('../Validation/kindOf')
  * isString('foo', 3)          //=> true (extra argument ignored)
  *
  */
-const isString = x => kindOf(x) === 'string'
+const isString = x => kind(x) === 'String'
 
 module.exports = isString

@@ -1,4 +1,4 @@
-const curry = require('crocks/helpers/curry')
+const curry = require('../Functional/curry')
 
 /**
  * Returns `true` if `value` satisfies specified bound, `false` otherwise

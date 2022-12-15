@@ -14,12 +14,12 @@ const passesModelCheck = require('../Boolean/passesModelCheck')
  * of this is to prevent redundant errors, e.g. 42 is not a String, 42 must match regex /^[a-z]+$/.
  *
  * The second element is a function to be [called](https://github.com/sylvainpolletvillard/ObjectModel/blob/9e890fc5ed5ad98e477a2144f1a925d740687ee3/src/object-model.js#L164)
- * by [ObjectModel](http://objectmodel.js.org/) to construct an error message if the bounds Validation fails.
+ * by [ObjectModel](http://objectmodel.js.org/) to construct an error message if the bounds validation fails.
  *
  * @function
  * @category ModelAssertion
  * @sig ((Boolean, *, String) -> String) ObjectModelErrMsgFn => Model -> RegExp -> [(* -> Boolean), ObjectModelErrMsgFn]
- * @param {Model} model - The Model to add regex Validation to
+ * @param {Model} model - The Model to add regex validation to
  * @param {RegExp} regex - The regex that must be matched.
  * @param {String} [errMsg] - Optional custom error message
  * @returns {Array} 2-element array [Function, Function]. See description for details.

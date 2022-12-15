@@ -6,11 +6,11 @@ const expect = chai.expect
 
 const DatetimeModel = require('../../../../src/Model/DatetimeModel')
 
-const kindOf = require('../../../../src/Validation/kindOf')
+const kind = require('../../../../src/Validation/kind')
 
 describe('DatetimeModel', () => {
   it('should work as expected', () => {
-    kindOf(DatetimeModel(new Date)).should.equal('date')
+    kind(DatetimeModel(new Date)).should.equal('Date')
     expect(() => DatetimeModel('foo')).to.throw('expecting Date, got String "foo"')
   })
 })

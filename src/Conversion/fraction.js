@@ -19,6 +19,12 @@
  *
  * fraction(4.2).toFraction(true)   //=> '4 1/5'
  *
+ * fraction('foo').toFraction(true) //=> EXCEPTION: 'Invalid argument'
+ *
+ * fraction('1/0').toFraction(true) //=> EXCEPTION: 'Division by Zero'
+ *
+ * fraction(4.2).toFraction(true)   //=> '4 1/5'
+ *
  * fraction('22/7').valueOf()       //=> 3.142857142857143
  *
  * fraction('-22/7').s              //=> -1  (sign)

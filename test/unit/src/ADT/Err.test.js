@@ -2,6 +2,7 @@
 
 const chai = require('chai')
 chai.should()
+const expect = chai.expect
 
 const Err = require('../../../../src/ADT/Err')
 const Ok = require('../../../../src/ADT/Ok')
@@ -11,7 +12,7 @@ const resultUnwrap = require('../../../../src/Conversion/resultUnwrap')
 const curry = require('../../../../src/Functional/curry')
 const liftA2 = require('../../../../src/Functional/liftA2')
 
-const kindOf = require('../../../../src/Validation/kindOf')
+const kind = require('../../../../src/Validation/kind')
 
 describe('Err', () => {
 
@@ -28,6 +29,17 @@ describe('Err', () => {
   })
 
   it('should automatically wrap non-array value in an array', () => {
-    kindOf(resultUnwrap(errObject1)).should.equal('array')
+    kind(resultUnwrap(errObject1)).should.equal('Array')
+  })
+
+  it('should be able to wrap an object', () => {
+    const structuredErr = Err({message: 'foo', err: TypeError})
+    kind(resultUnwrap(structuredErr)).should.equal('Array')
+    resultUnwrap(structuredErr)[0].message.should.equal('foo')
+  })
+
+  it('should throw an exception only for empty array', () => {
+    expect(()=> Err([])).to.throw('Err cannot wrap an empty array')
+    expect(()=> Err([undefined])).to.not.throw
   })
 })

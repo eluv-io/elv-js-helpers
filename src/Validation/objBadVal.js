@@ -3,12 +3,9 @@ const curry = require('crocks/helpers/curry')
 
 const find = require('ramda/src/find')
 const last = require('ramda/src/last')
-const not = require('ramda/src/not')
 const toPairs = require('ramda/src/toPairs')
 
-const passesModelCheck = require('../Boolean/passesModelCheck')
-
-
+const failsModelCheck = require('../Boolean/failsModelCheck')
 
 /**
  * Iterates over object values and returns 2-element array [key, value] pair for first value found that does not
@@ -45,8 +42,7 @@ const passesModelCheck = require('../Boolean/passesModelCheck')
 const objBadVal = curry(
   (valueModel, obj) => find(
     compose(
-      not,
-      passesModelCheck(valueModel),
+      failsModelCheck(valueModel),
       last
     ),
     toPairs(obj)

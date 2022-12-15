@@ -1,5 +1,5 @@
-const curry = require('crocks/helpers/curry')
-const kindOf = require('../Validation/kindOf')
+const curry = require('../Functional/curry')
+const isObject = require('../Boolean/isObject')
 
 const _objBadKey = require('../Validation/objBadKey')
 
@@ -45,7 +45,7 @@ const _objBadKey = require('../Validation/objBadKey')
  */
 const passesObjKeyCheck = curry(
   (keyModel, obj) =>
-    !(kindOf(obj) === 'object' && _objBadKey(keyModel, obj) !== undefined)
+    !(isObject(obj) && _objBadKey(keyModel, obj) !== undefined)
 )
 
 module.exports = passesObjKeyCheck

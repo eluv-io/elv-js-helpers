@@ -10,12 +10,14 @@ const lt = require('ramda/src/lt')
  * * `0` if `x == y` (more specifically, if neither `x < y` nor `y < x` are `true`)
  * * `1` if `y < x`
  *
- * Used as an input into sorting and Validation functions.
+ * Used as an input into sorting and validation functions.
  *
  * @function
  * @curried
  * @category Functional
  * @sig a -> b -> -1 | 0 | 1
+ * @param {*} - A value that can be compared with `<`
+ * @param {*} - A value that can be compared with `<`
  * @returns {Integer} -1 | 0 | 1
  * @example
  *

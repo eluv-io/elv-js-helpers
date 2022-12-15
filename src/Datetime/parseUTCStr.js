@@ -1,4 +1,4 @@
-const REGEX_UTC_TIMESTAMP = require('./REGEX_UTC_TIMESTAMP')
+const REGEX_UTC_TIMESTAMP = require('./RE_UTC_TIMESTAMP')
 
 const _MONTH_LENGTHS = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
 
