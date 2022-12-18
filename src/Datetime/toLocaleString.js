@@ -1,4 +1,4 @@
-const invoker = require('ramda/src/invoker')
+const curry = require('../Functional/curry')
 
 /**
  * Takes two inputs (for `locales` and `options` and returns a function that will accept a
@@ -18,8 +18,8 @@ const invoker = require('ramda/src/invoker')
  * @curried
  * @category Datetime
  * @sig (String | [String], Object) -> (Date -> String)
- * @param {(String | String[] )} - The `locales` argument to pass to `Date.toLocaleString()`
- * @param {Object} - The `options` argument to pass to `Date.toLocaleString()`
+ * @param {(String | String[] )} locales - The `locales` argument to pass to `Date.toLocaleString()`
+ * @param {Object} options - The `options` argument to pass to `Date.toLocaleString()`
  * @returns {Function}
  * @example
  *
@@ -68,6 +68,8 @@ const invoker = require('ramda/src/invoker')
  *
  *
  */
-const toLocaleString = invoker(2, 'toLocaleString')
+const toLocaleString = curry(
+  (locales, options) => date => date.toLocaleString(locales, options)
+)
 
 module.exports = toLocaleString

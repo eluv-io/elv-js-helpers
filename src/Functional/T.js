@@ -1,3 +1,3 @@
-const T = require('ramda/src/T')
+const T = () => true
 
 module.exports = T

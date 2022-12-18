@@ -1,5 +1,7 @@
-const comparator = require('ramda/src/comparator')
-const lt = require('ramda/src/lt')
+const comparator = require('./comparator')
+const flip = require('./flip')
+
+const isLT = require('../Boolean/isLT')
 
 /**
  * Compares two items `x` and `y` using Javascript's
@@ -7,8 +9,8 @@ const lt = require('ramda/src/lt')
  * operator, and returns:
  *
  * * `-1` if `x < y`
- * * `0` if `x == y` (more specifically, if neither `x < y` nor `y < x` are `true`)
  * * `1` if `y < x`
+ * * `0` otherwise (`x` and `y` may not be equal, e.g. `null < undefined` and `undefined < null` are both `false`)
  *
  * Used as an input into sorting and validation functions.
  *
@@ -16,8 +18,8 @@ const lt = require('ramda/src/lt')
  * @curried
  * @category Functional
  * @sig a -> b -> -1 | 0 | 1
- * @param {*} - A value that can be compared with `<`
- * @param {*} - A value that can be compared with `<`
+ * @param {*} x - A value that can be compared with `<`
+ * @param {*} y - A value that can be compared with `<`
  * @returns {Integer} -1 | 0 | 1
  * @example
  *
@@ -36,6 +38,6 @@ const lt = require('ramda/src/lt')
  * compare([1], 'a')        //= -1
  *
  */
-const compare = comparator(lt)
+const compare = comparator(flip(isLT))
 
 module.exports = compare

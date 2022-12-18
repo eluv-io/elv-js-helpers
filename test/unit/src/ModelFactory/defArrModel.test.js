@@ -5,17 +5,29 @@ const expect = chai.expect
 
 
 const kind = require('../../../../src/Validation/kind')
+const AnyModel = require('../../../../src/Model/AnyModel')
 const NonNegativeNumModel = require('../../../../src/Model/NonNegativeNumModel')
 const resultUnwrap = require('../../../../src/Conversion/resultUnwrap')
 const validateWithModel = require('../../../../src/Validation/validateWithModel')
 
 const defArrModel = require('../../../../src/ModelFactory/defArrModel')
 
-describe('defBoundedNumModel', function () {
+describe('defArrModel', function () {
 
   const AgeArrayModel = defArrModel('AgeArray', NonNegativeNumModel)
 
   const ValidateAgeArrayModel = validateWithModel(AgeArrayModel)
+
+  it('should be able to define non-typed arrays', function () {
+    const NonTypedArrayModel = defArrModel('NonTypedArray', AnyModel)
+    expect(() => NonTypedArrayModel([])).to.not.throw()
+    NonTypedArrayModel([]).should.eql([])
+    expect(() => NonTypedArrayModel([0])).to.not.throw()
+    NonTypedArrayModel([0]).should.eql([0])
+    expect(() => NonTypedArrayModel(['a', 42])).to.not.throw()
+    NonTypedArrayModel(['a',42]).should.eql(['a',42])
+  })
+
 
   it('should pass for valid inputs, and return input', function () {
     expect(() => AgeArrayModel([])).to.not.throw()

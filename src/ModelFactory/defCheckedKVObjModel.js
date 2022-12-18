@@ -6,6 +6,8 @@ const assertAfterCheck = require('../ModelAssertion/assertAfterCheck')
 const assertObjKeysValid = require('../ModelAssertion/assertObjKeysValid')
 const assertObjValuesValid = require('../ModelAssertion/assertObjValuesValid')
 
+const throwIfUndefined = require('../Validation/throwIfUndefined')
+
 /**
  * Returns an [ObjectModel](http://objectmodel.js.org/) which will validate that an input is:
  *
@@ -25,9 +27,9 @@ const assertObjValuesValid = require('../ModelAssertion/assertObjValuesValid')
  * @returns {Object} Returns an [ObjectModel](http://objectmodel.js.org/) that can be called with an input
  * @example
  *
- * const NonBlankStrModel = require('@eluvio/elv-js-helpers/Model/NonBlankStrModel')
- *
  * const defCheckedKVObjModel = require('@eluvio/elv-js-helpers/ModelFactory/defCheckedKVObjModel')
+ *
+ * const NonBlankStrModel = require('@eluvio/elv-js-helpers/Model/NonBlankStrModel')
  *
  * const NoBlankStrKVObjectModel = defCheckedKVObjModel(
  *   'ObjectWithNonBlankStringKeysAndValues',
@@ -48,8 +50,10 @@ const assertObjValuesValid = require('../ModelAssertion/assertObjValuesValid')
  *
  */
 // noinspection JSCheckFunctionSignatures
-const defCheckedKVObjModel = (name, keyModel, valueModel) =>
-  defBasicModel(name, Object)
+const defCheckedKVObjModel = (name, keyModel, valueModel) => {
+  throwIfUndefined('no key model supplied', keyModel)
+  throwIfUndefined('no value model supplied', valueModel)
+  return defBasicModel(name, Object)
     .extend()
     .assert(
       ...assertAfterCheck(
@@ -63,5 +67,6 @@ const defCheckedKVObjModel = (name, keyModel, valueModel) =>
         ...assertObjValuesValid(valueModel)
       )
     )
+}
 
 module.exports = defCheckedKVObjModel

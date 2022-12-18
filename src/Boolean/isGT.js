@@ -1,13 +1,10 @@
-const gt = require('ramda/src/gt')
-
-const flip = require('../Functional/flip')
+const curry = require('../Functional/curry')
 
 /**
- * Reversed version of Ramda's `gt` function _(Copyright © 2013-2020 Scott Sauyet and Michael Hurley)_
- *
  * Returns `true` if SECOND input is greater than the FIRST input, `false` otherwise.
  *
- * Note that this is the reverse of Ramda's `gt` function, this is to allow more intuitive currying.
+ * Note that this is the REVERSE of normal infix notation, as well as Ramda's `gt` function - this is to allow
+ * more intuitive currying, e.g. isGreaterThan42 = isGT(42)
  *
  * If called with fewer than 2 arguments, will return a [partially applied function](https://mostly-adequate.gitbook.io/mostly-adequate-guide/ch04)
  *
@@ -39,6 +36,6 @@ const flip = require('../Functional/flip')
  *
  * isPositive(1)           //=> true
  */
-const isGT = flip(gt)
+const isGT = curry((a, b) => b > a )
 
 module.exports = isGT

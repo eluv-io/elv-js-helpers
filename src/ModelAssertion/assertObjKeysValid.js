@@ -1,4 +1,4 @@
-const isNil = require('ramda/src/isNil')
+const isNil = require('../Boolean/isNil')
 const T = require('../Functional/T')
 
 const _objBadKeyErrMsg = require('./_objBadKeyErrMsg')

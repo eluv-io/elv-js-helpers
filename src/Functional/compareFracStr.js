@@ -1,4 +1,4 @@
-const comparator = require('ramda/src/comparator')
+const comparator = require('./comparator')
 
 const Fraction = require('../Conversion/fraction')
 const FractionStrModel = require('../Model/FractionStrModel')
