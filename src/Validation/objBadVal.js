@@ -3,7 +3,6 @@ const curry = require('crocks/helpers/curry')
 
 const find = require('ramda/src/find')
 const last = require('ramda/src/last')
-const toPairs = require('ramda/src/toPairs')
 
 const failsModelCheck = require('../Boolean/failsModelCheck')
 
@@ -45,7 +44,7 @@ const objBadVal = curry(
       failsModelCheck(valueModel),
       last
     ),
-    toPairs(obj)
+    Object.entries(obj)
   )
 )
 

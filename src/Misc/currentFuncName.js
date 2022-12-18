@@ -14,6 +14,6 @@
  * MyFunc()  //=> OUTPUT: 'Entered function: MyFunc'
  *
  */
-const currentFuncName = () => new Error().stack.split('\n')[2].trim()
+const currentFuncName = () => new Error().stack.split('\n')[2].trim().split(' ')[1]
 
 module.exports = currentFuncName

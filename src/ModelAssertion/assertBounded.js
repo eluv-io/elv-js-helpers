@@ -1,4 +1,4 @@
-const isNil = require('@eluvio/ramda-fork/src/isNil')
+const isNil = require('../Boolean/isNil')
 
 const _assertBoundedBetween = require('./assertBoundedBetween')
 const _assertBoundedLower = require('./assertBoundedLower')

@@ -13,6 +13,8 @@ const assertNotEmpty = require('../ModelAssertion/assertNotEmpty')
  *  * A [Javascript Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
  *  * Made up of elements that are of the specified type definition(s)
  *
+ *  To define an array that can hold any type of value, pass in [AnyModel](#AnyModel) for `def`.
+ *
  * @function
  * @category ModelFactory
  * @sig String -> ([Model] | Model) -> (* -> Array | THROW)
@@ -21,9 +23,9 @@ const assertNotEmpty = require('../ModelAssertion/assertNotEmpty')
  * @returns {Object} Returns an [ObjectModel](http://objectmodel.js.org/) that can be called with an input
  * @example
  *
- * const NonNegativeNumModel = require('@eluvio/elv-js-helpers/Model/NonNegativeNumModel')
- *
  * const defNonEmptyArrModel = require('@eluvio/elv-js-helpers/ModelFactory/defNonEmptyArrModel')
+ *
+ * const NonNegativeNumModel = require('@eluvio/elv-js-helpers/Model/NonNegativeNumModel')
  *
  * const NonEmptyAgeArrayModel = defNonEmptyArrModel('NonEmptyAgeArray', NonNegativeNumModel)
  *

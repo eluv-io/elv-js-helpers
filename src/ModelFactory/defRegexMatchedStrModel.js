@@ -2,6 +2,8 @@ const StringModel = require('../Model/StringModel')
 
 const assertMatchesRegex = require('../ModelAssertion/assertMatchesRegex')
 
+const throwIfUndefined = require('../Validation/throwIfUndefined')
+
 /**
  * Returns an [ObjectModel](http://objectmodel.js.org/) which will validate that an input is:
  *
@@ -36,8 +38,9 @@ const assertMatchesRegex = require('../ModelAssertion/assertMatchesRegex')
  *
  * UUIDStringModel2('foo')  //=> EXCEPTION: 'Value is not in UUID format "xxxxxxxx-xxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" (got: "foo")'
  */
-const defRegexMatchedStrModel = (name, regex, errMsg) =>
-  StringModel
+const defRegexMatchedStrModel = (name, regex, errMsg) => {
+  throwIfUndefined('no regex supplied', regex)
+  return StringModel
     .extend()
     .assert(
       ...assertMatchesRegex(
@@ -47,5 +50,7 @@ const defRegexMatchedStrModel = (name, regex, errMsg) =>
       )
     )
     .as(name)
+}
+
 
 module.exports = defRegexMatchedStrModel

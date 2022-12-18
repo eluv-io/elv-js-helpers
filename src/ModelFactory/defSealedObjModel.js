@@ -1,5 +1,7 @@
 const defObjModel = require('./defObjModel')
 
+const throwIfUndefined = require('../Validation/throwIfUndefined')
+
 // TODO: add defaults clause
 
 /**
@@ -36,6 +38,8 @@ const defObjModel = require('./defObjModel')
  *
  */
 const defSealedObjModel = (name, def) => {
+  throwIfUndefined('no model definition supplied', def)
+
   const model = defObjModel(name, def)
   model.sealed = true
   model.extend = () => {

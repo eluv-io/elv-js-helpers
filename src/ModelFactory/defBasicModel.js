@@ -2,6 +2,8 @@
 
 const {BasicModel} = require('objectmodel')
 
+const throwIfUndefined = require('../Validation/throwIfUndefined')
+
 /**
  * Passthrough for `BasicModel()` function from [ObjectModel](http://objectmodel.js.org/)
  * _(Copyright © 2015 Sylvain Pollet-Villard, MIT license)_ with name assignment added.
@@ -24,6 +26,9 @@ const {BasicModel} = require('objectmodel')
  * StringModel('foo')   //=> 'foo' (proxied by ObjectModel)
  *
  */
-const defBasicModel = (name, def)=> BasicModel(def).as(name)
+const defBasicModel = (name, def)=> {
+  throwIfUndefined('no basic type supplied', def)
+  return BasicModel(def).as(name)
+}
 
 module.exports = defBasicModel

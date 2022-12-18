@@ -20,6 +20,8 @@ const Boolean = {
   isGTCustom: require('./Boolean/isGTCustom'),
   isGTE: require('./Boolean/isGTE'),
   isGeneratorFunction: require('./Boolean/isGeneratorFunction'),
+  isLT: require('./Boolean/isLT'),
+  isLTE: require('./Boolean/isLTE'),
   isNil: require('./Boolean/isNil'),
   isNotEmpty: require('./Boolean/isNotEmpty'),
   isNull: require('./Boolean/isNull'),
@@ -77,6 +79,7 @@ const Functional = {
   clone: require('./Functional/clone'),
   cloneAssoc: require('./Functional/cloneAssoc'),
   cmpIndexable: require('./Functional/cmpIndexable'),
+  comparator: require('./Functional/comparator'),
   compare: require('./Functional/compare'),
   compareFracStr: require('./Functional/compareFracStr'),
   constant: require('./Functional/constant'),
@@ -104,6 +107,7 @@ const Functional = {
   permuterGenFn: require('./Functional/permuterGenFn'),
   pipe: require('./Functional/pipe'),
   pluck: require('./Functional/pluck'),
+  setArity: require('./Functional/setArity'),
   swapFields: require('./Functional/swapFields'),
   truthTable: require('./Functional/truthTable'),
   uniq: require('./Functional/uniq'),
@@ -122,6 +126,7 @@ const Math = {
 }
 
 const Misc = {
+  callerFuncName: require('./Misc/callerFuncName'),
   currentFuncName: require('./Misc/currentFuncName'),
   dumpJSON: require('./Misc/dumpJSON'),
   throwError: require('./Misc/throwError')
@@ -132,6 +137,7 @@ const Model = {
   DatetimeModel: require('./Model/DatetimeModel'),
   EmptyArrModel: require('./Model/EmptyArrModel'),
   FractionStrModel: require('./Model/FractionStrModel'),
+  FunctionModel: require('./Model/FunctionModel'),
   IntegerModel: require('./Model/IntegerModel'),
   NonBlankStrModel: require('./Model/NonBlankStrModel'),
   NonEmptyArrModel: require('./Model/NonEmptyArrModel'),
@@ -197,6 +203,7 @@ const Validation = {
   kind: require('./Validation/kind'),
   objBadKey: require('./Validation/objBadKey'),
   objBadVal: require('./Validation/objBadVal'),
+  throwIfArgsBad: require('./Validation/throwIfArgsBad'),
   throwIfFalse: require('./Validation/throwIfFalse'),
   throwIfTrue: require('./Validation/throwIfTrue'),
   throwIfUndefined: require('./Validation/throwIfUndefined'),

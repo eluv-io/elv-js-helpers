@@ -2,6 +2,8 @@
 
 const {ArrayModel} = require('objectmodel')
 
+const throwIfUndefined = require('../Validation/throwIfUndefined')
+
 /**
  * Passthrough for `ArrayModel()` function from [ObjectModel](http://objectmodel.js.org/)
  * _(Copyright © 2015 Sylvain Pollet-Villard, MIT license)_ with name assignment added.
@@ -10,6 +12,8 @@ const {ArrayModel} = require('objectmodel')
  *
  *  * A [Javascript Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
  *  * Made up of elements that are of the specified type definition(s)
+ *
+ *  To define an array that can hold any type of value, pass in [AnyModel](#AnyModel) for `def`.
  *
  * @function
  * @category ModelFactory
@@ -38,6 +42,9 @@ const {ArrayModel} = require('objectmodel')
  * AgeArrayModel(['foo'])     //=> EXCEPTION: 'expecting Array[0] to be Number, got String "foo"'
  *
  */
-const defArrModel = (name, def)=> ArrayModel(def).as(name)
+const defArrModel = (name, def)=> {
+  throwIfUndefined('no element model supplied', def)
+  return ArrayModel(def).as(name)
+}
 
 module.exports = defArrModel

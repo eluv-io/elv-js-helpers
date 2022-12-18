@@ -4,6 +4,8 @@ const {ObjectModel} = require('objectmodel')
 
 const assocComputed = require('../Functional/assocComputed')
 
+const throwIfUndefined = require('../Validation/throwIfUndefined')
+
 /**
  * Passthrough for `ObjectModel()` function from [ObjectModel](http://objectmodel.js.org/)
  * _(Copyright © 2015 Sylvain Pollet-Villard, MIT license)_ with name assignment added
@@ -37,6 +39,7 @@ const assocComputed = require('../Functional/assocComputed')
  *
  */
 const defObjModel = (name, def) => {
+  throwIfUndefined('no model definition supplied', def)
   const newModel = ObjectModel(def).as(name)
   newModel.errorCollector = errors => {
     ObjectModel.prototype.errorCollector(

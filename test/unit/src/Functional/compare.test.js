@@ -13,6 +13,7 @@ describe('compare', () => {
     compare(2, 1).should.equal(1)
     compare('a', 'b').should.equal(-1)
     compare(null, undefined).should.equal(0)
+    compare(undefined, null).should.equal(0)
     compare([1], 'a').should.equal(-1)
   })
 })

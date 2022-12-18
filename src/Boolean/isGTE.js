@@ -1,13 +1,10 @@
-const gte = require('ramda/src/gte')
-
-const flip = require('../Functional/flip')
+const curry = require('../Functional/curry')
 
 /**
- * Reversed version of Ramda's `gte` function _(Copyright © 2013-2020 Scott Sauyet and Michael Hurley)_
+ * Returns `true` if SECOND input is greater than or equal to the FIRST input, `false` otherwise.
  *
- * Returns `true` if SECOND input is greater or equal to than the FIRST input, `false` otherwise.
- *
- * Note that this is the reverse of Ramda's `gte` function, this is to allow more intuitive currying.
+ * Note that this is the REVERSE of normal infix notation, as well as Ramda's `gte` function - this is to allow
+ * more intuitive currying, e.g. isAtLeast42 = isGTE(42)
  *
  * If called with fewer than 2 arguments, will return a [partially applied function](https://mostly-adequate.gitbook.io/mostly-adequate-guide/ch04)
  *
@@ -39,6 +36,6 @@ const flip = require('../Functional/flip')
  *
  * notNegative(1)           //=> true
  */
-const isGTE = flip(gte)
+const isGTE = curry((a, b) => b >= a)
 
 module.exports = isGTE

@@ -2,7 +2,7 @@
   "name": "@eluvio/elv-js-helpers",
   "version": "4.0.0",
   "description": "A collection of Javascript helper functions used by several Eluvio libraries.",
-  "homepage": "https://eluv-io.github.io/elv-ramdoc",
+  "homepage": "https://eluv-io.github.io/elv-js-helpers",
   "repository": {
     "type": "git",
     "url": "https://github.com/eluv-io/elv-js-helpers"
