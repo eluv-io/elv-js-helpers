@@ -57,7 +57,7 @@ const validator = curry(
     )
     // noinspection JSValidateTypes
     return model.test(input, errorCollector) ?
-      Ok(model(input)) :
+      Ok(input) :
       Err(foundErrors)
   }
 )
