@@ -1,6 +1,6 @@
-const compose = require('ramda/src/compose')
-const isEmpty = require('ramda/src/isEmpty')
-const not = require('ramda/src/not')
+const compose = require('@eluvio/ramda-fork/src/compose')
+const isEmpty = require('@eluvio/ramda-fork/src/isEmpty')
+const not = require('@eluvio/ramda-fork/src/not')
 
 const assertionErrMsg = require('../assertionErrMsg')
 

@@ -1,10 +1,10 @@
 const compose = require('crocks/helpers/compose')
 const curry = require('crocks/helpers/curry')
 
-const find = require('ramda/src/find')
-const last = require('ramda/src/last')
-const not = require('ramda/src/not')
-const toPairs = require('ramda/src/toPairs')
+const find = require('@eluvio/ramda-fork/src/find')
+const last = require('@eluvio/ramda-fork/src/last')
+const not = require('@eluvio/ramda-fork/src/not')
+const toPairs = require('@eluvio/ramda-fork/src/toPairs')
 
 const checkVsModel = require('../checkVsModel')
 

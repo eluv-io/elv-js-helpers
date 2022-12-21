@@ -1,4 +1,4 @@
-const invoker = require('ramda/src/invoker')
+const invoker = require('@eluvio/ramda-fork/src/invoker')
 
 /**
  * Returns a function that will accept a [Luxon DateTime](https://moment.github.io/luxon/#/) object and return a string

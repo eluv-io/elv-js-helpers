@@ -1,5 +1,5 @@
 const ifElse = require('crocks/logic/ifElse')
-const T = require('ramda/src/T')
+const T = require('@eluvio/ramda-fork/src/T')
 
 const assertionErrMsg = require('../assertionErrMsg')
 const isFunction = require('../isFunction')

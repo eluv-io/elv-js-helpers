@@ -50,11 +50,11 @@
     "webpack-cli": "^4.9.2"
   },
   "dependencies": {
+    "@eluvio/ramda-fork": "^0.28.1",
     "@ladjs/format-util": "^1.0.4",
     "crocks": "^0.12.4",
     "fraction.js": "^4.2.0",
     "kind-of": "^6.0.3",
-    "objectmodel": "^4.3.0",
-    "ramda": "^0.28.0"
+    "objectmodel": "^4.3.0"
   }
 }

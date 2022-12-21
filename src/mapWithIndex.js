@@ -1,5 +1,5 @@
-const addIndex = require('ramda/src/addIndex')
-const map = require('ramda/src/map')
+const addIndex = require('@eluvio/ramda-fork/src/addIndex')
+const map = require('@eluvio/ramda-fork/src/map')
 
 /**
  * Iterates over an array and passes (element, index) pair to supplied function to generate new array

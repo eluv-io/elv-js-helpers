@@ -1,5 +1,5 @@
-const comparator = require('ramda/src/comparator')
-const lt = require('ramda/src/lt')
+const comparator = require('@eluvio/ramda-fork/src/comparator')
+const lt = require('@eluvio/ramda-fork/src/lt')
 
 /**
  * Compares two items `x` and `y` using Javascript's

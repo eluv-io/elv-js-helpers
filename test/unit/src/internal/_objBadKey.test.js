@@ -4,7 +4,7 @@ const chai = require('chai')
 chai.should()
 // const expect = chai.expect
 
-const equals = require('ramda/src/equals')
+const equals = require('@eluvio/ramda-fork/src/equals')
 
 const _assertWithPreCheck = require('../../../../src/internal/_assertWithPrecheck')
 const _objBadKey = require('../../../../src/internal/_objBadKey')

@@ -7,7 +7,7 @@ const liftA2 = require('crocks/helpers/liftA2')
 const {Ok, Err} = require('crocks/Result')
 
 const kindOf = require('../../../src/kindOf')
-const {multiply} = require('ramda')
+const {multiply} = require('@eluvio/ramda-fork')
 
 const resultToPOJO = require('../../../src/resultToPOJO')
 

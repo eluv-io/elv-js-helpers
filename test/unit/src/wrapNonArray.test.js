@@ -1,7 +1,7 @@
 const chai = require('chai')
 chai.should()
 
-const R = require('ramda')
+const R = require('@eluvio/ramda-fork')
 
 const wrapNonArray = require('../../../src/wrapNonArray')
 

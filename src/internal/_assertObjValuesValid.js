@@ -1,5 +1,5 @@
-const isNil = require('ramda/src/isNil')
-const T = require('ramda/src/T')
+const isNil = require('@eluvio/ramda-fork/src/isNil')
+const T = require('@eluvio/ramda-fork/src/T')
 
 const _objBadValErrMsg = require('./_objBadValErrMsg')
 const _satisfiesObjValCheck = require('./_satisfiesObjValCheck')
