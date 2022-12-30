@@ -1,4 +1,4 @@
-const filter = require('ramda/src/filter')
+const filter = require('@eluvio/ramda-fork/src/filter')
 
 const curry = require('./curry')
 const pipe = require('./pipe')

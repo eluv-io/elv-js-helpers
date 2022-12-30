@@ -6,7 +6,7 @@ const curry = require('../Functional/curry')
  * @function
  * @curried
  * @category Datetime
- * @sig Date -> Number -> String
+ * @sig Date -> Number -> Date
  * @param {Number} seconds The number of seconds to add
  * @param {Date} datetime  Javascript Date object to add to
  * @returns {Date}

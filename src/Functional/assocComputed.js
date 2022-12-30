@@ -1,6 +1,6 @@
 const curry = require('./curry')
 
-const assoc = require('ramda/src/assoc')
+const assoc = require('@eluvio/ramda-fork/src/assoc')
 
 /**
  * Returns a shallow copy of object with a specified property set to computeFn(obj)

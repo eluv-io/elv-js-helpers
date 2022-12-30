@@ -1,8 +1,8 @@
 const compose = require('crocks/helpers/compose')
 const curry = require('crocks/helpers/curry')
 
-const find = require('ramda/src/find')
-const last = require('ramda/src/last')
+const find = require('@eluvio/ramda-fork/src/find')
+const last = require('@eluvio/ramda-fork/src/last')
 
 const failsModelCheck = require('../Boolean/failsModelCheck')
 

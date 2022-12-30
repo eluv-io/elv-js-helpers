@@ -1,4 +1,4 @@
-const _max = require('ramda/src/max')
+const _max = require('@eluvio/ramda-fork/src/max')
 const reduce = require('crocks/pointfree/reduce')
 
 // return max element of array (note that an undefined element in first position will wind up being evaluated as max)

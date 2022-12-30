@@ -1,6 +1,6 @@
 // Version of swapFields without validation, works on 'normal' values rather than ADTs
 
-const assoc = require('ramda/src/assoc')
+const assoc = require('@eluvio/ramda-fork/src/assoc')
 
 const curry = require('./curry')
 

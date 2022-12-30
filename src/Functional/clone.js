@@ -1,5 +1,5 @@
-const _clone = require('ramda/src/clone')
-
+const _clone = require('@eluvio/ramda-fork/src/clone')
+const isObject = require('../Boolean/isObject')
 /**
  * Modified version of Ramda's `clone` function _(Copyright © 2013-2020 Scott Sauyet and Michael Hurley)_
  *
@@ -33,6 +33,6 @@ const _clone = require('ramda/src/clone')
  * arthurClone.last = 3                //=> EXCEPTION: 'expecting last to be String, got Number 3'
  *
  */
-const clone = x => x.constructor(_clone(x))
+const clone = x => isObject(x) ? x.constructor(_clone(x)) : _clone(x)
 
 module.exports = clone

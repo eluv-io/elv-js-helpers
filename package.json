@@ -31,7 +31,7 @@
   "author": "Eluvio, Inc.",
   "license": "MIT",
   "devDependencies": {
-    "@eluvio/elv-ramdoc": "^0.3.0",
+    "@eluvio/elv-ramdoc": "^0.3.2",
     "chai": "^4.3.7",
     "dependency-cruiser": "^12.1.0",
     "eslint": "^8.29.0",
@@ -54,11 +54,11 @@
     "webpack-cli": "^5.0.1"
   },
   "dependencies": {
+    "@eluvio/ramda-fork": "^0.28.1",
     "@ladjs/format-util": "^1.0.4",
     "crocks": "^0.12.4",
     "fraction.js": "^4.2.0",
     "kind-of": "^6.0.3",
-    "objectmodel": "^4.4.1",
-    "ramda": "^0.28.0"
+    "objectmodel": "^4.4.1"
   }
 }

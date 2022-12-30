@@ -1,4 +1,4 @@
-const _mergeDeepLeft = require('ramda/src/mergeDeepLeft')
+const _mergeDeepLeft = require('@eluvio/ramda-fork/src/mergeDeepLeft')
 
 const curry = require('./curry')
 

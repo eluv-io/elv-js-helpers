@@ -1,2 +1,2 @@
-const over = require('ramda/src/over')
+const over = require('@eluvio/ramda-fork/src/over')
 module.exports = over

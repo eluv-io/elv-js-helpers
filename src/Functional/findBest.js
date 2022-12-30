@@ -1,7 +1,7 @@
 const unless = require('crocks/logic/unless')
-const filter = require('ramda/src/filter')
-const last = require('ramda/src/last')
-const sort = require('ramda/src/sort')
+const filter = require('@eluvio/ramda-fork/src/filter')
+const last = require('@eluvio/ramda-fork/src/last')
+const sort = require('@eluvio/ramda-fork/src/sort')
 
 const cmpIndexable = require('./cmpIndexable')
 const curry = require('./curry')

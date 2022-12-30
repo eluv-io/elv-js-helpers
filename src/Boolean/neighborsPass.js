@@ -1,5 +1,5 @@
-const aperture = require('ramda/src/aperture')
-const find = require('ramda/src/find')
+const aperture = require('@eluvio/ramda-fork/src/aperture')
+const find = require('@eluvio/ramda-fork/src/find')
 
 const curry = require('../Functional/curry')
 

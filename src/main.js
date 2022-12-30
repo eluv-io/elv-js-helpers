@@ -62,6 +62,7 @@ const Datetime = {
   estTotalDur: require('./Datetime/estTotalDur'),
   etaDurStr: require('./Datetime/etaDurStr'),
   etaTimeStr: require('./Datetime/etaTimeStr'),
+  now: require('./Datetime/now'),
   parseUTCStr: require('./Datetime/parseUTCStr'),
   sysLocale: require('./Datetime/sysLocale'),
   sysTimezone: require('./Datetime/sysTimezone'),
@@ -87,6 +88,7 @@ const Functional = {
   filter: require('./Functional/filter'),
   filterKV: require('./Functional/filterKV'),
   findBest: require('./Functional/findBest'),
+  flatten: require('./Functional/flatten'),
   flip: require('./Functional/flip'),
   getPath: require('./Functional/getPath'),
   getProp: require('./Functional/getProp'),
@@ -102,9 +104,14 @@ const Functional = {
   max: require('./Functional/max'),
   mergeDeepLeft: require('./Functional/mergeDeepLeft'),
   mergeDeepRight: require('./Functional/mergeDeepRight'),
+  mergeRight: require('./Functional/mergeRight'),
+  mergeWith: require('./Functional/mergeWith'),
   negate: require('./Functional/negate'),
+  omit: require('./Functional/omit'),
   over: require('./Functional/over'),
   permuterGenFn: require('./Functional/permuterGenFn'),
+  pick: require('./Functional/pick'),
+  pickBy: require('./Functional/pickBy'),
   pipe: require('./Functional/pipe'),
   pluck: require('./Functional/pluck'),
   setArity: require('./Functional/setArity'),
@@ -129,6 +136,7 @@ const Misc = {
   callerFuncName: require('./Misc/callerFuncName'),
   currentFuncName: require('./Misc/currentFuncName'),
   dumpJSON: require('./Misc/dumpJSON'),
+  pause: require('./Misc/pause'),
   throwError: require('./Misc/throwError')
 }
 
