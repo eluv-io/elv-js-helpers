@@ -1,7 +1,7 @@
 const curry = require('crocks/helpers/curry')
 
-const find = require('ramda/src/find')
-const keys = require('ramda/src/keys')
+const find = require('@eluvio/ramda-fork/src/find')
+const keys = require('@eluvio/ramda-fork/src/keys')
 
 const failsModelCheck = require('../Boolean/failsModelCheck')
 

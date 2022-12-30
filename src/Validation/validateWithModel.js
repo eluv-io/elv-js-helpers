@@ -10,7 +10,7 @@ const {Ok, Err} = require('crocks/Result')
  * Validates `input` against a [Model](http://objectmodel.js.org/) and returns a
  * [Crocks Result](https://crocks.dev/docs/crocks/Result.html) instance. This returned instance will be an
  * [Ok](https://crocks.dev/docs/crocks/Result.html#ok) wrapping the input data if it passed the Model's validations,
- * or an [Err](https://crocks.dev/docs/crocks/Result.html#err) wrapping an array of validation error message strings.
+ * or an [Err](https://crocks.dev/docs/crocks/Result.html#err) wrapping an array of validation errors.
  *
  * Function is curried, it can be called with just `Model` to return a validation function.
  *
@@ -38,9 +38,9 @@ const {Ok, Err} = require('crocks/Result')
  *
  * validatePositiveNumber(42)         //=> Ok 42
  *
- * validatePositiveNumber(0)          //=> Err ['PositiveNumber: Value must be > 0 (got: 0)']
+ * validatePositiveNumber(0)          //=> Err [error('PositiveNumber: Value must be > 0 (got: 0)')]
  *
- * validatePositiveNumber('foo')      //=> Err ['PositiveNumber: expecting Number, got String "foo"']
+ * validatePositiveNumber('foo')      //=> Err [error('PositiveNumber: expecting Number, got String "foo"')]
  *
  */
 const validateWithModel = curry(

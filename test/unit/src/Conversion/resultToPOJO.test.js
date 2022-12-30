@@ -3,7 +3,7 @@ const chai = require('chai')
 chai.should()
 const expect = chai.expect
 
-const multiply = require('ramda/src/multiply')
+const multiply = require('@eluvio/ramda-fork/src/multiply')
 
 const Err = require('../../../../src/ADT/Err')
 const kind = require('../../../../src/Validation/kind')

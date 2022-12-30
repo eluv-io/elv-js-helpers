@@ -1,3 +1,3 @@
-const pluck = require('ramda/src/pluck')
+const pluck = require('@eluvio/ramda-fork/src/pluck')
 
 module.exports = pluck

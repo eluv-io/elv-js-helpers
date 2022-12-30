@@ -1,12 +1,23 @@
+const isFunction = require('../Boolean/isFunction')
 const isObject = require('../Boolean/isObject')
 
 const callerFuncName = require('../Misc/callerFuncName')
+const throwError = require('../Misc/throwError')
+
+const defSealedObjModel = require('../ModelFactory/defSealedObjModel')
+
+const kind = require('../Validation/kind')
 
 const throwIfUndefined = require('./throwIfUndefined')
 
-const throwIfArgsBad = (model, args) => {
+const throwIfArgsBad = (modelOrObj, args) => {
   const errPrefix = callerFuncName() + '() '
-  if(isObject(model.definition)) throwIfUndefined(errPrefix + 'expecting Object, got undefined', args)
+  const model = isObject(modelOrObj)
+    ? defSealedObjModel('args', modelOrObj)
+    : isFunction(modelOrObj)
+      ? modelOrObj
+      : throwError(`Expected model (function) or object to validate arguments against, got ${kind(modelOrObj)} (${modelOrObj})`)
+  throwIfUndefined(errPrefix + 'expecting Object containing arguments, got undefined', args)
   let result
   try {
     result = model(args)

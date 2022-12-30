@@ -1,2 +1,2 @@
-const head = require('ramda/src/head')
+const head = require('@eluvio/ramda-fork/src/head')
 module.exports = head
