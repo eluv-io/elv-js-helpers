@@ -36,44 +36,43 @@ const throwIfTrue = require('../Validation/throwIfTrue')
  * const curry = require('@eluvio/elv-js-helpers/Functional/curry')
  * const liftA2 = require('@eluvio/elv-js-helpers/Functional/liftA2')
  *
- * const okObject = Ok(42)                                   //=> Ok 42
+ * const dumpJSON = require('@eluvio/elv-js-helpers/Misc/dumpJSON')
  *
- * const errObject1 = Err('failed to obtain first input')    //=> Err ['failed to obtain first input'] (automatically converted to 1-element array)
+ * const okObject = Ok(42)
  *
- * const errObject2 = Err(['failed to obtain second input']) //=> Err ['failed to obtain second input']
+ * // Non-array input automatically converted to 1-element array:
+ * const errObject1 = Err('failed to obtain first input')
+ * errObject1.inspect()                                          //=> 'Err [ "failed to obtain first input" ]'
+ *
+ * const errObject2 = Err(['failed to obtain second input'])
+ * errObject2.inspect()                                          //=> 'Err [ "failed to obtain second input" ]'
  *
  * const mult = (a, b) => a * b
  *
- * const multResults = liftA2(curry(mult))                   //=> convert function 'mult' into one that works with values wrapped in Ok / Err
+ * // convert function 'mult' into one that works with values wrapped in Ok / Err
+ * const multResults = liftA2(curry(mult))
  *
- * const goodResult = multResults(okObject, okObject)        //=> Ok 1764
+ * const goodResult = multResults(okObject, okObject)
  *
- * console.log(resultToPOJO(goodResult))
- * '{ ok: true, result: 1764 }'
+ * goodResult.inspect()                                          //=> 'Ok 1764'
  *
- * const badResult1 = multResults(errObject1, okObject)      //=> Err ['failed to obtain first input']
+ * dumpJSON(resultToPOJO(goodResult))                            //=> OUTPUT: '{\n  "ok": true,\n  "value": 1764\n}'
  *
- * const badResult2 = multResults(okObject, errObject2)      //=> Err ['failed to obtain second input']
+ * multResults(errObject1, okObject).inspect()                   //=> 'Err [ "failed to obtain first input" ]'
  *
- * const badResult3 = multResults(errObject1, errObject2)    //=> Err ['failed to obtain first input', 'failed to obtain second input']
+ * multResults(okObject, errObject2).inspect()                   //=> 'Err [ "failed to obtain second input" ]'
  *
- * console.log(resultToPOJO(badResult3))
- * `{
- *   ok: false,
- *   errors: [ 'failed to obtain first input', 'failed to obtain second input' ],
- *   errorDetails: [ 'failed to obtain first input', 'failed to obtain second input' ]
- * }`
+ * const resultTwoBadInputs = multResults(errObject1, errObject2)
  *
- * Err([])                                                   //=> EXCEPTION: 'Err cannot wrap an empty array'
+ * resultTwoBadInputs.inspect()                                  //=> 'Err [ "failed to obtain first input", "failed to obtain second input" ]'
  *
- * Err([undefined])                                          //=> Err [undefined]
+ * dumpJSON(resultToPOJO(resultTwoBadInputs))                    //=> OUTPUT: '{\n  "ok": false,\n  "errors": [\n    "failed to obtain first input",\n    "failed to obtain second input"\n  ],\n  "errorDetails": [\n    "failed to obtain first input",\n    "failed to obtain second input"\n  ]\n}'
  *
- * console.log(resultToPOJO(Err([undefined])))
- * `{
- *   ok: false,
- *   errors: [ 'undefined' ],
- *   errorDetails: [ undefined ]
- * }`
+ * Err([])                                                       //=> EXCEPTION: 'Err cannot wrap an empty array'
+ *
+ * Err([undefined]).inspect()                                    //=> 'Err [ undefined ]'
+ *
+ * dumpJSON(resultToPOJO(Err([undefined])))                      //=> OUTPUT: '{\n  "ok": false,\n  "errors": [\n    "undefined"\n  ],\n  "errorDetails": [\n    null\n  ]\n}'
  */
 const Err = x => {
   const arr = wrapNonArray(x)

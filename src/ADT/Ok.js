@@ -25,7 +25,7 @@ const Result = require('crocks/Result')
  *
  * const Ok = require('@eluvio/elv-js-helpers/ADT/Ok')
  *
- * Ok(42)    //=> Ok 42
+ * Ok(42).inspect()    //=> 'Ok 42'
  *
  */
 const Ok = Result.Ok
