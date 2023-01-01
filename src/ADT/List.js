@@ -14,23 +14,35 @@
  *
  * const List = require('@eluvio/elv-js-helpers/ADT/List')
  *
- * const myList = List([1,2,3])    //=> List [ 1, 2, 3 ]  (List with 3 elements)
+ * const myList = List([1,2,3])
  *
- * myList.toArray()                //=> [ 1, 2, 3 ]  (Javascript array)
+ * // List with 3 elements:
+ * myList.inspect()                 //=> 'List [ 1, 2, 3 ]'
  *
- * myList.head()                   //=> Just 1 (instance of the Maybe ADT)
+ * // Convert to Javascript array:
+ * myList.toArray()                //=> [ 1, 2, 3 ]
  *
- * myList.tail()                   //=> Just List [ 2, 3 ] (instance of the Maybe ADT, wrapping a List)
+ * // Elements are instances of the Crocks 'Maybe' ADT
+ * myList.head().inspect()         //=> 'Just 1'
  *
- * List([[1,2,3]])                 //=> List [ [ 1, 2, 3 ] ] (List with 1 element which itself is a 3-item array)
+ * // tail() returns an instance of Crocks 'Maybe' ADT, which wraps a List if there were at least 2 elements in original List
+ * myList.tail().inspect()                   //=> 'Just List [ 2, 3 ]'
  *
- * List([42])                      //=> List [ 42 ] (List with 1 element)
+ * // List with 1 element, which itself is a 3-item array:
+ * List([[1,2,3]]).inspect()                 //=> 'List [ [ 1, 2, 3 ] ]'
  *
- * List(42)                        //=> List [ 42 ] (List with 1 element)
+ * // List with 1 element:
+ * List([42]).inspect()                      //=> 'List [ 42 ]'
  *
- * const emptyList = List([])      //=> List [ ] (List with 0 elements)
+ * // Non-array input is treated as a single-element array:
+ * List(42).inspect()                        //=> 'List [ 42 ]'
  *
- * emptyList.head()                //=> Nothing (instance of the Maybe ADT)
+ * // List with 0 elements:
+ * const emptyList = List([])
+ * emptyList.inspect()                    //=> 'List [ ]'
+ *
+ * // Instance of the Crocks 'Maybe' ADT, with no value
+ * emptyList.head().inspect()                //=> 'Nothing'
  */
 const List = require('crocks/List')
 
