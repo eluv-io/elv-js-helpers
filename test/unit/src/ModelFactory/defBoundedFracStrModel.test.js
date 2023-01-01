@@ -1,10 +1,5 @@
-// unit test for defBoundedFracStrModel.js
-
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
-
-const defBoundedFracStrModel = require('../../../../src/ModelFactory/defBoundedFracStrModel')
+const TH = require('../../../test-helpers')
+const defBoundedFracStrModel = TH.requireSrcFile('ModelFactory/defBoundedFracStrModel')
 
 describe('defBoundedFracStrModel', () => {
 
@@ -19,10 +14,10 @@ describe('defBoundedFracStrModel', () => {
 
     PositiveFracModel('42').should.equal('42')
     PositiveFracModel('22/7').should.equal('22/7')
-    expect(()=>PositiveFracModel('0')).to.throw('Value must be > 0 (got: "0")')
-    expect(()=>PositiveFracModel('-42')).to.throw('Value must be > 0 (got: "-42")')
-    expect(()=>PositiveFracModel('foo')).to.throw('Value must be a string in the form of a whole number or a fraction (got: "foo")')
-    expect(()=>PositiveFracModel(42)).to.throw('expecting String, got Number 42')
+    TH.expect(()=>PositiveFracModel('0')).to.throw('Value must be > 0 (got: "0")')
+    TH.expect(()=>PositiveFracModel('-42')).to.throw('Value must be > 0 (got: "-42")')
+    TH.expect(()=>PositiveFracModel('foo')).to.throw('Value must be a string in the form of a whole number or a fraction (got: "foo")')
+    TH.expect(()=>PositiveFracModel(42)).to.throw('expecting String, got Number 42')
 
     const NegativeFracModel = defBoundedFracStrModel(
       'NegativeFraction',
@@ -32,8 +27,8 @@ describe('defBoundedFracStrModel', () => {
       false
     )
 
-    expect(()=>NegativeFracModel('42')).to.throw('Value must be < 0 (got: "42")')
-    expect(()=>NegativeFracModel('0')).to.throw('Value must be < 0 (got: "0")')
+    TH.expect(()=>NegativeFracModel('42')).to.throw('Value must be < 0 (got: "42")')
+    TH.expect(()=>NegativeFracModel('0')).to.throw('Value must be < 0 (got: "0")')
     NegativeFracModel('-22/7').should.equal('-22/7')
     NegativeFracModel('-42').should.equal('-42')
 

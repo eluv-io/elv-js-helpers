@@ -1,10 +1,7 @@
-// unit test for estTotalDur.js
+const TH = require('../../../test-helpers')
+const estTotalDur = TH.requireSrcFile('Datetime/estTotalDur')
 
-const chai = require('chai')
-chai.should()
-
-const estTotalDur = require('../../../../src/Datetime/estTotalDur')
-const resultUnwrap = require('../../../../src/Conversion/resultUnwrap')
+const resultUnwrap = TH.requireSrcFile('Conversion/resultUnwrap')
 
 describe('estTotalDur', () => {
   it('should work as expected', () => {

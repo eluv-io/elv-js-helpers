@@ -1,7 +1,5 @@
-const chai = require('chai')
-chai.should()
-
-const sysTimezone = require('../../../../src/Datetime/sysTimezone')
+const TH = require('../../../test-helpers')
+const sysTimezone = TH.requireSrcFile('Datetime/sysTimezone')
 
 describe('sysTimezone', () => {
   it('should return the system timezone setting', () => {

@@ -1,13 +1,8 @@
-// unit test for fromPairs.js
+const TH = require('../../../test-helpers')
+const fromPairs = TH.requireSrcFile('Conversion/fromPairs')
 
-const chai = require('chai')
-chai.should()
-
-
-const fromPairs = require('../../../../src/Conversion/fromPairs')
-
-const List = require('../../../../src/ADT/List')
-const Pair = require('../../../../src/ADT/Pair')
+const List = TH.requireSrcFile('ADT/List')
+const Pair = TH.requireSrcFile('ADT/Pair')
 
 describe('fromPairs', () => {
 

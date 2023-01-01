@@ -1,9 +1,5 @@
-const chai = require('chai')
-chai.should()
-
-
-
-const wrapNonArray = require('../../../../src/Conversion/wrapNonArray')
+const TH = require('../../../test-helpers')
+const wrapNonArray = TH.requireSrcFile('Conversion/wrapNonArray')
 
 describe('wrapNonArray', () => {
 

@@ -1,10 +1,7 @@
-// unit test for flip.js
+const TH = require('../../../test-helpers')
+const getPath = TH.requireSrcFile('Functional/getPath')
 
-const chai = require('chai')
-chai.should()
-
-const getPath = require('../../../../src/Functional/getPath')
-const kind = require('../../../../src/Validation/kind')
+const kind = TH.requireSrcFile('Validation/kind')
 
 describe('getPath', () => {
   it('should work as expected', () => {

@@ -1,10 +1,7 @@
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
+const TH = require('../../../test-helpers')
+const assertBounded = TH.requireSrcFile('ModelAssertion/assertBounded')
 
-const NumberModel = require('../../../../src/Model/NumberModel')
-
-const assertBounded = require('../../../../src/ModelAssertion/assertBounded')
+const NumberModel = TH.requireSrcFile('Model/NumberModel')
 
 describe('assertBounded', () => {
 
@@ -138,10 +135,10 @@ describe('assertBounded', () => {
       .assert(...assertBounded(NumberModel, 0, 1, true, true))
       .as('NumberBetweenZeroAndOne')
 
-    expect(() => NumberBetweenZeroAndOneModel(-1)).to.throw('Value must be >= 0 and <= 1 (got: -1)')
+    TH.expect(() => NumberBetweenZeroAndOneModel(-1)).to.throw('Value must be >= 0 and <= 1 (got: -1)')
     NumberBetweenZeroAndOneModel(0).should.equal(0)
     NumberBetweenZeroAndOneModel(0.5).should.equal(0.5)
     NumberBetweenZeroAndOneModel(1).should.equal(1)
-    expect(() => NumberBetweenZeroAndOneModel(2)).to.throw('Value must be >= 0 and <= 1 (got: 2)')
+    TH.expect(() => NumberBetweenZeroAndOneModel(2)).to.throw('Value must be >= 0 and <= 1 (got: 2)')
   })
 })

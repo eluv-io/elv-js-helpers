@@ -1,9 +1,5 @@
-// unit test for isString.js
-
-const chai = require('chai')
-chai.should()
-
-const isString = require('../../../../src/Boolean/isString')
+const TH = require('../../../test-helpers')
+const isString = TH.requireSrcFile('Boolean/isString')
 
 describe('isString', () => {
   it('should work as expected', () => {

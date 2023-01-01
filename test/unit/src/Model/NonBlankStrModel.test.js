@@ -1,8 +1,5 @@
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
-
-const NonBlankStrModel = require('../../../../src/Model/NonBlankStrModel')
+const TH = require('../../../test-helpers')
+const NonBlankStrModel = TH.requireSrcFile('Model/NonBlankStrModel')
 
 describe('NonBlankStrModel', () => {
 
@@ -13,21 +10,21 @@ describe('NonBlankStrModel', () => {
   })
 
   it('should throw an exception for blank strings', () => {
-    expect(() => NonBlankStrModel('')).to.throw('Value must not be a blank string (got: "")')
-    expect(() => NonBlankStrModel(' ')).to.throw('Value must not be a blank string (got: " ")')
+    TH.expect(() => NonBlankStrModel('')).to.throw('Value must not be a blank string (got: "")')
+    TH.expect(() => NonBlankStrModel(' ')).to.throw('Value must not be a blank string (got: " ")')
   })
 
   it('should throw an exception for non-strings', () => {
-    expect(() => NonBlankStrModel(1.5)).to.throw('expecting String, got Number 1.5')
-    expect(() => NonBlankStrModel(-1.5)).to.throw('expecting String, got Number -1.5')
-    expect(() => NonBlankStrModel(Infinity)).to.throw('expecting String, got Number Infinity')
-    expect(() => NonBlankStrModel(-Infinity)).to.throw('expecting String, got Number -Infinity')
-    expect(() => NonBlankStrModel()).to.throw('expecting String, got undefined')
-    expect(() => NonBlankStrModel([])).to.throw('expecting String, got Array []')
-    expect(() => NonBlankStrModel([1])).to.throw('expecting String, got Array [1]')
-    expect(() => NonBlankStrModel(true)).to.throw('expecting String, got Boolean true')
-    expect(() => NonBlankStrModel(null)).to.throw('expecting String, got null')
-    expect(() => NonBlankStrModel(NonBlankStrModel)).to.throw('expecting String, got Function NonBlankString')
-    expect(() => NonBlankStrModel(x => x)).to.throw('expecting String, got Function x => x')
+    TH.expect(() => NonBlankStrModel(1.5)).to.throw('expecting String, got Number 1.5')
+    TH.expect(() => NonBlankStrModel(-1.5)).to.throw('expecting String, got Number -1.5')
+    TH.expect(() => NonBlankStrModel(Infinity)).to.throw('expecting String, got Number Infinity')
+    TH.expect(() => NonBlankStrModel(-Infinity)).to.throw('expecting String, got Number -Infinity')
+    TH.expect(() => NonBlankStrModel()).to.throw('expecting String, got undefined')
+    TH.expect(() => NonBlankStrModel([])).to.throw('expecting String, got Array []')
+    TH.expect(() => NonBlankStrModel([1])).to.throw('expecting String, got Array [1]')
+    TH.expect(() => NonBlankStrModel(true)).to.throw('expecting String, got Boolean true')
+    TH.expect(() => NonBlankStrModel(null)).to.throw('expecting String, got null')
+    TH.expect(() => NonBlankStrModel(NonBlankStrModel)).to.throw('expecting String, got Function NonBlankString')
+    TH.expect(() => NonBlankStrModel(x => x)).to.throw('expecting String, got Function x => x')
   })
 })

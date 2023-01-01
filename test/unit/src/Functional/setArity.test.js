@@ -1,11 +1,5 @@
-// unit test for setArity.js
-
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
-require('mocha-sinon')
-
-const setArity = require('../../../../src/Functional/setArity')
+const TH = require('../../../test-helpers')
+const setArity = TH.requireSrcFile('Functional/setArity')
 
 describe('setArity', () => {
   it('should have a correct example in JSDoc', function () {

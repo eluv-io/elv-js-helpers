@@ -1,9 +1,5 @@
-// unit test for isNull.js
-
-const chai = require('chai')
-chai.should()
-
-const isNull = require('../../../../src/Boolean/isNull')
+const TH = require('../../../test-helpers')
+const isNull = TH.requireSrcFile('Boolean/isNull')
 
 describe('isNull', () => {
 

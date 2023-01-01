@@ -1,14 +1,9 @@
-// unit test for StringModel.js
-
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
-
-const StringModel = require('../../../../src/Model/StringModel')
+const TH = require('../../../test-helpers')
+const StringModel = TH.requireSrcFile('Model/StringModel')
 
 describe('StringModel', () => {
   it('should work as expected', () => {
     StringModel('foo').should.equal('foo')
-    expect(() => StringModel(42)).to.throw('expecting String, got Number 42')
+    TH.expect(() => StringModel(42)).to.throw('expecting String, got Number 42')
   })
 })

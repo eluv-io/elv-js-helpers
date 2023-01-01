@@ -1,9 +1,5 @@
-// unit test for curry.js
-
-const chai = require('chai')
-chai.should()
-
-const curry = require('../../../../src/Functional/curry')
+const TH = require('../../../test-helpers')
+const curry = TH.requireSrcFile('Functional/curry')
 
 describe('curry', () => {
 

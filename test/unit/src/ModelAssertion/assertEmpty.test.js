@@ -1,14 +1,9 @@
-// unit test for assertEmpty.js
+const TH = require('../../../test-helpers')
+const assertEmpty = TH.requireSrcFile('ModelAssertion/assertEmpty')
 
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
-
-const assertEmpty = require('../../../../src/ModelAssertion/assertEmpty')
-
-const isString = require('../../../../src/Boolean/isString')
-const StringModel = require('../../../../src/Model/StringModel')
-const assertAfterCheck = require('../../../../src/ModelAssertion/assertAfterCheck')
+const isString = TH.requireSrcFile('Boolean/isString')
+const StringModel = TH.requireSrcFile('Model/StringModel')
+const assertAfterCheck = TH.requireSrcFile('ModelAssertion/assertAfterCheck')
 
 const EmptyStringModel = StringModel.extend()
   .assert(
@@ -21,8 +16,8 @@ const EmptyStringModel = StringModel.extend()
 
 describe('assertEmpty', () => {
   it('should work as expected', () => {
-    expect(() => EmptyStringModel('foo')).to.throw('Value must be empty (got: "foo")')
+    TH.expect(() => EmptyStringModel('foo')).to.throw('Value must be empty (got: "foo")')
     EmptyStringModel('').should.equal('')
-    expect(() => EmptyStringModel([])).to.throw('expecting String, got Array []')
+    TH.expect(() => EmptyStringModel([])).to.throw('expecting String, got Array []')
   })
 })

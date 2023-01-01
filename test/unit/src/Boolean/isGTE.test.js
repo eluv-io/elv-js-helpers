@@ -1,9 +1,5 @@
-// unit test for isGTE.js
-
-const chai = require('chai')
-chai.should()
-
-const isGTE = require('../../../../src/Boolean/isGTE')
+const TH = require('../../../test-helpers')
+const isGTE = TH.requireSrcFile('Boolean/isGTE')
 
 describe('isGTE', () => {
   it('should work as expected', () => {

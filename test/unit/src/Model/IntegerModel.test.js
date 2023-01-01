@@ -1,8 +1,5 @@
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
-
-const IntegerModel = require('../../../../src/Model/IntegerModel')
+const TH = require('../../../test-helpers')
+const IntegerModel = TH.requireSrcFile('Model/IntegerModel')
 
 describe('IntegerModel', () => {
 
@@ -13,20 +10,20 @@ describe('IntegerModel', () => {
   })
 
   it('should throw an exception for non-integers', () => {
-    expect(() => IntegerModel(1.5)).to.throw('Value must be an integer (got: 1.5)')
-    expect(() => IntegerModel(-1.5)).to.throw('Value must be an integer (got: -1.5)')
-    expect(() => IntegerModel(Infinity)).to.throw('Value must be an integer (got: Infinity)')
-    expect(() => IntegerModel(-Infinity)).to.throw('Value must be an integer (got: -Infinity)')
+    TH.expect(() => IntegerModel(1.5)).to.throw('Value must be an integer (got: 1.5)')
+    TH.expect(() => IntegerModel(-1.5)).to.throw('Value must be an integer (got: -1.5)')
+    TH.expect(() => IntegerModel(Infinity)).to.throw('Value must be an integer (got: Infinity)')
+    TH.expect(() => IntegerModel(-Infinity)).to.throw('Value must be an integer (got: -Infinity)')
   })
 
   it('should throw an exception for non-numbers', () => {
-    expect(() => IntegerModel()).to.throw('expecting Number, got undefined')
-    expect(() => IntegerModel([])).to.throw('expecting Number, got Array []')
-    expect(() => IntegerModel([1])).to.throw('expecting Number, got Array [1]')
-    expect(() => IntegerModel('1')).to.throw('expecting Number, got String "1"')
-    expect(() => IntegerModel(true)).to.throw('expecting Number, got Boolean true')
-    expect(() => IntegerModel(null)).to.throw('expecting Number, got null')
-    expect(() => IntegerModel(IntegerModel)).to.throw('expecting Number, got Function Integer')
-    expect(() => IntegerModel(x => x)).to.throw('expecting Number, got Function x => x')
+    TH.expect(() => IntegerModel()).to.throw('expecting Number, got undefined')
+    TH.expect(() => IntegerModel([])).to.throw('expecting Number, got Array []')
+    TH.expect(() => IntegerModel([1])).to.throw('expecting Number, got Array [1]')
+    TH.expect(() => IntegerModel('1')).to.throw('expecting Number, got String "1"')
+    TH.expect(() => IntegerModel(true)).to.throw('expecting Number, got Boolean true')
+    TH.expect(() => IntegerModel(null)).to.throw('expecting Number, got null')
+    TH.expect(() => IntegerModel(IntegerModel)).to.throw('expecting Number, got Function Integer')
+    TH.expect(() => IntegerModel(x => x)).to.throw('expecting Number, got Function x => x')
   })
 })

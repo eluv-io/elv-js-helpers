@@ -1,9 +1,5 @@
-// unit test for toPairs.js
-
-const chai = require('chai')
-chai.should()
-
-const toPairs = require('../../../../src/Conversion/toPairs')
+const TH = require('../../../test-helpers')
+const toPairs = TH.requireSrcFile('Conversion/toPairs')
 
 describe('toPairs', () => {
 

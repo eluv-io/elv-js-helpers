@@ -1,8 +1,5 @@
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
-
-const assertionErrMsg = require('../../../../src/ModelAssertion/assertionErrMsg')
+const TH = require('../../../test-helpers')
+const assertionErrMsg = TH.requireSrcFile('ModelAssertion/assertionErrMsg')
 
 describe('assertionErrMsg', () => {
 
@@ -10,7 +7,7 @@ describe('assertionErrMsg', () => {
     assertionErrMsg('is not 42')(false, 10, null)
       .should.equal('Value is not 42 (got: 10)')
 
-    const NumberModel = require('../../../../src/Model/NumberModel')
+    const NumberModel = TH.requireSrcFile('Model/NumberModel')
     const AnswerToEverythingModel = NumberModel.extend()
       .assert(
         x => x === 42,
@@ -18,7 +15,7 @@ describe('assertionErrMsg', () => {
       )
       .as('AnswerToEverything')
 
-    expect (() => AnswerToEverythingModel(43)).to.throw('Value must equal 42 (got: 43)')
+    TH.expect (() => AnswerToEverythingModel(43)).to.throw('Value must equal 42 (got: 43)')
   })
 
 

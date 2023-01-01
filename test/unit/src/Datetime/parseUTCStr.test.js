@@ -1,11 +1,7 @@
-// unit test for parseUTCStr.js
+const TH = require('../../../test-helpers')
+const parseUTCStr = TH.requireSrcFile('Datetime/parseUTCStr')
 
-const chai = require('chai')
-chai.should()
-
-const parseUTCStr = require('../../../../src/Datetime/parseUTCStr')
-
-const toLocaleString = require('../../../../src/Datetime/toLocaleString')
+const toLocaleString = TH.requireSrcFile('Datetime/toLocaleString')
 
 const utc = toLocaleString('en-US',
   {

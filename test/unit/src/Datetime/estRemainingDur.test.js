@@ -1,11 +1,7 @@
-// unit test for estRemainingDur.js
+const TH = require('../../../test-helpers')
+const estRemainingDur = TH.requireSrcFile('Datetime/estRemainingDur')
 
-const chai = require('chai')
-chai.should()
-
-const estRemainingDur = require('../../../../src/Datetime/estRemainingDur')
-
-const resultUnwrap = require('../../../../src/Conversion/resultUnwrap')
+const resultUnwrap = TH.requireSrcFile('Conversion/resultUnwrap')
 
 describe('estRemainingDur', () => {
   it('should work as expected', () => {

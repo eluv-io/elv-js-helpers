@@ -1,17 +1,12 @@
-// unit test for liftA3.js
+const TH = require('../../../test-helpers')
+const liftA3 = TH.requireSrcFile('Functional/liftA3')
 
-const chai = require('chai')
-chai.should()
+const Err = TH.requireSrcFile('ADT/Err')
+const Ok = TH.requireSrcFile('ADT/Ok')
 
+const resultToPOJO = TH.requireSrcFile('Conversion/resultToPOJO')
 
-const liftA3 = require('../../../../src/Functional/liftA3')
-
-const Err = require('../../../../src/ADT/Err')
-const Ok = require('../../../../src/ADT/Ok')
-
-const resultToPOJO = require('../../../../src/Conversion/resultToPOJO')
-
-const curry = require('../../../../src/Functional/curry')
+const curry = TH.requireSrcFile('Functional/curry')
 
 describe('liftA3', () => {
 

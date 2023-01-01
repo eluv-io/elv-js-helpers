@@ -1,10 +1,8 @@
-const chai = require('chai')
-chai.should()
+const TH = require('../../../test-helpers')
+const assertBoundedLower = TH.requireSrcFile('ModelAssertion/assertBoundedLower')
 
-const compare = require('../../../../src/Functional/compare')
-const NumberModel = require('../../../../src/Model/NumberModel')
-
-const assertBoundedLower = require('../../../../src/ModelAssertion/assertBoundedLower')
+const compare = TH.requireSrcFile('Functional/compare')
+const NumberModel = TH.requireSrcFile('Model/NumberModel')
 
 describe('assertBoundedLower', () => {
 

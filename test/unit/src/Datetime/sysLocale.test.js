@@ -1,7 +1,5 @@
-const chai = require('chai')
-chai.should()
-
-const sysLocale = require('../../../../src/Datetime/sysLocale')
+const TH = require('../../../test-helpers')
+const sysLocale = TH.requireSrcFile('Datetime/sysLocale')
 
 describe('sysLocale', () => {
   it('should return the system locale setting', () => {

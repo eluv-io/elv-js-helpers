@@ -1,11 +1,5 @@
-// unit test for currentFuncName.js
-
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
-require('mocha-sinon')
-
-const currentFuncName = require('../../../../src/Misc/currentFuncName')
+const TH = require('../../../test-helpers')
+const currentFuncName = TH.requireSrcFile('Misc/currentFuncName')
 
 describe('currentFuncName', () => {
   it('should have a correct example in JSDoc', function () {
@@ -13,7 +7,7 @@ describe('currentFuncName', () => {
 
     this.sinon.stub(console, 'log')
     MyFunc()
-    expect(console.log.calledWith('Entered function: MyFunc')).to.be.true
+    TH.expect(console.log.calledWith('Entered function: MyFunc')).to.be.true
     this.sinon.restore()
   })
 

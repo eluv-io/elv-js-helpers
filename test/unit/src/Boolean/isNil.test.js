@@ -1,11 +1,5 @@
-// unit test for isNil.js
-
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
-require('mocha-sinon')
-
-const isNil = require('../../../../src/Boolean/isNil')
+const TH = require('../../../test-helpers')
+const isNil = TH.requireSrcFile('Boolean/isNil')
 
 describe('isNil', () => {
   it('should have a correct example in JSDoc', function () {

@@ -1,9 +1,5 @@
-// unit test for assertNothing.js
-
-const chai = require('chai')
-chai.should()
-
-const assertNothing = require('../../../../src/ModelAssertion/assertNothing')
+const TH = require('../../../test-helpers')
+const assertNothing = TH.requireSrcFile('ModelAssertion/assertNothing')
 
 describe('assertNothing', () => {
   it('should work as expected', () => {

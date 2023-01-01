@@ -1,18 +1,14 @@
-// unit test for Err.js
+const TH = require('../../../test-helpers')
+const Err = TH.requireSrcFile('ADT/Err')
 
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
+const Ok = TH.requireSrcFile('ADT/Ok')
 
-const Err = require('../../../../src/ADT/Err')
-const Ok = require('../../../../src/ADT/Ok')
+const resultUnwrap = TH.requireSrcFile('Conversion/resultUnwrap')
 
-const resultUnwrap = require('../../../../src/Conversion/resultUnwrap')
+const curry = TH.requireSrcFile('Functional/curry')
+const liftA2 = TH.requireSrcFile('Functional/liftA2')
 
-const curry = require('../../../../src/Functional/curry')
-const liftA2 = require('../../../../src/Functional/liftA2')
-
-const kind = require('../../../../src/Validation/kind')
+const kind = TH.requireSrcFile('Validation/kind')
 
 describe('Err', () => {
 
@@ -39,7 +35,7 @@ describe('Err', () => {
   })
 
   it('should throw an exception only for empty array', () => {
-    expect(()=> Err([])).to.throw('Err cannot wrap an empty array')
-    expect(()=> Err([undefined])).to.not.throw
+    TH.expect(()=> Err([])).to.throw('Err cannot wrap an empty array')
+    TH.expect(()=> Err([undefined])).to.not.throw
   })
 })

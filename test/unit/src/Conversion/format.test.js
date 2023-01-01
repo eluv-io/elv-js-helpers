@@ -1,7 +1,5 @@
-const chai = require('chai')
-chai.should()
-
-const format = require('../../../../src/Conversion/format')
+const TH = require('../../../test-helpers')
+const format = TH.requireSrcFile('Conversion/format')
 
 describe('format', () => {
 

@@ -1,9 +1,5 @@
-// unit test for isUndefined.js
-
-const chai = require('chai')
-chai.should()
-
-const isUndefined = require('../../../../src/Boolean/isUndefined')
+const TH = require('../../../test-helpers')
+const isUndefined = TH.requireSrcFile('Boolean/isUndefined')
 
 describe('isUndefined', () => {
 

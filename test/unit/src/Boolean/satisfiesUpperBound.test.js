@@ -1,11 +1,7 @@
-// unit test for satisfiesUpperBound.js
+const TH = require('../../../test-helpers')
+const satisfiesUpperBound = TH.requireSrcFile('Boolean/satisfiesUpperBound')
 
-const chai = require('chai')
-chai.should()
-
-const satisfiesUpperBound = require('../../../../src/Boolean/satisfiesUpperBound')
-
-const compare = require('../../../../src/Functional/compare')
+const compare = TH.requireSrcFile('Functional/compare')
 
 describe('satisfiesUpperBound', () => {
 

@@ -1,9 +1,5 @@
-// unit test for isArray.js
-
-const chai = require('chai')
-chai.should()
-
-const isArray = require('../../../../src/Boolean/isArray')
+const TH = require('../../../test-helpers')
+const isArray = TH.requireSrcFile('Boolean/isArray')
 
 describe('isArray', () => {
 

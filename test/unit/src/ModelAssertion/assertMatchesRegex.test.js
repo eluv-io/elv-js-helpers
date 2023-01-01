@@ -1,9 +1,7 @@
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
+const TH = require('../../../test-helpers')
+const assertMatchesRegex = TH.requireSrcFile('ModelAssertion/assertMatchesRegex')
 
-const assertMatchesRegex = require('../../../../src/ModelAssertion/assertMatchesRegex')
-const StringModel = require('../../../../src/Model/StringModel')
+const StringModel = TH.requireSrcFile('Model/StringModel')
 
 describe('assertMatchesRegex', () => {
 
@@ -19,10 +17,10 @@ describe('assertMatchesRegex', () => {
 
     UUIDStringModel('12345678-1234-1234-1234-123456789abc').should.equal('12345678-1234-1234-1234-123456789abc')
 
-    expect(() => UUIDStringModel('foo'))
+    TH.expect(() => UUIDStringModel('foo'))
       .to.throw('Value is not in UUID format xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (got: "foo")')
 
-    expect(() => UUIDStringModel(42))
+    TH.expect(() => UUIDStringModel(42))
       .to.throw('expecting String, got Number 42')
 
     const HexStringModel = StringModel.extend()
@@ -33,7 +31,7 @@ describe('assertMatchesRegex', () => {
         )
       ).as('HexString')
 
-    expect(() => HexStringModel('xyz'))
+    TH.expect(() => HexStringModel('xyz'))
       .to.throw('Value is not in valid format or contains illegal characters (must match regular expression: /^[0-9a-f]+$/) (got: "xyz")')
   })
 })

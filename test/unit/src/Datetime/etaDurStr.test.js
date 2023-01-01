@@ -1,7 +1,5 @@
-const chai = require('chai')
-chai.should()
-
-const etaDurStr = require('../../../../src/Datetime/etaDurStr')
+const TH = require('../../../test-helpers')
+const etaDurStr = TH.requireSrcFile('Datetime/etaDurStr')
 
 describe('etaDurStr', () => {
   const minute = 60

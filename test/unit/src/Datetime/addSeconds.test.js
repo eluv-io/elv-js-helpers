@@ -1,7 +1,5 @@
-const chai = require('chai')
-chai.should()
-
-const addSeconds = require('../../../../src/Datetime/addSeconds')
+const TH = require('../../../test-helpers')
+const addSeconds = TH.requireSrcFile('Datetime/addSeconds')
 
 describe('addSeconds', () => {
   const d = new Date('2022-01-01T07:30:00Z')

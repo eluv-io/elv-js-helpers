@@ -1,11 +1,7 @@
-// unit test for satisfiesBetweenBounds.js
+const TH = require('../../../test-helpers')
+const satisfiesBetweenBounds = TH.requireSrcFile('Boolean/satisfiesBetweenBounds')
 
-const chai = require('chai')
-chai.should()
-
-const satisfiesBetweenBounds = require('../../../../src/Boolean/satisfiesBetweenBounds')
-
-const compare = require('../../../../src/Functional/compare')
+const compare = TH.requireSrcFile('Functional/compare')
 
 describe('satisfiesBetweenBounds', () => {
 

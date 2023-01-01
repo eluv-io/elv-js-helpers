@@ -1,11 +1,8 @@
-// unit test for comparator.js
+const TH = require('../../../test-helpers')
+const comparator = TH.requireSrcFile('Functional/comparator')
 
-const chai = require('chai')
-chai.should()
-
-const comparator = require('../../../../src/Functional/comparator')
-const isGT = require('../../../../src/Boolean/isGT')
-const isLT = require('../../../../src/Boolean/isLT')
+const isGT = TH.requireSrcFile('Boolean/isGT')
+const isLT = TH.requireSrcFile('Boolean/isLT')
 
 describe('comparator', () => {
 

@@ -1,11 +1,7 @@
-// unit test for listPush.js
+const TH = require('../../../test-helpers')
+const listPush = TH.requireSrcFile('Functional/listPush')
 
-const chai = require('chai')
-chai.should()
-
-const listPush = require('../../../../src/Functional/listPush')
-
-const List = require('../../../../src/ADT/List')
+const List = TH.requireSrcFile('ADT/List')
 
 describe('listPush', () => {
 

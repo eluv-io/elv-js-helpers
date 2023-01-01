@@ -1,11 +1,7 @@
-// unit test for passesObjValCheck.js
+const TH = require('../../../test-helpers')
+const passesObjValCheck = TH.requireSrcFile('Boolean/passesObjValCheck')
 
-const chai = require('chai')
-chai.should()
-
-const passesObjValCheck = require('../../../../src/Boolean/passesObjValCheck')
-
-const NonBlankStrModel = require('../../../../src/Model/NonBlankStrModel')
+const NonBlankStrModel = TH.requireSrcFile('Model/NonBlankStrModel')
 
 describe('passesObjValCheck', () => {
   it('should work as expected', () => {

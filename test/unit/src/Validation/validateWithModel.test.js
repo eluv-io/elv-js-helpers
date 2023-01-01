@@ -1,13 +1,10 @@
-// unit test for validateWithModel.js
+const TH = require('../../../test-helpers')
+const validateWithModel = TH.requireSrcFile('Validation/validateWithModel')
 
-const chai = require('chai')
-chai.should()
+const defObjModel = TH.requireSrcFile('ModelFactory/defObjModel')
 
-const defObjModel = require('../../../../src/ModelFactory/defObjModel')
-const validateWithModel = require('../../../../src/Validation/validateWithModel')
-
-const resultUnwrap = require('../../../../src/Conversion/resultUnwrap')
-const PositiveNumModel = require('../../../../src/Model/PositiveNumModel')
+const resultUnwrap = TH.requireSrcFile('Conversion/resultUnwrap')
+const PositiveNumModel = TH.requireSrcFile('Model/PositiveNumModel')
 
 describe('validateWithModel', () => {
 

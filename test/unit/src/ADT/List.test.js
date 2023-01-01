@@ -1,10 +1,5 @@
-// unit test for List.js
-
-
-const chai = require('chai')
-chai.should()
-
-const List = require('../../../../src/ADT/List')
+const TH = require('../../../test-helpers')
+const List = TH.requireSrcFile('ADT/List')
 
 describe('List', () => {
   const myList = List([1, 2, 3])

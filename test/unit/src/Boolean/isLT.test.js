@@ -1,11 +1,5 @@
-// unit test for isLT.js
-
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
-require('mocha-sinon')
-
-const isLT = require('../../../../src/Boolean/isLT')
+const TH = require('../../../test-helpers')
+const isLT = TH.requireSrcFile('Boolean/isLT')
 
 describe('isLT', () => {
   it('should have a correct example in JSDoc', function () {

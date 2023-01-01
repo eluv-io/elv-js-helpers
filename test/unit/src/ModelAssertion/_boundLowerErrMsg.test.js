@@ -1,9 +1,5 @@
-// unit test for _boundLowerErrMsg.js
-
-const chai = require('chai')
-chai.should()
-
-const _boundLowerErrMsg = require('../../../../src/ModelAssertion/_boundLowerErrMsg')
+const TH = require('../../../test-helpers')
+const _boundLowerErrMsg = TH.requireSrcFile('ModelAssertion/_boundLowerErrMsg')
 
 describe('_boundLowerErrMsg', () => {
   it('should work as expected', () => {

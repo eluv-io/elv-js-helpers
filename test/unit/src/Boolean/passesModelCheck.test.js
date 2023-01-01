@@ -1,13 +1,9 @@
-// unit test for passesModelCheck.js
+const TH = require('../../../test-helpers')
+const passesModelCheck = TH.requireSrcFile('Boolean/passesModelCheck')
 
-const chai = require('chai')
-chai.should()
-
-const passesModelCheck = require('../../../../src/Boolean/passesModelCheck')
-
-const PositiveIntModel = require('../../../../src/Model/PositiveIntModel')
-const StringModel = require('../../../../src/Model/StringModel')
-const assertAfterCheck = require('../../../../src/ModelAssertion/assertAfterCheck')
+const PositiveIntModel = TH.requireSrcFile('Model/PositiveIntModel')
+const StringModel = TH.requireSrcFile('Model/StringModel')
+const assertAfterCheck = TH.requireSrcFile('ModelAssertion/assertAfterCheck')
 
 describe('passesModelCheck', () => {
   it('should work as expected', () => {

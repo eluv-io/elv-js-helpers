@@ -1,11 +1,7 @@
-// unit test for addPreprocessFn2.js
+const TH = require('../../../test-helpers')
+const addPreprocessFn2 = TH.requireSrcFile('Functional/addPreprocessFn2')
 
-const chai = require('chai')
-chai.should()
-
-const addPreprocessFn2 = require('../../../../src/Functional/addPreprocessFn2')
-
-const isString = require('../../../../src/Boolean/isString')
+const isString = TH.requireSrcFile('Boolean/isString')
 
 describe('addPreprocessFn2', () => {
 

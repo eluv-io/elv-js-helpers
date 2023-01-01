@@ -1,9 +1,5 @@
-// unit test for flip.js
-
-const chai = require('chai')
-chai.should()
-
-const flip = require('../../../../src/Functional/flip')
+const TH = require('../../../test-helpers')
+const flip = TH.requireSrcFile('Functional/flip')
 
 describe('flip', () => {
   const div = (a, b) => a/b

@@ -1,9 +1,5 @@
-// unit test for kind.js
-
-const chai = require('chai')
-chai.should()
-
-const kind = require('../../../../src/Validation/kind')
+const TH = require('../../../test-helpers')
+const kind = TH.requireSrcFile('Validation/kind')
 
 describe('kind', () => {
   it('should work as expected', () => {

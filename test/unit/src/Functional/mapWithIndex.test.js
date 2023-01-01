@@ -1,10 +1,5 @@
-// unit test for mapWithIndex.js
-
-const chai = require('chai')
-chai.should()
-
-
-const mapWithIndex = require('../../../../src/Functional/mapWithIndex')
+const TH = require('../../../test-helpers')
+const mapWithIndex = TH.requireSrcFile('Functional/mapWithIndex')
 
 describe('mapWithIndex', () => {
   it('should work as expected', () => {

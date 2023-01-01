@@ -1,8 +1,5 @@
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
-
-const etaTimeStr = require('../../../../src/Datetime/etaTimeStr')
+const TH = require('../../../test-helpers')
+const etaTimeStr = TH.requireSrcFile('Datetime/etaTimeStr')
 
 describe('etaTimeStr', () => {
 
@@ -26,7 +23,7 @@ describe('etaTimeStr', () => {
   })
 
   it('should throw an exception for invalid Datetime zone', () => {
-    expect(()=> etaTimeStr(currentTime, 10, 'foo', 'en-US'))
+    TH.expect(()=> etaTimeStr(currentTime, 10, 'foo', 'en-US'))
       .to.throw('Invalid time zone specified: foo')
   })
 })

@@ -1,11 +1,5 @@
-// unit test for omit.js
-
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
-require('mocha-sinon')
-
-const omit = require('../../../../src/Functional/omit')
+const TH = require('../../../test-helpers')
+const omit = TH.requireSrcFile('Functional/omit')
 
 describe('omit', () => {
   it('should have a correct example in JSDoc', function () {
