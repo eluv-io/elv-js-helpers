@@ -6,7 +6,7 @@ const JSDOC_EXAMPLE_RE = /^ \* @example((.|\n)+^) *\*\//m
 const JSDOC_TEST_NAME = 'should have a correct example in JSDoc'
 const PRETTIER_BIN_PATH = path.resolve(__dirname, '..', 'node_modules','prettier','bin-prettier.js')
 
-const testRequireText = srcFileAbsPath => `require('../../../../src/${srcFileAbsPath.split('/src/')[1].slice(0,-3)}')`
+const testRequireText = srcFileAbsPath => `TH.requireSrcFile('${srcFileAbsPath.split('/src/')[1].slice(0,-3)}')`
 const jsDocRequireMatch = srcFileAbsPath => `require('@eluvio/elv-js-helpers/${srcFileAbsPath.split('/src/')[1].slice(0,-3)}')`
 
 const jsDocExample = filePath => {
@@ -21,7 +21,7 @@ const jsDocTest = (jsDocExampleText, srcFileAbsPath) => {
 
   // handle example lines that throw exceptions
   const exceptionSearch = /(.+)( +\/\/=> EXCEPTION: +)(.+)/
-  const exceptionReplacer = (_, code, divider, exceptionString) => `expect(() => ${code}).to.throw(${exceptionString})`
+  const exceptionReplacer = (_, code, divider, exceptionString) => `TH.expect(() => ${code}).to.throw(${exceptionString})`
 
   // handle example lines that output to console
   const consoleSearch = /(.+)( +\/\/=> OUTPUT: +)(.+)/
@@ -50,13 +50,7 @@ const newUnitTestFileText = (srcFileAbsPath, jsDocAssertions) => {
   const srcFileBasename = path.basename(srcFileAbsPath, '.js')
   const requireStmt = `const ${srcFileBasename} = ${testRequireText(srcFileAbsPath)}`
 
-  return `// unit test for ${srcFileBasename}.js
-
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
-require('mocha-sinon')
-
+  return `const TH = require('../../../test-helpers')
 ${requireStmt}
 
 describe('${srcFileBasename}', () => {
