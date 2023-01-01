@@ -1,16 +1,12 @@
-/* eslint-disable no-prototype-builtins */
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
-
+const TH = require('../../../test-helpers')
 const multiply = require('@eluvio/ramda-fork/src/multiply')
 
-const Err = require('../../../../src/ADT/Err')
-const kind = require('../../../../src/Validation/kind')
-const liftA2 = require('../../../../src/Functional/liftA2')
-const Ok = require('../../../../src/ADT/Ok')
+const Err = TH.requireSrcFile('ADT/Err')
+const kind = TH.requireSrcFile('Validation/kind')
+const liftA2 = TH.requireSrcFile('Functional/liftA2')
+const Ok = TH.requireSrcFile('ADT/Ok')
 
-const resultToPOJO = require('../../../../src/Conversion/resultToPOJO')
+const resultToPOJO = TH.requireSrcFile('Conversion/resultToPOJO')
 
 describe('resultToPOJO', function () {
   const result = resultToPOJO(Ok(42))
@@ -28,7 +24,7 @@ describe('resultToPOJO', function () {
   const tripleErrRetVal = resultToPOJO(tripleErr)
 
   it('should throw an exception when given an Err that does not contain an array',
-    () => expect(() => resultToPOJO(malformedErr)).to.throw
+    () => TH.expect(() => resultToPOJO(malformedErr)).to.throw
   )
 
   it('should return a value with ok: true when given an Ok', () => result.ok.should.be.true)
@@ -36,7 +32,7 @@ describe('resultToPOJO', function () {
     () => result.value.should.equal(42)
   )
   it('should not return a value with an "errors" attribute when given an Ok',
-    () => result.hasOwnProperty('errors').should.be.false
+    () => Object.keys(result).includes('errors').should.be.false
   )
 
   it('should return a value with ok: false when given an Err', () => {
@@ -52,9 +48,9 @@ describe('resultToPOJO', function () {
   })
 
   it('should return a value with an "errors" attribute that is an array when given an Err', () => {
-    simpleErrRetVal.hasOwnProperty('errors').should.be.true
-    doubleErrRetVal.hasOwnProperty('errors').should.be.true
-    tripleErrRetVal.hasOwnProperty('errors').should.be.true
+    Object.keys(simpleErrRetVal).includes('errors').should.be.true
+    Object.keys(doubleErrRetVal).includes('errors').should.be.true
+    Object.keys(tripleErrRetVal).includes('errors').should.be.true
 
     kind(simpleErrRetVal.errors).should.equal('Array')
     kind(doubleErrRetVal.errors).should.equal('Array')
@@ -62,9 +58,9 @@ describe('resultToPOJO', function () {
   })
 
   it('should not return a value with a "result" attribute when given an Err', () => {
-    simpleErrRetVal.hasOwnProperty('result').should.be.false
-    doubleErrRetVal.hasOwnProperty('result').should.be.false
-    tripleErrRetVal.hasOwnProperty('result').should.be.false
+    Object.keys(simpleErrRetVal).includes('result').should.be.false
+    Object.keys(doubleErrRetVal).includes('result').should.be.false
+    Object.keys(tripleErrRetVal).includes('result').should.be.false
   })
 
 })

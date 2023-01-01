@@ -1,12 +1,8 @@
-// unit test for isResult.js
+const TH = require('../../../test-helpers')
+const isResult = TH.requireSrcFile('Boolean/isResult')
 
-const chai = require('chai')
-chai.should()
-
-const isResult = require('../../../../src/Boolean/isResult')
-
-const Err = require('../../../../src/ADT/Err')
-const Ok = require('../../../../src/ADT/Ok')
+const Err = TH.requireSrcFile('ADT/Err')
+const Ok = TH.requireSrcFile('ADT/Ok')
 
 describe('isResult', () => {
   it('should work as expected', () => {

@@ -1,9 +1,5 @@
-// unit test for neighborsPass.js
-
-const chai = require('chai')
-chai.should()
-
-const neighborsPass = require('../../../../src/Boolean/neighborsPass')
+const TH = require('../../../test-helpers')
+const neighborsPass = TH.requireSrcFile('Boolean/neighborsPass')
 
 describe('neighborsPass', () => {
   const xGTEy = (x,y) => x <= y

@@ -1,9 +1,5 @@
-// unit test for isFunction.js
-
-const chai = require('chai')
-chai.should()
-
-const isFunction = require('../../../../src/Boolean/isFunction')
+const TH = require('../../../test-helpers')
+const isFunction = TH.requireSrcFile('Boolean/isFunction')
 
 describe('isFunction', () => {
 

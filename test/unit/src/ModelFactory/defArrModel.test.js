@@ -1,16 +1,11 @@
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
+const TH = require('../../../test-helpers')
+const defArrModel = TH.requireSrcFile('ModelFactory/defArrModel')
 
-
-
-const kind = require('../../../../src/Validation/kind')
-const AnyModel = require('../../../../src/Model/AnyModel')
-const NonNegativeNumModel = require('../../../../src/Model/NonNegativeNumModel')
-const resultUnwrap = require('../../../../src/Conversion/resultUnwrap')
-const validateWithModel = require('../../../../src/Validation/validateWithModel')
-
-const defArrModel = require('../../../../src/ModelFactory/defArrModel')
+const kind = TH.requireSrcFile('Validation/kind')
+const AnyModel = TH.requireSrcFile('Model/AnyModel')
+const NonNegativeNumModel = TH.requireSrcFile('Model/NonNegativeNumModel')
+const resultUnwrap = TH.requireSrcFile('Conversion/resultUnwrap')
+const validateWithModel = TH.requireSrcFile('Validation/validateWithModel')
 
 describe('defArrModel', function () {
 
@@ -20,27 +15,27 @@ describe('defArrModel', function () {
 
   it('should be able to define non-typed arrays', function () {
     const NonTypedArrayModel = defArrModel('NonTypedArray', AnyModel)
-    expect(() => NonTypedArrayModel([])).to.not.throw()
+    TH.expect(() => NonTypedArrayModel([])).to.not.throw()
     NonTypedArrayModel([]).should.eql([])
-    expect(() => NonTypedArrayModel([0])).to.not.throw()
+    TH.expect(() => NonTypedArrayModel([0])).to.not.throw()
     NonTypedArrayModel([0]).should.eql([0])
-    expect(() => NonTypedArrayModel(['a', 42])).to.not.throw()
+    TH.expect(() => NonTypedArrayModel(['a', 42])).to.not.throw()
     NonTypedArrayModel(['a',42]).should.eql(['a',42])
   })
 
 
   it('should pass for valid inputs, and return input', function () {
-    expect(() => AgeArrayModel([])).to.not.throw()
+    TH.expect(() => AgeArrayModel([])).to.not.throw()
     AgeArrayModel([]).should.eql([])
-    expect(() => AgeArrayModel([0])).to.not.throw()
+    TH.expect(() => AgeArrayModel([0])).to.not.throw()
     AgeArrayModel([0]).should.eql([0])
-    expect(() => AgeArrayModel([1, 42])).to.not.throw()
+    TH.expect(() => AgeArrayModel([1, 42])).to.not.throw()
     AgeArrayModel([1,42]).should.eql([1,42])
   })
 
   it('should throw for arrays with invalid elements', function () {
-    expect(() => AgeArrayModel([-1])).to.throw('Array[0] must be >= 0 (got: -1)')
-    expect(() => AgeArrayModel(['foo'])).to.throw('expecting Array[0] to be Number, got String "foo"')
+    TH.expect(() => AgeArrayModel([-1])).to.throw('Array[0] must be >= 0 (got: -1)')
+    TH.expect(() => AgeArrayModel(['foo'])).to.throw('expecting Array[0] to be Number, got String "foo"')
   })
 
   it('should only return 1 error for non-array inputs', function () {

@@ -1,16 +1,11 @@
-// unit test for DatetimeModel.js
+const TH = require('../../../test-helpers')
+const DatetimeModel = TH.requireSrcFile('Model/DatetimeModel')
 
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
-
-const DatetimeModel = require('../../../../src/Model/DatetimeModel')
-
-const kind = require('../../../../src/Validation/kind')
+const kind = TH.requireSrcFile('Validation/kind')
 
 describe('DatetimeModel', () => {
   it('should work as expected', () => {
     kind(DatetimeModel(new Date)).should.equal('Date')
-    expect(() => DatetimeModel('foo')).to.throw('expecting Date, got String "foo"')
+    TH.expect(() => DatetimeModel('foo')).to.throw('expecting Date, got String "foo"')
   })
 })

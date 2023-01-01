@@ -1,15 +1,9 @@
-// unit test for assertObjKeysValid.js
+const TH = require('../../../test-helpers')
+const assertObjKeysValid = TH.requireSrcFile('ModelAssertion/assertObjKeysValid')
 
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
+const NonBlankStrModel = TH.requireSrcFile('Model/NonBlankStrModel')
 
-
-const assertObjKeysValid = require('../../../../src/ModelAssertion/assertObjKeysValid')
-
-const NonBlankStrModel = require('../../../../src/Model/NonBlankStrModel')
-
-const defBasicModel = require('../../../../src/ModelFactory/defBasicModel')
+const defBasicModel = TH.requireSrcFile('ModelFactory/defBasicModel')
 
 describe('assertObjKeysValid', () => {
 
@@ -20,7 +14,7 @@ describe('assertObjKeysValid', () => {
 
     NoBlankKeysObjModel({foo: 3}).should.eql({foo: 3})
 
-    expect(() => NoBlankKeysObjModel({'  ': 3})).to.throw('invalid property name "  " (is not a valid NonBlankString)')
+    TH.expect(() => NoBlankKeysObjModel({'  ': 3})).to.throw('invalid property name "  " (is not a valid NonBlankString)')
 
     const AnyKeyModel = defBasicModel('AnyKey', Object)
       .extend()

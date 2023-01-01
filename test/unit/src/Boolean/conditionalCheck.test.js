@@ -1,9 +1,7 @@
-const chai = require('chai')
-chai.should()
+const TH = require('../../../test-helpers')
+const conditionalCheck = TH.requireSrcFile('Boolean/conditionalCheck')
 
-const isString = require('../../../../src/Boolean/isString')
-
-const conditionalCheck = require('../../../../src/Boolean/conditionalCheck')
+const isString = TH.requireSrcFile('Boolean/isString')
 
 const stringStartsWithF = conditionalCheck(isString, x => x.startsWith('f'))
 

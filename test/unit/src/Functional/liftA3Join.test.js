@@ -1,14 +1,10 @@
-// unit test for liftA3Join.js
+const TH = require('../../../test-helpers')
+const liftA3Join = TH.requireSrcFile('Functional/liftA3Join')
 
-const chai = require('chai')
-chai.should()
+const Err = TH.requireSrcFile('ADT/Err')
+const Ok = TH.requireSrcFile('ADT/Ok')
 
-const liftA3Join = require('../../../../src/Functional/liftA3Join')
-
-const Err = require('../../../../src/ADT/Err')
-const Ok = require('../../../../src/ADT/Ok')
-
-const curry = require('../../../../src/Functional/curry')
+const curry = TH.requireSrcFile('Functional/curry')
 
 const div3 = curry(
   (x, y, z) => y === 0 || z === 0 ?

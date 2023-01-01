@@ -1,10 +1,8 @@
-const chai = require('chai')
-chai.should()
+const TH = require('../../../test-helpers')
+const isOfKind = TH.requireSrcFile('Boolean/isOfKind')
 
-const Err = require('../../../../src/ADT/Err')
-const Ok = require('../../../../src/ADT/Ok')
-
-const isOfKind = require('../../../../src/Boolean/isOfKind')
+const Err = TH.requireSrcFile('ADT/Err')
+const Ok = TH.requireSrcFile('ADT/Ok')
 
 describe('isOfKind', () => {
 

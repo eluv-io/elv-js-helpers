@@ -1,9 +1,5 @@
-// unit test for isGT.js
-
-const chai = require('chai')
-chai.should()
-
-const isGT = require('../../../../src/Boolean/isGT')
+const TH = require('../../../test-helpers')
+const isGT = TH.requireSrcFile('Boolean/isGT')
 
 describe('isGT', () => {
 

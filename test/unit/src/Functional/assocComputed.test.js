@@ -1,10 +1,5 @@
-// unit test for assocComputed.js
-
-const chai = require('chai')
-chai.should()
-
-
-const assocComputed = require('../../../../src/Functional/assocComputed')
+const TH = require('../../../test-helpers')
+const assocComputed = TH.requireSrcFile('Functional/assocComputed')
 
 describe('assocComputed', () => {
 

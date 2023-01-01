@@ -1,8 +1,5 @@
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
-
-const NumberModel = require('../../../../src/Model/NumberModel')
+const TH = require('../../../test-helpers')
+const NumberModel = TH.requireSrcFile('Model/NumberModel')
 
 describe('NumberModel', () => {
 
@@ -17,13 +14,13 @@ describe('NumberModel', () => {
   })
 
   it('should throw an exception for non-numbers', () => {
-    expect(() => NumberModel()).to.throw('expecting Number, got undefined')
-    expect(() => NumberModel([])).to.throw('expecting Number, got Array []')
-    expect(() => NumberModel([1])).to.throw('expecting Number, got Array [1]')
-    expect(() => NumberModel('1')).to.throw('expecting Number, got String "1"')
-    expect(() => NumberModel(true)).to.throw('expecting Number, got Boolean true')
-    expect(() => NumberModel(null)).to.throw('expecting Number, got null')
-    expect(() => NumberModel(NumberModel)).to.throw('expecting Number, got Function Number')
-    expect(() => NumberModel(x => x)).to.throw('expecting Number, got Function x => x')
+    TH.expect(() => NumberModel()).to.throw('expecting Number, got undefined')
+    TH.expect(() => NumberModel([])).to.throw('expecting Number, got Array []')
+    TH.expect(() => NumberModel([1])).to.throw('expecting Number, got Array [1]')
+    TH.expect(() => NumberModel('1')).to.throw('expecting Number, got String "1"')
+    TH.expect(() => NumberModel(true)).to.throw('expecting Number, got Boolean true')
+    TH.expect(() => NumberModel(null)).to.throw('expecting Number, got null')
+    TH.expect(() => NumberModel(NumberModel)).to.throw('expecting Number, got Function Number')
+    TH.expect(() => NumberModel(x => x)).to.throw('expecting Number, got Function x => x')
   })
 })

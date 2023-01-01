@@ -199,10 +199,6 @@ const ModelFactory = {
   defSealedObjModel: require('./ModelFactory/defSealedObjModel')
 }
 
-const ModelInternals = {
-  _kindCheckFn: require('./ModelInternals/_kindCheckFn')
-}
-
 const Validation = {
   RE_RATIONAL: require('./Validation/RE_RATIONAL'),
   _throwIfNotErr: require('./Validation/_throwIfNotErr'),
@@ -231,6 +227,5 @@ module.exports = {
   Model,
   ModelAssertion,
   ModelFactory,
-  ModelInternals,
   Validation
 }

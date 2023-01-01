@@ -1,10 +1,7 @@
-// unit test for toLocaleString.js
+const TH = require('../../../test-helpers')
+const toLocaleString = TH.requireSrcFile('Datetime/toLocaleString')
 
-const chai = require('chai')
-chai.should()
-
-const toLocaleString = require('../../../../src/Datetime/toLocaleString')
-const utcStrToDate = require('../../../../src/Datetime/utcStrToDate')
+const utcStrToDate = TH.requireSrcFile('Datetime/utcStrToDate')
 
 describe('toLocaleString', () => {
   const myDate = utcStrToDate('2022-03-01T14:00:00Z')

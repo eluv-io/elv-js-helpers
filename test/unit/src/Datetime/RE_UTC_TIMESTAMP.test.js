@@ -1,18 +1,14 @@
-// unit test for RE_UTC_TIMESTAMP.js
+const TH = require('../../../test-helpers')
+const RE_UTC_TIMESTAMP = TH.requireSrcFile('Datetime/RE_UTC_TIMESTAMP')
 
-const chai = require('chai')
-chai.should()
-
-const REGEX_UTC_TIMESTAMP = require('../../../../src/Datetime/RE_UTC_TIMESTAMP')
-
-describe('REGEX_UTC_TIMESTAMP', () => {
+describe('RE_UTC_TIMESTAMP', () => {
 
   it('should work as expected', () => {
-    REGEX_UTC_TIMESTAMP.test('2022-01-02T03:45:00Z').should.be.true
-    REGEX_UTC_TIMESTAMP.test('foo').should.be.false
+    RE_UTC_TIMESTAMP.test('2022-01-02T03:45:00Z').should.be.true
+    RE_UTC_TIMESTAMP.test('foo').should.be.false
 
     const utcString = '2022-01-02T03:45:00Z'
-    const match = utcString.match(REGEX_UTC_TIMESTAMP)
+    const match = utcString.match(RE_UTC_TIMESTAMP)
 
     parseInt(match[1], 10).should.equal(2022)
     parseInt(match[2], 10).should.equal(1)

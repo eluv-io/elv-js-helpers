@@ -1,10 +1,7 @@
-// unit test for failsModelCheck.js
+const TH = require('../../../test-helpers')
+const failsModelCheck = TH.requireSrcFile('Boolean/failsModelCheck')
 
-const chai = require('chai')
-chai.should()
-
-const failsModelCheck = require('../../../../src/Boolean/failsModelCheck')
-const PositiveIntModel = require('../../../../src/Model/PositiveIntModel')
+const PositiveIntModel = TH.requireSrcFile('Model/PositiveIntModel')
 
 describe('failsModelCheck', () => {
   it('should work as expected', () => {

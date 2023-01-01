@@ -1,15 +1,8 @@
-// unit test for assertPropRel.js
+const TH = require('../../../test-helpers')
+const assertPropRel = TH.requireSrcFile('ModelAssertion/assertPropRel')
 
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
-
-
-
-const assertPropRel = require('../../../../src/ModelAssertion/assertPropRel')
-
-const isGTE = require('../../../../src/Boolean/isGTE')
-const defObjModel = require('../../../../src/ModelFactory/defObjModel')
+const isGTE = TH.requireSrcFile('Boolean/isGTE')
+const defObjModel = TH.requireSrcFile('ModelFactory/defObjModel')
 
 describe('assertPropRel', () => {
   it('should work as expected', () => {
@@ -29,6 +22,6 @@ describe('assertPropRel', () => {
     )
 
     NumLimitsModel({min: 1, max: 2}).should.eql({min: 1, max: 2})
-    expect(() => NumLimitsModel({min: 2, max: 1})).to.throw('max (1) must be greater than or equal to min (2)')
+    TH.expect(() => NumLimitsModel({min: 2, max: 1})).to.throw('max (1) must be greater than or equal to min (2)')
   })
 })

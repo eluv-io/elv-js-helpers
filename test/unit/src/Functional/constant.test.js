@@ -1,9 +1,5 @@
-// unit test for constant.js
-
-const chai = require('chai')
-chai.should()
-
-const constant = require('../../../../src/Functional/constant')
+const TH = require('../../../test-helpers')
+const constant = TH.requireSrcFile('Functional/constant')
 
 describe('constant', () => {
 

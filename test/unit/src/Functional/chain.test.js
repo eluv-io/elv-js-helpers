@@ -1,14 +1,10 @@
-// unit test for chain.js
+const TH = require('../../../test-helpers')
+const chain = TH.requireSrcFile('Functional/chain')
 
-const chai = require('chai')
-chai.should()
+const Err = TH.requireSrcFile('ADT/Err')
+const Ok = TH.requireSrcFile('ADT/Ok')
 
-const chain = require('../../../../src/Functional/chain')
-
-const Err = require('../../../../src/ADT/Err')
-const Ok = require('../../../../src/ADT/Ok')
-
-const map = require('../../../../src/Functional/map')
+const map = TH.requireSrcFile('Functional/map')
 
 describe('chain', () => {
   const reciprocal = a => a === 0 ? Err(['division by zero']) : Ok(1 / a)

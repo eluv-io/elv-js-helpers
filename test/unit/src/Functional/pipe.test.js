@@ -1,9 +1,5 @@
-// unit test for pipe.js
-
-const chai = require('chai')
-chai.should()
-
-const pipe = require('../../../../src/Functional/pipe')
+const TH = require('../../../test-helpers')
+const pipe = TH.requireSrcFile('Functional/pipe')
 
 describe('pipe', () => {
 

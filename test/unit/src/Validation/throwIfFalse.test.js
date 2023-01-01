@@ -1,17 +1,14 @@
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
-
-const throwIfFalse = require('../../../../src/Validation/throwIfFalse')
+const TH = require('../../../test-helpers')
+const throwIfFalse = TH.requireSrcFile('Validation/throwIfFalse')
 
 describe('throwIfFalse', () => {
   it('should throw an exception with the message passed in when passed a falsy value', () => {
-    expect(() => throwIfFalse('foo',false)).to.throw('foo')
-    expect(() => throwIfFalse('foo',null)).to.throw('foo')
-    expect(() => throwIfFalse('foo',0)).to.throw('foo')
-    expect(() => throwIfFalse('foo','')).to.throw('foo')
-    expect(() => throwIfFalse('foo',undefined)).to.throw('foo')
-    expect(() => throwIfFalse('foo',NaN)).to.throw('foo')
+    TH.expect(() => throwIfFalse('foo',false)).to.throw('foo')
+    TH.expect(() => throwIfFalse('foo',null)).to.throw('foo')
+    TH.expect(() => throwIfFalse('foo',0)).to.throw('foo')
+    TH.expect(() => throwIfFalse('foo','')).to.throw('foo')
+    TH.expect(() => throwIfFalse('foo',undefined)).to.throw('foo')
+    TH.expect(() => throwIfFalse('foo',NaN)).to.throw('foo')
   })
 
   it('should return original value when passed a truthy value', () => {

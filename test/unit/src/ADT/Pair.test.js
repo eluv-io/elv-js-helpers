@@ -1,10 +1,5 @@
-// unit test for Pair.js
-
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
-
-const Pair = require('../../../../src/ADT/Pair')
+const TH = require('../../../test-helpers')
+const Pair = TH.requireSrcFile('ADT/Pair')
 
 describe('Pair', () => {
 
@@ -14,6 +9,6 @@ describe('Pair', () => {
     p.inspect().should.equal('Pair( 1, 2 )')
     p.fst().should.equal(1)
     p.snd().should.equal(2)
-    expect(()=> Pair(42)).to.throw('Pair: Must provide a first and second value')
+    TH.expect(()=> Pair(42)).to.throw('Pair: Must provide a first and second value')
   })
 })

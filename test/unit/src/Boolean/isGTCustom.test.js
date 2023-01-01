@@ -1,8 +1,5 @@
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
-
-const isGTCustom = require('../../../../src/Boolean/isGTCustom')
+const TH = require('../../../test-helpers')
+const isGTCustom = TH.requireSrcFile('Boolean/isGTCustom')
 
 const strLength = str => str.length
 const isLongerThan = isGTCustom(strLength)
@@ -12,7 +9,7 @@ describe('isGTCustom', () => {
     isLongerThan('a', 'ab').should.be.true
     isLongerThan('ab', 'a').should.be.false
     isLongerThan(42, 42).should.be.false
-    expect(() => isLongerThan(null, undefined)).to.throw('Cannot read properties of null (reading \'length\')')
+    TH.expect(() => isLongerThan(null, undefined)).to.throw('Cannot read properties of null (reading \'length\')')
   })
 
   it('should work when called with 2 args', () => {

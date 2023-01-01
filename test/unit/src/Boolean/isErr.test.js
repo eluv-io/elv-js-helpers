@@ -1,10 +1,8 @@
-const chai = require('chai')
-chai.should()
+const TH = require('../../../test-helpers')
+const isErr = TH.requireSrcFile('Boolean/isErr')
 
-const Err = require('../../../../src/ADT/Err')
-const Ok = require('../../../../src/ADT/Ok')
-
-const isErr = require('../../../../src/Boolean/isErr')
+const Err = TH.requireSrcFile('ADT/Err')
+const Ok = TH.requireSrcFile('ADT/Ok')
 
 describe('isErr', () => {
   it('should return true for Err', () => {

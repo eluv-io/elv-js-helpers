@@ -1,11 +1,7 @@
-// unit test for passesObjKeyCheck.js
+const TH = require('../../../test-helpers')
+const passesObjKeyCheck = TH.requireSrcFile('Boolean/passesObjKeyCheck')
 
-const chai = require('chai')
-chai.should()
-
-const passesObjKeyCheck = require('../../../../src/Boolean/passesObjKeyCheck')
-
-const NonBlankStrModel = require('../../../../src/Model/NonBlankStrModel')
+const NonBlankStrModel = TH.requireSrcFile('Model/NonBlankStrModel')
 
 describe('passesObjKeyCheck', () => {
   it('should work as expected', () => {

@@ -1,10 +1,7 @@
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
+const TH = require('../../../test-helpers')
+const assertValidUTCStr = TH.requireSrcFile('ModelAssertion/assertValidUTCStr')
 
-const assertValidUTCStr = require('../../../../src/ModelAssertion/assertValidUTCStr')
-
-const StringModel = require('../../../../src/Model/StringModel')
+const StringModel = TH.requireSrcFile('Model/StringModel')
 
 describe('assertValidUTCStr', () => {
 
@@ -16,8 +13,8 @@ describe('assertValidUTCStr', () => {
       .as('UTCDateTimeString')
 
     UTCDateTimeStringModel('2022-05-03T00:26:07Z').should.equal('2022-05-03T00:26:07Z')
-    expect(()=> UTCDateTimeStringModel('2022-99-03T00:26:07Z')).to.throw('Value is not a valid UTC datetime string (got: "2022-99-03T00:26:07Z")')
-    expect(()=> UTCDateTimeStringModel('foo')).to.throw('Value is not a valid UTC datetime string (got: "foo")')
+    TH.expect(()=> UTCDateTimeStringModel('2022-99-03T00:26:07Z')).to.throw('Value is not a valid UTC datetime string (got: "2022-99-03T00:26:07Z")')
+    TH.expect(()=> UTCDateTimeStringModel('foo')).to.throw('Value is not a valid UTC datetime string (got: "foo")')
 
   })
 

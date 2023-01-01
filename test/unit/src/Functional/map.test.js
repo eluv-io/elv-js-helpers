@@ -1,12 +1,8 @@
-// unit test for map.js
+const TH = require('../../../test-helpers')
+const map = TH.requireSrcFile('Functional/map')
 
-const chai = require('chai')
-chai.should()
-
-const map = require('../../../../src/Functional/map')
-
-const Err = require('../../../../src/ADT/Err')
-const Ok = require('../../../../src/ADT/Ok')
+const Err = TH.requireSrcFile('ADT/Err')
+const Ok = TH.requireSrcFile('ADT/Ok')
 
 describe('map', () => {
 

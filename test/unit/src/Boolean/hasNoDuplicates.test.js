@@ -1,10 +1,5 @@
-// unit test for hasNoDuplicates.js
-
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
-
-const hasNoDuplicates = require('../../../../src/Boolean/hasNoDuplicates')
+const TH = require('../../../test-helpers')
+const hasNoDuplicates = TH.requireSrcFile('Boolean/hasNoDuplicates')
 
 describe('hasNoDuplicates', () => {
 
@@ -23,7 +18,7 @@ describe('hasNoDuplicates', () => {
 
     hasNoDuplicates([{a: 1, b: 2}, {b: 2, a: 1}]).should.equal(false)
 
-    expect(() => hasNoDuplicates('foo')).to.throw('hasNoDuplicates() - expecting Array, got: String')
+    TH.expect(() => hasNoDuplicates('foo')).to.throw('hasNoDuplicates() - expecting Array, got: String')
 
   })
 

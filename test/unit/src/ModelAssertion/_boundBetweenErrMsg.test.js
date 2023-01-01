@@ -1,9 +1,5 @@
-// unit test for _boundBetweenErrMsg.js
-
-const chai = require('chai')
-chai.should()
-
-const _boundBetweenErrMsg = require('../../../../src/ModelAssertion/_boundBetweenErrMsg')
+const TH = require('../../../test-helpers')
+const _boundBetweenErrMsg = TH.requireSrcFile('ModelAssertion/_boundBetweenErrMsg')
 
 describe('_boundBetweenErrMsg', () => {
   it('should work as expected', () => {

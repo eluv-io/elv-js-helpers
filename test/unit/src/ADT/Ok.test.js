@@ -1,9 +1,5 @@
-// unit test for Ok.js
-
-const chai = require('chai')
-chai.should()
-
-const Ok = require('../../../../src/ADT/Ok')
+const TH = require('../../../test-helpers')
+const Ok = TH.requireSrcFile('ADT/Ok')
 
 describe('Ok', () => {
 

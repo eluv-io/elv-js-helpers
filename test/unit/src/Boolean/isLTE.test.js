@@ -1,11 +1,5 @@
-// unit test for isLTE.js
-
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
-require('mocha-sinon')
-
-const isLTE = require('../../../../src/Boolean/isLTE')
+const TH = require('../../../test-helpers')
+const isLTE = TH.requireSrcFile('Boolean/isLTE')
 
 describe('isLTE', () => {
   it('should have a correct example in JSDoc', function () {

@@ -1,9 +1,5 @@
-// unit test for truthTable.js
-
-const chai = require('chai')
-chai.should()
-
-const truthTable = require('../../../../src/Functional/truthTable')
+const TH = require('../../../test-helpers')
+const truthTable = TH.requireSrcFile('Functional/truthTable')
 
 describe('truthTable', () => {
   it('should work as expected', () => {

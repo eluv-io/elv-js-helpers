@@ -1,14 +1,7 @@
-// unit test for assertOrdered.js
+const TH = require('../../../test-helpers')
+const assertOrdered = TH.requireSrcFile('ModelAssertion/assertOrdered')
 
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
-
-
-
-const assertOrdered = require('../../../../src/ModelAssertion/assertOrdered')
-
-const defArrModel = require('../../../../src/ModelFactory/defArrModel')
+const defArrModel = TH.requireSrcFile('ModelFactory/defArrModel')
 
 describe('assertOrdered', () => {
   it('should work as expected', () => {
@@ -22,7 +15,7 @@ describe('assertOrdered', () => {
 
     OrderedNumArrayModel([1, 2, 3]).should.eql([1,2,3])
     OrderedNumArrayModel([]).should.eql([])
-    expect(() => OrderedNumArrayModel([3, 2])).to.throw('Value is not in ascending order (got: [3,2])')
-    expect(() => OrderedNumArrayModel('foo')).to.throw('expecting Array of Number, got String "foo"')
+    TH.expect(() => OrderedNumArrayModel([3, 2])).to.throw('Value is not in ascending order (got: [3,2])')
+    TH.expect(() => OrderedNumArrayModel('foo')).to.throw('expecting Array of Number, got String "foo"')
   })
 })

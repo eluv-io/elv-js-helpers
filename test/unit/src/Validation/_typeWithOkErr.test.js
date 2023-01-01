@@ -1,12 +1,8 @@
-// unit test for _typeWithOkErr.js
+const TH = require('../../../test-helpers')
+const _typeWithOkErr = TH.requireSrcFile('Validation/_typeWithOkErr')
 
-const chai = require('chai')
-chai.should()
-
-const _typeWithOkErr = require('../../../../src/Validation/_typeWithOkErr')
-
-const Err = require('../../../../src/ADT/Err')
-const Ok = require('../../../../src/ADT/Ok')
+const Err = TH.requireSrcFile('ADT/Err')
+const Ok = TH.requireSrcFile('ADT/Ok')
 
 describe('_typeWithOkErr', () => {
   it('should work as expected', () => {

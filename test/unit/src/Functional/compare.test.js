@@ -1,9 +1,5 @@
-// unit test for compare.js
-
-const chai = require('chai')
-chai.should()
-
-const compare = require('../../../../src/Functional/compare')
+const TH = require('../../../test-helpers')
+const compare = TH.requireSrcFile('Functional/compare')
 
 describe('compare', () => {
 

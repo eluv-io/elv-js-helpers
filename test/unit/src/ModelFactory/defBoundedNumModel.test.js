@@ -1,12 +1,9 @@
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
+const TH = require('../../../test-helpers')
+const defBoundedNumModel = TH.requireSrcFile('ModelFactory/defBoundedNumModel')
 
-const kind = require('../../../../src/Validation/kind')
-const resultUnwrap = require('../../../../src/Conversion/resultUnwrap')
-const validateWithModel = require('../../../../src/Validation/validateWithModel')
-
-const defBoundedNumModel = require('../../../../src/ModelFactory/defBoundedNumModel')
+const kind = TH.requireSrcFile('Validation/kind')
+const resultUnwrap = TH.requireSrcFile('Conversion/resultUnwrap')
+const validateWithModel = TH.requireSrcFile('Validation/validateWithModel')
 
 describe('defBoundedNumModel', function () {
 
@@ -19,33 +16,33 @@ describe('defBoundedNumModel', function () {
   const ValidateZeroToOneUpperInclusive = validateWithModel(ZeroToOneUpperInclusive)
 
   it('should pass for valid inputs', function () {
-    expect(() => ZeroToOneInclusive(0)).to.not.throw()
-    expect(() => ZeroToOneInclusive(0.5)).to.not.throw()
-    expect(() => ZeroToOneInclusive(1)).to.not.throw()
+    TH.expect(() => ZeroToOneInclusive(0)).to.not.throw()
+    TH.expect(() => ZeroToOneInclusive(0.5)).to.not.throw()
+    TH.expect(() => ZeroToOneInclusive(1)).to.not.throw()
 
-    expect(() => ZeroToOneLowerInclusive(0)).to.not.throw()
-    expect(() => ZeroToOneLowerInclusive(0.5)).to.not.throw()
+    TH.expect(() => ZeroToOneLowerInclusive(0)).to.not.throw()
+    TH.expect(() => ZeroToOneLowerInclusive(0.5)).to.not.throw()
 
-    expect(() => ZeroToOneUpperInclusive(0.5)).to.not.throw()
-    expect(() => ZeroToOneUpperInclusive(1)).to.not.throw()
+    TH.expect(() => ZeroToOneUpperInclusive(0.5)).to.not.throw()
+    TH.expect(() => ZeroToOneUpperInclusive(1)).to.not.throw()
   })
 
   it('should throw for out of range inputs', function () {
-    expect(() => ZeroToOneInclusive(-Infinity)).to.throw()
-    expect(() => ZeroToOneInclusive(-1)).to.throw()
-    expect(() => ZeroToOneInclusive(1.5)).to.throw()
-    expect(() => ZeroToOneInclusive(Infinity)).to.throw()
+    TH.expect(() => ZeroToOneInclusive(-Infinity)).to.throw()
+    TH.expect(() => ZeroToOneInclusive(-1)).to.throw()
+    TH.expect(() => ZeroToOneInclusive(1.5)).to.throw()
+    TH.expect(() => ZeroToOneInclusive(Infinity)).to.throw()
 
-    expect(() => ZeroToOneLowerInclusive(-Infinity)).to.throw()
-    expect(() => ZeroToOneLowerInclusive(-1)).to.throw()
-    expect(() => ZeroToOneLowerInclusive(1)).to.throw()
-    expect(() => ZeroToOneLowerInclusive(Infinity)).to.throw()
+    TH.expect(() => ZeroToOneLowerInclusive(-Infinity)).to.throw()
+    TH.expect(() => ZeroToOneLowerInclusive(-1)).to.throw()
+    TH.expect(() => ZeroToOneLowerInclusive(1)).to.throw()
+    TH.expect(() => ZeroToOneLowerInclusive(Infinity)).to.throw()
 
-    expect(() => ZeroToOneUpperInclusive(-Infinity)).to.throw()
-    expect(() => ZeroToOneUpperInclusive(-1)).to.throw()
-    expect(() => ZeroToOneUpperInclusive(0)).to.throw()
-    expect(() => ZeroToOneUpperInclusive(1.5)).to.throw()
-    expect(() => ZeroToOneUpperInclusive(Infinity)).to.throw()
+    TH.expect(() => ZeroToOneUpperInclusive(-Infinity)).to.throw()
+    TH.expect(() => ZeroToOneUpperInclusive(-1)).to.throw()
+    TH.expect(() => ZeroToOneUpperInclusive(0)).to.throw()
+    TH.expect(() => ZeroToOneUpperInclusive(1.5)).to.throw()
+    TH.expect(() => ZeroToOneUpperInclusive(Infinity)).to.throw()
   })
 
   it('should only return 1 error for non-numeric inputs', function () {

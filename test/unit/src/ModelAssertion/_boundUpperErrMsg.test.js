@@ -1,9 +1,5 @@
-// unit test for _boundUpperErrMsg.js
-
-const chai = require('chai')
-chai.should()
-
-const _boundUpperErrMsg = require('../../../../src/ModelAssertion/_boundUpperErrMsg')
+const TH = require('../../../test-helpers')
+const _boundUpperErrMsg = TH.requireSrcFile('ModelAssertion/_boundUpperErrMsg')
 
 describe('_boundUpperErrMsg', () => {
   it('should work as expected', () => {

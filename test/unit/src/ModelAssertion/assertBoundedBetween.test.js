@@ -1,14 +1,9 @@
-// unit test for assertBoundedBetween.js
+const TH = require('../../../test-helpers')
+const assertBoundedBetween = TH.requireSrcFile('ModelAssertion/assertBoundedBetween')
 
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
+const compare = TH.requireSrcFile('Functional/compare')
 
-const assertBoundedBetween = require('../../../../src/ModelAssertion/assertBoundedBetween')
-
-const compare = require('../../../../src/Functional/compare')
-
-const IntegerModel = require('../../../../src/Model/IntegerModel')
+const IntegerModel = TH.requireSrcFile('Model/IntegerModel')
 
 describe('assertBoundedBetween', () => {
 
@@ -30,7 +25,7 @@ describe('assertBoundedBetween', () => {
     CartonEggCountModel(0).should.equal(0)
     CartonEggCountModel(6).should.equal(6)
     CartonEggCountModel(12).should.equal(12)
-    expect(() => CartonEggCountModel(42)).throw('Value must be >= 0 and <= 12 (got: 42)')
-    expect(() => CartonEggCountModel('foo')).throw('expecting Number, got String "foo"')
+    TH.expect(() => CartonEggCountModel(42)).throw('Value must be >= 0 and <= 12 (got: 42)')
+    TH.expect(() => CartonEggCountModel('foo')).throw('expecting Number, got String "foo"')
   })
 })

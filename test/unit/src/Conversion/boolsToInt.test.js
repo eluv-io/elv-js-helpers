@@ -1,9 +1,5 @@
-// unit test for boolsToInt.js
-
-const chai = require('chai')
-chai.should()
-
-const boolsToInt = require('../../../../src/Conversion/boolsToInt')
+const TH = require('../../../test-helpers')
+const boolsToInt = TH.requireSrcFile('Conversion/boolsToInt')
 
 describe('boolsToInt', () => {
 

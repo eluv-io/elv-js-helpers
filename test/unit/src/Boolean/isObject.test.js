@@ -1,9 +1,5 @@
-// unit test for isObject.js
-
-const chai = require('chai')
-chai.should()
-
-const isObject = require('../../../../src/Boolean/isObject')
+const TH = require('../../../test-helpers')
+const isObject = TH.requireSrcFile('Boolean/isObject')
 
 describe('isObject', () => {
 

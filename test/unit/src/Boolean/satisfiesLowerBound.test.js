@@ -1,11 +1,7 @@
-// unit test for satisfiesLowerBound.js
+const TH = require('../../../test-helpers')
+const satisfiesLowerBound = TH.requireSrcFile('Boolean/satisfiesLowerBound')
 
-const chai = require('chai')
-chai.should()
-
-const satisfiesLowerBound = require('../../../../src/Boolean/satisfiesLowerBound')
-
-const compare = require('../../../../src/Functional/compare')
+const compare = TH.requireSrcFile('Functional/compare')
 
 describe('satisfiesLowerBound', () => {
 

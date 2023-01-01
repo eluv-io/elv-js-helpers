@@ -1,14 +1,9 @@
-// unit test for assertObjValuesValid.js
+const TH = require('../../../test-helpers')
+const assertObjValuesValid = TH.requireSrcFile('ModelAssertion/assertObjValuesValid')
 
-const chai = require('chai')
-chai.should()
-const expect = chai.expect
+const NonBlankStrModel = TH.requireSrcFile('Model/NonBlankStrModel')
 
-const assertObjValuesValid = require('../../../../src/ModelAssertion/assertObjValuesValid')
-
-const NonBlankStrModel = require('../../../../src/Model/NonBlankStrModel')
-
-const defBasicModel = require('../../../../src/ModelFactory/defBasicModel')
+const defBasicModel = TH.requireSrcFile('ModelFactory/defBasicModel')
 
 
 describe('assertObjValuesValid', () => {
@@ -18,7 +13,7 @@ describe('assertObjValuesValid', () => {
       .extend()
       .assert(...assertObjValuesValid(NonBlankStrModel))
 
-    expect(()=>NoBlankStringValsObjModel({foo: '  '})).to.throw('key "foo" points to a value that is an invalid NonBlankString (NonBlankString: Value must not be a blank string (got: "  "))')
+    TH.expect(()=>NoBlankStringValsObjModel({foo: '  '})).to.throw('key "foo" points to a value that is an invalid NonBlankString (NonBlankString: Value must not be a blank string (got: "  "))')
 
     const AnyValueModel = defBasicModel('AnyValue', Object)
       .extend()
