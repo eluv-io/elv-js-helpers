@@ -45,7 +45,6 @@
     "madge": "^5.0.1",
     "marked": "^4.2.4",
     "mocha": "^10.2.0",
-    "mocha-sinon": "^2.1.2",
     "np": "^7.6.2",
     "npm-check-updates": "^16.6.0",
     "nyc": "^15.1.0",
