@@ -1,45 +1,24 @@
 /**
- * Pretty-prints value to console/stdout in JSON format
+ * Pretty-prints value to console/stdout in JSON format. Like `console.log()`, returns `undefined`.
  *
  * @function
  * @category Misc
- * @sig * -> PRINT
+ * @sig * -> undefined (PRINTS TO CONSOLE)
  * @example
  *
  * const dumpJSON = require('@eluvio/elv-js-helpers/Misc/dumpJSON')
  *
- * dumpJSON('A')
- * // string that is output contains leading and trailing "
- * // console.log is called with:
- * '"A"'
+ * dumpJSON('A')           //=> OUTPUT: '"A"'
  *
- * dumpJSON(42)
- * // console.log is called with:
- * '42'
+ * dumpJSON(42)            //=> OUTPUT: '42'
  *
- * dumpJSON(undefined)
- * // not a string: actual value that gets passed to console.log is: undefined
- * // console.log is called with:
- * undefined
-
- * dumpJSON([1, 2, 3])
- * // console.log is called with:
- * `[
- *   1,
- *   2,
- *   3
- * ]`
+ * dumpJSON(undefined)     //=> OUTPUT: undefined
  *
- * dumpJSON({foo: 'bar'})
- * // console.log is called with:
- * `{
- *   "foo": "bar"
- * }`
+ * dumpJSON([1, 2, 3])     //=> OUTPUT: '[\n  1,\n  2,\n  3\n]'
  *
- * dumpJSON(dumpJSON)
- * // not a string: actual value that gets passed to console.log is: undefined
- * // console.log is called with:
- * undefined
+ * dumpJSON({foo: 'bar'})  //=> OUTPUT: '{\n  "foo": "bar"\n}'
+ *
+ * dumpJSON(dumpJSON)      //=> OUTPUT: undefined
  *
  */
 const dumpJSON = x => console.log(JSON.stringify(x, null, 2))

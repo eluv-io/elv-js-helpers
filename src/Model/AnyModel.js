@@ -11,9 +11,6 @@ const {Any} = require('objectmodel')
  * @sig * -> *
  * @param {*} - Any input
  * @returns {*} The input, proxied by ObjectModel
- * @example
- *
- * const AnyModel = require('@eluvio/elv-js-helpers/Model/AnyModel')
  *
  *
  */

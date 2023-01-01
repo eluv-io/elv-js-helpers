@@ -21,7 +21,7 @@
  *
  * const myObject = {foo: "f", bar: "b"}
  *
- * omit(['foo'], myObject) => {bar: 'b'}
+ * omit(['foo'], myObject) //=> {bar: 'b'}
  */
 const omit = require('crocks/helpers/omit')
 

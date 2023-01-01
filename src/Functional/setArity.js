@@ -19,13 +19,15 @@
  *
  * const setArity = require('@eluvio/elv-js-helpers/Functional/setArity')
  *
- * const log3items = setArity(3, console.log)
+ * const maxOfThree = setArity(3, Math.max)
  *
- * const log2more = log3items("Prefix:")      //=> returns partially applied function
+ * // creates partially applied function with 1 argument applied (waiting for 2 more):
+ * const maxNeedTwoMore = maxOfThree(42)
  *
- * const log1more = log2more("WARN")          //=> returns partially applied function
+ * // creates partially applied function with 2 arguments applied (waiting for 1 more):
+ * const maxNeedOneMore = maxNeedTwoMore(0)
  *
- * const log1more("message")                  //=> Outputs "Prefix: WARN message"
+ * maxNeedOneMore(-42)                  //=> 42
  *
  */
 const setArity = require('crocks/helpers/nAry')

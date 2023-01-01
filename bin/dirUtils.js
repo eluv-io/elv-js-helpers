@@ -1,6 +1,9 @@
 const path = require('path')
 const fs = require('fs')
 
+const SRC_DIR = path.normalize(path.join(__dirname, '..','src'))
+const UNIT_TEST_SRC_DIR = path.normalize(path.join(__dirname, '..','test','unit','src'))
+
 // String -> [String]
 // Returns list of subdirectory names
 const subdirNameList = pathStr =>
@@ -17,5 +20,7 @@ const jsFileBasenamesList = pathStr =>
 
 module.exports = {
   subdirNameList,
-  jsFileBasenamesList
+  jsFileBasenamesList,
+  SRC_DIR,
+  UNIT_TEST_SRC_DIR
 }
