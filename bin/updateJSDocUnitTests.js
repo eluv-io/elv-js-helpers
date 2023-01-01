@@ -89,12 +89,11 @@ const processDir = (srcDir, testDir) => {
       ].join('\n')
     } else {
       // did not find the test of JSDoc example
-      // insert at end of 'describe' block
+      // insert at beginning of 'describe' block as first test
       revisedTestFile = [
-        testFileLines.slice(0, traverseResult.describeEndLine - 1).join('\n'),
-        '',
-        testBlock,
-        testFileLines.slice(traverseResult.describeEndLine-1).join('\n')
+        testFileLines.slice(0, traverseResult.describeStartLine).join('\n'),
+        testBlock + '\n',
+        testFileLines.slice(traverseResult.describeStartLine).join('\n')
       ].join('\n')
     }
     fs.writeFileSync(testFilePath, revisedTestFile)
