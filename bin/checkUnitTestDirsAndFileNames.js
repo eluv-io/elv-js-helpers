@@ -1,11 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const {subdirNameList, jsFileBasenamesList} = require('./dirUtils')
-
-const UNIT_TEST_DIR = path.normalize(path.join(__dirname, '..','test','unit','src'))
-
-const SRC_DIR = path.normalize(path.join(__dirname, '..','src'))
+const {jsFileBasenamesList, subdirNameList, SRC_DIR, UNIT_TEST_SRC_DIR} = require('./dirUtils')
 
 const checkDir = (testDir, srcDir) => {
   if (!fs.existsSync(testDir)) console.error(`Unit test dir ${testDir} not found`)
@@ -30,6 +26,6 @@ const checkDir = (testDir, srcDir) => {
 }
 
 console.log('\nChecking for unit test filenames that do not look correct...\n')
-checkDir(UNIT_TEST_DIR, SRC_DIR)
+checkDir(UNIT_TEST_SRC_DIR, SRC_DIR)
 console.log('\nDone.\n')
 

@@ -16,17 +16,19 @@ const _NIL_KINDS = ['null', 'undefined']
  *
  * const isNil = require('@eluvio/elv-js-helpers/Boolean/isNil')
  *
- * isNil()             //=> true
+ * isNil()                //=> true
  *
- * isNil(undefined)             //=> true
+ * isNil(undefined)       //=> true
  *
- * isNil(null)             //=> true
+ * isNil(null)            //=> true
  *
- * isGTE(42)             //=> false
+ * isNil(42)              //=> false
  *
- * isGTE(42, undefined)            //=> false
+ * // extra argument ignored:
+ * isNil(42, undefined)   //=> false
  *
- * isGTE(undefined, 42)   //=> false
+ * // extra argument ignored:
+ * isNil(undefined, 42)   //=> true
  *
  */
 const isNil = value => _NIL_KINDS.includes(kind(value))

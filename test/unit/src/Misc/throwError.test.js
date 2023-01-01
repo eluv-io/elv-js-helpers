@@ -5,7 +5,6 @@ const expect = chai.expect
 const throwError = require('../../../../src/Misc/throwError')
 
 describe('throwError', () => {
-
   it('should throw an exception with the message passed in', () => {
     expect(() => throwError('foo')).to.throw('foo')
   })
