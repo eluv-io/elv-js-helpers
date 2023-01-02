@@ -19,6 +19,9 @@ const _throwIfNotResult = require('../Validation/_throwIfNotResult')
  *
  * const resultUnwrap = require('@eluvio/elv-js-helpers/Conversion/resultUnwrap')
  *
+ * const Err = require('@eluvio/elv-js-helpers/ADT/Err')
+ * const Ok = require('@eluvio/elv-js-helpers/ADT/Ok')
+ *
  * resultUnwrap(Err(['invalid query'])) //=> ['invalid query']
  *
  * resultUnwrap(Ok(42))                 //=> 42

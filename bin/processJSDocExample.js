@@ -29,7 +29,7 @@ const jsDocTest = (jsDocExampleText, srcFileAbsPath) => {
 
   // handle example lines that output to console
   const consoleSearch = /(.+)( +\/\/=> OUTPUT: +)(.+)/
-  const consoleReplacer = (_, code, divider, outputString) => `\nTH.sinon.stub(console,'log')\n${code}\nTH.expect(console.log.calledWith(${outputString})).to.be.true\nTH.sinon.restore()\n`
+  const consoleReplacer = (_, code, divider, outputString) => `\nTH.sinon.stub(console,'log')\n${code}\ntry{TH.expect(console.log.calledWith(${outputString})).to.be.true\n} finally {\nTH.sinon.restore()\n}`
 
   // handle example lines that return values
   const shouldSearch = /(.+)( +\/\/=> +)(.+)/

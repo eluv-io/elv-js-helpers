@@ -1,16 +1,45 @@
 const TH = require('../../../test-helpers')
-const multiply = require('@eluvio/ramda-fork/src/multiply')
-
-const Err = TH.requireSrcFile('ADT/Err')
-const kind = TH.requireSrcFile('Validation/kind')
-const liftA2 = TH.requireSrcFile('Functional/liftA2')
-const Ok = TH.requireSrcFile('ADT/Ok')
-
 const resultToPOJO = TH.requireSrcFile('Conversion/resultToPOJO')
 
-describe('resultToPOJO', function () {
-  const result = resultToPOJO(Ok(42))
+// AUTO-GENERATED TEST: Do not modify the following "describe('resultToPOJO JSDoc example', ...)" block:
+describe('resultToPOJO JSDoc example', () => {
+  it('should execute correctly as described', () => {
+    const Err = TH.requireSrcFile('ADT/Err')
+    const Ok = TH.requireSrcFile('ADT/Ok')
+    const dumpJSON = TH.requireSrcFile('Misc/dumpJSON')
+    resultToPOJO(Ok(42)).should.eql({ok: true, value: 42})
+    resultToPOJO(Err(['query invalid'])).should.eql({
+      ok: false,
+      errors: ['query invalid'],
+      errorDetails: ['query invalid'],
+    })
+    const e = RangeError('value too large')
 
+    TH.sinon.stub(console, 'log')
+    dumpJSON(resultToPOJO(Err([e])))
+    try {
+      TH.expect(
+        console.log.calledWith(
+          '{\n  "ok": false,\n  "errors": [\n    "RangeError: value too large"\n  ],\n  "errorDetails": [\n    {}\n  ]\n}'
+        )
+      ).to.be.true
+    } finally {
+      TH.sinon.restore()
+    }
+  })
+})
+
+describe('resultToPOJO', function () {
+  const multiply = require('@eluvio/ramda-fork/src/multiply')
+
+  const Err = TH.requireSrcFile('ADT/Err')
+  const Ok = TH.requireSrcFile('ADT/Ok')
+
+  const liftA2 = TH.requireSrcFile('Functional/liftA2')
+
+  const kind = TH.requireSrcFile('Validation/kind')
+
+  const result = resultToPOJO(Ok(42))
   const malformedErr = Err('error val not wrapped in an array')
 
   const err1 = Err(['first error'])
@@ -23,17 +52,13 @@ describe('resultToPOJO', function () {
   const doubleErrRetVal = resultToPOJO(doubleErr)
   const tripleErrRetVal = resultToPOJO(tripleErr)
 
-  it('should throw an exception when given an Err that does not contain an array',
-    () => TH.expect(() => resultToPOJO(malformedErr)).to.throw
-  )
+  it('should throw an exception when given an Err that does not contain an array', () =>
+    TH.expect(() => resultToPOJO(malformedErr)).to.throw)
 
   it('should return a value with ok: true when given an Ok', () => result.ok.should.be.true)
-  it('should return a value with a "value" attribute when given an Ok',
-    () => result.value.should.equal(42)
-  )
-  it('should not return a value with an "errors" attribute when given an Ok',
-    () => Object.keys(result).includes('errors').should.be.false
-  )
+  it('should return a value with a "value" attribute when given an Ok', () => result.value.should.equal(42))
+  it('should not return a value with an "errors" attribute when given an Ok', () =>
+    Object.keys(result).includes('errors').should.be.false)
 
   it('should return a value with ok: false when given an Err', () => {
     simpleErrRetVal.ok.should.be.false
@@ -62,5 +87,4 @@ describe('resultToPOJO', function () {
     Object.keys(doubleErrRetVal).includes('result').should.be.false
     Object.keys(tripleErrRetVal).includes('result').should.be.false
   })
-
 })

@@ -15,11 +15,8 @@ const isArray = require('../Boolean/isArray')
  * where `errorDetails` is the array value wrapped by the `Err`, and `errors` is the result of passing each item in
  * that array to `String()` then removing duplicates.
  *
- * If an `Err` result does not contain an array, an exception will be thrown
- *
- * **NOTE:** You should ALWAYS use arrays when constructing `Err` values to ensure that errors accumulate correctly.
- * If you are working with a library that can return either a single error or an array of errors, use the helper
- * function `wrapNonArray`, e.g. `Err(wrapNonArray(extLibValidationErr()))`
+ * Throws an error if the `Result` is an `Err` that does not contain an array. (This situation is not usually encountered,
+ * as the `Err()` function performs automatic conversion to single-element array if the input is not an array)
  *
  * @function
  * @category Conversion
@@ -28,28 +25,19 @@ const isArray = require('../Boolean/isArray')
  * @returns {Object}
  * @example
  *
+ * const resultToPOJO = require('@eluvio/elv-js-helpers/Conversion/resultToPOJO')
+ *
  * const Err = require('@eluvio/elv-js-helpers/ADT/Err')
  * const Ok = require('@eluvio/elv-js-helpers/ADT/Ok')
  *
- * const resultToPOJO = require('@eluvio/elv-js-helpers/Conversion/resultToPOJO')
+ * const dumpJSON = require('@eluvio/elv-js-helpers/Misc/dumpJSON')
  *
  * resultToPOJO(Ok(42))                 //=> {ok: true, value: 42}
  *
- * resultToPOJO(Err(['query invalid'])) //=> {ok: false, errors: ["query invalid"], error_details: ["query invalid"]}
- *
- * resultToPOJO(Err('foo'))             //=> EXCEPTION: 'Err instance does not contain an array, instead contains: string ("foo")'
+ * resultToPOJO(Err(['query invalid'])) //=> {ok: false, errors: ["query invalid"], errorDetails: ["query invalid"]}
  *
  * const e = RangeError('value too large')
- * console.log(resultToPOJO(Err([e])))
- * `{
- *   ok: false,
- *   errors: [ 'RangeError: value too large' ],
- *   errorDetails: [
- *     RangeError: value too large
- *         at Object.<anonymous>
- *         (stack trace)
- *   ]
- * }`
+ * dumpJSON(resultToPOJO(Err([e])))  //=> OUTPUT: '{\n  "ok": false,\n  "errors": [\n    "RangeError: value too large"\n  ],\n  "errorDetails": [\n    {}\n  ]\n}'
  *
  */
 const resultToPOJO = result => either(
