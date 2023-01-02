@@ -1,4 +1,4 @@
-const relChange = require('./relChange')
+const growth = require('./growth')
 
 const curry = require('../Functional/curry')
 
@@ -7,7 +7,7 @@ const curry = require('../Functional/curry')
 // e.g. returns 0 if the values are the same, 0.5 if the second value is 50% larger
 // Note that 0 is invalid for oldValue, the relative change is Infinity in that case
 const absRelChange = curry(
-  (oldValue, newValue) => Math.abs(relChange(oldValue, newValue))
+  (oldValue, newValue) => Math.abs(growth(oldValue, newValue))
 )
 
 module.exports = absRelChange

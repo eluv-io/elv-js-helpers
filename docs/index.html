@@ -1,6 +1,8 @@
 <!DOCTYPE html><html class="docs-page" lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="shortcut icon" href="./images/favicon.png"><link href="./css/style.css" rel="stylesheet"><title></title></head><body><!-- ENTIRE BROWSER VIEW AREA--><div class="d-flex flex-column vh-100" id="viewport"><!-- UPPER PANE--><div class="d-flex flex-row border navbar fixed-top align-items-stretch" id="header-row"><div class="d-flex flex-wrap align-items-center" id="logo-container"><a href="https://eluv.io" target="_blank"><img class="m-1" src="./images/logo.png"></a></div><div class="nav d-flex flex-wrap align-items-stretch" id="title-container"><ul class="nav"><li class="nav-link" id="project-name"><strong>@eluvio/elv-js-helpers</strong><span class="ms-1" id="version">v4.0.0</span></li><li class="nav-link active-header-tab" id="undefined-li,"><a id="nav-home" href="./index.html">Home</a></li><li class="nav-link inactive-header-tab" id="undefined-li,"><a id="nav-home" href="./api.html">API Documentation</a></li></ul></div><div class="flex-fill" id="header-space-fill"></div><div id="github-link-container"><ul class="nav"><li class="nav-link"><a href="https://github.com/eluv-io/elv-js-helpers" target="_blank">Github</a></li></ul></div></div><!-- LOWER PANE--><div class="d-flex flex-col flex-fill justify-content-center" id="readme-container"><div id="readme"><h1>elv-js-helpers</h1>
 <p>A collection of Javascript helper functions used by several Eluvio libraries.</p>
 <p><strong>THIS LIBRARY IS CURRENTLY IN PRE-RELEASE: FUNCTION NAMES AND SIGNATURES ARE STILL IN FLUX.</strong></p>
+<h2>API Documentation</h2>
+<p><a href="https://eluv-io.github.io/elv-js-helpers/api.html">https://eluv-io.github.io/elv-js-helpers/api.html</a></p>
 <h2>Installation</h2>
 <h4>Install from NPM:</h4>
 <pre class="prettyprint source"><code>npm install --save @eluvio/elv-js-helpers
@@ -53,5 +55,85 @@ is expected that browser apps would be built using a bundling tool like Webpack/
     console.log('_boundLowerErrMsg(0,true)= &quot;' + ElvJsHelpers.ModelAssertion._boundLowerErrMsg(0,true) + '&quot;')
 &lt;/script>
 </code></pre>
-<h2>API Documentation</h2>
-<p><a href="https://eluv-io.github.io/elv-js-helpers/api.html">https://eluv-io.github.io/elv-js-helpers/api.html</a></p></div></div></div></body></html>
+<h2>Conventions</h2>
+<h3>Source Files (<code>src/CATEGORY/*.js</code>)</h3>
+<ul>
+<li>Each function (or exported constant) has its own source file.</li>
+<li>Each source file exports exactly 1 item.</li>
+<li>Files have the same case-sensitive name as the function or constant it defines (with <code>.js</code> extension added)</li>
+<li>Files are stored in subdirectories of <code>src/</code> according to category (1 category per subdirectory)</li>
+</ul>
+<h3>Naming / Capitalization</h3>
+<h4>Abbreviations</h4>
+<ul>
+<li>Names tend to err on the side of not abbreviating, prioritizing clarity over brevity:
+<ul>
+<li><code>conditionalCheck</code> <em>not</em> <code>condlChk</code> <em>(function)</em></li>
+<li><code>sysTimezone</code> <em>not</em> <code>sysTZ</code> <em>(function)</em></li>
+</ul>
+</li>
+<li>When an item name would be cumbersome or excessively long otherwise, abbreviations and/or acronyms are used for words where the meaning remains reasonably clear and obvious:
+<ul>
+<li><code>assertPropMaxGTEMin</code> <em>not</em> <code>assertPropertyMaximumGreaterThanOrEqualToMinimum</code>  <em>(function)</em></li>
+<li><code>defNonEmptyArrModel</code> <em>not</em> <code>defineNonEmptyArrayModel</code>  <em>(function)</em></li>
+<li><code>RE_UTC_TIMESTAMP</code> <em>not</em> <code>REGEXP_UNIVERSAL_TIME_COORDINATED_TIMESTAMP</code> <em>(constant)</em></li>
+</ul>
+</li>
+<li>A few abbreviations stretch the &quot;reasonably clear and obvious&quot; condition:
+<ul>
+<li><code>ADT</code> <em>not</em> <code>AlgebraicDataType</code> <em>(category)</em></li>
+<li><code>resultToPOJO</code> <em>not</em> <code>resultToPlainOldJavascriptObject</code> <em>(function)</em></li>
+</ul>
+</li>
+</ul>
+<h4>Capitalization (general)</h4>
+<ul>
+<li>Compound words that are widely treated as single words do not capitalize the second word:
+<ul>
+<li><code>Datetime</code> <em>not</em> <code>DateTime</code> <em>(category)</em></li>
+<li><code>sysTimezone</code> <em>not</em> <code>sysTimeZone</code> <em>(function)</em></li>
+<li><code>RE_UTC_TIMESTAMP</code> <em>not</em> <code>RE_UTC_TIME_STAMP</code> <em>(constant)</em></li>
+</ul>
+</li>
+<li>Acronyms are kept all the same case, either upper or lower depending on kind of item and position within name:
+<ul>
+<li><code>ADT</code> <em>not</em> <code>Adt</code> <em>(category)</em></li>
+<li><code>parseUTCStr</code> <em>not</em> <code>parseUtcStr</code> <em>(function)</em></li>
+<li><code>utcStrToDate</code> <em>not</em> <code>uTCStrToDate</code> <em>(function)</em></li>
+<li><code>etaDurStr</code> <em>not</em> <code>eTADurStr</code> <em>(function)</em></li>
+</ul>
+</li>
+<li>For greater legibility, the prefix &quot;non&quot; is treated as a word:
+<ul>
+<li><code>NonBlankStrModel</code> <em>not</em> <code>NonblankStrModel</code> <em>(model)</em></li>
+<li><code>wrapNonArray</code> <em>not</em> <code>wrapNonarray</code> <em>(function)</em></li>
+</ul>
+</li>
+</ul>
+<h4>Capitalization (by item type)</h4>
+<ul>
+<li><strong>ADTs</strong>: PascalCase (<code>List</code>, <code>Ok</code>)</li>
+<li><strong>Categories</strong>: PascalCase (<code>ModelAssertion</code>, <code>ModelFactory</code>)</li>
+<li><strong>Constants</strong>: UPPER_SNAKE_CASE (<code>RE_UTC_TIMESTAMP</code>)
+<ul>
+<li>Regular expression names start with &quot;RE_&quot;</li>
+</ul>
+</li>
+<li><strong>Models</strong>: PascalCase (<code>NonBlankStrModel</code>)
+<ul>
+<li>Model names always end with &quot;Model&quot;</li>
+</ul>
+</li>
+<li><strong>Functions</strong>: camelCase (<code>mapWithIndex</code>, <code>resultUnwrap</code>)
+<ul>
+<li>Note that <strong>ADTs</strong> and <strong>Models</strong> are actually functions but are named using PascalCase because they are used more like classes.</li>
+<li><strong>ModelFactory</strong> names always start with &quot;def&quot; and end with &quot;Model&quot; (<code>defArrModel</code>, <code>defObjModel</code>)</li>
+</ul>
+</li>
+</ul>
+<h4>Private Items</h4>
+<ul>
+<li>Have names beginning with underscore (<code>_boundLowerErrMsg</code>)</li>
+<li>Are not truly private, they are available for use but are filtered from the documentation page unless <code>Show private</code> is checked.</li>
+<li>Contain internal code shared by more than one function but considered too specialized to be useful outside the package</li>
+</ul></div></div></div></body></html>
