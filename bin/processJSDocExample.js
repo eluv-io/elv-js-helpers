@@ -3,20 +3,24 @@ const fs = require('fs')
 const path = require('path')
 
 const JSDOC_EXAMPLE_RE = /^ \* @example((.|\n)+^) *\*\//m
-const JSDOC_TEST_NAME = 'should have a working example in JSDoc'
 const PRETTIER_BIN_PATH = path.resolve(__dirname, '..', 'node_modules', 'prettier', 'bin-prettier.js')
 
-const testRequireText = srcFileAbsPath => `TH.requireSrcFile('${srcFileAbsPath.split('/src/')[1].slice(0, -3)}')`
-const jsDocRequireMatch = srcFileAbsPath => `require('@eluvio/elv-js-helpers/${srcFileAbsPath.split('/src/')[1].slice(0, -3)}')`
+const srcFileBasename = srcFilePath => path.basename(srcFilePath, '.js')
+const srcFileSubDirPlusBasename = srcFileAbsPath =>  srcFileAbsPath.split('/src/')[1].slice(0, -3)
+const testRequireText = srcFileAbsPath => `TH.requireSrcFile('${srcFileSubDirPlusBasename(srcFileAbsPath)}')`
+const jsDocRequireMatch = srcFileAbsPath => `require('@eluvio/elv-js-helpers/${srcFileSubDirPlusBasename(srcFileAbsPath)}')`
 
+// Get JSDoc @example from source file.
+// Returns multi-line string containing everything in between "@example" and final " *\" of JSDoc comment block
 const jsDocExample = filePath => {
   const scriptCode = fs.readFileSync(filePath).toString()
   const match = scriptCode.match(JSDOC_EXAMPLE_RE)
   return match && match[1]
 }
 
-// generates one 'it(...)' test block
+// generates 'describe(...)' block for test of JSDoc example
 const jsDocTest = (jsDocExampleText, srcFileAbsPath) => {
+  const name = srcFileBasename(srcFileAbsPath)
   const requireFindText = jsDocRequireMatch(srcFileAbsPath)
 
   // handle example lines that throw exceptions
@@ -48,23 +52,33 @@ const jsDocTest = (jsDocExampleText, srcFileAbsPath) => {
     .filter(x => !/^\w*$/.test(x)) // remove blank lines
     .join('\n')
 
-  return `it('${JSDOC_TEST_NAME}', () => {\n${jsDocAssertions}\n})`
+  return `describe('${name} JSDoc example', () => {
+  it('should execute correctly as described', () => {
+    ${jsDocAssertions}
+  })
+})
+`
 }
 
 const newUnitTestFileText = (srcFileAbsPath, jsDocAssertions) => {
-  const srcFileBasename = path.basename(srcFileAbsPath, '.js')
-  const requireStmt = `const ${srcFileBasename} = ${testRequireText(srcFileAbsPath)}`
+  const name = srcFileBasename(srcFileAbsPath)
+  const requireStmt = `const ${name} = ${testRequireText(srcFileAbsPath)}`
 
   return `const TH = require('../../../test-helpers')
 ${requireStmt}
 
-describe('${srcFileBasename}', () => {
-  ${jsDocAssertions}
+// AUTO-GENERATED TEST: Do not modify the following "describe('${name} JSDoc example', ...)" block:
+${jsDocAssertions}
 
-  // it('should... ', () => {
-  //
-  // })
-})
+// Place additional tests in the 'describe' block below.
+//
+// describe('${name}', () => {
+//
+//   it('should... ', () => {
+//
+//   })
+//
+// })
 `
 }
 
@@ -75,7 +89,6 @@ module.exports = {
   jsDocExample,
   jsDocTest,
   JSDOC_EXAMPLE_RE,
-  JSDOC_TEST_NAME,
   newUnitTestFileText,
   PRETTIER_BIN_PATH,
   prettify

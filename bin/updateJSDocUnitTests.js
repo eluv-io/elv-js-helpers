@@ -6,7 +6,7 @@ const traverse = require('babel-traverse').default
 const t = require('babel-types')
 
 const {jsFileBasenamesList, subdirNameList, SRC_DIR, UNIT_TEST_SRC_DIR} = require('./dirUtils')
-const {jsDocExample, jsDocTest, JSDOC_TEST_NAME, prettify} = require('./processJSDocExample')
+const {jsDocExample, jsDocTest, prettify} = require('./processJSDocExample')
 
 const processDir = (srcDir, testDir) => {
   if (!fs.existsSync(srcDir)) throw Error(`Src dir ${srcDir} not found`)
@@ -48,30 +48,23 @@ const processDir = (srcDir, testDir) => {
 
     const testFileText = fs.readFileSync(testFilePath).toString()
     const testAST = babylon.parse(testFileText, {sourceType: 'module'})
-    const isDescribe = path => t.isIdentifier(path.node, {name: 'describe'})
+    const isDescribeIdentifier = path => t.isIdentifier(path.node, {name: 'describe'})
     const traverseResult = {}
 
     traverse(testAST, {
       enter(path) {
-        if (isDescribe(path)) {
-          const describeCallExpr = path.parent
-          const describeFn = path.parent.arguments[1]
-          // line numbers are 1-based
-          traverseResult.describeStartLine = describeCallExpr.loc.start.line
-          traverseResult.describeEndLine = describeCallExpr.loc.end.line
-
-          const statements = describeFn.body.body
-          const tests = statements.filter(
-            x => t.isExpressionStatement(x)
-              && x.expression.callee.type === 'Identifier'
-              && x.expression.callee.name === 'it'
-          )
-          const jsDocTest = tests.find(x => x.expression.arguments[0].value === JSDOC_TEST_NAME)
-          if (jsDocTest) {
-            traverseResult.jsDocTestStartLine = jsDocTest.expression.arguments[1].loc.start.line
-            traverseResult.jsDocTestEndLine = jsDocTest.expression.arguments[1].loc.end.line
+        if (isDescribeIdentifier(path)) {
+          // check the first argument (string, description of the thing being tested) to see if this is the
+          // correct 'describe' block.
+          const describeArg1 = path.parent.arguments[0]
+          if (describeArg1.value === `${srcFileBasename} JSDoc example`) {
+            const describeCallExpr = path.parent
+            // line numbers are 1-based
+            traverseResult.describeStartLine = describeCallExpr.loc.start.line
+            traverseResult.describeEndLine = describeCallExpr.loc.end.line
+            // halt traversal
+            path.stop()
           }
-          path.stop()
         }
       }
     })
@@ -79,21 +72,22 @@ const processDir = (srcDir, testDir) => {
     const testBlock = jsDocTest(example, srcFileAbsPath)
     const testFileLines = testFileText.split('\n')
     let revisedTestFile = ''
-    if (traverseResult.jsDocTestStartLine) {
-      // found the test of JSDoc example
+    if (traverseResult.describeStartLine) {
+      // found the describe() block for unit test of JSDoc example
       // remove and replace
       revisedTestFile = [
-        testFileLines.slice(0, traverseResult.jsDocTestStartLine - 1).join('\n'),
+        testFileLines.slice(0, traverseResult.describeStartLine - 1).join('\n'),
         testBlock,
-        testFileLines.slice(traverseResult.jsDocTestEndLine).join('\n')
+        testFileLines.slice(traverseResult.describeEndLine).join('\n')
       ].join('\n')
     } else {
       // did not find the test of JSDoc example
-      // insert at beginning of 'describe' block as first test
+      // insert at fourth line
       revisedTestFile = [
-        testFileLines.slice(0, traverseResult.describeStartLine).join('\n'),
+        testFileLines.slice(0, 3).join('\n'),
+        `// AUTO-GENERATED TEST: Do not modify the following "describe('${srcFileBasename} JSDoc example', ...)" block:`,
         testBlock + '\n',
-        testFileLines.slice(traverseResult.describeStartLine).join('\n')
+        testFileLines.slice(3).join('\n')
       ].join('\n')
     }
     fs.writeFileSync(testFilePath, revisedTestFile)
