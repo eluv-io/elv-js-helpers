@@ -15,11 +15,13 @@ const kind = require('../Validation/kind')
  *
  * isString([1, 2, 3])         //=> false
  *
- * isString(1, 'foo', 'bar')   //=> false (extra arguments ignored)
+ * // extra arguments ignored:
+ * isString(1, 'foo', 'bar')   //=> false
  *
  * isString('foo')             //=> true
  *
- * isString('foo', 3)          //=> true (extra argument ignored)
+ * // extra argument ignored:
+ * isString('foo', 3)          //=> true
  *
  */
 const isString = x => kind(x) === 'String'

@@ -31,7 +31,8 @@ const _objBadKey = require('../Validation/objBadKey')
  *
  * passesObjKeyCheck(NonBlankStrModel, {foo: 42})   //=> true
  *
- * passesObjKeyCheck(NonBlankStrModel, 3)           //=> true  (test input not an object, check skipped)
+ * // test input not an object, check skipped:
+ * passesObjKeyCheck(NonBlankStrModel, 3)           //=> true
  *
  * // function is curried: call with fewer params to obtain a narrower function
  *
@@ -41,7 +42,8 @@ const _objBadKey = require('../Validation/objBadKey')
  *
  * hasNoBlankKeys({foo: 42})                        //=> true
  *
- * hasNoBlankKeys(3)                                //=> true  (test input not an object, check skipped)
+ * // test input not an object, check skipped:
+ * hasNoBlankKeys(3)                                //=> true
  */
 const passesObjKeyCheck = curry(
   (keyModel, obj) =>

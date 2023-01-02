@@ -21,11 +21,13 @@ const kind = require('../Validation/kind')
  *
  * isNull(0)                 //=> false
  *
- * isNull(1, null, null)     //=> false (extra arguments ignored)
+ * // extra arguments ignored:
+ * isNull(1, null, null)     //=> false
  *
  * isNull('foo')             //=> false
  *
- * isNull(null, 3)           //=> true (extra argument ignored)
+ * // extra argument ignored:
+ * isNull(null, 3)           //=> true
  *
  */
 const isNull = x => kind(x) === 'null'

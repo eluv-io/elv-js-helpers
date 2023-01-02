@@ -18,6 +18,9 @@ const isResult = require('./isResult')
  *
  * const isOk = require('@eluvio/elv-js-helpers/Boolean/isOk')
  *
+ * const Err = require('@eluvio/elv-js-helpers/ADT/Err')
+ * const Ok = require('@eluvio/elv-js-helpers/ADT/Ok')
+ *
  * isOk(Err(['invalid query'])) //=> false
  *
  * isOk(Ok(42))                 //=> true

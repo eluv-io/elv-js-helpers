@@ -13,6 +13,9 @@ const type = require('crocks/core/type')
  *
  * const isResult = require('@eluvio/elv-js-helpers/Boolean/isResult')
  *
+ * const Err = require('@eluvio/elv-js-helpers/ADT/Err')
+ * const Ok = require('@eluvio/elv-js-helpers/ADT/Ok')
+ *
  * isResult(Err(['invalid query'])) //=> true
  *
  * isResult(Ok(42))                 //=> true

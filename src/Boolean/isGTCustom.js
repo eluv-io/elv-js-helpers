@@ -1,5 +1,4 @@
-const addPreprocessFn2 = require('../Functional/addPreprocessFn2')
-const flip = require('../Functional/flip')
+const curry = require('../Functional/curry')
 
 const isGT = require('./isGT')
 
@@ -20,8 +19,8 @@ const isGT = require('./isGT')
  * @category Boolean
  * @sig (* -> *) -> * -> * -> Boolean
  * @param {Function} preprocessFn - function to use to preprocess inputs, to allow them to be compared with `>`
- * @param {*} - the first value to compare
- * @param {*} - the second value to compare
+ * @param {*} value1 - the first value to compare
+ * @param {*} value2 - the second value to compare
  * @returns {Boolean}
  * @example
  *
@@ -34,7 +33,8 @@ const isGT = require('./isGT')
  *
  * isLongerThan('ab', 'a')                               //=> false
  *
- * isLongerThan(42, 42)                                  //=> false (x.length returns undefined for x === 42, undefined > undefined returns false)
+ * // x.length returns undefined for x === 42, undefined > undefined returns false:
+ * isLongerThan(42, 42)                                  //=> false
  *
  * isLongerThan(null, undefined)                         //=> EXCEPTION: "Cannot read properties of null (reading 'length')"
  *
@@ -52,13 +52,8 @@ const isGT = require('./isGT')
  *
  * isGTCustom(strLength, 'foo', 'foobar')                //=> true
  */
-// const isGTCustom = curry(
-//   preprocessFn => addPreprocessFn2(preprocessFn, isGT)
-// )
-const isGTCustom = flip(addPreprocessFn2)(isGT)
-// Above is pointfree shorthand for:
-// curry(
-//   preprocessFn => addPreprocessFn2(preprocessFn, isGT)
-// )
+const isGTCustom = curry(
+  (preProcessFn, value1, value2) => isGT(preProcessFn(value1), preProcessFn(value2))
+)
 
 module.exports = isGTCustom

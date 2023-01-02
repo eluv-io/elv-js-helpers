@@ -1,8 +1,9 @@
 const TH = require('../../../test-helpers')
 const List = TH.requireSrcFile('ADT/List')
 
-describe('List', () => {
-  it('should have a working example in JSDoc', () => {
+// AUTO-GENERATED TEST: Do not modify the following "describe('List JSDoc example', ...)" block:
+describe('List JSDoc example', () => {
+  it('should execute correctly as described', () => {
     const myList = List([1, 2, 3])
     // List with 3 elements:
     myList.inspect().should.eql('List [ 1, 2, 3 ]')
@@ -27,3 +28,13 @@ describe('List', () => {
     emptyList.head().inspect().should.eql('Nothing')
   })
 })
+
+// Place additional tests in the 'describe' block below.
+//
+// describe('List', () => {
+//
+//   it('should... ', () => {
+//
+//   })
+//
+// })
