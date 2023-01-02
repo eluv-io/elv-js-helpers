@@ -30,7 +30,8 @@ const negate = require('../Functional/negate')
  *
  * const stringStartsWithF = conditionalCheck(isString, x => x.startsWith('f'))
  *
- * stringStartsWithF(1)        //=> true (skip assertion, value is not a string)
+ * // Skip assertion, value is not a string:
+ * stringStartsWithF(1)        //=> true
  *
  * stringStartsWithF('foo')    //=> true
  *

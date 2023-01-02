@@ -1,32 +1,28 @@
 const TH = require('../../../test-helpers')
 const passesModelCheck = TH.requireSrcFile('Boolean/passesModelCheck')
 
-const PositiveIntModel = TH.requireSrcFile('Model/PositiveIntModel')
-const StringModel = TH.requireSrcFile('Model/StringModel')
-const assertAfterCheck = TH.requireSrcFile('ModelAssertion/assertAfterCheck')
+// AUTO-GENERATED TEST: Do not modify the following "describe('passesModelCheck JSDoc example', ...)" block:
+describe('passesModelCheck JSDoc example', () => {
+  it('should execute correctly as described', () => {
+    const PositiveIntModel = TH.requireSrcFile('Model/PositiveIntModel')
+    passesModelCheck(PositiveIntModel, -1).should.eql(false)
+    // function is curried: call with just first param to obtain a narrower function
+    const isPositiveInt = passesModelCheck(PositiveIntModel)
+    isPositiveInt(1).should.eql(true)
+    isPositiveInt(0).should.eql(false)
+    isPositiveInt('foo').should.eql(false)
+  })
+})
 
 describe('passesModelCheck', () => {
-  it('should work as expected', () => {
-    passesModelCheck(PositiveIntModel, -1).should.be.false
-  })
+  const StringModel = TH.requireSrcFile('Model/StringModel')
+  const assertAfterCheck = TH.requireSrcFile('ModelAssertion/assertAfterCheck')
 
-  it('should be curried', () => {
-    const isPositiveInt = passesModelCheck(PositiveIntModel)
-    isPositiveInt(1).should.be.true
-    isPositiveInt(0).should.be.false
-    isPositiveInt('foo').should.be.false
-  })
+  const ThreeCharStringModel = StringModel.extend()
+    .assert(...assertAfterCheck(passesModelCheck(StringModel), x => x.length === 3, 'string must be 3 characters long'))
+    .as('ThreeCharString')
 
-
-  const ThreeCharStringModel = StringModel.extend().assert(
-    ...assertAfterCheck(
-      passesModelCheck(StringModel),
-      x => x.length === 3,
-      'string must be 3 characters long'
-    )
-  ).as('ThreeCharString')
-
-  it('should return true good input', () => {
+  it('should return true for good input', () => {
     passesModelCheck(ThreeCharStringModel, 'foo').should.be.true
   })
 
@@ -34,5 +30,4 @@ describe('passesModelCheck', () => {
     passesModelCheck(ThreeCharStringModel, 'foobar').should.be.false
     passesModelCheck(ThreeCharStringModel, 3).should.be.false
   })
-
 })

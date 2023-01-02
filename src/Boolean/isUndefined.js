@@ -19,11 +19,13 @@ const kind = require('../Validation/kind')
  *
  * isUndefined(null)          //=> false
  *
- * isUndefined(1, undefined)  //=> false (extra arguments ignored)
+ * // extra argument ignored:
+ * isUndefined(1, undefined)  //=> false
  *
  * isUndefined('foo')         //=> false
  *
- * isUndefined(undefined, 3)  //=> true (extra argument ignored)
+ * // extra argument ignored:
+ * isUndefined(undefined, 3)  //=> true
  *
  */
 const isUndefined = x => kind(x) === 'undefined'

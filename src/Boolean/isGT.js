@@ -27,6 +27,8 @@ const curry = require('../Functional/curry')
  *
  * isGT(null, undefined)   //=> false
  *
+ * isGT(undefined, null)   //=> false
+ *
  * // function is curried: can call with fewer params to obtain a narrower function
  * const isPositive = isGT(0)
  *

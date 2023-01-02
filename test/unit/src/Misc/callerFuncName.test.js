@@ -7,10 +7,10 @@ describe('callerFuncName', () => {
     const MyFunc = () => console.log('Function: ' + currentFuncName() + ' was called by: ' + callerFuncName())
     const OuterFunc = () => MyFunc()
 
-    this.sinon.stub(console, 'log')
+    TH.sinon.stub(console, 'log')
     OuterFunc()
     TH.expect(console.log.calledWith('Function: MyFunc was called by: OuterFunc')).to.be.true
-    this.sinon.restore()
+    TH.sinon.restore()
   })
 
   // it('should... ', function() {

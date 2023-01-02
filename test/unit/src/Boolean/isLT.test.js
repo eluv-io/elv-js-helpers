@@ -1,8 +1,9 @@
 const TH = require('../../../test-helpers')
 const isLT = TH.requireSrcFile('Boolean/isLT')
 
-describe('isLT', () => {
-  it('should have a correct example in JSDoc', function () {
+// AUTO-GENERATED TEST: Do not modify the following "describe('isLT JSDoc example', ...)" block:
+describe('isLT JSDoc example', () => {
+  it('should execute correctly as described', () => {
     isLT(42, 1).should.eql(true)
     isLT(1, 42).should.eql(false)
     isLT(42, 42).should.eql(false)
@@ -14,8 +15,4 @@ describe('isLT', () => {
     isNegative(0).should.eql(false)
     isNegative(1).should.eql(false)
   })
-
-  // it('should... ', function() {
-  //
-  // })
 })

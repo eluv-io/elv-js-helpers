@@ -23,13 +23,16 @@ const curry = require('../Functional/curry')
  *
  * neighborsPass(xGTEy, [1, 2, 2, 3])   //=> true
  *
- * neighborsPass(xGTEy, [1])            //=> true (single element, has no pairs to check)
+ * // single element, has no pairs to check:
+ * neighborsPass(xGTEy, [1])            //=> true
  *
  * neighborsPass(xGTEy, [3, 2, 2, 1])   //=> false
  *
- * neighborsPass(xGTEy, 'abcde')        //=> true (strings support indexed access via [])
+ * // strings support indexed access via []:
+ * neighborsPass(xGTEy, 'abcde')        //=> true
  *
- * neighborsPass(xGTEy, 5)              //=> true (non-array, has no pairs to check)
+ * // non-array, has no pairs to check:
+ * neighborsPass(xGTEy, 5)              //=> true
  *
  * // function is curried: call with 1 arg to obtain a narrower function
  * const isOrdered = neighborsPass(xGTEy)
@@ -40,9 +43,11 @@ const curry = require('../Functional/curry')
  *
  * isOrdered([3, 2, 2, 1])                    //=> false
  *
- * isOrdered('abcde')                         //=> true (strings support indexed access via [])
+ * // strings support indexed access via []:
+ * isOrdered('abcde')                         //=> true
  *
- * isOrdered(5)                               //=> true (non-array, has no pairs to check)
+ * // non-array, has no pairs to check:
+ * isOrdered(5)                               //=> true
  */
 const neighborsPass = curry(
   (checkFn, array) => find(

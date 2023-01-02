@@ -15,13 +15,15 @@ const kind = require('../Validation/kind')
  *
  * isObject([1, 2, 3])         //=> false
  *
- * isObject(1, {foo: 'bar'})   //=> false (extra argument ignored)
+ * // extra argument ignored:
+ * isObject(1, {foo: 'bar'})   //=> false
  *
  * isObject('foo')             //=> false
  *
  * isObject({})                //=> true
  *
- * isObject({foo: 'bar'}, 3)   //=> true (extra argument ignored)
+ * // extra argument ignored:
+ * isObject({foo: 'bar'}, 3)   //=> true
  *
  */
 const isObject = x => kind(x) === 'Object'

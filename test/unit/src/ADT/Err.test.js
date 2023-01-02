@@ -1,6 +1,7 @@
 const TH = require('../../../test-helpers')
 const Err = TH.requireSrcFile('ADT/Err')
 
+// AUTO-GENERATED TEST: Do not modify the following "describe('Err JSDoc example', ...)" block:
 describe('Err JSDoc example', () => {
   it('should execute correctly as described', () => {
     const Ok = TH.requireSrcFile('ADT/Ok')
