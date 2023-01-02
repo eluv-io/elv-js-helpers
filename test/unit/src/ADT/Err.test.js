@@ -1,17 +1,8 @@
 const TH = require('../../../test-helpers')
 const Err = TH.requireSrcFile('ADT/Err')
 
-const Ok = TH.requireSrcFile('ADT/Ok')
-
-const resultUnwrap = TH.requireSrcFile('Conversion/resultUnwrap')
-
-const curry = TH.requireSrcFile('Functional/curry')
-const liftA2 = TH.requireSrcFile('Functional/liftA2')
-
-const kind = TH.requireSrcFile('Validation/kind')
-
-describe('Err', () => {
-  it('should have a working example in JSDoc', () => {
+describe('Err JSDoc example', () => {
+  it('should execute correctly as described', () => {
     const Ok = TH.requireSrcFile('ADT/Ok')
     const resultToPOJO = TH.requireSrcFile('Conversion/resultToPOJO')
     const curry = TH.requireSrcFile('Functional/curry')
@@ -60,6 +51,14 @@ describe('Err', () => {
     ).to.be.true
     TH.sinon.restore()
   })
+})
+
+describe('Err', () => {
+  const Ok = TH.requireSrcFile('ADT/Ok')
+  const resultUnwrap = TH.requireSrcFile('Conversion/resultUnwrap')
+  const curry = TH.requireSrcFile('Functional/curry')
+  const liftA2 = TH.requireSrcFile('Functional/liftA2')
+  const kind = TH.requireSrcFile('Validation/kind')
 
   const okObject = Ok(42)
   const errObject1 = Err('failed to obtain first input')
