@@ -27,11 +27,14 @@
  *
  * fraction('22/7').valueOf()       //=> 3.142857142857143
  *
- * fraction('-22/7').s              //=> -1  (sign)
+ * // .s returns sign:
+ * fraction('-22/7').s              //=> -1
  *
- * fraction('-22/7').n              //=> 22  (numerator)
+ * // .n returns numerator
+ * fraction('-22/7').n              //=> 22
  *
- * fraction('-22/7').d              //=> 7   (denominator)
+ * // .d returns denominator
+ * fraction('-22/7').d              //=> 7
  *
  * fraction('9 3/4').valueOf()      //=> 9.75
  *

@@ -18,7 +18,8 @@
  *
  * const toPairs = require('@eluvio/elv-js-helpers/Conversion/toPairs')
  *
- * const kvPairs = toPairs({a:1, b:2})    //=> List [ Pair( "a", 1 ), Pair( "b", 2 ) ]
+ * const kvPairs = toPairs({a:1, b:2})
+ * kvPairs.inspect()                     //=> 'List [ Pair( "a", 1 ), Pair( "b", 2 ) ]'
  *
  */
 const toPairs = require('crocks/Pair/toPairs')
