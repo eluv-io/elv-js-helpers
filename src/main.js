@@ -124,7 +124,7 @@ const Functional = {
 
 const Math = {
   absRelChange: require('./Math/absRelChange'),
-  relChange: require('./Math/relChange'),
+  growth: require('./Math/growth'),
   relChangeToMult: require('./Math/relChangeToMult'),
   roundEven: require('./Math/roundEven'),
   roundToMultiple: require('./Math/roundToMultiple'),
