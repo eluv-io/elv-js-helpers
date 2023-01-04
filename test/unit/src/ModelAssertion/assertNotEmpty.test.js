@@ -1,13 +1,11 @@
 const TH = require('../../../test-helpers')
 const assertNotEmpty = TH.requireSrcFile('ModelAssertion/assertNotEmpty')
 
-const isString = TH.requireSrcFile('Boolean/isString')
-
-const StringModel = TH.requireSrcFile('Model/StringModel')
-
-const assertAfterCheck = TH.requireSrcFile('ModelAssertion/assertAfterCheck')
-
 describe('assertNotEmpty', () => {
+
+  const assertAfterCheck = TH.requireSrcFile('ModelAssertion/assertAfterCheck')
+  const isString = TH.requireSrcFile('Boolean/isString')
+  const StringModel = TH.requireSrcFile('Model/StringModel')
 
   it('should work as expected', () => {
     const NonEmptyStringModel = StringModel.extend()

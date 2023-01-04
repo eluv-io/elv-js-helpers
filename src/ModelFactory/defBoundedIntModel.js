@@ -30,11 +30,11 @@ const assertBounded = require('../ModelAssertion/assertBounded')
  *
  * CartonEggCountModel(-1)     //=> EXCEPTION: 'Value must be >= 0 and <= 12 (got: -1)'
  *
- * CartonEggCountModel(0)      //=> 0 (proxied by ObjectModel)
+ * CartonEggCountModel(0)      //=> 0
  *
  * CartonEggCountModel(4.2)    //=> EXCEPTION: 'Value must be an integer (got: 4.2)'
  *
- * CartonEggCountModel(6)      //=> 6 (proxied by ObjectModel)
+ * CartonEggCountModel(6)      //=> 6
  *
  * CartonEggCountModel(42)     //=> EXCEPTION: 'Value must be >= 0 and <= 12 (got: 42)'
  *

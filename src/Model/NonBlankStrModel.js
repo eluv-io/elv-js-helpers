@@ -11,7 +11,7 @@ const assertAfterCheck = require('../ModelAssertion/assertAfterCheck')
  *  * Is not zero length
  *  * Does not consist solely of whitespace
  *
- * If input passes validations, will return the input (proxied by ObjectModel)
+ * If input passes validations, will return the input
  *
  * Throws an exception if passed in an invalid value.
  *
@@ -24,9 +24,9 @@ const assertAfterCheck = require('../ModelAssertion/assertAfterCheck')
  *
  * const NonBlankStrModel = require('@eluvio/elv-js-helpers/Model/NonBlankStrModel')
  *
- * NonBlankStrModel('foo') //=> 'foo' (proxied by ObjectModel)
+ * NonBlankStrModel('foo') //=> 'foo'
  *
- * NonBlankStrModel('  ')  //=> EXCEPTION: 'Value must not be a blank string (got:    )'
+ * NonBlankStrModel('  ')  //=> EXCEPTION: 'Value must not be a blank string (got: "  ")'
  *
  * NonBlankStrModel(42)    //=> EXCEPTION: 'expecting String, got Number 42'
  *

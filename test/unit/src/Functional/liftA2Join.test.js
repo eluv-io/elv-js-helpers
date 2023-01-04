@@ -1,18 +1,18 @@
 const TH = require('../../../test-helpers')
 const liftA2Join = TH.requireSrcFile('Functional/liftA2Join')
 
-const Err = TH.requireSrcFile('ADT/Err')
-const Ok = TH.requireSrcFile('ADT/Ok')
-
-const curry = TH.requireSrcFile('Functional/curry')
-
-const div = curry(
-  (x, y) => y === 0 ?
-    Err(['division by zero']) :
-    Ok(x / y)
-)
-
 describe('liftA2Join', () => {
+
+  const curry = TH.requireSrcFile('Functional/curry')
+  const Err = TH.requireSrcFile('ADT/Err')
+  const Ok = TH.requireSrcFile('ADT/Ok')
+
+  const div = curry(
+    (x, y) => y === 0 ?
+      Err(['division by zero']) :
+      Ok(x / y)
+  )
+
   it('should work as expected', () => {
     const divWrapped = liftA2Join(div)
     divWrapped(

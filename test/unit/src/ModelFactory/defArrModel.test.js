@@ -1,13 +1,13 @@
 const TH = require('../../../test-helpers')
 const defArrModel = TH.requireSrcFile('ModelFactory/defArrModel')
 
-const kind = TH.requireSrcFile('Validation/kind')
-const AnyModel = TH.requireSrcFile('Model/AnyModel')
-const NonNegativeNumModel = TH.requireSrcFile('Model/NonNegativeNumModel')
-const resultUnwrap = TH.requireSrcFile('Conversion/resultUnwrap')
-const validateWithModel = TH.requireSrcFile('Validation/validateWithModel')
-
 describe('defArrModel', function () {
+
+  const AnyModel = TH.requireSrcFile('Model/AnyModel')
+  const kind = TH.requireSrcFile('Validation/kind')
+  const NonNegativeNumModel = TH.requireSrcFile('Model/NonNegativeNumModel')
+  const resultUnwrap = TH.requireSrcFile('Conversion/resultUnwrap')
+  const validateWithModel = TH.requireSrcFile('Validation/validateWithModel')
 
   const AgeArrayModel = defArrModel('AgeArray', NonNegativeNumModel)
 

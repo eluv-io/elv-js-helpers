@@ -1,9 +1,8 @@
 const TH = require('../../../test-helpers')
 const hasNoDuplicates = TH.requireSrcFile('Boolean/hasNoDuplicates')
 
-// AUTO-GENERATED TEST: Do not modify the following "describe('hasNoDuplicates JSDoc example', ...)" block:
-describe('hasNoDuplicates JSDoc example', () => {
-  it('should execute correctly as described', () => {
+describe('hasNoDuplicates', () => {
+  it('should work as expected', () => {
     hasNoDuplicates([]).should.eql(true)
     hasNoDuplicates([1, 2, 3]).should.eql(true)
     hasNoDuplicates([1, 2, 2]).should.eql(false)

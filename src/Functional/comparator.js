@@ -31,10 +31,10 @@ const curry = require('./curry')
  * let data = [1, 42, -42, 0]
  *
  * data.sort(compAscending)
- * console.log(data)             //=> [-42, 0, 1, 42]
+ * console.log(data)             //=> OUTPUT: [-42, 0, 1, 42]
  *
  * data.sort(compDescending)
- * console.log(data)             //=> [42, 1, 0, -42]
+ * console.log(data)             //=> OUTPUT: [42, 1, 0, -42]
  *
  */
 const comparator = fn => curry(

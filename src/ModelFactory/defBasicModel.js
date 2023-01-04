@@ -23,7 +23,7 @@ const throwIfUndefined = require('../Validation/throwIfUndefined')
  * const StringModel = defBasicModel('String', String)
  *
  * StringModel(42)      //=> EXCEPTION: 'expecting String, got Number 42'
- * StringModel('foo')   //=> 'foo' (proxied by ObjectModel)
+ * StringModel('foo')   //=> 'foo'
  *
  */
 const defBasicModel = (name, def)=> {

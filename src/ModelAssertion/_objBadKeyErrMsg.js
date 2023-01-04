@@ -12,13 +12,11 @@ const _objBadKey = require('../Validation/objBadKey')
  * @returns {Function} Constructs an error message for failed key
  * @example
  *
- * const passesModelCheck = require('@eluvio/elv-js-helpers/Boolean/passesModelCheck')
- *
  * const _objBadKeyErrMsg = require('@eluvio/elv-js-helpers/ModelAssertion/_objBadKeyErrMsg')
  *
- * const NonBlankStrModel = require('@eluvio/elv-js-helpers/Model/NonBlankStrModel')
- *
  * const defBasicModel = require('@eluvio/elv-js-helpers/ModelFactory/defBasicModel')
+ * const NonBlankStrModel = require('@eluvio/elv-js-helpers/Model/NonBlankStrModel')
+ * const passesModelCheck = require('@eluvio/elv-js-helpers/Boolean/passesModelCheck')
  *
  * const NoBlankKeysObjModel = defBasicModel('NoBlankKeysObj', Object).extend()
  *   .assert(
@@ -26,7 +24,7 @@ const _objBadKey = require('../Validation/objBadKey')
  *     _objBadKeyErrMsg(NonBlankStrModel)
  *   )
  *
- * NoBlankKeysObjModel({'  ': 3}) //=>  EXCEPTION: 'invalid property name "  " (is not a valid NonBlankString)'
+ * NoBlankKeysObjModel({'  ': 3})                      //=> EXCEPTION: 'invalid property name "  " (is not a valid NonBlankString)'
  *
  */
 const _objBadKeyErrMsg = keyModel =>

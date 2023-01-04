@@ -1,26 +1,25 @@
 const TH = require('../../../test-helpers')
 const neighborsPass = TH.requireSrcFile('Boolean/neighborsPass')
 
-// AUTO-GENERATED TEST: Do not modify the following "describe('neighborsPass JSDoc example', ...)" block:
-describe('neighborsPass JSDoc example', () => {
-  it('should execute correctly as described', () => {
-    const xGTEy = (x, y) => x <= y
-    neighborsPass(xGTEy, [1, 2, 2, 3]).should.eql(true)
-    // single element, has no pairs to check:
-    neighborsPass(xGTEy, [1]).should.eql(true)
-    neighborsPass(xGTEy, [3, 2, 2, 1]).should.eql(false)
-    // strings support indexed access via []:
-    neighborsPass(xGTEy, 'abcde').should.eql(true)
-    // non-array, has no pairs to check:
-    neighborsPass(xGTEy, 5).should.eql(true)
-    // function is curried: call with 1 arg to obtain a narrower function
+describe('neighborsPass', () => {
+  const xGTEy = (x,y) => x <= y
+
+  neighborsPass(xGTEy, 5)
+
+  it('should work as expected', () => {
+    neighborsPass(xGTEy, [1, 2, 2, 3]).should.be.true
+    neighborsPass(xGTEy, [1]).should.be.true
+    neighborsPass(xGTEy, [3, 2, 2, 1]).should.be.false
+    neighborsPass(xGTEy, 'abcde').should.be.true
+    neighborsPass(xGTEy, 5).should.be.true
+  })
+
+  it('should be curried', () => {
     const isOrdered = neighborsPass(xGTEy)
-    isOrdered([1, 2, 2, 3]).should.eql(true)
-    isOrdered([1]).should.eql(true)
-    isOrdered([3, 2, 2, 1]).should.eql(false)
-    // strings support indexed access via []:
-    isOrdered('abcde').should.eql(true)
-    // non-array, has no pairs to check:
-    isOrdered(5).should.eql(true)
+    isOrdered([1, 2, 2, 3]).should.be.true
+    isOrdered([1]).should.be.true
+    isOrdered([3, 2, 2, 1]).should.be.false
+    isOrdered('abcde').should.be.true
+    isOrdered(5).should.be.true
   })
 })

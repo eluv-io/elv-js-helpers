@@ -1,10 +1,11 @@
 const TH = require('../../../test-helpers')
 const assertPropRel = TH.requireSrcFile('ModelAssertion/assertPropRel')
 
-const isGTE = TH.requireSrcFile('Boolean/isGTE')
-const defObjModel = TH.requireSrcFile('ModelFactory/defObjModel')
-
 describe('assertPropRel', () => {
+
+  const isGTE = TH.requireSrcFile('Boolean/isGTE')
+  const defObjModel = TH.requireSrcFile('ModelFactory/defObjModel')
+
   it('should work as expected', () => {
     const NumLimitsModel = defObjModel(
       'NumberLimits',

@@ -1,8 +1,6 @@
 const Result = require('crocks/Result')
-
-const wrapNonArray = require('../Conversion/wrapNonArray')
-
 const throwIfTrue = require('../Validation/throwIfTrue')
+const wrapNonArray = require('../Conversion/wrapNonArray')
 
 /**
  * Passthrough for the `Err` variety of the `Result` [Crocks Algebraic Data Type](https://crocks.dev/docs/crocks/)
@@ -29,14 +27,12 @@ const throwIfTrue = require('../Validation/throwIfTrue')
  * @example
  *
  * const Err = require('@eluvio/elv-js-helpers/ADT/Err')
- * const Ok = require('@eluvio/elv-js-helpers/ADT/Ok')
- *
- * const resultToPOJO = require('@eluvio/elv-js-helpers/Conversion/resultToPOJO')
  *
  * const curry = require('@eluvio/elv-js-helpers/Functional/curry')
- * const liftA2 = require('@eluvio/elv-js-helpers/Functional/liftA2')
- *
  * const dumpJSON = require('@eluvio/elv-js-helpers/Misc/dumpJSON')
+ * const liftA2 = require('@eluvio/elv-js-helpers/Functional/liftA2')
+ * const Ok = require('@eluvio/elv-js-helpers/ADT/Ok')
+ * const resultToPOJO = require('@eluvio/elv-js-helpers/Conversion/resultToPOJO')
  *
  * const okObject = Ok(42)
  *
@@ -56,7 +52,7 @@ const throwIfTrue = require('../Validation/throwIfTrue')
  *
  * goodResult.inspect()                                          //=> 'Ok 1764'
  *
- * dumpJSON(resultToPOJO(goodResult))                            //=> OUTPUT: '{\n  "ok": true,\n  "value": 1764\n}'
+ * dumpJSON(resultToPOJO(goodResult))                            //=> OUTPUT: `{\n  "ok": true,\n  "value": 1764\n}`
  *
  * multResults(errObject1, okObject).inspect()                   //=> 'Err [ "failed to obtain first input" ]'
  *
@@ -66,13 +62,13 @@ const throwIfTrue = require('../Validation/throwIfTrue')
  *
  * resultTwoBadInputs.inspect()                                  //=> 'Err [ "failed to obtain first input", "failed to obtain second input" ]'
  *
- * dumpJSON(resultToPOJO(resultTwoBadInputs))                    //=> OUTPUT: '{\n  "ok": false,\n  "errors": [\n    "failed to obtain first input",\n    "failed to obtain second input"\n  ],\n  "errorDetails": [\n    "failed to obtain first input",\n    "failed to obtain second input"\n  ]\n}'
+ * dumpJSON(resultToPOJO(resultTwoBadInputs))                    //=> OUTPUT: `{\n  "ok": false,\n  "errMsgs": [\n    "failed to obtain first input",\n    "failed to obtain second input"\n  ],\n  "errors": [\n    "failed to obtain first input",\n    "failed to obtain second input"\n  ]\n}`
  *
  * Err([])                                                       //=> EXCEPTION: 'Err cannot wrap an empty array'
  *
  * Err([undefined]).inspect()                                    //=> 'Err [ undefined ]'
  *
- * dumpJSON(resultToPOJO(Err([undefined])))                      //=> OUTPUT: '{\n  "ok": false,\n  "errors": [\n    "undefined"\n  ],\n  "errorDetails": [\n    null\n  ]\n}'
+ * dumpJSON(resultToPOJO(Err([undefined])))                      //=> OUTPUT: `{\n  "ok": false,\n  "errMsgs": [\n    "undefined"\n  ],\n  "errors": [\n    null\n  ]\n}`
  */
 const Err = x => {
   const arr = wrapNonArray(x)

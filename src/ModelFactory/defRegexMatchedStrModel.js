@@ -23,7 +23,7 @@ const throwIfUndefined = require('../Validation/throwIfUndefined')
  *
  * const UUIDStringModel = defRegexMatchedStrModel('UUIDString', /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/)
  *
- * UUIDStringModel('12345678-90ab-cdef-0123-4567890abcde')  //=> '12345678-90ab-cdef-0123-4567890abcde' (proxied by ObjectModel)
+ * UUIDStringModel('12345678-90ab-cdef-0123-4567890abcde')  //=> '12345678-90ab-cdef-0123-4567890abcde'
  *
  * UUIDStringModel('foo')                                   //=> EXCEPTION: 'Value is not in valid format or contains illegal characters (must match regular expression: /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/) (got: "foo")'
  *

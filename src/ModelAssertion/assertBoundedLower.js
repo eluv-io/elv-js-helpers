@@ -51,9 +51,9 @@ const passesModelCheck = require('../Boolean/passesModelCheck')
  *   )
  *   .as('PositiveInteger')
  *
- *  PositiveIntegerModel(1)       \\=> 1 (proxied by objectModel)
- *  PositiveIntegerModel(0)       \\=> EXCEPTION: 'Value must be > 0 (got: 0)'
- *  PositiveIntegerModel('foo')   \\=> EXCEPTION: 'expecting Number, got String "foo"' *
+ *  PositiveIntegerModel(1)       //=> 1
+ *  PositiveIntegerModel(0)       //=> EXCEPTION: 'Value must be > 0 (got: 0)'
+ *  PositiveIntegerModel('foo')   //=> EXCEPTION: 'expecting Number, got String "foo"'
  */
 const assertBoundedLower = (model, lowerBound, inclusive, comparatorFn) =>
   assertAfterCheck(

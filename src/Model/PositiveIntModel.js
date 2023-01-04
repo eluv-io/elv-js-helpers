@@ -7,7 +7,7 @@ const defBoundedIntModel = require('../ModelFactory/defBoundedIntModel')
  *  * An integer
  *  * Greater than zero
  *
- * If input passes validations, will return the input (proxied by ObjectModel)
+ * If input passes validations, will return the input
  *
  * Throws an exception if passed in an invalid value.
  *
@@ -20,7 +20,7 @@ const defBoundedIntModel = require('../ModelFactory/defBoundedIntModel')
  *
  * const PositiveIntModel = require('@eluvio/elv-js-helpers/Model/PositiveIntModel')
  *
- * PositiveIntModel(42)    //=> 42 (proxied by ObjectModel)
+ * PositiveIntModel(42)    //=> 42
  *
  * PositiveIntModel(0)     //=> EXCEPTION: 'Value must be > 0 (got: 0)'
  *

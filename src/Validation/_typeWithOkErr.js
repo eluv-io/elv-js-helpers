@@ -32,7 +32,8 @@ const isOk = require('../Boolean/isOk')
  *
  * _typeWithOkErr(Ok(42))                 //=> "Ok"
  *
- * _typeWithOkErr('foo')                  //=> "String" (use kind() instead!)
+ * // use kind() instead to check values other than Ok/Err!
+ * _typeWithOkErr('foo')                  //=> "String"
  *
  */
 const _typeWithOkErr = x =>

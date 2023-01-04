@@ -2,16 +2,15 @@ const TH = require('../../../test-helpers')
 const currentFuncName = TH.requireSrcFile('Misc/currentFuncName')
 
 describe('currentFuncName', () => {
-  it('should have a correct example in JSDoc', function () {
+  it('should work as expected', () => {
     const MyFunc = () => console.log('Entered function: ' + currentFuncName())
 
     TH.sinon.stub(console, 'log')
     MyFunc()
-    TH.expect(console.log.calledWith('Entered function: MyFunc')).to.be.true
-    TH.sinon.restore()
+    try {
+      TH.expect(console.log.calledWith('Entered function: MyFunc')).to.be.true
+    } finally {
+      TH.sinon.restore()
+    }
   })
-
-  // it('should... ', function() {
-  //
-  // })
 })

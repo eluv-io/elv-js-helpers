@@ -1,11 +1,11 @@
 const TH = require('../../../test-helpers')
 const assertBoundedUpper = TH.requireSrcFile('ModelAssertion/assertBoundedUpper')
 
-const compare = TH.requireSrcFile('Functional/compare')
-
-const IntegerModel = TH.requireSrcFile('Model/IntegerModel')
-
 describe('assertBoundedUpper', () => {
+
+  const compare = TH.requireSrcFile('Functional/compare')
+  const IntegerModel = TH.requireSrcFile('Model/IntegerModel')
+
   it('should work as expected', () => {
     const NegativeIntegerModel = IntegerModel
       .extend()

@@ -1,10 +1,10 @@
 const TH = require('../../../test-helpers')
 const comparator = TH.requireSrcFile('Functional/comparator')
 
-const isGT = TH.requireSrcFile('Boolean/isGT')
-const isLT = TH.requireSrcFile('Boolean/isLT')
-
 describe('comparator', () => {
+
+  const isGT = TH.requireSrcFile('Boolean/isGT')
+  const isLT = TH.requireSrcFile('Boolean/isLT')
 
   it('should work as expected', () => {
     const compAscending = comparator(isGT)

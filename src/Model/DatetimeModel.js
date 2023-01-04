@@ -1,11 +1,10 @@
 const defBasicModel = require('../ModelFactory/defBasicModel')
 
-// noinspection JSValidateTypes
 /**
  * An [ObjectModel](http://objectmodel.js.org/) which validates that an input
  * is a [Javascript Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
  *
- * If input passes validation, will return the input (proxied by ObjectModel)
+ * If input passes validation, will return the input
  *
  * Throws an exception if passed in an invalid value.
  *
@@ -18,9 +17,12 @@ const defBasicModel = require('../ModelFactory/defBasicModel')
  *
  * const DatetimeModel = require('@eluvio/elv-js-helpers/Model/DatetimeModel')
  *
- * DatetimeModel(new Date) //=> current Datetime (proxied by ObjectModel)
+ * // when validation succeeds, returns the input:
+ * const testVal = new Date('2022-01-01T07:30:00Z')
+ * const myDatetime = DatetimeModel(testVal)
+ * myDatetime.valueOf()                             //=> 1641022200000
  *
- * DatetimeModel('foo')    //=> EXCEPTION: 'expecting Date, got String "foo"'
+ * DatetimeModel('foo')                             //=> EXCEPTION: 'expecting Date, got String "foo"'
  *
  */
 const DatetimeModel = defBasicModel('Javascript Date object', Date)

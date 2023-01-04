@@ -20,6 +20,7 @@ describe('NumberModel', () => {
     TH.expect(() => NumberModel('1')).to.throw('expecting Number, got String "1"')
     TH.expect(() => NumberModel(true)).to.throw('expecting Number, got Boolean true')
     TH.expect(() => NumberModel(null)).to.throw('expecting Number, got null')
+    TH.expect(() => NumberModel(NaN)).to.throw('expecting Number, got Number NaN')
     TH.expect(() => NumberModel(NumberModel)).to.throw('expecting Number, got Function Number')
     TH.expect(() => NumberModel(x => x)).to.throw('expecting Number, got Function x => x')
   })

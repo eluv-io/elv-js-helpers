@@ -1,22 +1,22 @@
 const TH = require('../../../test-helpers')
 const parseUTCStr = TH.requireSrcFile('Datetime/parseUTCStr')
 
-const toLocaleString = TH.requireSrcFile('Datetime/toLocaleString')
-
-const utc = toLocaleString('en-US',
-  {
-    hour: 'numeric',
-    day: 'numeric',
-    minute: 'numeric',
-    month: 'short',
-    second: 'numeric',
-    timeZone: 'UTC',
-    timeZoneName: 'short'
-
-  }
-)
-
 describe('parseUTCStr', () => {
+
+  const toLocaleString = TH.requireSrcFile('Datetime/toLocaleString')
+
+  const utc = toLocaleString('en-US',
+    {
+      hour: 'numeric',
+      day: 'numeric',
+      minute: 'numeric',
+      month: 'short',
+      second: 'numeric',
+      timeZone: 'UTC',
+      timeZoneName: 'short'
+
+    }
+  )
 
   it('should work as expected', () => {
     utc(parseUTCStr('2022-01-01T14:00:00Z')).should.equal('Jan 1, 2:00:00 PM UTC')

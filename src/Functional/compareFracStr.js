@@ -22,7 +22,7 @@ const FractionStrModel = require('../Model/FractionStrModel')
  * @returns {Integer} -1 | 0 | 1
  * @example
  *
- * const compareFrac = require('@eluvio/elv-js-helpers/Functional/compareFrac')
+ * const compareFracStr = require('@eluvio/elv-js-helpers/Functional/compareFracStr')
  *
  * compareFracStr('1', '2')        //=> -1
  *
@@ -34,7 +34,7 @@ const FractionStrModel = require('../Model/FractionStrModel')
  *
  * compareFracStr(null, undefined) //=> EXCEPTION: 'expecting String, got null'
  *
- * compareFracStr(0.5, '1/2')      //= EXCEPTION: 'expecting String, got Number 0.5'
+ * compareFracStr(0.5, '1/2')      //=> EXCEPTION: 'expecting String, got Number 0.5'
  *
  */
 const compareFracStr = comparator(

@@ -35,6 +35,8 @@ const isLT = require('../Boolean/isLT')
  *
  * compare(null, undefined) //=> 0
  *
+ * compare(undefined, null) //=> 0
+ *
  * compare([1], 'a')        //= -1
  *
  */

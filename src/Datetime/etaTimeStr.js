@@ -35,15 +35,15 @@ const sysTimezone = require('./sysTimezone')
  *
  * const etaTimeStr = require('@eluvio/elv-js-helpers/Datetime/etaTimeStr')
  *
- * const currentTime = new Date('2022-01-01T07:30:00Z')
+ * const myTime = new Date('2022-01-01T07:30:00Z')
  *
- * etaTimeStr(currentTime, 10, 'America/Los_Angeles', 'en-US')   //=> "11:30:10 PM PST"
+ * etaTimeStr(myTime, 10, 'America/Los_Angeles', 'en-US')   //=> "11:30:10 PM PST"
  *
- * etaTimeStr(currentTime, 3600, 'America/Los_Angeles', 'en-US') //=> "Jan 1, 12:30:00 AM PST"
+ * etaTimeStr(myTime, 3600, 'America/Los_Angeles', 'en-US') //=> "Jan 1, 12:30:00 AM PST"
  *
- * etaTimeStr(currentTime, -10, 'America/Los_Angeles', 'en-US')  //=> "--"
+ * etaTimeStr(myTime, -10, 'America/Los_Angeles', 'en-US')  //=> "--"
  *
- * etaTimeStr(currentTime, 10, 'foo', 'en-US')                   //=> EXCEPTION: "Invalid Datetime zone specified: foo"
+ * etaTimeStr(myTime, 10, 'foo', 'en-US')                   //=> EXCEPTION: "Invalid time zone specified: foo"
  */
 const etaTimeStr = (currentTime, secondsLeft, zone = sysTimezone(), locales = sysLocale()) =>
   secondsLeft < 0 ?

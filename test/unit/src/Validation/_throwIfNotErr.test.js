@@ -1,10 +1,10 @@
 const TH = require('../../../test-helpers')
 const _throwIfNotErr = TH.requireSrcFile('Validation/_throwIfNotErr')
 
-const Err = TH.requireSrcFile('ADT/Err')
-const Ok = TH.requireSrcFile('ADT/Ok')
-
 describe('_throwIfNotErr', () => {
+
+  const Err = TH.requireSrcFile('ADT/Err')
+  const Ok = TH.requireSrcFile('ADT/Ok')
 
   it('should work as expected', () => {
     TH.expect(()=>_throwIfNotErr(42)).to.throw('Expected an Err, got: Number (42)')

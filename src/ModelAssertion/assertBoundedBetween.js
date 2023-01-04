@@ -55,11 +55,11 @@ const passesModelCheck = require('../Boolean/passesModelCheck')
  *   )
  *   .as('CartonEggCount')
  *
- * CartonEggCountModel(0)       \\=> 0 (proxied by ObjectModel)
- * CartonEggCountModel(6)       \\=> 6 (proxied by ObjectModel)
- * CartonEggCountModel(12)      \\=> 12 (proxied by ObjectModel)
- * CartonEggCountModel(42)      \\=> EXCEPTION: 'Value must be >= 0 and <= 12 (got: 42)'
- * CartonEggCountModel('foo')   \\=> EXCEPTION: 'expecting Number, got String "foo"'
+ * CartonEggCountModel(0)       //=> 0
+ * CartonEggCountModel(6)       //=> 6
+ * CartonEggCountModel(12)      //=> 12
+ * CartonEggCountModel(42)      //=> EXCEPTION: 'Value must be >= 0 and <= 12 (got: 42)'
+ * CartonEggCountModel('foo')   //=> EXCEPTION: 'expecting Number, got String "foo"'
  *
  */
 const assertBoundedBetween = (model, lowerBound, upperBound, lowerInclusive, upperInclusive, comparatorFn) =>

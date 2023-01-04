@@ -1,13 +1,12 @@
 const TH = require('../../../test-helpers')
 const _objBadValErrMsg = TH.requireSrcFile('ModelAssertion/_objBadValErrMsg')
 
-const passesModelCheck = TH.requireSrcFile('Boolean/passesModelCheck')
-
-const NonBlankStrModel = TH.requireSrcFile('Model/NonBlankStrModel')
-
-const defBasicModel = TH.requireSrcFile('ModelFactory/defBasicModel')
-
 describe('_objBadValErrMsg', () => {
+
+  const defBasicModel = TH.requireSrcFile('ModelFactory/defBasicModel')
+  const NonBlankStrModel = TH.requireSrcFile('Model/NonBlankStrModel')
+  const passesModelCheck = TH.requireSrcFile('Boolean/passesModelCheck')
+
   it('should work as expected', () => {
     const NoBlankValuesObjModel = defBasicModel('NoBlankValuesObj', Object).extend()
       .assert(

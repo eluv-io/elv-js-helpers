@@ -1,9 +1,10 @@
 const TH = require('../../../test-helpers')
 const estRemainingDur = TH.requireSrcFile('Datetime/estRemainingDur')
 
-const resultUnwrap = TH.requireSrcFile('Conversion/resultUnwrap')
-
 describe('estRemainingDur', () => {
+
+  const resultUnwrap = TH.requireSrcFile('Conversion/resultUnwrap')
+
   it('should work as expected', () => {
     estRemainingDur(21, 0.5).inspect().should.equal('Ok 21')
     estRemainingDur(42, 1).inspect().should.equal('Ok 0')

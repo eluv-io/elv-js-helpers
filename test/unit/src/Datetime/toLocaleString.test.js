@@ -1,11 +1,11 @@
 const TH = require('../../../test-helpers')
 const toLocaleString = TH.requireSrcFile('Datetime/toLocaleString')
 
-const utcStrToDate = TH.requireSrcFile('Datetime/utcStrToDate')
-
 describe('toLocaleString', () => {
-  const myDate = utcStrToDate('2022-03-01T14:00:00Z')
 
+  const utcStrToDate = TH.requireSrcFile('Datetime/utcStrToDate')
+
+  const myDate = utcStrToDate('2022-03-01T14:00:00Z')
 
   it('should work as expected', () => {
     const USA_Pacific_short = toLocaleString(

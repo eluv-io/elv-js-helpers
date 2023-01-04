@@ -39,9 +39,10 @@
  * const match = fracString.match(RE_RATIONAL)
  * if (!match) throw Error('Rational number string not in proper format')
  *
- * const numerator = parseInt(match[1], 10)              //=> 22
- * const slashDenominator = match[2]                     //=> '/7'
- * const denominator = parseInt(match[2].slice(1), 10)   //=> 7
+ * // first capture group is numerator:
+ * match[1]                                           //=> '22'
+ * // second capture group is slash + denominator:
+ * match[2]                                           //=> '/7'
  *
  */
 const RE_RATIONAL = /^(-?[0-9]+)(\/[0-9]*[1-9][0-9]*)?$/

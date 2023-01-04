@@ -13,11 +13,11 @@ const List = require('crocks/List')
  * @returns {List} New Crocks List containing original list elements plus new element at end
  * @example
  *
- * const List = require('@eluvio/elv-js-helpers/ADT/List')
- *
  * const listPush = require('@eluvio/elv-js-helpers/Functional/listPush')
  *
- * listPush(List([1,2,3]), 4)  //=> List [ 1, 2, 3, 4 ]
+ * const List = require('@eluvio/elv-js-helpers/ADT/List')
+ *
+ * listPush(List([1,2,3]), 4).inspect()    //=> 'List [ 1, 2, 3, 4 ]'
  *
  */
 const listPush = curry(

@@ -37,7 +37,7 @@ const _satisfiesObjKeyCheck = require('../Boolean/passesObjKeyCheck')
  *   .extend()
  *   .assert(...assertObjKeysValid(NonBlankStrModel))
  *
- * NoBlankKeysObjModel({'  ': 3}) //=>  EXCEPTION: 'invalid property name "  " (is not a valid NonBlankString)'
+ * NoBlankKeysObjModel({'  ': 3}) //=> EXCEPTION: 'invalid property name "  " (is not a valid NonBlankString)'
  *
  */
 const assertObjKeysValid = keyModel =>

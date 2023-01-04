@@ -37,7 +37,7 @@ const isEmpty = require('../Boolean/isEmpty')
  *
  * EmptyStringModel('foo')  //=> EXCEPTION: 'Value must be empty (got: "foo")'
  *
- * EmptyStringModel('')     //=> '' (proxied by ObjectModel)
+ * EmptyStringModel('')     //=> ''
  *
  * EmptyStringModel([])     //=> EXCEPTION: 'expecting String, got Array []'
  *

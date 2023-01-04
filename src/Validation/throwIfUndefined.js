@@ -27,7 +27,7 @@ const throwError = require('../Misc/throwError')
  *
  * throwIfUndefined('value is undefined', y)   //=> 42
  *
- * throwIfUndefined('value is undefined')() //=> 42
+ * throwIfUndefined('value is undefined')()    //=> EXCEPTION: "value is undefined"
  *
  */
 const throwIfUndefined = curry(

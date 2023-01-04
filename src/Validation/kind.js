@@ -56,7 +56,7 @@ const _FORMATTED_KINDS = {
  *
  * kind(true)                     //=> 'Boolean'
  *
- * kind(new Buffer(''))           //=> 'Buffer'
+ * kind(Buffer.from(' '))         //=> 'Buffer'
  *
  * kind(42)                       //=> 'Number'
  *
@@ -72,7 +72,7 @@ const _FORMATTED_KINDS = {
  *
  * kind([1, 2, 3])                //=> 'Array'
  *
- * kind(/foo/)                    //=> 'Regexp'
+ * kind(/foo/)                    //=> 'RegExp'
  *
  * kind(new Error('error'))       //=> 'Error'
  *

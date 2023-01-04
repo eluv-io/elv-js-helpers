@@ -1,12 +1,11 @@
 const TH = require('../../../test-helpers')
 const validateWithModel = TH.requireSrcFile('Validation/validateWithModel')
 
-const defObjModel = TH.requireSrcFile('ModelFactory/defObjModel')
-
-const resultUnwrap = TH.requireSrcFile('Conversion/resultUnwrap')
-const PositiveNumModel = TH.requireSrcFile('Model/PositiveNumModel')
-
 describe('validateWithModel', () => {
+
+  const defObjModel = TH.requireSrcFile('ModelFactory/defObjModel')
+  const PositiveNumModel = TH.requireSrcFile('Model/PositiveNumModel')
+  const resultUnwrap = TH.requireSrcFile('Conversion/resultUnwrap')
 
   it('should work as expected', () => {
     validateWithModel(PositiveNumModel, 42).inspect().should.equal('Ok 42')

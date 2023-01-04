@@ -12,7 +12,11 @@ const curry = require('../Functional/curry')
  *  * Returns `0.5` if second value is 50% bigger than the first value
  *  * Returns `-0.5` if second value is 50% smaller than the first value
  *
- * Note that if the first value is `0` the return value will be either `Infinity` or `-Infinity`
+ * Note that if the first value is `0` the return value will be:
+ *
+ *  * `Infinity` if the second value is positive
+ *  * `-Infinity` if the second value is negative
+ *  * `0` if the second value is zero
  *
  * Note that if the first value is negative, "growth" is defined as "becoming less negative", e.g. `growth(-100, 0) == 1`
  *
@@ -51,10 +55,12 @@ const curry = require('../Functional/curry')
  *
  * // Zero starting value
  * growth(0, 1)           //=> Infinity
+ * growth(0, 0)           //=> 0
+ * growth(0, -1)          //=> -Infinity
  *
  */
 const growth = curry(
-  (oldValue, newValue) => (newValue - oldValue) / Math.abs(oldValue)
+  (oldValue, newValue) => (newValue === 0 && oldValue === 0) ? 0 : (newValue - oldValue) / Math.abs(oldValue)
 )
 
 module.exports = growth

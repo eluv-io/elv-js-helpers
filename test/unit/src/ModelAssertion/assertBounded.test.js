@@ -1,9 +1,9 @@
 const TH = require('../../../test-helpers')
 const assertBounded = TH.requireSrcFile('ModelAssertion/assertBounded')
 
-const NumberModel = TH.requireSrcFile('Model/NumberModel')
-
 describe('assertBounded', () => {
+
+  const NumberModel = TH.requireSrcFile('Model/NumberModel')
 
   const [assertPositiveNumberFn, assertPositiveErrMsgFn] =
     assertBounded(NumberModel, 0, null, false, null)

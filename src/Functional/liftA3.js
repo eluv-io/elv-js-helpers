@@ -26,47 +26,59 @@
  * @returns {Function} The lifted function
  * @example
  *
- * const Err = require('@eluvio/elv-js-helpers/ADT/Err')
- * const Ok = require('@eluvio/elv-js-helpers/ADT/Ok')
- *
- * const resultToPOJO = require('@eluvio/elv-js-helpers/Conversion/resultToPOJO')
- *
- * const curry = require('@eluvio/elv-js-helpers/Functional/curry')
  * const liftA3 = require('@eluvio/elv-js-helpers/Functional/liftA3')
  *
- * const mult3 = (a, b, c) => a * b * c                            //=> function that takes and returns 'normal' values
+ * const curry = require('@eluvio/elv-js-helpers/Functional/curry')
+ * const dumpJSON = require('@eluvio/elv-js-helpers/Misc/dumpJSON')
+ * const Err = require('@eluvio/elv-js-helpers/ADT/Err')
+ * const Ok = require('@eluvio/elv-js-helpers/ADT/Ok')
+ * const resultToPOJO = require('@eluvio/elv-js-helpers/Conversion/resultToPOJO')
+ *
+ * // define a function that takes and returns 'normal' values:
+ * const mult3 = (a, b, c) => a * b * c
  *
  * mult3(42, 42, 42)                                               //=> 74088
  *
- * const liftedMult3 = liftA3(curry(mult3))                        //=> convert function 'mult3' into one that works with values wrapped in Functional data types
+ * // convert function 'mult3' into one that works with values wrapped in Functional data types:
+ * const liftedMult3 = liftA3(curry(mult3))
  *
- * const okObject = Ok(42)                                         //=> Ok 42
+ * // create a wrapped good input
+ * const okObject = Ok(42)
  *
- * const errObject1 = Err('failed to obtain first input')          //=> Err ['failed to obtain first input'] (automatically converted to 1-element array)
  *
- * const errObject2 = Err(['failed to obtain second input'])       //=> Err ['failed to obtain second input']
+ * // create 2 wrapped errors indicating input failures:
  *
- * const goodResult = liftedMult3(okObject, okObject, okObject)    //=> Ok 74088
+ * // non-array input automatically converted to single element array
+ * const errObject1 = Err('failed to obtain first input')
  *
- * console.log(resultToPOJO(goodResult))
- * '{ ok: true, result: 74088 }'
+ * const errObject2 = Err(['failed to obtain second input'])
  *
- * const badResult1 = liftedMult3(errObject1, okObject, okObject)   //=> Err ['failed to obtain first input']
+ * const goodResult = liftedMult3(okObject, okObject, okObject)
+ * goodResult.inspect()                                              //=> 'Ok 74088'
  *
- * const badResult2 = liftedMult3(okObject, errObject2, okObject)   //=> Err ['failed to obtain second input']
+ * resultToPOJO(goodResult)                                          //=> {ok: true, value: 74088}
  *
- * const badResult3 = liftedMult3(errObject1, errObject2, okObject) //=> Err ['failed to obtain first input', 'failed to obtain second input']
+ * // call lifted function using 1 bad input:
  *
- * console.log(resultToPOJO(badResult3))
- * `{
- *   ok: false,
- *   errors: [ 'failed to obtain first input', 'failed to obtain second input' ],
- *   errorDetails: [ 'failed to obtain first input', 'failed to obtain second input' ]
- * }`
+ * const badResult1 = liftedMult3(errObject1, okObject, okObject)
+ * resultToPOJO(badResult1).ok                                       //=> false
+ * resultToPOJO(badResult1).errMsgs                                  //=> ['failed to obtain first input']
+ *
+ * const badResult2 = liftedMult3(okObject, errObject2, okObject)
+ * resultToPOJO(badResult2).ok                                       //=> false
+ * resultToPOJO(badResult2).errMsgs                                  //=> ['failed to obtain second input']
+ *
+ * // call lifted function using 2 bad inputs:
+ *
+ * const badResult3 = liftedMult3(errObject1, errObject2, okObject)
+ * resultToPOJO(badResult3).ok                                       //=> false
+ * resultToPOJO(badResult3).errMsgs                                  //=> ['failed to obtain first input', 'failed to obtain second input']
+ *
+ * dumpJSON(resultToPOJO(badResult3))                                //=> OUTPUT: `{\n  "ok": false,\n  "errMsgs": [\n    "failed to obtain first input",\n    "failed to obtain second input"\n  ],\n  "errors": [\n    "failed to obtain first input",\n    "failed to obtain second input"\n  ]\n}`
  *
  * // liftA3 itself is curried, it can be called with 1-4 arguments as desired. If called with 4 arguments, it will
  * // immediately return the final result instead of returning a function.
- * liftA3(curry(mult3), okObject, okObject, okObject)               //=> Ok 74088
+ * liftA3(curry(mult3), okObject, okObject, okObject).inspect()     //=> 'Ok 74088'
  *
  */
 const liftA3 = require('crocks/helpers/liftA3')

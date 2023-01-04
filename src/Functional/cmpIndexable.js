@@ -36,7 +36,7 @@ const isNumber = require('../Boolean/isNumber')
  *
  * cmpIndexable('abc', 'ab')      //=> 1
  *
- * cmpIndexable(null, undefined)  //=> EXCEPTION: 'Cannot read properties of null (reading 'length')'
+ * cmpIndexable(null, undefined)  //=> EXCEPTION: "Cannot read properties of null (reading 'length')"
  *
  * cmpIndexable([42], ['a'])      //=> EXCEPTION: 'cmpIndexable: elements at index 0 are not comparable'
  *

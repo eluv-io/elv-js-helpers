@@ -1,9 +1,9 @@
 const TH = require('../../../test-helpers')
 const assertValidUTCStr = TH.requireSrcFile('ModelAssertion/assertValidUTCStr')
 
-const StringModel = TH.requireSrcFile('Model/StringModel')
-
 describe('assertValidUTCStr', () => {
+
+  const StringModel = TH.requireSrcFile('Model/StringModel')
 
   const [assertFn, assertErrMsgFn] = assertValidUTCStr()
 

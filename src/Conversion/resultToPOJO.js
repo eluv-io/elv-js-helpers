@@ -11,9 +11,9 @@ const isArray = require('../Boolean/isArray')
  *
  * If the `Result` is an `Ok`, returns `{ok: true, value: a}`, where `a` is the value wrapped by the `Ok`
  *
- * If the `Result` is an `Err`, returns `{ok: false, errors: uniqErrStringArray, errorDetails: arrayErrVal}`
- * where `errorDetails` is the array value wrapped by the `Err`, and `errors` is the result of passing each item in
- * that array to `String()` then removing duplicates.
+ * If the `Result` is an `Err`, returns `{ok: false, errMsgs: uniqErrStringArray, errors: arrayErrVal}`
+ * where `errors` is the array value wrapped by the `Err` (often an array of Javascript Error objects), and `errMsgs`
+ * is the result of passing each item in that array to `String()` then removing duplicates.
  *
  * Throws an error if the `Result` is an `Err` that does not contain an array. (This situation is not usually encountered,
  * as the `Err()` function performs automatic conversion to single-element array if the input is not an array)
@@ -34,17 +34,17 @@ const isArray = require('../Boolean/isArray')
  *
  * resultToPOJO(Ok(42))                 //=> {ok: true, value: 42}
  *
- * resultToPOJO(Err(['query invalid'])) //=> {ok: false, errors: ["query invalid"], errorDetails: ["query invalid"]}
+ * resultToPOJO(Err(['query invalid'])) //=> {ok: false, errMsgs: ["query invalid"], errors: ["query invalid"]}
  *
  * const e = RangeError('value too large')
- * dumpJSON(resultToPOJO(Err([e])))  //=> OUTPUT: '{\n  "ok": false,\n  "errors": [\n    "RangeError: value too large"\n  ],\n  "errorDetails": [\n    {}\n  ]\n}'
+ * dumpJSON(resultToPOJO(Err([e])))     //=> OUTPUT: `{\n  "ok": false,\n  "errMsgs": [\n    "RangeError: value too large"\n  ],\n  "errors": [\n    {}\n  ]\n}`
  *
  */
 const resultToPOJO = result => either(
   errVal => _throwIfFalse(
     `Err instance does not contain an array, instead contains: ${kind(errVal)} (${format(errVal)})`,
     isArray(errVal)
-  ) && Object({ok: false, errors: uniq(errVal.map(e => String(e))), errorDetails: errVal}),
+  ) && Object({ok: false, errMsgs: uniq(errVal.map(e => String(e))), errors: errVal}),
 
   okVal => Object({ok: true, value: okVal}),
 

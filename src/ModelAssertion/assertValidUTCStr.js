@@ -1,6 +1,5 @@
-const parseUTCStr = require('../Datetime/parseUTCStr')
-
 const assertAfterCheck = require('./assertAfterCheck')
+const parseUTCStr = require('../Datetime/parseUTCStr')
 const passesModelCheck = require('../Boolean/passesModelCheck')
 const NonBlankStrModel = require('../Model/NonBlankStrModel')
 
@@ -27,18 +26,20 @@ const NonBlankStrModel = require('../Model/NonBlankStrModel')
  *
  * @example
  *
- * const StringModel = require('@eluvio/elv-js-helpers/StringModel')
+ * const assertValidUTCStr = require('@eluvio/elv-js-helpers/ModelAssertion/assertValidUTCStr')
+ *
+ * const StringModel = require('@eluvio/elv-js-helpers/Model/StringModel')
  *
  * // Note use of spread operator (...) to unpack the array returned by _assertBoundedUpper()
  * const UTCDateTimeStringModel = StringModel.extend()
  *   .assert(...assertValidUTCStr())
  *   .as('UTCDateTimeString')
  *
- * UTCDateTimeStringModel('2022-05-03T00:26:07Z')    //=> '2022-05-03T00:26:07Z' (proxied by ObjectModel)
+ * UTCDateTimeStringModel('2022-05-03T00:26:07Z')    //=> '2022-05-03T00:26:07Z'
  *
  * UTCDateTimeStringModel('2022-99-03T00:26:07Z')    //=> EXCEPTION: 'Value is not a valid UTC datetime string (got: "2022-99-03T00:26:07Z")'
  *
- * UTCDateTimeStringModel('foo')    //=> EXCEPTION: 'Value is not a valid UTC datetime string (got: "foo")'
+ * UTCDateTimeStringModel('foo')                     //=> EXCEPTION: 'Value is not a valid UTC datetime string (got: "foo")'
  *
  */
 const assertValidUTCStr = () =>

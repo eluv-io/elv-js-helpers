@@ -19,7 +19,7 @@ const throwError = require('../Misc/throwError')
  *
  * const PASSWORD_REGEX_4 = /[A-Z]{4}/
  * const PASSWORD_REGEX_42 = /[A-Z]{42}/
- * const password = 'foobar'
+ * const password = 'ABCD'
  *
  * throwIfFalse('password must be 42 upper-case letters', PASSWORD_REGEX_42.test(password)) //=> EXCEPTION: 'password must be 42 upper-case letters'
  *

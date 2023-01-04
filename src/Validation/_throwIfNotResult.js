@@ -17,9 +17,12 @@ const isResult = require('../Boolean/isResult')
  *
  * const _throwIfNotResult = require('@eluvio/elv-js-helpers/Validation/_throwIfNotResult')
  *
- *  _throwIfNotResult(42)            //=> EXCEPTION: 'Expected a value of type Result, got: Number (42)'
- * _throwIfNotResult(Err(['42']))    //=> Err [ "42" ]
- * _throwIfNotResult(Ok(42))         //=> Ok 42
+ * const Err = require('@eluvio/elv-js-helpers/ADT/Err')
+ * const Ok = require('@eluvio/elv-js-helpers/ADT/Ok')
+ *
+ *  _throwIfNotResult(42)                      //=> EXCEPTION: 'Expected a value of type Result, got: Number (42)'
+ * _throwIfNotResult(Err(['42'])).inspect()    //=> 'Err [ "42" ]'
+ * _throwIfNotResult(Ok(42)).inspect()         //=> 'Ok 42'
  *
  */
 const _throwIfNotResult = x =>

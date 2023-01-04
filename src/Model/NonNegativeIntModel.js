@@ -7,7 +7,7 @@ const defBoundedIntModel = require('../ModelFactory/defBoundedIntModel')
  *  * An integer
  *  * Greater than zero
  *
- * If input passes validations, will return the input (proxied by ObjectModel)
+ * If input passes validations, will return the input
  *
  * Throws an exception if passed in an invalid value.
  *

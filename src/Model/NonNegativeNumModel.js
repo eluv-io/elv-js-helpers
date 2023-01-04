@@ -6,7 +6,7 @@ const defBoundedNumModel = require('../ModelFactory/defBoundedNumModel')
  *  * A [Javascript Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
  *  * Greater than zero
  *
- * If input passes validations, will return the input (proxied by ObjectModel)
+ * If input passes validations, will return the input
  *
  * Throws an exception if passed in an invalid value.
  *

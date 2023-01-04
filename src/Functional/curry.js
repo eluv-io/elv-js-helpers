@@ -26,7 +26,7 @@
  *
  * const curry = require('@eluvio/elv-js-helpers/Functional/curry')
  *
- * const withinBounds(lower, upper, val) => (val >= lower) && (val <= upper)
+ * const withinBounds = (lower, upper, val) => (val >= lower) && (val <= upper)
  *
  * // curry an already-defined function
  * const fromZeroToOne = curry(withinBounds)(0, 1) // returns a new function that takes 1 argument (val)
@@ -40,13 +40,15 @@
  *   (lowerBound, val) => (val > lowerBound)
  * )
  *
- * greaterThan(0, 1)                 //=> true (function can be called normally with full set of arguments)
+ * // function can be called normally with full set of arguments
+ * greaterThan(0, 1)                               //=> true
  *
- * const isPositive = greaterThan(0) // when called with only lowerBound, returns a new function that takes 1 argument (val)
+ * // when called with only lowerBound, returns a new function that takes 1 argument (val)
+ * const isPositive = greaterThan(0)
  *
- * isPositive(0)                     //=> false
+ * isPositive(0)                                   //=> false
  *
- * isPositive(42)                    //=> true
+ * isPositive(42)                                  //=> true
  *
  */
 const curry = require('crocks/helpers/curry')

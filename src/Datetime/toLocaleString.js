@@ -41,7 +41,7 @@ const curry = require('../Functional/curry')
  *   }
  * )
  *
- * USA_Pacific_short(myDate)          //=> 'Mar 1, 6:00:00 AM PST'
+ * USA_Pacific_short(myDate)                //=> 'Mar 1, 6:00:00 AM PST'
  *
  * const UK_long = toLocaleString(
  *   'en-GB',
@@ -52,19 +52,17 @@ const curry = require('../Functional/curry')
  *   }
  * )
  *
- * UK_long(myDate)                    //=> 'Tuesday, 1 March 2022 at 14:00:00 GMT'
+ * UK_long(myDate)                          //=> 'Tuesday, 1 March 2022 at 14:00:00 GMT'
  *
- * // function is curried, it is possible to pass all arguments at once to define and invoke in one step
+ * // function is curried, it is possible to pass all arguments at once to define and invoke in one step:
  *
- * toLocaleString(
- *   'en-US',
- *   {
+ * const options = {
  *     dateStyle: 'short',
  *     timeStyle: 'short',
  *     timeZone: 'America/New_York'
- *   },
- *   myDate
- * )                                  //=>    '3/1/22, 9:00 AM'
+ * }
+ *
+ * toLocaleString('en-US', options, myDate) //=> '3/1/22, 9:00 AM'
  *
  *
  */

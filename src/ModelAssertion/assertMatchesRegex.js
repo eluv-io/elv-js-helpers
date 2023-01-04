@@ -37,9 +37,9 @@ const passesModelCheck = require('../Boolean/passesModelCheck')
  *       /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/,
  *       'is not in UUID format xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx')
  *     )
- *   ).as('UUIDString')
+ *   .as('UUIDString')
  *
- * UUIDStringModel('12345678-1234-1234-1234-123456789abc')  //=> '12345678-1234-1234-1234-123456789abc' (proxied by ObjectModel)
+ * UUIDStringModel('12345678-1234-1234-1234-123456789abc')  //=> '12345678-1234-1234-1234-123456789abc'
  *
  * UUIDStringModel('foo')                                   //=> EXCEPTION: 'Value is not in UUID format xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (got: "foo")'
  *
