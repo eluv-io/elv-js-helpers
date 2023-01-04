@@ -42,11 +42,11 @@ const neighborsPass = require('../Boolean/neighborsPass')
  *     )
  *   )
  *
- * ArrayAllSameKindModel([1, 2, 3])     //=> [1, 2, 3] (proxied by ObjectModel)
+ * ArrayAllSameKindModel([1, 2, 3])     //=> [1, 2, 3]
  *
- * ArrayAllSameKindModel([])            //=> [] (proxied by ObjectModel)
+ * ArrayAllSameKindModel([])            //=> []
  *
- * ArrayAllSameKindModel([42, 'a'])     //=>  EXCEPTION: 'Value elements are not all of the same kind (got: [42,"a"])'
+ * ArrayAllSameKindModel([42, 'a'])     //=> EXCEPTION: 'Value elements are not all of the same kind (got: [42,"a"])'
  *
  * ArrayAllSameKindModel('foo')         //=> EXCEPTION: 'expecting Array, got String "foo"'
  *

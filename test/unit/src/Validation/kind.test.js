@@ -6,7 +6,7 @@ describe('kind', () => {
     kind(undefined).should.equal('undefined')
     kind(null).should.equal('null')
     kind(true).should.equal('Boolean')
-    kind(new Buffer('')).should.equal('Buffer')
+    kind(Buffer.from(' ')).should.equal('Buffer')
     kind(42).should.equal('Number')
     kind('str').should.equal('String')
     kind(arguments).should.equal('arguments')

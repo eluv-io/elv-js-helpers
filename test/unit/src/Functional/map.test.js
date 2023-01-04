@@ -1,10 +1,10 @@
 const TH = require('../../../test-helpers')
 const map = TH.requireSrcFile('Functional/map')
 
-const Err = TH.requireSrcFile('ADT/Err')
-const Ok = TH.requireSrcFile('ADT/Ok')
-
 describe('map', () => {
+
+  const Err = TH.requireSrcFile('ADT/Err')
+  const Ok = TH.requireSrcFile('ADT/Ok')
 
   const double = a => a * 2
   const ok21 = Ok(21)

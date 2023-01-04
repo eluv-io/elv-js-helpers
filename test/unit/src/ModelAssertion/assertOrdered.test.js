@@ -1,9 +1,10 @@
 const TH = require('../../../test-helpers')
 const assertOrdered = TH.requireSrcFile('ModelAssertion/assertOrdered')
 
-const defArrModel = TH.requireSrcFile('ModelFactory/defArrModel')
-
 describe('assertOrdered', () => {
+
+  const defArrModel = TH.requireSrcFile('ModelFactory/defArrModel')
+
   it('should work as expected', () => {
     const OrderedNumArrayModel = defArrModel('OrderedArray', Number).extend()
       .assert(

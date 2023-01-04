@@ -1,19 +1,20 @@
 const TH = require('../../../test-helpers')
 const passesObjKeyCheck = TH.requireSrcFile('Boolean/passesObjKeyCheck')
 
-// AUTO-GENERATED TEST: Do not modify the following "describe('passesObjKeyCheck JSDoc example', ...)" block:
-describe('passesObjKeyCheck JSDoc example', () => {
-  it('should execute correctly as described', () => {
-    const NonBlankStrModel = TH.requireSrcFile('Model/NonBlankStrModel')
-    passesObjKeyCheck(NonBlankStrModel, {' ': 42}).should.eql(false)
-    passesObjKeyCheck(NonBlankStrModel, {foo: 42}).should.eql(true)
-    // test input not an object, check skipped:
-    passesObjKeyCheck(NonBlankStrModel, 3).should.eql(true)
-    // function is curried: call with fewer params to obtain a narrower function
+describe('passesObjKeyCheck', () => {
+
+  const NonBlankStrModel = TH.requireSrcFile('Model/NonBlankStrModel')
+
+  it('should work as expected', () => {
+    passesObjKeyCheck(NonBlankStrModel, {' ': 42}).should.be.false
+    passesObjKeyCheck(NonBlankStrModel, {'foo': 42}).should.be.true
+    passesObjKeyCheck(NonBlankStrModel, 3).should.be.true // test input not an object, check skipped
+  })
+
+  it('should be curried', () => {
     const hasNoBlankKeys = passesObjKeyCheck(NonBlankStrModel)
-    hasNoBlankKeys({' ': 42}).should.eql(false)
-    hasNoBlankKeys({foo: 42}).should.eql(true)
-    // test input not an object, check skipped:
-    hasNoBlankKeys(3).should.eql(true)
+    hasNoBlankKeys({' ': 42}).should.be.false
+    hasNoBlankKeys({'foo': 42}).should.be.true
+    hasNoBlankKeys(3).should.be.true // test input not an object, check skipped
   })
 })

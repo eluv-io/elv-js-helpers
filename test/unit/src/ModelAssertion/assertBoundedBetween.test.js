@@ -1,11 +1,10 @@
 const TH = require('../../../test-helpers')
 const assertBoundedBetween = TH.requireSrcFile('ModelAssertion/assertBoundedBetween')
 
-const compare = TH.requireSrcFile('Functional/compare')
-
-const IntegerModel = TH.requireSrcFile('Model/IntegerModel')
-
 describe('assertBoundedBetween', () => {
+
+  const compare = TH.requireSrcFile('Functional/compare')
+  const IntegerModel = TH.requireSrcFile('Model/IntegerModel')
 
   it('should work as expected', () => {
     const CartonEggCountModel = IntegerModel

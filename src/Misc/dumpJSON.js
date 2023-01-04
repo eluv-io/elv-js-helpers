@@ -14,9 +14,9 @@
  *
  * dumpJSON(undefined)     //=> OUTPUT: undefined
  *
- * dumpJSON([1, 2, 3])     //=> OUTPUT: '[\n  1,\n  2,\n  3\n]'
+ * dumpJSON([1, 2, 3])     //=> OUTPUT: `[\n  1,\n  2,\n  3\n]`
  *
- * dumpJSON({foo: 'bar'})  //=> OUTPUT: '{\n  "foo": "bar"\n}'
+ * dumpJSON({foo: 'bar'})  //=> OUTPUT: `{\n  "foo": "bar"\n}`
  *
  * dumpJSON(dumpJSON)      //=> OUTPUT: undefined
  *

@@ -36,7 +36,7 @@ const negate = require('../Functional/negate')
  *   )
  *   .as('NonEmptyString')
  *
- * NonEmptyStringModel('foo')  //=> 'foo' (proxied by ObjectModel)
+ * NonEmptyStringModel('foo')  //=> 'foo'
  *
  * NonEmptyStringModel('')     //=> EXCEPTION: 'Value must not be empty (got: "")'
  *

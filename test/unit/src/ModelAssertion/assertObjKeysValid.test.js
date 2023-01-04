@@ -1,11 +1,10 @@
 const TH = require('../../../test-helpers')
 const assertObjKeysValid = TH.requireSrcFile('ModelAssertion/assertObjKeysValid')
 
-const NonBlankStrModel = TH.requireSrcFile('Model/NonBlankStrModel')
-
-const defBasicModel = TH.requireSrcFile('ModelFactory/defBasicModel')
-
 describe('assertObjKeysValid', () => {
+
+  const defBasicModel = TH.requireSrcFile('ModelFactory/defBasicModel')
+  const NonBlankStrModel = TH.requireSrcFile('Model/NonBlankStrModel')
 
   it('should work as expected', () => {
     const NoBlankKeysObjModel = defBasicModel('NoBlankKeysObj', Object)

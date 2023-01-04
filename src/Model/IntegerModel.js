@@ -11,7 +11,7 @@ const assertAfterCheck = require('../ModelAssertion/assertAfterCheck')
  * * A [Javascript Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
  * * An integer
  *
- * If input passes validation, will return the input (proxied by ObjectModel)
+ * If input passes validation, will return the input
  *
  * Throws an exception if passed in an invalid value.
  *
@@ -24,7 +24,7 @@ const assertAfterCheck = require('../ModelAssertion/assertAfterCheck')
  *
  * const IntegerModel = require('@eluvio/elv-js-helpers/Model/IntegerModel')
  *
- * IntegerModel(42)    //=> 42 (proxied by ObjectModel)
+ * IntegerModel(42)    //=> 42
  *
  * IntegerModel(4.2)   //=> EXCEPTION: 'Value must be an integer (got: 4.2)'
  *

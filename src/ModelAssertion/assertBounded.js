@@ -50,11 +50,11 @@ const truthTable = require('../Functional/truthTable')
  *
  * NumberBetweenZeroAndOneModel(-1)  //=> EXCEPTION: 'Value must be >= 0 and <= 1 (got: -1)'
  *
- * NumberBetweenZeroAndOneModel(0)   //=> 0 (proxied by ObjectModel)
+ * NumberBetweenZeroAndOneModel(0)   //=> 0
  *
- * NumberBetweenZeroAndOneModel(0.5) //=> 0.5 (proxied by ObjectModel)
+ * NumberBetweenZeroAndOneModel(0.5) //=> 0.5
  *
- * NumberBetweenZeroAndOneModel(1)   //=> 1 (proxied by ObjectModel)
+ * NumberBetweenZeroAndOneModel(1)   //=> 1
  *
  * NumberBetweenZeroAndOneModel(42)  //=> EXCEPTION: 'Value must be >= 0 and <= 1 (got: 42)'
  *

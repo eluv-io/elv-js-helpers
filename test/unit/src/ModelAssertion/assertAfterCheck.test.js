@@ -1,10 +1,10 @@
 const TH = require('../../../test-helpers')
 const assertAfterCheck = TH.requireSrcFile('ModelAssertion/assertAfterCheck')
 
-const passesModelCheck = TH.requireSrcFile('Boolean/passesModelCheck')
-const NumberModel = TH.requireSrcFile('Model/NumberModel')
-
 describe('assertAfterCheck', () => {
+
+  const NumberModel = TH.requireSrcFile('Model/NumberModel')
+  const passesModelCheck = TH.requireSrcFile('Boolean/passesModelCheck')
 
   const [assertEvenNumberFn, assertEvenErrMsgFn] =
     assertAfterCheck(

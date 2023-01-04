@@ -1,9 +1,10 @@
 const TH = require('../../../test-helpers')
 const defNonEmptyArrModel = TH.requireSrcFile('ModelFactory/defNonEmptyArrModel')
 
-const NonNegativeNumModel = TH.requireSrcFile('Model/NonNegativeNumModel')
-
 describe('defNonEmptyArrModel', () => {
+
+  const NonNegativeNumModel = TH.requireSrcFile('Model/NonNegativeNumModel')
+
   it('should work as expected', () => {
     const NonEmptyAgeArrayModel = defNonEmptyArrModel('NonEmptyAgeArray', NonNegativeNumModel)
     NonEmptyAgeArrayModel([42]).should.eql( [42])

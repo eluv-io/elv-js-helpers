@@ -23,25 +23,32 @@ const {Ok, Err} = require('crocks/Result')
  * @returns {function}
  * @example
  *
- * const PositiveNumModel = require('@eluvio/elv-js-helpers/Model/PositiveNumModel')
- *
  * const validateWithModel = require('@eluvio/elv-js-helpers/Validation/validateWithModel')
  *
- * validateWithModel(PositiveNumModel, 42)    //=> Ok 42
+ * const PositiveNumModel = require('@eluvio/elv-js-helpers/Model/PositiveNumModel')
+ * const resultToPOJO = require('@eluvio/elv-js-helpers/Conversion/ResultToPOJO')
  *
- * validateWithModel(PositiveNumModel, 0)     //=> Err ['PositiveNumber: Value must be > 0 (got: 0)']
+ * const goodResult = validateWithModel(PositiveNumModel, 42)
+ * goodResult.inspect()                             //=> 'Ok 42'
+ * resultToPOJO(goodResult).ok                      //=> true
+ * resultToPOJO(goodResult).value                   //=> 42
  *
- * validateWithModel(PositiveNumModel, 'foo') //=> Err ['PositiveNumber: expecting Number, got String "foo"']
+ * const errZeroInput = validateWithModel(PositiveNumModel, 0)
+ * resultToPOJO(errZeroInput).ok                    //=> false
+ * resultToPOJO(errZeroInput).errMsgs               //=> ['PositiveNumber: Value must be > 0 (got: 0)']
+ *
+ * const errStringInput = validateWithModel(PositiveNumModel, 'foo')
+ * resultToPOJO(errStringInput).ok                  //=> false
+ * resultToPOJO(errStringInput).errMsgs             //=> ['PositiveNumber: expecting Number, got String "foo"']
  *
  * // function is curried, call with just 1 argument to return a more specific validation function
  * const validatePositiveNumber = validateWithModel(PositiveNumModel)
  *
- * validatePositiveNumber(42)         //=> Ok 42
+ * validatePositiveNumber(42).inspect()             //=> 'Ok 42'
  *
- * validatePositiveNumber(0)          //=> Err [error('PositiveNumber: Value must be > 0 (got: 0)')]
+ * resultToPOJO(validatePositiveNumber(0)).ok       //=> false
  *
- * validatePositiveNumber('foo')      //=> Err [error('PositiveNumber: expecting Number, got String "foo"')]
- *
+ * resultToPOJO(validatePositiveNumber('foo')).ok   //=> false
  */
 const validateWithModel = curry(
   (model, input) => {

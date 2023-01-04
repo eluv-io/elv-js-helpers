@@ -1,3 +1,5 @@
+const isString = require('../Boolean/isString')
+
 const REGEX_UTC_TIMESTAMP = require('./RE_UTC_TIMESTAMP')
 
 const _MONTH_LENGTHS = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
@@ -18,17 +20,22 @@ const _MONTH_LENGTHS = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
  * @see utcStrToDate
  * @example
  *
- * parseUTCStr('2022-01-01T14:00:00Z')  //=> 2022-01-01T14:00:00.000Z (Date object)
+ * const dateObject = parseUTCStr('2022-01-01T14:00:00Z')
+ * dateObject.valueOf()                                  //=> 1641045600000
  *
- * parseUTCStr('2022-99-01T14:00:00Z')  //=> NaN (Date object containing NaN)
+ * // Strings containing bad datetime return Date object containing NaN
+ * const badDate = parseUTCStr('2022-99-01T14:00:00Z')
+ * badDate.valueOf()                                     //=> NaN
  *
- * parseUTCStr(42)                      //=> NaN (Date object containing NaN)
+ * // Non-strings return Date object containing NaN
+ * const nonStringDate = parseUTCStr(42)
+ * nonStringDate.valueOf()                               //=> NaN
  *
  */
 const parseUTCStr = utcString => {
-  const match = utcString.match(REGEX_UTC_TIMESTAMP)
-  if (!match) return new Date(NaN)
+  if (!isString(utcString) || !REGEX_UTC_TIMESTAMP.test(utcString)) return new Date(NaN)
 
+  const match = utcString.match(REGEX_UTC_TIMESTAMP)
   const year = parseInt(match[1], 10)
   const month = parseInt(match[2], 10)
   const day = parseInt(match[3], 10)

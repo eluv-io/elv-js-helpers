@@ -29,7 +29,7 @@ const validateWithModel = require('../Validation/validateWithModel')
  *     _objBadValErrMsg(NonBlankStrModel)
  *   )
  *
- * NoBlankValuesObjModel({foo: '  '}) //=>  EXCEPTION: 'key "foo" points to a value that is an invalid NonBlankString (NonBlankString: Value must not be a blank string (got: "  "))'
+ * NoBlankValuesObjModel({foo: '  '})        //=> EXCEPTION: 'key "foo" points to a value that is an invalid NonBlankString (NonBlankString: Value must not be a blank string (got: "  "))'
  *
  */
 const _objBadValErrMsg = valueModel =>

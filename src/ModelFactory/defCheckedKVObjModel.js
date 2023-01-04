@@ -37,15 +37,15 @@ const throwIfUndefined = require('../Validation/throwIfUndefined')
  *   NonBlankStrModel
  * )
  *
- * NoBlankStrKVObjectModel({foo: 'bar'})     //=>  {foo: 'bar'}  (proxied by ObjectModel)
+ * NoBlankStrKVObjectModel({foo: 'bar'})     //=> {foo: 'bar'}
  *
- * NoBlankStrKVObjectModel({foo: '   '})     //=>  EXCEPTION: 'key "foo" points to a value that is an invalid NonBlankString (NonBlankString: Value must not be a blank string (got: "   "))'
+ * NoBlankStrKVObjectModel({foo: '   '})     //=> EXCEPTION: 'key "foo" points to a value that is an invalid NonBlankString (NonBlankString: Value must not be a blank string (got: "   "))'
  *
- * NoBlankStrKVObjectModel({'  ': 'bar'})    //=>  EXCEPTION: 'invalid property name "  " (is not a valid NonBlankString)'
+ * NoBlankStrKVObjectModel({'  ': 'bar'})    //=> EXCEPTION: 'invalid property name "  " (is not a valid NonBlankString)'
  *
- * NoBlankStrKVObjectModel({foo: 42})        //=>  EXCEPTION: 'key "foo" points to a value that is an invalid NonBlankString (NonBlankString: expecting String, got Number 42)'
+ * NoBlankStrKVObjectModel({foo: 42})        //=> EXCEPTION: 'key "foo" points to a value that is an invalid NonBlankString (NonBlankString: expecting String, got Number 42)'
  *
- * NoBlankStrKVObjectModel(42)               //=>  EXCEPTION: 'expecting Object, got Number 42'
+ * NoBlankStrKVObjectModel(42)               //=> EXCEPTION: 'expecting Object, got Number 42'
  *
  *
  */

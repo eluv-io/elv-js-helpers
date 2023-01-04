@@ -1,18 +1,17 @@
 const TH = require('../../../test-helpers')
 const liftA3Join = TH.requireSrcFile('Functional/liftA3Join')
 
-const Err = TH.requireSrcFile('ADT/Err')
-const Ok = TH.requireSrcFile('ADT/Ok')
-
-const curry = TH.requireSrcFile('Functional/curry')
-
-const div3 = curry(
-  (x, y, z) => y === 0 || z === 0 ?
-    Err(['division by zero']) :
-    Ok(x / y / z)
-)
-
 describe('liftA3Join', () => {
+
+  const curry = TH.requireSrcFile('Functional/curry')
+  const Err = TH.requireSrcFile('ADT/Err')
+  const Ok = TH.requireSrcFile('ADT/Ok')
+
+  const div3 = curry(
+    (x, y, z) => y === 0 || z === 0 ?
+      Err(['division by zero']) :
+      Ok(x / y / z)
+  )
 
   it('should work as expected', () => {
     const div3Wrapped = liftA3Join(div3)

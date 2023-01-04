@@ -15,8 +15,9 @@ const T = require('../Functional/T')
  * @example
  *
  * const assertNothing = require('@eluvio/elv-js-helpers/ModelAssertion/assertNothing')
+ * const T = require('@eluvio/elv-js-helpers/Functional/T')
  *
- * assertNothing() //=> [x => true, '']
+ * assertNothing()     //=> [T, '']
  *
  */
 const assertNothing = () => [T, '']

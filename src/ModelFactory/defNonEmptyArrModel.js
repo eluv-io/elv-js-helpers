@@ -29,7 +29,7 @@ const assertNotEmpty = require('../ModelAssertion/assertNotEmpty')
  *
  * const NonEmptyAgeArrayModel = defNonEmptyArrModel('NonEmptyAgeArray', NonNegativeNumModel)
  *
- * NonEmptyAgeArrayModel([42])        //=> [42]  (proxied by ObjectModel)
+ * NonEmptyAgeArrayModel([42])        //=> [42]
  *
  * NonEmptyAgeArrayModel([])          //=> EXCEPTION: 'Value must not be empty (got: [])'
  *

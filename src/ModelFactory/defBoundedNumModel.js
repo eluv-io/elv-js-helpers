@@ -27,13 +27,13 @@ const assertBounded = require('../ModelAssertion/assertBounded')
  *
  * const HumanHeightMetersModel = defBoundedNumModel('HumanHeightMeters', 0, 3, false, true)
  *
- * HumanHeightMetersModel(0)     //=> EXCEPTION: 'HumanHeightMeters: Value must be > 0 and <= 3 (got: 0)'
+ * HumanHeightMetersModel(0)     //=> EXCEPTION: 'Value must be > 0 and <= 3 (got: 0)'
  *
- * HumanHeightMetersModel(1.5)   //=> 1.5 (proxied by ObjectModel)
+ * HumanHeightMetersModel(1.5)   //=> 1.5
  *
- * HumanHeightMetersModel(4)     //=> EXCEPTION: 'HumanHeightMeters: Value must be >0 and <= 3 (got: 4)'
+ * HumanHeightMetersModel(4)     //=> EXCEPTION: 'Value must be > 0 and <= 3 (got: 4)'
  *
- * HumanHeightMetersModel('foo') //=> EXCEPTION: 'HumanHeightMeters: expecting Number, got String "foo"'
+ * HumanHeightMetersModel('foo') //=> EXCEPTION: 'expecting Number, got String "foo"'
  *
  */
 const defBoundedNumModel = (name, lowerBound, upperBound, lowerInclusive, upperInclusive) =>

@@ -1,10 +1,10 @@
 const TH = require('../../../test-helpers')
 const assertBoundedLower = TH.requireSrcFile('ModelAssertion/assertBoundedLower')
 
-const compare = TH.requireSrcFile('Functional/compare')
-const NumberModel = TH.requireSrcFile('Model/NumberModel')
-
 describe('assertBoundedLower', () => {
+
+  const compare = TH.requireSrcFile('Functional/compare')
+  const NumberModel = TH.requireSrcFile('Model/NumberModel')
 
   const [assertPositiveNumberFn, assertPositiveErrMsgFn] =
     assertBoundedLower(NumberModel, 0, false, compare)

@@ -33,7 +33,7 @@
  *
  * isNotEmpty([1, 2, 3])     //=> true
  *
- * isNotEmpty(undefined)     //=> EXCEPTION: 'Cannot read properties of undefined (reading 'length')'
+ * isNotEmpty(undefined)     //=> EXCEPTION: "Cannot read properties of undefined (reading 'length')"
  */
 const negate = require('crocks/logic/not')
 

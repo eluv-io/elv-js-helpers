@@ -1,9 +1,9 @@
 const TH = require('../../../test-helpers')
 const assertMatchesRegex = TH.requireSrcFile('ModelAssertion/assertMatchesRegex')
 
-const StringModel = TH.requireSrcFile('Model/StringModel')
-
 describe('assertMatchesRegex', () => {
+
+  const StringModel = TH.requireSrcFile('Model/StringModel')
 
   it('should work as expected when used to extend a Model', () => {
     const UUIDStringModel = StringModel.extend()

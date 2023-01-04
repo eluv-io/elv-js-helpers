@@ -1,9 +1,10 @@
 const TH = require('../../../test-helpers')
 const getPath = TH.requireSrcFile('Functional/getPath')
 
-const kind = TH.requireSrcFile('Validation/kind')
-
 describe('getPath', () => {
+
+  const kind = TH.requireSrcFile('Validation/kind')
+
   it('should work as expected', () => {
     getPath(['a', 'b'], {a: {b: 2}}).should.equal(2)
     kind(getPath(['a', 'b'], {c: {b: 2}})).should.equal('undefined')

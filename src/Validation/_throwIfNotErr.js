@@ -23,7 +23,8 @@ const isErr = require('../Boolean/isErr')
  *
  * _throwIfNotErr(Ok(42))      //=> EXCEPTION: 'Expected an Err, got: Ok (Ok 42)'
  *
- * _throwIfNotErr(Err['foo'])  //=> (no exception)
+ * // No exception thrown:
+ * _throwIfNotErr(Err('foo'))
  *
  */
 const _throwIfNotErr = x =>

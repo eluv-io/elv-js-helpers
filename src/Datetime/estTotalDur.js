@@ -15,7 +15,7 @@ const _paramsModel = defObjModel(
  * The function is unit-agnostic, but for most uses timeElapsed is in seconds.
  *
  * Returns a [Crocks Ok](https://crocks.dev/docs/crocks/Result.html#ok) instance wrapping a number if calculation succeeds.
- * Returns a [Crocks Err](https://crocks.dev/docs/crocks/Result.html#err) instance wrapping an array containing error string(s) if passed bad inputs.
+ * Returns a [Crocks Err](https://crocks.dev/docs/crocks/Result.html#err) instance wrapping an array containing error(s) if passed bad inputs.
  *
  * @function
  * @category Datetime
@@ -27,19 +27,23 @@ const _paramsModel = defObjModel(
  *
  * const estTotalDur = require('@eluvio/elv-js-helpers/Datetime/estTotalDur')
  *
- * estTotalDur(21, 0.5)   //=> Ok 42
+ * const resultToPOJO = require('@eluvio/elv-js-helpers/Conversion/resultToPOJO')
  *
- * estTotalDur(42, 1)     //=> Ok 42
+ * estTotalDur(21, 0.5).inspect()             //=> 'Ok 42'
  *
- * estTotalDur(42, 0)     //=> Err ['estTotalDur: portionComplete must be > 0 and <= 1 (got: 0)']
+ * estTotalDur(42, 1).inspect()               //=> 'Ok 42'
  *
- * estTotalDur(0, .1)     //=> Err ['estTotalDur: timeElapsed must be > 0 (got: 0)']
+ * const portionBadErr = estTotalDur(42, 0)
+ * resultToPOJO(portionBadErr).ok             //=> false
+ * resultToPOJO(portionBadErr).errMsgs        // => ['estTotalDur: portionComplete must be > 0 and <= 1 (got: 0)']
  *
- * estTotalDur(0, 0)      //=> Err ['estTotalDur: portionComplete must be > 0 and <= 1 (got: 0)', 'estTotalDur: timeElapsed must be > 0 (got: 0)']
+ * const elapsedBadErr = estTotalDur(0, .1)
+ * resultToPOJO(elapsedBadErr).ok             //=> false
+ * resultToPOJO(elapsedBadErr).errMsgs        //=> ['estTotalDur: timeElapsed must be > 0 (got: 0)']
  *
- * estTotalDur(-1, .1)    //=> Err ['estTotalDur: timeElapsed must be > 0 (got: -1)']
- *
- * estTotalDur(42, 42)    //=> Err ['estTotalDur: portionComplete must be > 0 and <= 1 (got: 42)']
+ * const bothBadErr = estTotalDur(0, 0)
+ * resultToPOJO(bothBadErr).ok                //=> false
+ * resultToPOJO(bothBadErr).errMsgs           //=>['estTotalDur: portionComplete must be > 0 and <= 1 (got: 0)', 'estTotalDur: timeElapsed must be > 0 (got: 0)']
  *
  */
 const estTotalDur = (timeElapsed, portionComplete) =>

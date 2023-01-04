@@ -1,7 +1,7 @@
 const TH = require('../../../test-helpers')
 const RE_UTC_TIMESTAMP = TH.requireSrcFile('Datetime/RE_UTC_TIMESTAMP')
 
-describe('RE_UTC_TIMESTAMP', () => {
+describe('REGEX_UTC_TIMESTAMP', () => {
 
   it('should work as expected', () => {
     RE_UTC_TIMESTAMP.test('2022-01-02T03:45:00Z').should.be.true

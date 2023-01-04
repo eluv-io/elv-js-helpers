@@ -1,14 +1,12 @@
 const TH = require('../../../test-helpers')
 const liftA3 = TH.requireSrcFile('Functional/liftA3')
 
-const Err = TH.requireSrcFile('ADT/Err')
-const Ok = TH.requireSrcFile('ADT/Ok')
-
-const resultToPOJO = TH.requireSrcFile('Conversion/resultToPOJO')
-
-const curry = TH.requireSrcFile('Functional/curry')
-
 describe('liftA3', () => {
+
+  const curry = TH.requireSrcFile('Functional/curry')
+  const Err = TH.requireSrcFile('ADT/Err')
+  const Ok = TH.requireSrcFile('ADT/Ok')
+  const resultToPOJO = TH.requireSrcFile('Conversion/resultToPOJO')
 
   const mult3 = (a, b, c) => a * b * c
   const okObject = Ok(42)
@@ -28,8 +26,8 @@ describe('liftA3', () => {
     resultToPOJO(badResult3).should.eql(
       {
         ok: false,
-        errors: ['failed to obtain first input', 'failed to obtain second input'],
-        errorDetails: ['failed to obtain first input', 'failed to obtain second input']
+        errMsgs: ['failed to obtain first input', 'failed to obtain second input'],
+        errors: ['failed to obtain first input', 'failed to obtain second input']
       }
     )
   })

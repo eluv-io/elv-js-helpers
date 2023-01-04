@@ -1,12 +1,12 @@
 const TH = require('../../../test-helpers')
 const chain = TH.requireSrcFile('Functional/chain')
 
-const Err = TH.requireSrcFile('ADT/Err')
-const Ok = TH.requireSrcFile('ADT/Ok')
-
-const map = TH.requireSrcFile('Functional/map')
-
 describe('chain', () => {
+
+  const Err = TH.requireSrcFile('ADT/Err')
+  const map = TH.requireSrcFile('Functional/map')
+  const Ok = TH.requireSrcFile('ADT/Ok')
+
   const reciprocal = a => a === 0 ? Err(['division by zero']) : Ok(1 / a)
   const ok4 = Ok(4)
   const ok0 = Ok(0)

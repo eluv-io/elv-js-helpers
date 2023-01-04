@@ -6,7 +6,7 @@ const defBoundedNumModel = require('../ModelFactory/defBoundedNumModel')
  *  * A [Javascript Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
  *  * Is greater than or equal to zero, and less than one
  *
- * If input passes validations, will return the input (proxied by ObjectModel)
+ * If input passes validations, will return the input
  *
  * Throws an exception if passed in an invalid value.
  *
@@ -19,9 +19,9 @@ const defBoundedNumModel = require('../ModelFactory/defBoundedNumModel')
  *
  * const NumZeroToOneXModel = require('@eluvio/elv-js-helpers/Model/NumZeroToOneXModel')
  *
- * NumZeroToOneXModel(0)     //=> 0 (proxied by ObjectModel)
+ * NumZeroToOneXModel(0)     //=> 0
  *
- * NumZeroToOneXModel(0.5)   //=> 0.5 (proxied by ObjectModel)
+ * NumZeroToOneXModel(0.5)   //=> 0.5
  *
  * NumZeroToOneXModel(1)     //=> EXCEPTION: 'Value must be >= 0 and < 1 (got: 1)'
  *

@@ -1,9 +1,9 @@
 const TH = require('../../../test-helpers')
 const objBadVal = TH.requireSrcFile('Validation/objBadVal')
 
-const NonBlankStrModel = TH.requireSrcFile('Model/NonBlankStrModel')
-
 describe('objBadVal', () => {
+
+  const NonBlankStrModel = TH.requireSrcFile('Model/NonBlankStrModel')
 
   it('should work as expected', () => {
     TH.expect(objBadVal(NonBlankStrModel, {foo: 'bar'}) === undefined).to.be.true

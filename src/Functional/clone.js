@@ -3,7 +3,7 @@ const isObject = require('../Boolean/isObject')
 /**
  * Modified version of Ramda's `clone` function _(Copyright © 2013-2020 Scott Sauyet and Michael Hurley)_
  *
- * Uses original item's constructor function to process cloned values.
+ * Uses original item's constructor function when input is an object.
  *
  * Used to preserve ObjectModel constraints.
  *
@@ -26,9 +26,9 @@ const isObject = require('../Boolean/isObject')
  *
  * arthurClone.last = 'Clone'
  *
- * console.log(arthurClone.last)       //=> Clone
+ * console.log(arthurClone.last)       //=> OUTPUT: 'Clone'
  *
- * console.log(arthur.last)            //=> Dent
+ * console.log(arthur.last)            //=> OUTPUT: 'Dent'
  *
  * arthurClone.last = 3                //=> EXCEPTION: 'expecting last to be String, got Number 3'
  *

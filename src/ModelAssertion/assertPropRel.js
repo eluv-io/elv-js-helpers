@@ -1,10 +1,7 @@
 const assertAfterCheck = require('./assertAfterCheck')
-
-const isObject = require('../Boolean/isObject')
-
-const format = require('../Conversion/format')
-
 const curry = require('../Functional/curry')
+const format = require('../Conversion/format')
+const isObject = require('../Boolean/isObject')
 
 /**
  * Returns a 2-element array for use in an [ObjectModel assertion](http://objectmodel.js.org/#doc-assertions)
@@ -32,11 +29,10 @@ const curry = require('../Functional/curry')
  * @returns {Array} 2-element array [Function, Function | String]. See description for details.
  * @example
  *
- * const isGTE = require('../Boolean/isGTE')
- *
  * const assertPropRel = require('@eluvio/elv-js-helpers/ModelAssertion/assertPropRel')
  *
- * const defObjModel = require('../ModelFactory/defObjModel')
+ * const defObjModel = require('@eluvio/elv-js-helpers/ModelFactory/defObjModel')
+ * const isGTE = require('@eluvio/elv-js-helpers/Boolean/isGTE')
  *
  * const NumLimitsModel = defObjModel(
  *   'NumberLimits',
@@ -53,7 +49,7 @@ const curry = require('../Functional/curry')
  *   )
  * )
  *
- * NumLimitsModel({min:1, max:2})  //=> {min:1, max:2} (proxied by ObjectModel)
+ * NumLimitsModel({min:1, max:2})  //=> {min:1, max:2}
  *
  * NumLimitsModel({min:2, max:1})  //=> EXCEPTION: 'max (1) must be greater than or equal to min (2)'
  *

@@ -6,7 +6,7 @@ const defBoundedNumModel = require('../ModelFactory/defBoundedNumModel')
  *  * A [Javascript Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
  *  * Greater than zero
  *
- * If input passes validations, will return the input (proxied by ObjectModel)
+ * If input passes validations, will return the input
  *
  * Throws an exception if passed in an invalid value.
  *
@@ -19,7 +19,7 @@ const defBoundedNumModel = require('../ModelFactory/defBoundedNumModel')
  *
  * const PositiveNumModel = require('@eluvio/elv-js-helpers/Model/PositiveNumModel')
  *
- * PositiveNumModel(42)     //=> 42 (proxied by ObjectModel)
+ * PositiveNumModel(42)     //=> 42
  *
  * PositiveNumModel(0)      //=> EXCEPTION: 'Value must be > 0 (got: 0)'
  *

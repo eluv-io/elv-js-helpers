@@ -27,11 +27,11 @@ const throwIfUndefined = require('../Validation/throwIfUndefined')
  *
  * const defArrModel = require('@eluvio/elv-js-helpers/ModelFactory/defArrModel')
  *
- * const AgeArrayModel = defObjModel('AgeArray', NonNegativeNumModel)
+ * const AgeArrayModel = defArrModel('AgeArray', NonNegativeNumModel)
  *
- * AgeArrayModel([42])        //=> [42]  (proxied by ObjectModel)
+ * AgeArrayModel([42])        //=> [42]
  *
- * AgeArrayModel([])          //=> []  (proxied by ObjectModel)
+ * AgeArrayModel([])          //=> []
  *
  * AgeArrayModel(-1)          //=> EXCEPTION: 'expecting Array of NonNegativeNumber, got Number -1'
  *

@@ -31,11 +31,11 @@ const throwIfUndefined = require('../Validation/throwIfUndefined')
  *
  * PersonNameModel(-1)                                        //=> EXCEPTION: 'expecting Object, got Number -1'
  *
- * PersonNameModel({first: 'Arthur', last: 'Dent'})           //=> {"first":"Arthur","last":"Dent"} (proxied by ObjectModel)
+ * PersonNameModel({first: 'Arthur', last: 'Dent'})           //=> {"first":"Arthur","last":"Dent"}
  *
  * PersonNameModel({first: 'Arthur'})                         //=> EXCEPTION: 'expecting last to be String, got undefined'
  *
- * PersonNameModel({first: 'A', last: 'D', species: 'human'}) //=> {first: 'A', last: 'D', species: 'human'} (proxied by ObjectModel)
+ * PersonNameModel({first: 'A', last: 'D', species: 'human'}) //=> {first: 'A', last: 'D', species: 'human'}
  *
  */
 const defObjModel = (name, def) => {

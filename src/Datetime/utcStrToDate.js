@@ -17,11 +17,12 @@ const UTCStrModel = require('../Model/UTCStrModel')
  *
  * const utcStrToDate = require('@eluvio/elv-js-helpers/Datetime/utcStrToDate')
  *
- * utcStrToDate('2022-01-01T14:00:00Z')  //=> 2022-01-01T14:00:00.000Z
+ * const dateObject = utcStrToDate('2022-01-01T14:00:00Z')
+ * dateObject.valueOf()                                    //=> 1641045600000
  *
- * utcStrToDate('2022-99-01T14:00:00Z')  //=> EXCEPTION: Value is not a valid UTC Datetime string (got: "2022-99-01T14:00:00Z")
+ * utcStrToDate('2022-99-01T14:00:00Z')                    //=> EXCEPTION: 'Value is not a valid UTC datetime string (got: "2022-99-01T14:00:00Z")'
  *
- * utcStrToDate(42)                      //=> EXCEPTION: expecting String, got Number 42
+ * utcStrToDate(42)                                        //=> EXCEPTION: 'expecting String, got Number 42'
  */
 const utcStrToDate = utcString =>
   parseUTCStr(UTCStrModel(utcString))

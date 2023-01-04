@@ -46,7 +46,7 @@ const isFunction = require('../Boolean/isFunction')
  *   )
  *   .as('Integer')
  *
- * IntegerModel(42)        //=> 42 (proxied by ObjectModel)
+ * IntegerModel(42)        //=> 42
  *
  * IntegerModel(4.2)       //=> EXCEPTION: 'Value must be an integer (got: 4.2)'
  *

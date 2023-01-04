@@ -42,15 +42,15 @@ const neighborsPass = require('../Boolean/neighborsPass')
  *   .assert(
  *     ...assertOrdered(
  *       (x, y) => x <= y,
- *       'is not in ascending order')
+ *       'is not in ascending order'
  *     )
- *   )
+ *   ).as('OrderedNumArray')
  *
- * OrderedNumArrayModel([1, 2, 3])     //=> [1, 2, 3] (proxied by ObjectModel)
+ * OrderedNumArrayModel([1, 2, 3])     //=> [1, 2, 3]
  *
- * OrderedNumArrayModel([])            //=> [] (proxied by ObjectModel)
+ * OrderedNumArrayModel([])            //=> []
  *
- * OrderedNumArrayModel([3, 2])        //=>  EXCEPTION: 'Value is not in ascending order (got: [3,2])'
+ * OrderedNumArrayModel([3, 2])        //=> EXCEPTION: 'Value is not in ascending order (got: [3,2])'
  *
  * OrderedNumArrayModel('foo')         //=> EXCEPTION: 'expecting Array of Number, got String "foo"'
  *

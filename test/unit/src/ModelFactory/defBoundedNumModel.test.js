@@ -1,11 +1,11 @@
 const TH = require('../../../test-helpers')
 const defBoundedNumModel = TH.requireSrcFile('ModelFactory/defBoundedNumModel')
 
-const kind = TH.requireSrcFile('Validation/kind')
-const resultUnwrap = TH.requireSrcFile('Conversion/resultUnwrap')
-const validateWithModel = TH.requireSrcFile('Validation/validateWithModel')
-
 describe('defBoundedNumModel', function () {
+
+  const kind = TH.requireSrcFile('Validation/kind')
+  const resultUnwrap = TH.requireSrcFile('Conversion/resultUnwrap')
+  const validateWithModel = TH.requireSrcFile('Validation/validateWithModel')
 
   const ZeroToOneInclusive = defBoundedNumModel('ZeroToOneInclusive', 0, 1, true, true)
   const ZeroToOneLowerInclusive = defBoundedNumModel('ZeroToOneLowerInclusive', 0, 1, true, false)

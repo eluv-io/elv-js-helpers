@@ -2,7 +2,7 @@ const TH = require('../../../test-helpers')
 const RE_RATIONAL = TH.requireSrcFile('Validation/RE_RATIONAL')
 
 describe('RE_RATIONAL', () => {
-  it('should have JSDoc example that works', () => {
+  it('should work as expected', () => {
     RE_RATIONAL.test('0').should.equal(true)
     RE_RATIONAL.test('-0').should.equal(true)
     RE_RATIONAL.test('0/1').should.equal(true)

@@ -33,13 +33,16 @@
  * const ok21 = Ok(21)
  * const badNum = Err(['failed to read input'])
  *
- * double(21)                 //=> 42
+ * double(21)                          //=> 42
  *
- * double(ok21)               //=> NaN (double does not know to unwrap value before use)
+ * // double() does not know to unwrap value before use:
+ * double(ok21)                        //=> NaN
  *
- * map(double, ok21)          //=> Ok 42 (map asks input wrapper to remove wrapping and pass value to function, and then re-wrap the return value)
+ * // map() asks input wrapper to remove wrapping and pass value to function, and then re-wrap the return value
+ * map(double, ok21).inspect()         //=> 'Ok 42'
  *
- * map(double, badNum)        //=> Err ['failed to read input'] (badNum ignores request to apply double)
+ * // badNum ignores request to apply double()
+ * map(double, badNum).inspect()       //=> 'Err [ "failed to read input" ]'
  *
  */
 const map = require('crocks/pointfree/map')

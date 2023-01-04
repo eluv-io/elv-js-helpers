@@ -1,9 +1,9 @@
 const TH = require('../../../test-helpers')
 const negate = TH.requireSrcFile('Functional/negate')
 
-const isEmpty = a => a.length === 0
-
 describe('negate', () => {
+
+  const isEmpty = a => a.length === 0
 
   it('should work as expected', () => {
     const isNotEmpty = negate(isEmpty)
