@@ -1,9 +1,8 @@
-const chain = require('crocks/pointfree/chain')
+const chain = require('./chain')
 const compose = require('crocks/helpers/compose')
-const identity = require('crocks/combinators/identity')
-const nAry = require('crocks/helpers/nAry')
-
+const identity = require('./identity')
 const liftA2 = require('./liftA2')
+const setArity = require('./setArity')
 
 /**
  * Converts a function which accepts 2 'normal' values and returns a **wrapped** value (i.e. an ADT) into a  function
@@ -70,6 +69,6 @@ const liftA2 = require('./liftA2')
  *   Err(['failed to read y'])
  * ).inspect()                          //=> 'Err [ "failed to read x", "failed to read y" ]'
  */
-const liftA2Join = nAry(3, compose(chain(identity), liftA2))
+const liftA2Join = setArity(3, compose(chain(identity), liftA2))
 
 module.exports = liftA2Join

@@ -1,3 +1,5 @@
+// TODO: run eslint fix on jsdoc test files after prettifying (fix single-quote)
+
 const child_process = require('child_process')
 const fs = require('fs')
 const path = require('path')

@@ -1,7 +1,7 @@
-const chain = require('crocks/pointfree/chain')
+const chain = require('./chain')
 const compose = require('crocks/helpers/compose')
-const identity = require('crocks/combinators/identity')
-const nAry = require('crocks/helpers/nAry')
+const identity = require('./identity')
+const setArity = require('./setArity')
 
 const liftA3 = require('./liftA3')
 
@@ -75,6 +75,6 @@ const liftA3 = require('./liftA3')
  *   Err(['failed to read z'])
  * ).inspect()                           //=> 'Err [ "failed to read x", "failed to read y", "failed to read z" ]'
  */
-const liftA3Join = nAry(4, compose(chain(identity), liftA3))
+const liftA3Join = setArity(4, compose(chain(identity), liftA3))
 
 module.exports = liftA3Join

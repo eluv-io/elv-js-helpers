@@ -14,7 +14,7 @@ const defBoundedNumModel = require('../ModelFactory/defBoundedNumModel')
  * @category Model
  * @sig * -> Number | THROW
  * @param {*} - The input to validate
- * @returns {Number} The validated input, proxied by ObjectModel
+ * @returns {Number} The validated input
  * @example
  *
  * const NumZeroToOneXModel = require('@eluvio/elv-js-helpers/Model/NumZeroToOneXModel')

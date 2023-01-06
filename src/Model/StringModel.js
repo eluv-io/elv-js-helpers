@@ -13,7 +13,7 @@ const defBasicModel = require('../ModelFactory/defBasicModel')
  * @category Model
  * @sig * -> String | THROW
  * @param {*} - The input to validate
- * @returns {String} The validated input, proxied by ObjectModel
+ * @returns {String} The validated input
  * @example
  *
  * const StringModel = require('@eluvio/elv-js-helpers/Model/StringModel')

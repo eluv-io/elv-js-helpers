@@ -1,5 +1,5 @@
 const either = require('crocks/pointfree/either')
-const identity = require('crocks/combinators/identity')
+const identity = require('../Functional/identity')
 
 const _throwIfNotResult = require('../Validation/_throwIfNotResult')
 

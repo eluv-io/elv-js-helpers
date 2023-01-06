@@ -8,6 +8,9 @@ const curry = require('../Functional/curry')
  *
  * If called with fewer than 2 arguments, will return a [partially applied function](https://mostly-adequate.gitbook.io/mostly-adequate-guide/ch04)
  *
+ * Uses the Javascript [Less than or equal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Less_than_or_equal)
+ * operator (`<=`) to perform the comparison.
+ *
  * @function
  * @curried
  * @category Boolean

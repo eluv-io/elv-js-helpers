@@ -1,9 +1,7 @@
 const either = require('crocks/pointfree/either')
-
 const F = require('../Functional/F')
-const T = require('../Functional/T')
-
 const isResult = require('./isResult')
+const T = require('../Functional/T')
 
 /**
  * Returns `true` if passed a [Crocks Ok](https://crocks.dev/docs/crocks/Result.html#ok) instance.

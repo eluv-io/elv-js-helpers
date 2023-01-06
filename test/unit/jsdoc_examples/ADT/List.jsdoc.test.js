@@ -9,7 +9,7 @@ describe('List JSDoc example', () => {
     myList.inspect().should.eql('List [ 1, 2, 3 ]')
     // Convert to Javascript array:
     myList.toArray().should.eql([1, 2, 3])
-    // Elements are instances of the Crocks 'Maybe' ADT
+    // head() returns instance of the Crocks 'Maybe' ADT: if array is empty, returns Nothing, else returns Just
     myList.head().inspect().should.eql('Just 1')
     // tail() returns an instance of Crocks 'Maybe' ADT, which wraps a List if there were at least 2 elements in original List
     myList.tail().inspect().should.eql('Just List [ 2, 3 ]')
@@ -19,6 +19,7 @@ describe('List JSDoc example', () => {
       .should.eql('List [ [ 1, 2, 3 ] ]')
     // List with 1 element:
     List([42]).inspect().should.eql('List [ 42 ]')
+    List([42]).tail().inspect().should.eql('Nothing')
     // Non-array input is treated as a single-element array:
     List(42).inspect().should.eql('List [ 42 ]')
     // List with 0 elements:

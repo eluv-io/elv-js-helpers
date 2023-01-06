@@ -5,7 +5,7 @@ const _NIL_KINDS = ['null', 'undefined']
 /**
  * Returns `true` if value is `null` or `undefined`, otherwise returns `false`
  *
- * Copies functionality of the Ramda function of the same name _(Copyright © 2013-2020 Scott Sauyet and Michael Hurley)_
+ * Copies functionality of the [Ramda](https://ramdajs.com/docs/#isNil) function of the same name _(Copyright © 2013-2020 Scott Sauyet and Michael Hurley)_
  *
  * @function
  * @category Boolean

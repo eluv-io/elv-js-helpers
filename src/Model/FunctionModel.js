@@ -7,7 +7,7 @@ const defBasicModel = require('../ModelFactory/defBasicModel')
  * @category Model
  * @sig * -> *
  * @param {*} - Any input
- * @returns {*} The input, proxied by ObjectModel
+ * @returns {*} The input
  *
  *
  */

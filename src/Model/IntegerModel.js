@@ -19,7 +19,7 @@ const assertAfterCheck = require('../ModelAssertion/assertAfterCheck')
  * @category Model
  * @sig * -> Integer | THROW
  * @param {*} - The input to validate
- * @returns {Integer} The validated input, proxied by ObjectModel
+ * @returns {Integer} The validated input
  * @example
  *
  * const IntegerModel = require('@eluvio/elv-js-helpers/Model/IntegerModel')
