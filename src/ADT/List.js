@@ -22,7 +22,7 @@
  * // Convert to Javascript array:
  * myList.toArray()                //=> [ 1, 2, 3 ]
  *
- * // Elements are instances of the Crocks 'Maybe' ADT
+ * // head() returns instance of the Crocks 'Maybe' ADT: if array is empty, returns Nothing, else returns Just
  * myList.head().inspect()         //=> 'Just 1'
  *
  * // tail() returns an instance of Crocks 'Maybe' ADT, which wraps a List if there were at least 2 elements in original List
@@ -33,6 +33,7 @@
  *
  * // List with 1 element:
  * List([42]).inspect()                      //=> 'List [ 42 ]'
+ * List([42]).tail().inspect()                 //=> 'Nothing'
  *
  * // Non-array input is treated as a single-element array:
  * List(42).inspect()                        //=> 'List [ 42 ]'

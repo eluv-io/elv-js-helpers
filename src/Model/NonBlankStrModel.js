@@ -19,7 +19,7 @@ const assertAfterCheck = require('../ModelAssertion/assertAfterCheck')
  * @category Model
  * @sig * -> String | THROW
  * @param {*} - The input to validate
- * @returns {String} The validated input, proxied by ObjectModel
+ * @returns {String} The validated input
  * @example
  *
  * const NonBlankStrModel = require('@eluvio/elv-js-helpers/Model/NonBlankStrModel')

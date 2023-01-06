@@ -12,7 +12,7 @@ const defBasicModel = require('../ModelFactory/defBasicModel')
  * @category Model
  * @sig * -> Date | THROW
  * @param {*} - The input to validate
- * @returns {Date} The validated input, proxied by ObjectModel
+ * @returns {Date} The validated input
  * @example
  *
  * const DatetimeModel = require('@eluvio/elv-js-helpers/Model/DatetimeModel')

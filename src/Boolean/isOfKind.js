@@ -1,4 +1,3 @@
-
 const curry = require('../Functional/curry')
 const kind = require('../Validation/kind')
 

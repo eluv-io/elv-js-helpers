@@ -18,7 +18,7 @@ const REGEX_RATIONAL = require('../Validation/RE_RATIONAL')
  * @category Model
  * @sig * -> String | THROW
  * @param {*} - The input to validate
- * @returns {String} The validated input, proxied by ObjectModel
+ * @returns {String} The validated input
  * @example
  *
  * const FractionStrModel = require('@eluvio/elv-js-helpers/Model/FractionStrModel')

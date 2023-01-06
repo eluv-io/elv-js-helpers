@@ -1,14 +1,14 @@
 const unless = require('crocks/logic/unless')
-const filter = require('@eluvio/ramda-fork/src/filter')
 const last = require('@eluvio/ramda-fork/src/last')
 const sort = require('@eluvio/ramda-fork/src/sort')
 
 const cmpIndexable = require('./cmpIndexable')
 const curry = require('./curry')
+const filter = require('./filter')
 const mapWithIndex = require('./mapWithIndex')
+const Pair = require('../ADT/Pair')
 const pipe = require('./pipe')
 
-const Pair = require('../ADT/Pair')
 
 const findBest = curry(
   (sortKeyArrayFn, minSortKeyArray, iterable) =>

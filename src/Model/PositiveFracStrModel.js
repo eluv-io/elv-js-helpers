@@ -14,7 +14,7 @@ const defBoundedFracStrModel = require('../ModelFactory/defBoundedFracStrModel')
  * @category Model
  * @sig * -> * | THROW
  * @param {*} - The input to validate
- * @returns {Number} The validated input, proxied by ObjectModel
+ * @returns {Number} The validated input
  * @example
  *
  * const PositiveFracStrModel = require('@eluvio/elv-js-helpers/Model/PositiveFracStrModel')

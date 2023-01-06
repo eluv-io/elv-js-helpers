@@ -15,7 +15,7 @@ const defBoundedIntModel = require('../ModelFactory/defBoundedIntModel')
  * @category Model
  * @sig * -> * | THROW
  * @param {*} - The input to validate
- * @returns {Number} The validated input, proxied by ObjectModel
+ * @returns {Number} The validated input
  * @example
  *
  * const PositiveIntModel = require('@eluvio/elv-js-helpers/Model/PositiveIntModel')
