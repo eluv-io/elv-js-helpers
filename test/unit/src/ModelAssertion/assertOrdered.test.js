@@ -3,10 +3,10 @@ const assertOrdered = TH.requireSrcFile('ModelAssertion/assertOrdered')
 
 describe('assertOrdered', () => {
 
-  const defArrModel = TH.requireSrcFile('ModelFactory/defArrModel')
+  const defArrayModel = TH.requireSrcFile('ModelFactory/defArrayModel')
 
   it('should work as expected', () => {
-    const OrderedNumArrayModel = defArrModel('OrderedArray', Number).extend()
+    const OrderedNumArrayModel = defArrayModel('OrderedArray', Number).extend()
       .assert(
         ...assertOrdered(
           (x, y) => x <= y,

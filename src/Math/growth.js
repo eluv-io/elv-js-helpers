@@ -25,7 +25,7 @@ const curry = require('../Functional/curry')
  * @category Math
  * @sig Number -> Number -> Number
  * @param {Number} oldValue starting (baseline) value
- * @param {Number} newValue ending value for calculating growth amout
+ * @param {Number} newValue ending value for calculating growth amount
  * @returns {Number} growth expressed as a proportion of the absolute value of the first value
  * @example
  *

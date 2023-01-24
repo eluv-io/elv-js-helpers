@@ -27,30 +27,32 @@ const throwIfUndefined = require('../Validation/throwIfUndefined')
  * @returns {Object} Returns an [ObjectModel](http://objectmodel.js.org/) that can be called with an input
  * @example
  *
- * const defCheckedKVObjModel = require('@eluvio/elv-js-helpers/ModelFactory/defCheckedKVObjModel')
+ * const defTypedKVObjModel = require('@eluvio/elv-js-helpers/ModelFactory/defTypedKVObjModel')
  *
  * const NonBlankStrModel = require('@eluvio/elv-js-helpers/Model/NonBlankStrModel')
  *
- * const NoBlankStrKVObjectModel = defCheckedKVObjModel(
- *   'ObjectWithNonBlankStringKeysAndValues',
+ * const NoBlankKVModel = defTypedKVObjModel(
+ *   'NonBlankKV',
  *   NonBlankStrModel,
  *   NonBlankStrModel
  * )
  *
- * NoBlankStrKVObjectModel({foo: 'bar'})     //=> {foo: 'bar'}
+ * NoBlankKVModel({})               //=> {}
  *
- * NoBlankStrKVObjectModel({foo: '   '})     //=> EXCEPTION: 'key "foo" points to a value that is an invalid NonBlankString (NonBlankString: Value must not be a blank string (got: "   "))'
+ * NoBlankKVModel({foo: 'bar'})     //=> {foo: 'bar'}
  *
- * NoBlankStrKVObjectModel({'  ': 'bar'})    //=> EXCEPTION: 'invalid property name "  " (is not a valid NonBlankString)'
+ * NoBlankKVModel({foo: '   '})     //=> EXCEPTION: 'key "foo" points to a value that is an invalid NonBlankString (NonBlankString: Value must not be a blank string (got: "   "))'
  *
- * NoBlankStrKVObjectModel({foo: 42})        //=> EXCEPTION: 'key "foo" points to a value that is an invalid NonBlankString (NonBlankString: expecting String, got Number 42)'
+ * NoBlankKVModel({'  ': 'bar'})    //=> EXCEPTION: 'invalid property name "  " (is not a valid NonBlankString)'
  *
- * NoBlankStrKVObjectModel(42)               //=> EXCEPTION: 'expecting Object, got Number 42'
+ * NoBlankKVModel({foo: 42})        //=> EXCEPTION: 'key "foo" points to a value that is an invalid NonBlankString (NonBlankString: expecting String, got Number 42)'
+ *
+ * NoBlankKVModel(42)               //=> EXCEPTION: 'expecting Object, got Number 42'
  *
  *
  */
 // noinspection JSCheckFunctionSignatures
-const defCheckedKVObjModel = (name, keyModel, valueModel) => {
+const defTypedKVObjModel = (name, keyModel, valueModel) => {
   throwIfUndefined('no key model supplied', keyModel)
   throwIfUndefined('no value model supplied', valueModel)
   return defBasicModel(name, Object)
@@ -69,4 +71,4 @@ const defCheckedKVObjModel = (name, keyModel, valueModel) => {
     )
 }
 
-module.exports = defCheckedKVObjModel
+module.exports = defTypedKVObjModel

@@ -25,9 +25,9 @@ const throwIfUndefined = require('../Validation/throwIfUndefined')
  * @returns {Object} Returns an [ObjectModel](http://objectmodel.js.org/) that can be called with an input
  * @example
  *
- * const defObjModel = require('@eluvio/elv-js-helpers/ModelFactory/defObjModel')
+ * const defObjectModel = require('@eluvio/elv-js-helpers/ModelFactory/defObjectModel')
  *
- * const PersonNameModel = defObjModel('PersonName', {first: String, last: String})
+ * const PersonNameModel = defObjectModel('PersonName', {first: String, last: String})
  *
  * PersonNameModel(-1)                                        //=> EXCEPTION: 'expecting Object, got Number -1'
  *
@@ -38,7 +38,7 @@ const throwIfUndefined = require('../Validation/throwIfUndefined')
  * PersonNameModel({first: 'A', last: 'D', species: 'human'}) //=> {first: 'A', last: 'D', species: 'human'}
  *
  */
-const defObjModel = (name, def) => {
+const defObjectModel = (name, def) => {
   throwIfUndefined('no model definition supplied', def)
   const newModel = ObjectModel(def).as(name)
   newModel.errorCollector = errors => {
@@ -55,4 +55,4 @@ const defObjModel = (name, def) => {
   return newModel
 }
 
-module.exports = defObjModel
+module.exports = defObjectModel

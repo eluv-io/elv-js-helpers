@@ -62,6 +62,7 @@
     "crocks": "^0.12.4",
     "fraction.js": "^4.2.0",
     "kind-of": "^6.0.3",
-    "objectmodel": "^4.4.1"
+    "objectmodel": "^4.4.1",
+    "uuid": "^9.0.0"
   }
 }

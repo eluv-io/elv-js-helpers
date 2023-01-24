@@ -3,7 +3,7 @@ const validateWithModel = TH.requireSrcFile('Validation/validateWithModel')
 
 describe('validateWithModel', () => {
 
-  const defObjModel = TH.requireSrcFile('ModelFactory/defObjModel')
+  const defObjectModel = TH.requireSrcFile('ModelFactory/defObjectModel')
   const PositiveNumModel = TH.requireSrcFile('Model/PositiveNumModel')
   const resultUnwrap = TH.requireSrcFile('Conversion/resultUnwrap')
 
@@ -21,7 +21,7 @@ describe('validateWithModel', () => {
   })
 
   it('should not hide attributes not defined in model', () => {
-    const fooModel = defObjModel('foo', {foo: String})
+    const fooModel = defObjectModel('foo', {foo: String})
     const data = resultUnwrap(validateWithModel(fooModel)({foo: 'f', bar: 'b'}))
 
     const rebuilt = JSON.parse(JSON.stringify(data))

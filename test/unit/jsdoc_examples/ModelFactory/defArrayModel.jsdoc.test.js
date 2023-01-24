@@ -1,11 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
 const TH = require('../../../test-helpers')
-const defArrModel = TH.requireSrcFile('ModelFactory/defArrModel')
+const defArrayModel = TH.requireSrcFile('ModelFactory/defArrayModel')
 
-describe('defArrModel JSDoc example', () => {
+describe('defArrayModel JSDoc example', () => {
   it('should execute correctly as described', () => {
     const NonNegativeNumModel = TH.requireSrcFile('Model/NonNegativeNumModel')
-    const AgeArrayModel = defArrModel('AgeArray', NonNegativeNumModel)
+    const AgeArrayModel = defArrayModel('AgeArray', NonNegativeNumModel)
     AgeArrayModel([42]).should.eql([42])
     AgeArrayModel([]).should.eql([])
     TH.expect(() => AgeArrayModel(-1)).to.throw('expecting Array of NonNegativeNumber, got Number -1')

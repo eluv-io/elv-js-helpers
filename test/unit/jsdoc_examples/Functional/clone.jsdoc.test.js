@@ -4,8 +4,8 @@ const clone = TH.requireSrcFile('Functional/clone')
 
 describe('clone JSDoc example', () => {
   it('should execute correctly as described', () => {
-    const defObjModel = TH.requireSrcFile('ModelFactory/defObjModel')
-    const PersonNameModel = defObjModel('PersonName', {first: String, last: String})
+    const defObjectModel = TH.requireSrcFile('ModelFactory/defObjectModel')
+    const PersonNameModel = defObjectModel('PersonName', {first: String, last: String})
     const arthur = PersonNameModel({first: 'Arthur', last: 'Dent'})
     const arthurClone = clone(arthur)
     arthurClone.last = 'Clone'

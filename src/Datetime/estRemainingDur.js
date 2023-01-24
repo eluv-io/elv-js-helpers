@@ -1,9 +1,9 @@
 const defBoundedNumModel = require('../ModelFactory/defBoundedNumModel')
-const defObjModel = require('../ModelFactory/defObjModel')
+const defObjectModel = require('../ModelFactory/defObjectModel')
 const PositiveNumModel = require('../Model/PositiveNumModel')
 const validateWithModel = require('../Validation/validateWithModel')
 
-const _paramsModel = defObjModel(
+const _paramsModel = defObjectModel(
   'estRemainingDur',
   {
     portionComplete: defBoundedNumModel('portionComplete', 0, 1, false, true),

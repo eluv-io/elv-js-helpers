@@ -1,4 +1,4 @@
-const defObjModel = require('./defObjModel')
+const defObjectModel = require('./defObjectModel')
 
 const throwIfUndefined = require('../Validation/throwIfUndefined')
 
@@ -40,7 +40,7 @@ const throwIfUndefined = require('../Validation/throwIfUndefined')
 const defSealedObjModel = (name, def) => {
   throwIfUndefined('no model definition supplied', def)
 
-  const model = defObjModel(name, def)
+  const model = defObjectModel(name, def)
   model.sealed = true
   model.extend = () => {
     throw new Error('Sealed models cannot be extended')

@@ -18,6 +18,11 @@
  * OuterFunc()  //=> OUTPUT: 'Function: MyFunc was called by: OuterFunc'
  *
  */
-const callerFuncName = () => new Error().stack.split('\n')[3].trim().split(' ')[1]
+const callerFuncName = () => new Error().stack
+  .split('\n')
+  .filter(line => !line.includes('node_modules'))[3]
+  .trim()
+  .split(' ')[1]
+
 
 module.exports = callerFuncName

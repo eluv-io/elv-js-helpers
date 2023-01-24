@@ -25,9 +25,9 @@ const throwIfUndefined = require('../Validation/throwIfUndefined')
  *
  * const NonNegativeNumModel = require('@eluvio/elv-js-helpers/Model/NonNegativeNumModel')
  *
- * const defArrModel = require('@eluvio/elv-js-helpers/ModelFactory/defArrModel')
+ * const defArrayModel = require('@eluvio/elv-js-helpers/ModelFactory/defArrayModel')
  *
- * const AgeArrayModel = defArrModel('AgeArray', NonNegativeNumModel)
+ * const AgeArrayModel = defArrayModel('AgeArray', NonNegativeNumModel)
  *
  * AgeArrayModel([42])        //=> [42]
  *
@@ -42,9 +42,9 @@ const throwIfUndefined = require('../Validation/throwIfUndefined')
  * AgeArrayModel(['foo'])     //=> EXCEPTION: 'expecting Array[0] to be Number, got String "foo"'
  *
  */
-const defArrModel = (name, def)=> {
+const defArrayModel = (name, def)=> {
   throwIfUndefined('no element model supplied', def)
   return ArrayModel(def).as(name)
 }
 
-module.exports = defArrModel
+module.exports = defArrayModel

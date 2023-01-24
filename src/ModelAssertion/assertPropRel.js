@@ -31,10 +31,10 @@ const isObject = require('../Boolean/isObject')
  *
  * const assertPropRel = require('@eluvio/elv-js-helpers/ModelAssertion/assertPropRel')
  *
- * const defObjModel = require('@eluvio/elv-js-helpers/ModelFactory/defObjModel')
+ * const defObjectModel = require('@eluvio/elv-js-helpers/ModelFactory/defObjectModel')
  * const isGTE = require('@eluvio/elv-js-helpers/Boolean/isGTE')
  *
- * const NumLimitsModel = defObjModel(
+ * const NumLimitsModel = defObjectModel(
  *   'NumberLimits',
  *   {
  *     min: Number,

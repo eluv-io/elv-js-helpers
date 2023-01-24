@@ -1,7 +1,7 @@
 const TH = require('../../../test-helpers')
-const defCheckedKVObjModel = TH.requireSrcFile('ModelFactory/defCheckedKVObjModel')
+const defTypedKVObjModel = TH.requireSrcFile('ModelFactory/defTypedKVObjModel')
 
-describe('defCheckedKVObjModel', () => {
+describe('defTypedKVObjModel', () => {
 
   const assertAfterCheck = TH.requireSrcFile('ModelAssertion/assertAfterCheck')
   const passesModelCheck = TH.requireSrcFile('Boolean/passesModelCheck')
@@ -16,7 +16,7 @@ describe('defCheckedKVObjModel', () => {
     )
   ).as('ThreeCharString')
 
-  const Test1Model = defCheckedKVObjModel('Test1', ThreeCharStringModel, PositiveIntModel)
+  const Test1Model = defTypedKVObjModel('Test1', ThreeCharStringModel, PositiveIntModel)
 
   it('should pass for good objects', () => {
     Test1Model({'foo': 1}).should.eql({'foo': 1})

@@ -1,7 +1,7 @@
 const TH = require('../../../test-helpers')
-const defArrModel = TH.requireSrcFile('ModelFactory/defArrModel')
+const defArrayModel = TH.requireSrcFile('ModelFactory/defArrayModel')
 
-describe('defArrModel', function () {
+describe('defArrayModel', function () {
 
   const AnyModel = TH.requireSrcFile('Model/AnyModel')
   const kind = TH.requireSrcFile('Validation/kind')
@@ -9,12 +9,12 @@ describe('defArrModel', function () {
   const resultUnwrap = TH.requireSrcFile('Conversion/resultUnwrap')
   const validateWithModel = TH.requireSrcFile('Validation/validateWithModel')
 
-  const AgeArrayModel = defArrModel('AgeArray', NonNegativeNumModel)
+  const AgeArrayModel = defArrayModel('AgeArray', NonNegativeNumModel)
 
   const ValidateAgeArrayModel = validateWithModel(AgeArrayModel)
 
   it('should be able to define non-typed arrays', function () {
-    const NonTypedArrayModel = defArrModel('NonTypedArray', AnyModel)
+    const NonTypedArrayModel = defArrayModel('NonTypedArray', AnyModel)
     TH.expect(() => NonTypedArrayModel([])).to.not.throw()
     NonTypedArrayModel([]).should.eql([])
     TH.expect(() => NonTypedArrayModel([0])).to.not.throw()

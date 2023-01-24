@@ -1,10 +1,10 @@
 const TH = require('../../../test-helpers')
-const defObjModel = TH.requireSrcFile('ModelFactory/defObjModel')
+const defObjectModel = TH.requireSrcFile('ModelFactory/defObjectModel')
 
-describe('defObjModel', () => {
+describe('defObjectModel', () => {
 
   it('should work as expected', () => {
-    const PersonNameModel = defObjModel('PersonName', {first: String, last: String})
+    const PersonNameModel = defObjectModel('PersonName', {first: String, last: String})
     TH.expect(() => PersonNameModel(-1)).to.throw('expecting Object, got Number -1')
     TH.expect(() => PersonNameModel(-1)).to.not.throw('expecting first to be String, got undefined')
     TH.expect(() => PersonNameModel(null)).to.throw('expecting Object, got null')

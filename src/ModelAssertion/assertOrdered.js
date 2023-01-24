@@ -35,10 +35,10 @@ const neighborsPass = require('../Boolean/neighborsPass')
  *
  * const assertOrdered = require('@eluvio/elv-js-helpers/ModelAssertion/assertOrdered')
  *
- * const defArrModel = require('@eluvio/elv-js-helpers/ModelFactory/defArrModel')
+ * const defArrayModel = require('@eluvio/elv-js-helpers/ModelFactory/defArrayModel')
  *
  * // Note use of spread operator (...) to unpack the array returned by assertOrdered()
- * const OrderedNumArrayModel = defArrModel('OrderedArray', Number).extend()
+ * const OrderedNumArrayModel = defArrayModel('OrderedArray', Number).extend()
  *   .assert(
  *     ...assertOrdered(
  *       (x, y) => x <= y,

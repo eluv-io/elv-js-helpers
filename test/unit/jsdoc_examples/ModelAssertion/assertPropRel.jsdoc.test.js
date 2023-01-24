@@ -4,9 +4,9 @@ const assertPropRel = TH.requireSrcFile('ModelAssertion/assertPropRel')
 
 describe('assertPropRel JSDoc example', () => {
   it('should execute correctly as described', () => {
-    const defObjModel = TH.requireSrcFile('ModelFactory/defObjModel')
+    const defObjectModel = TH.requireSrcFile('ModelFactory/defObjectModel')
     const isGTE = TH.requireSrcFile('Boolean/isGTE')
-    const NumLimitsModel = defObjModel('NumberLimits', {
+    const NumLimitsModel = defObjectModel('NumberLimits', {
       min: Number,
       max: Number,
     })

@@ -4,9 +4,9 @@ const assertOrdered = TH.requireSrcFile('ModelAssertion/assertOrdered')
 
 describe('assertOrdered JSDoc example', () => {
   it('should execute correctly as described', () => {
-    const defArrModel = TH.requireSrcFile('ModelFactory/defArrModel')
+    const defArrayModel = TH.requireSrcFile('ModelFactory/defArrayModel')
     // Note use of spread operator (...) to unpack the array returned by assertOrdered()
-    const OrderedNumArrayModel = defArrModel('OrderedArray', Number)
+    const OrderedNumArrayModel = defArrayModel('OrderedArray', Number)
       .extend()
       .assert(...assertOrdered((x, y) => x <= y, 'is not in ascending order'))
       .as('OrderedNumArray')

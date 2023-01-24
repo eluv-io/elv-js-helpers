@@ -16,9 +16,9 @@ const isObject = require('../Boolean/isObject')
  *
  * const clone = require('@eluvio/elv-js-helpers/Functional/clone')
  *
- * const defObjModel = require('@eluvio/elv-js-helpers/ModelFactory/defObjModel')
+ * const defObjectModel = require('@eluvio/elv-js-helpers/ModelFactory/defObjectModel')
  *
- * const PersonNameModel = defObjModel('PersonName', {first: String, last: String})
+ * const PersonNameModel = defObjectModel('PersonName', {first: String, last: String})
  *
  * const arthur = PersonNameModel({first: 'Arthur', last:'Dent'})
  *

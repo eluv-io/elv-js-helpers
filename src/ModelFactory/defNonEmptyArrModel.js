@@ -1,6 +1,6 @@
 // noinspection JSValidateTypes
 
-const defArrModel = require('./defArrModel')
+const defArrayModel = require('./defArrayModel')
 
 const isArray = require('../Boolean/isArray')
 
@@ -42,7 +42,7 @@ const assertNotEmpty = require('../ModelAssertion/assertNotEmpty')
  * NonEmptyAgeArrayModel(['foo'])     //=> EXCEPTION: 'expecting Array[0] to be Number, got String "foo"'
  *
  */
-const defNonEmptyArrModel = (name, def) => defArrModel(name, def)
+const defNonEmptyArrModel = (name, def) => defArrayModel(name, def)
   .extend()
   .assert(
     ...assertAfterCheck(

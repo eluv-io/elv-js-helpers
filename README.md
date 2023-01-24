@@ -26,12 +26,15 @@ It is possible to import individual items or the entire library, depending on wh
 // namespace entire suite to a const
 const H = require('@eluvio/elv-js-helpers')
 
-// create references to particular items in order to avoid needing to use H. prefix
-const { etaDurStr, etaTimeStr } = H
-const {_boundLowerErrMsg} = H
+console.log(H.Datetime.now())
 
-// Note that the following syntax still causes entire library to be bundled into your project
-const { etaDurStr, etaTimeStr } = require('@eluvio/elv-js-helpers')
+// create references to particular items in order to avoid needing to use H.Category prefix
+const { etaDurStr, etaTimeStr } = H.Datetime
+const {_boundLowerErrMsg} = H.ModelAssertion
+
+// Get reference to 1 category (note that this will still wind up incuding the entire package)
+const { Datetime } = require('@eluvio/elv-js-helpers')
+console.log(Datetime.now())
 ```
 
 ### Entire library (JS Modules)
@@ -41,14 +44,16 @@ const { etaDurStr, etaTimeStr } = require('@eluvio/elv-js-helpers')
 import H from '@eluvio/elv-js-helpers'
 
 // create references to particular items in order to avoid needing to use H. prefix
-const { etaDurStr, etaTimeStr } = H
-const {_boundLowerErrMsg} = H
+const { etaDurStr, etaTimeStr } = H.Datetime
+const {_boundLowerErrMsg} = H.ModelAssertion
 
 // Note that the following syntax still causes entire library to be bundled into your project
-import { etaDurStr, etaTimeStr }  from '@eluvio/elv-js-helpers'
+import { Datetime }  from '@eluvio/elv-js-helpers'
 ```
 
 ### Individual items (CommonJS)
+
+Importing individual items will minimize code size.
 
 ```javascript
 // require in each item directly
