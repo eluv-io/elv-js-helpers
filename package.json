@@ -59,6 +59,7 @@
   "dependencies": {
     "@eluvio/ramda-fork": "^0.28.1",
     "@ladjs/format-util": "^1.0.4",
+    "bs58": "^5.0.0",
     "crocks": "^0.12.4",
     "fraction.js": "^4.2.0",
     "kind-of": "^6.0.3",

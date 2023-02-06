@@ -16,6 +16,7 @@ const Boolean = {
   failsModelCheck: require('./Boolean/failsModelCheck'),
   hasNoDuplicates: require('./Boolean/hasNoDuplicates'),
   isArray: require('./Boolean/isArray'),
+  isBase58String: require('./Boolean/isBase58String'),
   isEmpty: require('./Boolean/isEmpty'),
   isEqual: require('./Boolean/isEqual'),
   isEquivalent: require('./Boolean/isEquivalent'),
@@ -43,10 +44,13 @@ const Boolean = {
   passesObjValCheck: require('./Boolean/passesObjValCheck'),
   satisfiesBetweenBounds: require('./Boolean/satisfiesBetweenBounds'),
   satisfiesLowerBound: require('./Boolean/satisfiesLowerBound'),
-  satisfiesUpperBound: require('./Boolean/satisfiesUpperBound')
+  satisfiesUpperBound: require('./Boolean/satisfiesUpperBound'),
+  throwsException: require('./Boolean/throwsException')
 }
 
 const Conversion = {
+  base58Decode: require('./Conversion/base58Decode'),
+  base58Encode: require('./Conversion/base58Encode'),
   boolsToInt: require('./Conversion/boolsToInt'),
   escapeForRegExp: require('./Conversion/escapeForRegExp'),
   format: require('./Conversion/format'),
@@ -167,6 +171,7 @@ const Misc = {
 
 const Model = {
   AnyModel: require('./Model/AnyModel'),
+  Base58StrModel: require('./Model/Base58StrModel'),
   DatetimeModel: require('./Model/DatetimeModel'),
   EmptyArrModel: require('./Model/EmptyArrModel'),
   FractionStrModel: require('./Model/FractionStrModel'),
