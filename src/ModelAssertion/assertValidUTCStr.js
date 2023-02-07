@@ -18,7 +18,6 @@ const NonBlankStrModel = require('../Model/NonBlankStrModel')
  * by [ObjectModel](http://objectmodel.js.org/) to construct an error message if the bounds validation fails.
  *
  * @function
- * @private
  * @category ModelAssertion
  * @sig ((Boolean, *, String) -> String) ObjectModelErrMsgFn => () -> [(* -> Boolean), ObjectModelErrMsgFn]
  *

@@ -16,10 +16,8 @@ describe('kind', () => {
     kind([1, 2, 3]).should.equal('Array')
     kind(/foo/).should.equal('RegExp')
     kind(new Error('error')).should.equal('Error')
-    kind(function () {
-    }).should.equal('Function')
-    kind(function* () {
-    }).should.equal('GeneratorFunction')
+    kind(function () {}).should.equal('Function')
+    kind(function* () {}).should.equal('GeneratorFunction')
     kind(Symbol('str')).should.equal('Symbol')
     kind(new Map()).should.equal('Map')
     kind(new WeakMap()).should.equal('WeakMap')

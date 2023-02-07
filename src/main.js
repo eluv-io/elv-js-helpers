@@ -28,6 +28,7 @@ const Boolean = {
   isGeneratorFunction: require('./Boolean/isGeneratorFunction'),
   isLT: require('./Boolean/isLT'),
   isLTE: require('./Boolean/isLTE'),
+  isModel: require('./Boolean/isModel'),
   isNil: require('./Boolean/isNil'),
   isNotEmpty: require('./Boolean/isNotEmpty'),
   isNull: require('./Boolean/isNull'),
