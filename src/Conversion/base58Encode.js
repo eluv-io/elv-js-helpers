@@ -24,6 +24,11 @@ const bs58 = require('bs58')
  * ])
  * base58Encode(bytes)                   //=> '16UjcYNBG9GTK4uq2f7yYEbuifqCzoLMGS'
  *
+ * const hexString = '5b4b3f4c262aa0f5237cb9a4b59ab0825ddead28'
+ * const hexBytes = Uint8Array.from(Buffer.from(hexString, 'hex'));
+ *
+ * base58Encode(hexBytes)                //=> '2GmbemxTtSdy1YeFWE6zg6CmG8wy'
+ *
  */
 const base58Encode = bytes => {
   return bs58.encode(bytes)

@@ -50,6 +50,7 @@ const Boolean = {
 }
 
 const Conversion = {
+  REDACT_PATTERNS: require('./Conversion/REDACT_PATTERNS'),
   base58Decode: require('./Conversion/base58Decode'),
   base58Encode: require('./Conversion/base58Encode'),
   boolsToInt: require('./Conversion/boolsToInt'),
@@ -61,6 +62,7 @@ const Conversion = {
   fromPairs: require('./Conversion/fromPairs'),
   objFromEntries: require('./Conversion/objFromEntries'),
   objToEntries: require('./Conversion/objToEntries'),
+  redact: require('./Conversion/redact'),
   resultToPOJO: require('./Conversion/resultToPOJO'),
   resultUnwrap: require('./Conversion/resultUnwrap'),
   toPairs: require('./Conversion/toPairs'),
