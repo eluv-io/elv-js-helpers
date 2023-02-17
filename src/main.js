@@ -193,7 +193,10 @@ const Model = {
   PositiveIntModel: require('./Model/PositiveIntModel'),
   PositiveNumModel: require('./Model/PositiveNumModel'),
   StringModel: require('./Model/StringModel'),
-  UTCStrModel: require('./Model/UTCStrModel')
+  UTCStrModel: require('./Model/UTCStrModel'),
+  UUIDStrLowerModel: require('./Model/UUIDStrLowerModel'),
+  UUIDStrModel: require('./Model/UUIDStrModel'),
+  UUIDStrUpperModel: require('./Model/UUIDStrUpperModel')
 }
 
 const ModelAssertion = {
@@ -237,6 +240,9 @@ const ModelFactory = {
 
 const Validation = {
   RE_RATIONAL: require('./Validation/RE_RATIONAL'),
+  RE_UUID: require('./Validation/RE_UUID'),
+  RE_UUID_LOWER_CASE: require('./Validation/RE_UUID_LOWER_CASE'),
+  RE_UUID_UPPER_CASE: require('./Validation/RE_UUID_UPPER_CASE'),
   _throwIfArgsBad: require('./Validation/_throwIfArgsBad'),
   _throwIfNotErr: require('./Validation/_throwIfNotErr'),
   _throwIfNotResult: require('./Validation/_throwIfNotResult'),

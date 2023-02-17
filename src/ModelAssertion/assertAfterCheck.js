@@ -25,7 +25,7 @@ const isFunction = require('../Boolean/isFunction')
  * @sig ((Boolean, *, String) -> String) ObjectModelErrMsgFn => Model -> (a -> Boolean) -> String -> [(* -> Boolean), ObjectModelErrMsgFn | String]
  * @param {Function} preCheckFn - The preliminary check that must pass in order for `assertFn` to be checked.
  * @param {Function} assertFn - The assertion to check.
- * @param {(String | Function)} msgStrOrFn - An error message string or message generating function to use if assertFn returns `false`.
+ * @param {(String|Function)} msgStrOrFn - An error message string or message generating function to use if assertFn returns `false`.
  * @returns {Array} 2-element array [Function, Function]. See description for details.
  * @example
  *

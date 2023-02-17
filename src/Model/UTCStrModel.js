@@ -2,7 +2,7 @@ const assertAfterCheck = require('../ModelAssertion/assertAfterCheck')
 const assertValidUTCStr = require('../ModelAssertion/assertValidUTCStr')
 const defRegexMatchedStrModel = require('../ModelFactory/defRegexMatchedStrModel')
 const passesModelCheck = require('../Boolean/passesModelCheck')
-const REGEX_UTC_TIMESTAMP = require('../Datetime/RE_UTC_TIMESTAMP')
+const RE_UTC_TIMESTAMP = require('../Datetime/RE_UTC_TIMESTAMP')
 const StringModel = require('../Model/StringModel')
 
 /**
@@ -37,13 +37,13 @@ const StringModel = require('../Model/StringModel')
 const UTCStrModel =
   defRegexMatchedStrModel(
     'UTCTimestampRegexMatchStr', // intermediate name for the Model that only checks regex
-    REGEX_UTC_TIMESTAMP,
+    RE_UTC_TIMESTAMP,
     'is not in UTC format \'yyyy-mm-ddThh:mm:ssZ\''
   )
     .extend()
     .assert(
       ...assertAfterCheck(
-        x=> passesModelCheck(StringModel,x) && REGEX_UTC_TIMESTAMP.test(x),
+        x=> passesModelCheck(StringModel,x) && RE_UTC_TIMESTAMP.test(x),
         ...assertValidUTCStr()
       )
     )

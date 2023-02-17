@@ -20,16 +20,19 @@
  *
  */
 const REDACT_PATTERNS = [
-  /_KEY$/i,         // ends with "_KEY" (case insensitive)
-  /_SECRET$/i,      // ends with "_SECRET" (case insensitive)
+  /_KEY$/i,           // ends with "_KEY" (case insensitive)
+  /_SECRET$/i,        // ends with "_SECRET" (case insensitive)
 
-  /^AWS_KEY$/i,     // specific check in case generic "ends with" check gets changed
-  /^AWS_SECRET$/i,  // specific check in case generic "ends with" check gets changed
-  /^PRIVATE_KEY$/i, // specific check in case generic "ends with" check gets changed
-  /^KEY$/i,         // equals "KEY" (case insensitive)
+  /^AWS_KEY$/i,       // specific check in case generic "ends with" check gets changed
+  /^AWS_SECRET$/i,    // specific check in case generic "ends with" check gets changed
+  /^PRIVATE_KEY$/i,   // specific check in case generic "ends with" check gets changed
+  /^AUTH$/i,          // equals "AUTH" (case insensitive)
+  /^AUTHORIZATION$/i, // equals "AUTHORIZATION" (case insensitive)
+  /^KEY$/i,           // equals "KEY" (case insensitive)
 
-  /SECRET/i,        // contains "SECRET" (case insensitive)
-  /PASSWORD/i,      // contains "PASSWORD" (case insensitive)
+  /AUTHORIZATION/i,   // contains "AUTHORIZATION" (case insensitive)
+  /SECRET/i,          // contains "SECRET" (case insensitive)
+  /PASSWORD/i,        // contains "PASSWORD" (case insensitive)
 ]
 
 module.exports = REDACT_PATTERNS

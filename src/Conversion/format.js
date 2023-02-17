@@ -2,6 +2,12 @@ const formatUtil = require('@ladjs/format-util')
 const kind = require('../Validation/kind')
 
 /**
+ * Passthrough for the `format()` function from [@ladjs/format-util](https://github.com/tmpfs/format-util)
+ * _(Copyright © 2015 Freeform Systems and other contributors, MIT license).
+ *
+ * Allows users of `elv-js-helpers` to use the function without adding the [@ladjs/format-util](https://www.npmjs.com/package/uuid)
+ * package as a dependency.
+ *
  * Converts input to a string for use in error messages and log statements.
  *
  * Similar to `format()` from the [node:util module](https://nodejs.org/api/util.html) but without the code size
