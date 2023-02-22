@@ -1,4 +1,5 @@
 const defObjectModel = require('./defObjectModel')
+const isObject = require('../Boolean/isObject')
 
 const throwIfUndefined = require('../Validation/throwIfUndefined')
 
@@ -46,15 +47,15 @@ const defSealedObjModel = (name, def) => {
     throw new Error('Sealed models cannot be extended')
   }
 
-  const isPlainObject = obj => typeof obj === 'object' && Object.getPrototypeOf(obj) === Object.prototype
+  // const isPlainObject = obj => typeof obj === 'object' && Object.getPrototypeOf(obj) === Object.prototype
   const checkUndeclaredProps = (obj, def, undeclaredProps, path) => {
-    if(typeof obj !== 'object') return
+    if(!isObject(obj)) return
     Object.keys(obj).forEach(key => {
       let val = obj[key],
         subpath = path ? path + '.' + key : key
-      if(isPlainObject(def) && !Object.prototype.hasOwnProperty.call(def, key)) {
+      if(isObject(obj) && isObject(def) && !Object.prototype.hasOwnProperty.call(def, key)) {
         undeclaredProps.push(subpath)
-      } else if (isPlainObject(val) && isPlainObject(def)) {
+      } else if (isObject(val) && isObject(def)) {
         checkUndeclaredProps(val, def[key], undeclaredProps, subpath)
       }
     })

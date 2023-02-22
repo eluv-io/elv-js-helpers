@@ -1,6 +1,8 @@
 const TH = require('../../../test-helpers')
 const defSealedObjModel = TH.requireSrcFile('ModelFactory/defSealedObjModel')
 
+const defBasicModel = TH.requireSrcFile('ModelFactory/defBasicModel')
+
 describe('defSealedObjModel', () => {
 
   it('should work as expected', () => {
@@ -123,4 +125,100 @@ describe('defSealedObjModel', () => {
 
     TH.expect(() => PersonModel('foo')).to.not.throw('Unrecognized')
   })
+
+
+  it('should work with optional union property that accepts null', () => {
+
+    const HDRFieldsModel = defSealedObjModel('HDRFields',{
+      master_display: String,
+      max_cll: String
+    })
+
+    const HDRFieldsOptionalModel = defBasicModel('HDRFieldsOptional', [HDRFieldsModel, null, undefined])
+
+    const MediaStreamVideoModel = defSealedObjModel(
+      'MediaStreamVideo',
+      {
+        field_order: String,
+        frame_rate: String,
+        hdr:  HDRFieldsOptionalModel,
+        type: 'video'
+      }
+    )
+
+    MediaStreamVideoModel(
+      {
+        field_order: '',
+        frame_rate: '25',
+        hdr: null,
+        type: 'video'
+      }
+    )
+
+    MediaStreamVideoModel(
+      {
+        field_order: '',
+        frame_rate: '25',
+        type: 'video'
+      }
+    )
+
+    MediaStreamVideoModel(
+      {
+        field_order: '',
+        frame_rate: '25',
+        hdr: {
+          master_display: 'a',
+          max_cll: 'a',
+        },
+        type: 'video'
+      })
+
+    TH.expect(() =>MediaStreamVideoModel(
+      {
+        field_order: '',
+        frame_rate: '25',
+        hdr: {
+          master_display: 'a'
+        },
+        type: 'video'
+      })).to.throw(`expecting hdr to be {
+\tmaster_display: String, 
+\tmax_cll: String 
+} or null or undefined, got Object {
+\tmaster_display: "a" 
+}`)
+
+    TH.expect(() => MediaStreamVideoModel(
+      {
+        field_order: '',
+        frame_rate: '25',
+        hdr: {
+          master_display: 'a',
+          max_cll: 'a',
+        },
+        type: 'b'
+      }
+    )).to.throw('expecting type to be "video", got String "b"')
+
+    TH.expect(() => MediaStreamVideoModel(
+      {
+        field_order: '',
+        frame_rate: '25',
+        hdr: {
+          master_display: 'a',
+          master_display2: 'a',
+        },
+        type: 'video'
+      }
+    )).to.throw(`expecting hdr to be {
+\tmaster_display: String, 
+\tmax_cll: String 
+} or null or undefined, got Object {
+\tmaster_display: "a", 
+\tmaster_display2: "a" 
+}`)
+
+  })
+
 })
