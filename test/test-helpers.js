@@ -9,9 +9,12 @@ const expect = chai.expect
 
 const requireSrcFile = subDirAndFilename => require(path.join(__dirname, '../src/', subDirAndFilename))
 
+const isEquivalent = requireSrcFile('Boolean/isEquivalent')
+
 module.exports = {
   chai,
   expect,
+  isEquivalent,
   requireSrcFile,
   sinon
 }

@@ -142,6 +142,7 @@ const Functional = {
   resultToAsync: require('./Functional/resultToAsync'),
   reverse: require('./Functional/reverse'),
   setArity: require('./Functional/setArity'),
+  setPath: require('./Functional/setPath'),
   sortBy: require('./Functional/sortBy'),
   swapFields: require('./Functional/swapFields'),
   tap: require('./Functional/tap'),

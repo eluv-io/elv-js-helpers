@@ -3,7 +3,7 @@ const _path = require('@eluvio/ramda-fork/src/path')
 const curry = require('./curry')
 
 /**
- * Passthrough for Ramda's `path` function _(Copyright © 2013-2020 Scott Sauyet and Michael Hurley)_
+ * Renamed passthrough for Ramda's `path` function _(Copyright © 2013-2020 Scott Sauyet and Michael Hurley)_
  *
  * Allows users of `elv-js-helpers` to use the function without adding the [Ramda](https://www.npmjs.com/package/ramda)
  * package as a dependency.
