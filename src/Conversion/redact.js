@@ -1,6 +1,6 @@
 const kind = require('../Validation/kind')
 const isUndefined = require('../Boolean/isUndefined')
-const mapObjIndexed = require('../Functional/mapObjIndexed')
+const mapObjValues = require('../Functional/mapObjValues')
 const REDACT_PATTERNS = require('./REDACT_PATTERNS')
 /**
  * Redacts string values within objects. Used to filter data before logging.
@@ -45,7 +45,7 @@ const redact = (value, addlPatterns = [], parentKey = null) => {
     case 'Array':
       return value.map(redact, addlPatterns)
     case 'Object':
-      return mapObjIndexed((value, key) => redact(value, addlPatterns, key), value)
+      return mapObjValues((val, key) => redact(val, addlPatterns, key), value)
     case 'String':
       return isUndefined(testPatterns.find(pattern => pattern.test(parentKey)))
         ? value

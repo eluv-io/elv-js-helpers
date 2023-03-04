@@ -28,7 +28,7 @@ const PathArrayModel = defArrayModel('PathArray', PathElementModel)
  * @sig Idx = String | Int | Symbol => [Idx] -> * -> Object -> Object
  * @param {Array} pathArray - the path to set, expressed as an array
  * @param {*} value - the value to store at path
- * @param {Object} object - the source object
+ * @param {Object} object - the original object
  * @returns {Object} Shallow copy of `object` with
  * @example
  *

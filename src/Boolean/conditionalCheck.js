@@ -37,7 +37,8 @@ const negate = require('../Functional/negate')
  *
  * stringStartsWithF('bar')    //=> false
  *
- */const conditionalCheck = curry(
+ */
+const conditionalCheck = curry(
   (preCheckFn, mainCheckFn) => or(negate(preCheckFn), mainCheckFn)
 )
 
