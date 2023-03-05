@@ -10,7 +10,7 @@ const kind = require('../Validation/kind')
  * @sig a -> Boolean
  * @param {*} x - The value to test
  * @returns {Boolean}
- *
+ * @example
  *
  * const isGeneratorFunction = require('@eluvio/elv-js-helpers/Boolean/isGeneratorFunction')
  *
