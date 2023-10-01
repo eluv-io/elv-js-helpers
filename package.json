@@ -5,7 +5,7 @@
   "homepage": "https://eluv-io.github.io/elv-js-helpers",
   "repository": {
     "type": "git",
-    "url": "https://github.com/eluv-io/elv-js-helpers"
+    "url": "git+https://github.com/eluv-io/elv-js-helpers.git"
   },
   "main": "main.js",
   "sideEffects": false,
