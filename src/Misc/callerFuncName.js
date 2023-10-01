@@ -1,6 +1,6 @@
 /**
- * Returns name of function from 2 levels up the call stack, i.e. the function that called the function that
- * called `callerFuncName`. Used for introspection/logging.
+ * Returns the name of the (non-node-module) function that was responsible for current function getting called (
+ * 'current function' meaning the one containing the `callerFuncName()` call).
  *
  * @function
  * @category Misc
@@ -18,11 +18,19 @@
  * OuterFunc()  //=> OUTPUT: 'Function: MyFunc was called by: OuterFunc'
  *
  */
-const callerFuncName = () => new Error().stack
-  .split('\n')
-  .filter(line => !line.includes('node_modules'))[3]
-  .trim()
-  .split(' ')[1]
+const callerFuncName = () => {
+  const s = new Error().stack
+  const nonNodeModuleLines = s
+    .split('\n')
+    .filter(line => !line.includes('node_modules'))
+
+  const line = nonNodeModuleLines.length >= 4
+    ? nonNodeModuleLines[3]
+    : (nonNodeModuleLines[nonNodeModuleLines.length - 1] || 'x unknown')
+
+  return line.trim()
+    .split(' ')[1]
+}
 
 
 module.exports = callerFuncName
