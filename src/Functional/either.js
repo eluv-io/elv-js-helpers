@@ -8,7 +8,10 @@
  * Allows users of `elv-js-helpers` to use the function without adding the [Crocks](https://www.npmjs.com/package/crocks)
  * package as a dependency.
  *
- * Given two functions, returns a function that takes a Result and, if the Result is an Err, ( input, returns that input. Used for composing functional workflows, often indicating 'no-op'.
+ * Given two functions, returns a function that takes a Result and:
+ *
+ *   If the Result is an Err, calls the first function with the value wrapped by the Err
+ *   If the Result is an Ok, calls the second function with the value wrapped by the Ok
  *
  * @function
  * @category Functional
