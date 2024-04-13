@@ -1,5 +1,3 @@
-const uniq = require('@eluvio/ramda-fork/src/uniq')
-
 /**
  * Passthrough for Ramda's `uniq` function _(Copyright © 2013-2020 Scott Sauyet and Michael Hurley)_
  *
@@ -34,4 +32,6 @@ const uniq = require('@eluvio/ramda-fork/src/uniq')
  * uniq(99)                          //=> []
  *
  */
+const uniq = require('@eluvio/ramda-fork/src/uniq')
+
 module.exports = uniq
