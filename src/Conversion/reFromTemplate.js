@@ -87,8 +87,4 @@ const reFromTemplate = (strings, ...expressions) => {
   )
 }
 
-
-const RE_FOO_ONLY = /^foo$/
-const RE_BAR_ONLY = /^bar$/
 module.exports = reFromTemplate
-console.log((reFromTemplate`^${RE_FOO_ONLY}${RE_BAR_ONLY}$`).source)
