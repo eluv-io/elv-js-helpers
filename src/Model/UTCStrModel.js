@@ -27,9 +27,11 @@ const StringModel = require('../Model/StringModel')
  *
  * UTCStrModel('2022-01-01T14:00:00Z') //=> '2022-01-01T14:00:00Z'
  *
+ * UTCStrModel('2022-01-01T14:00:00.123Z') //=> '2022-01-01T14:00:00.123Z'
+ *
  * UTCStrModel('2022-13-01T14:00:00Z') //=> EXCEPTION: 'Value is not a valid UTC datetime string (got: "2022-13-01T14:00:00Z")'
  *
- * UTCStrModel('foo')                  //=> EXCEPTION: `Value is not in UTC format 'yyyy-mm-ddThh:mm:ssZ' (got: "foo")`
+ * UTCStrModel('foo')                  //=> EXCEPTION: `Value is not in UTC format 'yyyy-mm-ddThh:mm:ss[.s...]Z' (got: "foo")`
  *
  * UTCStrModel(42)                     //=> EXCEPTION: 'expecting String, got Number 42'
  *
@@ -38,7 +40,7 @@ const UTCStrModel =
   defRegexMatchedStrModel(
     'UTCTimestampRegexMatchStr', // intermediate name for the Model that only checks regex
     RE_UTC_TIMESTAMP,
-    'is not in UTC format \'yyyy-mm-ddThh:mm:ssZ\''
+    'is not in UTC format \'yyyy-mm-ddThh:mm:ss[.s...]Z\''
   )
     .extend()
     .assert(

@@ -21,5 +21,9 @@ describe('RE_UTC_TIMESTAMP JSDoc example', () => {
     parseInt(match[5], 10).should.eql(45)
     // second
     parseInt(match[6], 10).should.eql(0)
+    const utcStringFrac = '2022-01-02T03:45:00.123Z'
+    const fracMatch = utcStringFrac.match(RE_UTC_TIMESTAMP)
+    // fractional seconds
+    parseFloat(fracMatch[7]).should.eql(0.123)
   })
 })

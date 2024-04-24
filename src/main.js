@@ -155,6 +155,7 @@ const Functional = {
   sortBy: require('./Functional/sortBy'),
   swapFields: require('./Functional/swapFields'),
   tap: require('./Functional/tap'),
+  times: require('./Functional/times'),
   truthTable: require('./Functional/truthTable'),
   tryCatch: require('./Functional/tryCatch'),
   uniq: require('./Functional/uniq'),
@@ -249,6 +250,7 @@ const ModelFactory = {
 }
 
 const Validation = {
+  RE_BASE58_CHAR: require('./Validation/RE_BASE58_CHAR'),
   RE_RATIONAL: require('./Validation/RE_RATIONAL'),
   RE_UUID: require('./Validation/RE_UUID'),
   RE_UUID_LOWER_CASE: require('./Validation/RE_UUID_LOWER_CASE'),

@@ -34,6 +34,8 @@ const curry = require('./curry')
  * getPath(['foo', 'bar', -1], myObject)     //=> 3
  *
  */
-const getPath = (pathArray, object) => _path(pathArray, object)
+const getPath = curry(
+  (pathArray, object) => _path(pathArray, object)
+)
 
-module.exports = curry(getPath)
+module.exports = getPath

@@ -34,7 +34,13 @@
  * // second
  * parseInt(match[6], 10)                            //=> 0
  *
+ * const utcStringFrac = '2022-01-02T03:45:00.123Z'
+ * const fracMatch = utcStringFrac.match(RE_UTC_TIMESTAMP)
+ *
+ * // fractional seconds
+ * parseFloat(fracMatch[7])                              //=> 0.123
+ *
  */
-const RE_UTC_TIMESTAMP = /^([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{2}):([0-9]{2}):([0-9]{2})Z$/
+const RE_UTC_TIMESTAMP = /^([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{2}):([0-9]{2}):([0-9]{2})(\.[0-9]+)?Z$/
 
 module.exports = RE_UTC_TIMESTAMP
