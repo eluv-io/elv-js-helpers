@@ -8,10 +8,12 @@ describe('matchesRegex JSDoc example', () => {
     matchesRegex(/a/, 'def').should.eql(false)
     matchesRegex(/a/, 0).should.eql(false)
     // function is curried: can call with fewer params to obtain a narrower function
-    const isFourDigitNumString = matchesRegex(/^[0-9]{4}$/)
-    isFourDigitNumString('1234').should.eql(true)
-    isFourDigitNumString('0001').should.eql(true)
-    isFourDigitNumString('foo').should.eql(false)
-    isFourDigitNumString(1234).should.eql(false)
+    const isThreeDigitNum = matchesRegex(/^[0-9]{3}$/)
+    isThreeDigitNum('123').should.eql(true)
+    // Javascript does automatic type conversion in this case
+    isThreeDigitNum(123).should.eql(true)
+    isThreeDigitNum('foo').should.eql(false)
+    isThreeDigitNum('001').should.eql(true)
+    isThreeDigitNum(1).should.eql(false)
   })
 })

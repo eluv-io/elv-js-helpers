@@ -23,15 +23,18 @@ const curry = require('../Functional/curry')
  * matchesRegex(/a/, 0)                 //=> false
  *
  * // function is curried: can call with fewer params to obtain a narrower function
- * const isFourDigitNumString = matchesRegex(/^[0-9]{4}$/)
+ * const isThreeDigitNum = matchesRegex(/^[0-9]{3}$/)
  *
- * isFourDigitNumString('1234')         //=> true
+ * isThreeDigitNum('123')               //=> true
  *
- * isFourDigitNumString('0001')         //=> true
+ * // Javascript does automatic type conversion in this case
+ * isThreeDigitNum(123)                 //=> true
  *
- * isFourDigitNumString('foo')          //=> false
+ * isThreeDigitNum('foo')               //=> false
  *
- * isFourDigitNumString(1234)           //=> false
+ * isThreeDigitNum('001')               //=> true
+ *
+ * isThreeDigitNum(1)                   //=> false
  *
  */
 const matchesRegex = curry((a, b) => a.test(b))
