@@ -40,6 +40,7 @@ const Boolean = {
   isResult: require('./Boolean/isResult'),
   isString: require('./Boolean/isString'),
   isUndefined: require('./Boolean/isUndefined'),
+  matchesRegex: require('./Boolean/matchesRegex'),
   neighborsPass: require('./Boolean/neighborsPass'),
   objHasKey: require('./Boolean/objHasKey'),
   passesModelCheck: require('./Boolean/passesModelCheck'),
