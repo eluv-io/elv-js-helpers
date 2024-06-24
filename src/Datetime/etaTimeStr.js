@@ -1,14 +1,14 @@
 const branch = require('crocks/Pair/branch')
-const ifElse = require('crocks/logic/ifElse')
-const map = require('crocks/pointfree/map')
-const pipe = require('crocks/helpers/pipe')
 const snd = require('crocks/Pair/snd')
-
-const _toLocaleString = require('./toLocaleString')
 
 const addSeconds = require('./addSeconds')
 const sysLocale = require('./sysLocale')
 const sysTimezone = require('./sysTimezone')
+const _toLocaleString = require('./toLocaleString')
+
+const ifElse = require('../Functional/ifElse')
+const map = require('../Functional/map')
+const pipe = require('../Functional/pipe')
 
 /**
  * Returns an ETA Datetime or Datetime string based on a supplied value for current Datetime and how many seconds are left.

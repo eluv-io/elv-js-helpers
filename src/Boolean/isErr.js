@@ -1,5 +1,4 @@
-const either = require('crocks/pointfree/either')
-
+const either = require('../Functional/either')
 const F = require('../Functional/F')
 const T = require('../Functional/T')
 

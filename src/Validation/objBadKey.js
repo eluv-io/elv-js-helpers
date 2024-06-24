@@ -1,9 +1,10 @@
-const curry = require('crocks/helpers/curry')
 
-const find = require('@eluvio/ramda-fork/src/find')
 const keys = require('@eluvio/ramda-fork/src/keys')
 
 const failsModelCheck = require('../Boolean/failsModelCheck')
+
+const curry = require('../Functional/curry')
+const find = require('../Functional/find')
 
 /**
  * Iterates over object properties and returns first property name (key) where passesModelCheck(keyModel) returns false

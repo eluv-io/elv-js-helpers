@@ -1,19 +1,22 @@
-const constant = require('crocks/combinators/constant')
-const Pair = require('crocks/Pair')
-const pipe = require('crocks/helpers/pipe')
-const when = require('crocks/logic/when')
 
-const equals = require('@eluvio/ramda-fork/src/equals')
 const join = require('@eluvio/ramda-fork/src/join')
 const last = require('@eluvio/ramda-fork/src/last')
-const reverse = require('@eluvio/ramda-fork/src/reverse')
 const splitWhen = require('@eluvio/ramda-fork/src/splitWhen')
 const startsWith = require('@eluvio/ramda-fork/src/startsWith')
 const tail = require('@eluvio/ramda-fork/src/tail')
 const zipWith = require('@eluvio/ramda-fork/src/zipWith')
 
+const Pair = require('../ADT/Pair')
+
+const equals = require('../Boolean/isEquivalent')
 const isEmpty = require('../Boolean/isEmpty')
+
+const constant = require('../Functional/constant')
 const negate = require('../Functional/negate')
+const pipe = require('../Functional/pipe')
+const reverse = require('../Functional/reverse')
+const when = require('../Functional/when')
+
 
 // TODO: refactor?
 

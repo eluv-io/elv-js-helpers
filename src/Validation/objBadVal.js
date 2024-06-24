@@ -1,10 +1,11 @@
 const compose = require('crocks/helpers/compose')
-const curry = require('crocks/helpers/curry')
 
-const find = require('@eluvio/ramda-fork/src/find')
 const last = require('@eluvio/ramda-fork/src/last')
 
 const failsModelCheck = require('../Boolean/failsModelCheck')
+
+const curry = require('../Functional/curry')
+const find = require('../Functional/find')
 
 /**
  * Iterates over object values and returns 2-element array [key, value] pair for first value found that does not

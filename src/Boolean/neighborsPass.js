@@ -1,7 +1,7 @@
 const aperture = require('@eluvio/ramda-fork/src/aperture')
-const find = require('@eluvio/ramda-fork/src/find')
 
 const curry = require('../Functional/curry')
+const find = require('../Functional/find')
 
 /**
  * Returns true if all pairs of neighbors in `array` return true when fed into `checkFn`.

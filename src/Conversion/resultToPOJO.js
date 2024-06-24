@@ -1,10 +1,12 @@
-const either = require('crocks/pointfree/either')
-const uniq = require('@eluvio/ramda-fork/src/uniq')
-
-const _throwIfFalse = require('../Validation/throwIfFalse')
 const format = require('./format')
-const kind = require('../Validation/kind')
+
 const isArray = require('../Boolean/isArray')
+
+const either = require('../Functional/either')
+const uniq = require('../Functional/uniq')
+
+const kind = require('../Validation/kind')
+const _throwIfFalse = require('../Validation/throwIfFalse')
 
 /**
  * Converts a [Crocks Result](https://crocks.dev/docs/crocks/Result.html) to a Plain Old Javascript Object.

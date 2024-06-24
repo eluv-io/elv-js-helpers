@@ -1,6 +1,5 @@
-const filter = require('@eluvio/ramda-fork/src/filter')
-
 const curry = require('./curry')
+const filter = require('./filter')
 const pipe = require('./pipe')
 
 const fromPairs = require('../Conversion/fromPairs')

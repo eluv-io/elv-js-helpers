@@ -1,5 +1,6 @@
 const curry = require('./curry')
-const List = require('crocks/List')
+
+const List = require('../ADT/List')
 
 /**
  * Returns a new [Crocks](https://crocks.dev/docs/crocks/) List object with new element added to end

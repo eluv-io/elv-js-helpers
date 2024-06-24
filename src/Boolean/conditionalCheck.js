@@ -1,7 +1,7 @@
-const or = require('crocks/logic/or')
 
 const curry = require('../Functional/curry')
 const negate = require('../Functional/negate')
+const or = require('../Functional/or')
 
 /**
  * Creates a function that:

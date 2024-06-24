@@ -1,7 +1,4 @@
-const nAry = require('crocks/helpers/nAry')
-const psi = require('crocks/combinators/psi')
-
-const flip = require('./flip')
+const curry = require('./curry')
 
 /**
  * Given a 1-input preprocessing function `p` and a 2-input function `f`, returns a new function that will apply the
@@ -59,13 +56,14 @@ const flip = require('./flip')
  * addPreprocessFn2(strOrNumToNum, add, x, y)  //=> 84
  *
  */
-const addPreprocessFn2 = nAry(4, flip(psi))
-// Above is pointfree shorthand for:
-// curry(
-//   (preprocessorFn, binaryFn) =>
-//     curry(
-//       (val1, val2) => binaryFn(preprocessorFn(val1), preprocessorFn(val2))
-//     )
-// )
+const addPreprocessFn2 = curry(
+  (preprocessorFn, binaryFn) =>
+    curry(
+      (val1, val2) => binaryFn(
+        preprocessorFn(val1),
+        preprocessorFn(val2)
+      )
+    )
+)
 
 module.exports = addPreprocessFn2

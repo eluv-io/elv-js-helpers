@@ -4,7 +4,7 @@ const kind = require('../Validation/kind')
 /**
  * Returns `true` if value is of the specified type, `false` otherwise.
  *
- * The type is determined using the [kind-of](https://github.com/jonschlinkert/kind-of) package.
+ * The type is determined using the [kind](#kind) function.
  *
  * @function
  * @curried

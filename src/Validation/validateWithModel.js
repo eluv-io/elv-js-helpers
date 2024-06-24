@@ -1,5 +1,7 @@
+const Err = require('../ADT/Err')
+const Ok = require('../ADT/Ok')
+
 const curry = require('../Functional/curry')
-const {Ok, Err} = require('crocks/Result')
 /**
  * An ObjectModel definition.
  * @external Model
