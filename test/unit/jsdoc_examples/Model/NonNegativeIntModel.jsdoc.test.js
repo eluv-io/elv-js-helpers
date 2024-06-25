@@ -9,5 +9,7 @@ describe('NonNegativeIntModel JSDoc example', () => {
     TH.expect(() => NonNegativeIntModel(4.2)).to.throw('Value must be an integer (got: 4.2)')
     TH.expect(() => NonNegativeIntModel(-1)).to.throw('Value must be >= 0 (got: -1)')
     TH.expect(() => NonNegativeIntModel('foo')).to.throw('expecting Number, got String "foo"')
+    TH.expect(() => NonNegativeIntModel(Infinity)).to.throw('Value must be an integer (got: Infinity)')
+    TH.expect(() => NonNegativeIntModel(-Infinity)).to.throw('Value must be an integer (got: -Infinity)')
   })
 })

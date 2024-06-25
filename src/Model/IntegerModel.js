@@ -30,6 +30,10 @@ const assertAfterCheck = require('../ModelAssertion/assertAfterCheck')
  *
  * IntegerModel('foo') //=> EXCEPTION: 'expecting Number, got String "foo"'
  *
+ * IntegerModel(Infinity) //=> EXCEPTION: 'Value must be an integer (got: Infinity)'
+ *
+ * IntegerModel(-Infinity) //=> EXCEPTION: 'Value must be an integer (got: -Infinity)'
+ *
  */
 const IntegerModel = NumberModel
   .extend()

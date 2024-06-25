@@ -7,5 +7,7 @@ describe('IntegerModel JSDoc example', () => {
     IntegerModel(42).should.eql(42)
     TH.expect(() => IntegerModel(4.2)).to.throw('Value must be an integer (got: 4.2)')
     TH.expect(() => IntegerModel('foo')).to.throw('expecting Number, got String "foo"')
+    TH.expect(() => IntegerModel(Infinity)).to.throw('Value must be an integer (got: Infinity)')
+    TH.expect(() => IntegerModel(-Infinity)).to.throw('Value must be an integer (got: -Infinity)')
   })
 })

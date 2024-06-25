@@ -28,6 +28,10 @@ const defBoundedIntModel = require('../ModelFactory/defBoundedIntModel')
  *
  * PositiveIntModel('foo') //=> EXCEPTION: 'expecting Number, got String "foo"'
  *
+ * PositiveIntModel(Infinity) //=> EXCEPTION: 'Value must be an integer (got: Infinity)'
+ *
+ * PositiveIntModel(-Infinity) //=> EXCEPTION: 'Value must be an integer (got: -Infinity)'
+ *
  */
 const PositiveIntModel = defBoundedIntModel(
   'PositiveInteger',

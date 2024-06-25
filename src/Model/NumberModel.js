@@ -18,14 +18,16 @@ const defBasicModel = require('../ModelFactory/defBasicModel')
  *
  * const NumberModel = require('@eluvio/elv-js-helpers/Model/NumberModel')
  *
- * NumberModel(42)    //=> 42
+ * NumberModel(42)        //=> 42
  *
- * NumberModel('foo') //=> EXCEPTION: 'expecting Number, got String "foo"'
+ * NumberModel('foo')     //=> EXCEPTION: 'expecting Number, got String "foo"'
  *
- * NumberModel(Infinity) //=> Infinity
+ * NumberModel(Infinity)  //=> Infinity
+ *
+ * NumberModel(-Infinity) //=> -Infinity
  *
  * // Error message for NaN is not the greatest:
- * NumberModel(NaN) //=> EXCEPTION: 'expecting Number, got Number NaN'
+ * NumberModel(NaN)      //=> EXCEPTION: 'expecting Number, got Number NaN'
  *
  */
 const NumberModel = defBasicModel('Number', Number)

@@ -19,13 +19,17 @@ const defBoundedNumModel = require('../ModelFactory/defBoundedNumModel')
  *
  * const NonNegativeNumModel = require('@eluvio/elv-js-helpers/Model/NonNegativeNumModel')
  *
- * NonNegativeNumModel(42)    //=> 42
+ * NonNegativeNumModel(42)        //=> 42
  *
- * NonNegativeNumModel(0)     //=> 0
+ * NonNegativeNumModel(0)         //=> 0
  *
- * NonNegativeNumModel(-1)    //=> EXCEPTION: 'Value must be >= 0 (got: -1)'
+ * NonNegativeNumModel(-1)        //=> EXCEPTION: 'Value must be >= 0 (got: -1)'
  *
- * NonNegativeNumModel('foo') //=> EXCEPTION: 'expecting Number, got String "foo"'
+ * NonNegativeNumModel('foo')     //=> EXCEPTION: 'expecting Number, got String "foo"'
+ *
+ * NonNegativeNumModel(Infinity)  //=> Infinity
+ *
+ * NonNegativeNumModel(-Infinity) //=> EXCEPTION: 'Value must be >= 0 (got: -Infinity)'
  *
  */
 const NonNegativeNumModel = defBoundedNumModel('NonNegativeNumber', 0, null, true, null)

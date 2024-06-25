@@ -19,11 +19,15 @@ const defBoundedNumModel = require('../ModelFactory/defBoundedNumModel')
  *
  * const PositiveNumModel = require('@eluvio/elv-js-helpers/Model/PositiveNumModel')
  *
- * PositiveNumModel(42)     //=> 42
+ * PositiveNumModel(42)        //=> 42
  *
- * PositiveNumModel(0)      //=> EXCEPTION: 'Value must be > 0 (got: 0)'
+ * PositiveNumModel(0)         //=> EXCEPTION: 'Value must be > 0 (got: 0)'
  *
- * PositiveNumModel('foo')  //=> EXCEPTION: 'expecting Number, got String "foo"'
+ * PositiveNumModel('foo')     //=> EXCEPTION: 'expecting Number, got String "foo"'
+ *
+ * PositiveNumModel(Infinity)  //=> Infinity
+ *
+ * PositiveNumModel(-Infinity) //=> EXCEPTION: 'Value must be > 0 (got: -Infinity)'
  *
  */
 const PositiveNumModel = defBoundedNumModel(

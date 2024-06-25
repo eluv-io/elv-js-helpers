@@ -22,7 +22,7 @@ const callerFuncName = () => {
   const s = new Error().stack
   const nonNodeModuleLines = s
     .split('\n')
-    .filter(line => !line.includes('node_modules'))
+    .filter(line => !(line.includes('node_modules')  && !line.includes('node_modules/@eluvio/elv-js-helpers/')))
 
   const line = nonNodeModuleLines.length >= 4
     ? nonNodeModuleLines[3]
