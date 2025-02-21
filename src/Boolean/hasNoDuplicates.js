@@ -10,7 +10,7 @@ const throwIfFalse = require('../Validation/throwIfFalse')
  * Throws error if passed anything but an array.
  *
  * Uses [_Set](https://github.com/ramda/ramda/blob/master/source/internal/_Set.js) from
- * [Ramda](https://github.com/ramda/ramda) _(Copyright © 2013-2020 Scott Sauyet and Michael Hurley)_ to determine
+ * [Ramda](https://github.com/ramda/ramda) _(Copyright © Scott Sauyet and Michael Hurley)_ to determine
  * whether two elements are equivalent, so should handle cyclical data structures, comparison of equivalent objects,
  * functions, and so forth.
  *

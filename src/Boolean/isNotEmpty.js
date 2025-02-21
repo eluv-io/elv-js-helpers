@@ -2,7 +2,7 @@ const isEmpty = require('./isEmpty')
 const negate = require('../Functional/negate')
 
 /**
- * Negated version of the [Ramda `isEmpty` function](https://ramdajs.com/docs/#isEmpty) _(Copyright © 2013-2020 Scott Sauyet and Michael Hurley)_
+ * Negated version of the [Ramda `isEmpty` function](https://ramdajs.com/docs/#isEmpty) _(Copyright © Scott Sauyet and Michael Hurley)_
  *
  * Returns `false` if a value is the empty value for its type, `true` otherwise.
  *

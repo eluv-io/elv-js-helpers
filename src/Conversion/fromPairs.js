@@ -16,12 +16,13 @@
  * @sig List (Pair String a) -> Object
  * @param {List} - The `List` of key, value `Pairs`
  * @returns {Object}
+ * @see objFromEntries, toPairs
  * @example
+ *
+ * const fromPairs = require('@eluvio/elv-js-helpers/Conversion/fromPairs')
  *
  * const List = require('@eluvio/elv-js-helpers/ADT/List')
  * const Pair = require('@eluvio/elv-js-helpers/ADT/Pair')
- *
- * const fromPairs = require('@eluvio/elv-js-helpers/Conversion/fromPairs')
  *
  * const kvPairs = List([Pair('a', 1), Pair('b',2)])
  *

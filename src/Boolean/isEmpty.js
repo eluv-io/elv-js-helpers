@@ -1,5 +1,5 @@
 /**
- * Passthrough for the [Ramda `isEmpty` function](https://ramdajs.com/docs/#isEmpty) _(Copyright © 2013-2020 Scott Sauyet and Michael Hurley)_
+ * Passthrough for the [Ramda `isEmpty` function](https://ramdajs.com/docs/#isEmpty) _(Copyright © Scott Sauyet and Michael Hurley)_
  *
  * Allows users of `elv-js-helpers` to use the function without adding the [Ramda](https://www.npmjs.com/package/ramda)
  * package as a dependency.

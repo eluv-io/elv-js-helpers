@@ -3,7 +3,7 @@ const _prop = require('@eluvio/ramda-fork/src/prop')
 const curry = require('./curry')
 
 /**
- * Renamed passthrough for Ramda's `prop` function _(Copyright © 2013-2020 Scott Sauyet and Michael Hurley)_
+ * Renamed passthrough for Ramda's `prop` function _(Copyright © Scott Sauyet and Michael Hurley)_
  * Not to be confused with Crocks getProp(), which returns a Maybe
  *
  * Allows users of `elv-js-helpers` to use the function without adding the [Ramda](https://www.npmjs.com/package/ramda)

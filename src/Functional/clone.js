@@ -1,7 +1,7 @@
 const _clone = require('@eluvio/ramda-fork/src/clone')
 const isObject = require('../Boolean/isObject')
 /**
- * Modified version of Ramda's `clone` function _(Copyright © 2013-2020 Scott Sauyet and Michael Hurley)_
+ * Modified version of Ramda's `clone` function _(Copyright © Scott Sauyet and Michael Hurley)_
  *
  * Uses original item's constructor function when input is an object.
  *

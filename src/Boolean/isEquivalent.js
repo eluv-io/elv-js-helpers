@@ -1,5 +1,5 @@
 /**
- * Renamed passthrough for the [Ramda `equals` function](https://ramdajs.com/docs/#equals) _(Copyright © 2013-2020 Scott Sauyet and Michael Hurley)_
+ * Renamed passthrough for the [Ramda `equals` function](https://ramdajs.com/docs/#equals) _(Copyright © Scott Sauyet and Michael Hurley)_
  *
  * Allows users of `elv-js-helpers` to use the function without adding the [Ramda](https://www.npmjs.com/package/ramda)
  * package as a dependency.

@@ -1,7 +1,7 @@
 const curry = require('./curry')
 
 /**
- * Copies name and functionality of Ramda's `comparator` function _(Copyright © 2013-2020 Scott Sauyet and Michael Hurley)_
+ * Copies name and functionality of Ramda's `comparator` function _(Copyright © Scott Sauyet and Michael Hurley)_
  *
  * When supplied with a boolean 2-input function `f`, will return another 2-input function that returns:
  *
