@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const Pair = TH.requireSrcFile('ADT/Pair')
 
 describe('Pair JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const p = Pair(1, 2)
     p.inspect().should.eql('Pair( 1, 2 )')
     p.fst().should.eql(1)

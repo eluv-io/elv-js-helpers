@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const defBoundedIntModel = TH.requireSrcFile('ModelFactory/defBoundedIntModel')
 
 describe('defBoundedIntModel JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const CartonEggCountModel = defBoundedIntModel('CartonEggCount', 0, 12, true, true)
     TH.expect(() => CartonEggCountModel(-1)).to.throw('Value must be >= 0 and <= 12 (got: -1)')
     CartonEggCountModel(0).should.eql(0)

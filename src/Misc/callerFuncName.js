@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Returns the name of the (non-node-module) function that was responsible for current function getting called (
  * 'current function' meaning the one containing the `callerFuncName()` call).
@@ -8,6 +9,7 @@
  * @returns String
  * @example
  *
+ * 'use strict'
  * const currentFuncName = require('@eluvio/elv-js-helpers/Misc/currentFuncName')
  * const callerFuncName = require('@eluvio/elv-js-helpers/Misc/callerFuncName')
  *

@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const cmpIndexable = TH.requireSrcFile('Functional/cmpIndexable')
 
 describe('cmpIndexable JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     cmpIndexable([], [42]).should.eql(-1)
     cmpIndexable([42], []).should.eql(1)
     cmpIndexable([42], [42]).should.eql(0)

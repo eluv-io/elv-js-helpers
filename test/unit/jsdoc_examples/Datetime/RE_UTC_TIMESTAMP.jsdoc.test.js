@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const RE_UTC_TIMESTAMP = TH.requireSrcFile('Datetime/RE_UTC_TIMESTAMP')
 
 describe('RE_UTC_TIMESTAMP JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     RE_UTC_TIMESTAMP.test('2022-01-02T03:45:00Z').should.eql(true)
     RE_UTC_TIMESTAMP.test('foo').should.eql(false)
     const utcString = '2022-01-02T03:45:00Z'

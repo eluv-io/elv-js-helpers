@@ -1,3 +1,4 @@
+'use strict'
 const defRegexMatchedStrModel = require('../ModelFactory/defRegexMatchedStrModel')
 const RE_UUID = require('../Validation/RE_UUID')
 
@@ -17,6 +18,7 @@ const RE_UUID = require('../Validation/RE_UUID')
  * @returns {String} The validated input
  * @example
  *
+ * 'use strict'
  * const UUIDStrModel = require('@eluvio/elv-js-helpers/Model/UUIDStrModel')
  *
  * UUIDStrModel('0')                                      //=> EXCEPTION: `Value is not in UUID format '00000000-0000-0000-0000-000000000000' (got: "0")`

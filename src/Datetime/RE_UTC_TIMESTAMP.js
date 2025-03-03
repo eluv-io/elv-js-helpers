@@ -1,3 +1,4 @@
+'use strict'
 /**
  * [RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) used for first-pass
  * validation of UTC timestamp of form YYYY-MM-DDThh:mm:ssZ, e.g. '2022-01-01T14:00:00Z'.
@@ -10,6 +11,7 @@
  * @category Constant
  * @example
  *
+ * 'use strict'
  * const RE_UTC_TIMESTAMP = require('@eluvio/elv-js-helpers/Datetime/RE_UTC_TIMESTAMP')
  *
  * RE_UTC_TIMESTAMP.test('2022-01-02T03:45:00Z')     //=> true

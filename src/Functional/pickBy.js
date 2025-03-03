@@ -1,3 +1,4 @@
+'use strict'
 const _pickBy = require('@eluvio/ramda-fork/src/pickBy')
 
 const curry = require('./curry')
@@ -19,6 +20,7 @@ const curry = require('./curry')
  * @returns {Object} Object containing only the keys where `testFn(value, key)` returned `true`
  * @example
  *
+ * 'use strict'
  * const pickBy = require('@eluvio/elv-js-helpers/Functional/pickBy')
  *
  * const valueIsEven = (v, k) => v % 2 === 0

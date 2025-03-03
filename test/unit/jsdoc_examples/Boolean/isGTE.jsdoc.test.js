@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const isGTE = TH.requireSrcFile('Boolean/isGTE')
 
 describe('isGTE JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     isGTE(1, 42).should.eql(true)
     isGTE(42, 1).should.eql(false)
     isGTE(42, 42).should.eql(true)

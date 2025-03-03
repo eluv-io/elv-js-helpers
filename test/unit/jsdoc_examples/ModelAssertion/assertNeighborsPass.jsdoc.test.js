@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const assertNeighborsPass = TH.requireSrcFile('ModelAssertion/assertNeighborsPass')
 
 describe('assertNeighborsPass JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const defBasicModel = TH.requireSrcFile('ModelFactory/defBasicModel')
     const kind = TH.requireSrcFile('Validation/kind')
     // Note use of spread operator (...) to unpack the array returned by assertNeighborsPass()

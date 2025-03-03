@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Returns a description of a lower bound condition
  *
@@ -10,6 +11,7 @@
  * @returns {String}
  * @example
  *
+ * 'use strict'
  * const _boundLowerErrMsg = require('@eluvio/elv-js-helpers/ModelAssertion/_boundLowerErrMsg')
  *
  * _boundLowerErrMsg(42, true)   //=> 'must be >= 42'

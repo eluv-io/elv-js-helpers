@@ -1,3 +1,4 @@
+'use strict'
 const _clone = require('@eluvio/ramda-fork/src/clone')
 const isObject = require('../Boolean/isObject')
 /**
@@ -14,6 +15,7 @@ const isObject = require('../Boolean/isObject')
  * @returns {(Object | Array)}
  * @example
  *
+ * 'use strict'
  * const clone = require('@eluvio/elv-js-helpers/Functional/clone')
  *
  * const defObjectModel = require('@eluvio/elv-js-helpers/ModelFactory/defObjectModel')

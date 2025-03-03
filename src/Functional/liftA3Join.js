@@ -1,3 +1,4 @@
+'use strict'
 const chain = require('./chain')
 const compose = require('crocks/helpers/compose')
 const identity = require('./identity')
@@ -29,6 +30,7 @@ const liftA3 = require('./liftA3')
  * @returns {Function} New function which takes 3 wrapped values and returns a wrapped value
  * @example
  *
+ * 'use strict'
  * const liftA3Join = require('@eluvio/elv-js-helpers/Functional/liftA3Join')
  *
  * const curry = require('@eluvio/elv-js-helpers/Functional/curry')

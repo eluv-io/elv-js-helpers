@@ -1,3 +1,4 @@
+'use strict'
 const parseUTCStr = require('./parseUTCStr')
 
 const UTCStrModel = require('../Model/UTCStrModel')
@@ -15,6 +16,7 @@ const UTCStrModel = require('../Model/UTCStrModel')
  * @returns {Date}
  * @example
  *
+ * 'use strict'
  * const utcStrToDate = require('@eluvio/elv-js-helpers/Datetime/utcStrToDate')
  *
  * const dateObject = utcStrToDate('2022-01-01T14:00:00Z')

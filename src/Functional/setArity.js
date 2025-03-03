@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Renamed passthrough for the `nAry()` [Crocks](https://crocks.dev/docs/functions/helpers.html#nary) function
  * _(Copyright © 2016, Ian Hofmann-Hicks, ISC license)_
@@ -17,6 +18,7 @@
  * @returns {Function} Curried version of function with fixed argument count
  * @example
  *
+ * 'use strict'
  * const setArity = require('@eluvio/elv-js-helpers/Functional/setArity')
  *
  * const maxOfThree = setArity(3, Math.max)

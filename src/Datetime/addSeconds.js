@@ -1,3 +1,4 @@
+'use strict'
 const curry = require('../Functional/curry')
 
 /**
@@ -12,6 +13,7 @@ const curry = require('../Functional/curry')
  * @returns {Date}
  * @example
  *
+ * 'use strict'
  * const addSeconds = require('@eluvio/elv-js-helpers/Datetime/addSeconds')
  *
  * const d = new Date('2022-01-01T07:30:00Z')

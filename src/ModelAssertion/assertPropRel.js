@@ -1,3 +1,4 @@
+'use strict'
 const assertAfterCheck = require('./assertAfterCheck')
 const curry = require('../Functional/curry')
 const format = require('../Conversion/format')
@@ -29,6 +30,7 @@ const isObject = require('../Boolean/isObject')
  * @returns {Array} 2-element array [Function, Function | String]. See description for details.
  * @example
  *
+ * 'use strict'
  * const assertPropRel = require('@eluvio/elv-js-helpers/ModelAssertion/assertPropRel')
  *
  * const defObjectModel = require('@eluvio/elv-js-helpers/ModelFactory/defObjectModel')

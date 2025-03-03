@@ -1,3 +1,4 @@
+'use strict'
 const _flatten = require('@eluvio/ramda-fork/src/flatten')
 
 /**
@@ -15,6 +16,7 @@ const _flatten = require('@eluvio/ramda-fork/src/flatten')
  * @returns {Array} The flattened list
  * @example
  *
+ * 'use strict'
  * const flatten = require('@eluvio/elv-js-helpers/Functional/flatten')
  *
  * flatten([1, [2, [3]]])         //=> [1, 2, 3]

@@ -1,3 +1,4 @@
+'use strict'
 const curry = require('./curry')
 const identity = require('./identity')
 const mapObjKV = require('./mapObjKV')
@@ -15,6 +16,7 @@ const mapObjKV = require('./mapObjKV')
  * @returns {Object}
  * @example
  *
+ * 'use strict'
  * const mapObjValues = require('@eluvio/elv-js-helpers/Functional/mapObjValues')
  *
  * const dumpJSON = require('@eluvio/elv-js-helpers/Misc/dumpJSON')

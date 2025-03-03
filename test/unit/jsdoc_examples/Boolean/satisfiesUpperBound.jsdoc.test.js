@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const satisfiesUpperBound = TH.requireSrcFile('Boolean/satisfiesUpperBound')
 
 describe('satisfiesUpperBound JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const compare = TH.requireSrcFile('Functional/compare')
     satisfiesUpperBound(42, true, compare, 42).should.eql(true)
     satisfiesUpperBound(42, true, compare, 0).should.eql(true)

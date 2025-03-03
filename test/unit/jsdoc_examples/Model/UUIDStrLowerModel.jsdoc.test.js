@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const UUIDStrLowerModel = TH.requireSrcFile('Model/UUIDStrLowerModel')
 
 describe('UUIDStrLowerModel JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     TH.expect(() => UUIDStrLowerModel('0')).to.throw(
       `Value is not in lower case UUID format '00000000-0000-0000-0000-000000000000' (got: "0")`
     )

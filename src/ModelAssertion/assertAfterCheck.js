@@ -1,3 +1,4 @@
+'use strict'
 const assertionErrMsg = require('./assertionErrMsg')
 
 const conditionalCheck = require('../Boolean/conditionalCheck')
@@ -29,6 +30,7 @@ const isFunction = require('../Boolean/isFunction')
  * @returns {Array} 2-element array [Function, Function]. See description for details.
  * @example
  *
+ * 'use strict'
  * const passesModelCheck = require('@eluvio/elv-js-helpers/Boolean/passesModelCheck')
  *
  * const NumberModel = require('@eluvio/elv-js-helpers/Model/NumberModel')

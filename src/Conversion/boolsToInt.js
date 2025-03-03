@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Converts an array of booleans to a number by interpreting them as binary digits (most significant bits first)
  *
@@ -8,6 +9,7 @@
  * @returns {Integer}
  * @example
  *
+ * 'use strict'
  * const boolsToInt = require('@eluvio/elv-js-helpers/Conversion/boolsToInt')
  *
  * boolsToInt([false, false, true]) //=> 1

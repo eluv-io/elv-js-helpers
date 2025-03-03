@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const reFromTemplate = TH.requireSrcFile('Conversion/reFromTemplate')
 
 describe('reFromTemplate JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const RE_LETTER = /[a-zA-Z]/
     const RE_DIGIT = /[0-9]/
     const RE_UNICODE_LETTER = /\p{Lu}|\p{Ll}|\p{Lt}|\p{Lm}|\p{Lo}/u

@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const RE_RATIONAL = TH.requireSrcFile('Validation/RE_RATIONAL')
 
 describe('RE_RATIONAL JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     RE_RATIONAL.test('0').should.eql(true)
     RE_RATIONAL.test('-0').should.eql(true)
     RE_RATIONAL.test('0/1').should.eql(true)

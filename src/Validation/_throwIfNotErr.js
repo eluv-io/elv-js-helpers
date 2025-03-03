@@ -1,3 +1,4 @@
+'use strict'
 const _typeWithOkErr = require('./_typeWithOkErr')
 const _throwIfFalse = require('./throwIfFalse')
 const isErr = require('../Boolean/isErr')
@@ -14,6 +15,7 @@ const isErr = require('../Boolean/isErr')
  * @returns {Err}
  * @example
  *
+ * 'use strict'
  * const Err = require('@eluvio/elv-js-helpers/ADT/Err')
  * const Ok = require('@eluvio/elv-js-helpers/ADT/Ok')
  *

@@ -1,5 +1,5 @@
 // noinspection JSValidateTypes
-
+'use strict'
 const {BasicModel} = require('objectmodel')
 
 const throwIfUndefined = require('../Validation/throwIfUndefined')
@@ -18,6 +18,7 @@ const throwIfUndefined = require('../Validation/throwIfUndefined')
  * @returns {Object} Returns an [ObjectModel](http://objectmodel.js.org/) that can be called with an input
  * @example
  *
+ * 'use strict'
  * const defBasicModel = require('@eluvio/elv-js-helpers/ModelFactory/defBasicModel')
  *
  * const StringModel = defBasicModel('String', String)

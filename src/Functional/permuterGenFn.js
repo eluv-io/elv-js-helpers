@@ -1,3 +1,4 @@
+'use strict'
 const isGeneratorFunction = require('../Boolean/isGeneratorFunction')
 
 const permuterGenFn = (items1, items2, combineFn, filterFn) => {

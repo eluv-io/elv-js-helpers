@@ -1,3 +1,4 @@
+'use strict'
 const type = require('crocks/core/type')
 
 /**
@@ -11,6 +12,7 @@ const type = require('crocks/core/type')
  * @returns {Boolean}
  * @example
  *
+ * 'use strict'
  * const isResult = require('@eluvio/elv-js-helpers/Boolean/isResult')
  *
  * const Err = require('@eluvio/elv-js-helpers/ADT/Err')

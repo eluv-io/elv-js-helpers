@@ -1,3 +1,4 @@
+'use strict'
 const aperture = require('@eluvio/ramda-fork/src/aperture')
 
 const curry = require('../Functional/curry')
@@ -17,6 +18,7 @@ const find = require('../Functional/find')
  * @returns {Boolean}
  * @example
  *
+ * 'use strict'
  * const neighborsPass = require('@eluvio/elv-js-helpers/Boolean/neighborsPass')
  *
  * const xGTEy = (x,y) => x <= y

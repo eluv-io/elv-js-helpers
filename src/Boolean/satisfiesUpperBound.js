@@ -1,3 +1,4 @@
+'use strict'
 const curry = require('../Functional/curry')
 
 /**
@@ -20,6 +21,7 @@ const curry = require('../Functional/curry')
  * @returns {Boolean}
  * @example
  *
+ * 'use strict'
  * const satisfiesUpperBound = require('@eluvio/elv-js-helpers/Boolean/satisfiesUpperBound')
  *
  * const compare = require('@eluvio/elv-js-helpers/Functional/compare')

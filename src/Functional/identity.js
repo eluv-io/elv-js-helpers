@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Given an input, returns that input. Used for composing functional workflows, often indicating 'no-op'.
  *
@@ -8,6 +9,7 @@
  * @returns {*} The input value
  * @example
  *
+ * 'use strict'
  * const identity = require('@eluvio/elv-js-helpers/Functional/identity')
  *
  * identity(42)   //=> 42

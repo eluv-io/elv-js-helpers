@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const pickBy = TH.requireSrcFile('Functional/pickBy')
 
 describe('pickBy JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const valueIsEven = (v, k) => v % 2 === 0
     const obj = {a: 1, b: 2, c: 3, d: 4}
     pickBy(valueIsEven, obj).should.eql({b: 2, d: 4})

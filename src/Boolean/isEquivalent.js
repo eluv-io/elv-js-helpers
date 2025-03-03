@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Renamed passthrough for the [Ramda `equals` function](https://ramdajs.com/docs/#equals) _(Copyright © Scott Sauyet and Michael Hurley)_
  *

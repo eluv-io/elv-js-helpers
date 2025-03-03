@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const satisfiesLowerBound = TH.requireSrcFile('Boolean/satisfiesLowerBound')
 
 describe('satisfiesLowerBound JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const compare = TH.requireSrcFile('Functional/compare')
     satisfiesLowerBound(0, true, compare, 42).should.eql(true)
     satisfiesLowerBound(0, true, compare, 0).should.eql(true)

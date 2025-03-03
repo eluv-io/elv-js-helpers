@@ -1,3 +1,4 @@
+'use strict'
 const Maybe = require('crocks/Maybe')
 
 /**
@@ -22,6 +23,7 @@ const Maybe = require('crocks/Maybe')
  * @returns {Maybe}
  * @example
  *
+ * 'use strict'
  * const Just = require('@eluvio/elv-js-helpers/ADT/Just')
  *
  * Just(42).inspect()    //=> 'Just 42'

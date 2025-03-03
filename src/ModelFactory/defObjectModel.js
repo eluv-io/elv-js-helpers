@@ -1,5 +1,5 @@
 // noinspection JSValidateTypes
-
+'use strict'
 const {ObjectModel} = require('objectmodel')
 
 const assocComputed = require('../Functional/assocComputed')
@@ -25,6 +25,7 @@ const throwIfUndefined = require('../Validation/throwIfUndefined')
  * @returns {Object} Returns an [ObjectModel](http://objectmodel.js.org/) that can be called with an input
  * @example
  *
+ * 'use strict'
  * const defObjectModel = require('@eluvio/elv-js-helpers/ModelFactory/defObjectModel')
  *
  * const PersonNameModel = defObjectModel('PersonName', {first: String, last: String})

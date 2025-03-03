@@ -1,3 +1,4 @@
+'use strict'
 const isUndefined = require('../Boolean/isUndefined')
 const curry = require('../Functional/curry')
 const throwError = require('../Misc/throwError')
@@ -15,6 +16,7 @@ const throwError = require('../Misc/throwError')
  * @returns {Any}
  * @example
  *
+ * 'use strict'
  * const throwIfUndefined = require('@eluvio/elv-js-helpers/Validation/throwIfUndefined')
  *
  * let u

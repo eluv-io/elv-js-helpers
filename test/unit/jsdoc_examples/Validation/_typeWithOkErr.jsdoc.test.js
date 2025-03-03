@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const _typeWithOkErr = TH.requireSrcFile('Validation/_typeWithOkErr')
 
 describe('_typeWithOkErr JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const Err = TH.requireSrcFile('ADT/Err')
     const Ok = TH.requireSrcFile('ADT/Ok')
     _typeWithOkErr(Err(['invalid query'])).should.eql('Err')

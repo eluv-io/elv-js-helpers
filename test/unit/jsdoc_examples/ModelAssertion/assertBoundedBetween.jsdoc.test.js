@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const assertBoundedBetween = TH.requireSrcFile('ModelAssertion/assertBoundedBetween')
 
 describe('assertBoundedBetween JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const compare = TH.requireSrcFile('Functional/compare')
     const IntegerModel = TH.requireSrcFile('Model/IntegerModel')
     // Note use of spread operator (...) to unpack the array returned by assertBoundedBetween()

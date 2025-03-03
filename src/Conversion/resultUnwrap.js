@@ -1,3 +1,4 @@
+'use strict'
 const either = require('../Functional/either')
 const identity = require('../Functional/identity')
 
@@ -17,6 +18,7 @@ const _throwIfNotResult = require('../Validation/_throwIfNotResult')
  * @see resultToPOJO
  * @example
  *
+ * 'use strict'
  * const resultUnwrap = require('@eluvio/elv-js-helpers/Conversion/resultUnwrap')
  *
  * const Err = require('@eluvio/elv-js-helpers/ADT/Err')

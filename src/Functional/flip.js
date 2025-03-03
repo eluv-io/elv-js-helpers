@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Passthrough for the `flip()` [Crocks combinator](https://crocks.dev/docs/functions/combinators.html)
  * _(Copyright © 2016, Ian Hofmann-Hicks, ISC license)_
@@ -18,6 +19,7 @@
  * @returns {Function} - A curried 2-input function that reverses the order of inputs before passing to the original function
  * @example
  *
+ * 'use strict'
  * const flip = require('@eluvio/elv-js-helpers/Functional/flip')
  *
  * const div = (a, b) => a/b

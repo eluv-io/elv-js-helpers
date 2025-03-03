@@ -1,3 +1,4 @@
+'use strict'
 const isNull = require('../Boolean/isNull')
 const passesModelCheck = require('../Boolean/passesModelCheck')
 
@@ -33,6 +34,7 @@ const _throwIfFalse = require('../Validation/throwIfFalse')
  * @returns {Model}
  * @example
  *
+ * 'use strict'
  * const defBoundedFracStrModel = require('@eluvio/elv-js-helpers/ModelFactory/defBoundedFracStrModel')
  *
  * const PositiveFracModel = defBoundedFracStrModel(

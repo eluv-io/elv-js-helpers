@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const fraction = TH.requireSrcFile('Conversion/fraction')
 
 describe('fraction JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     fraction(4.2).toFraction(true).should.eql('4 1/5')
     TH.expect(() => fraction('foo').toFraction(true)).to.throw('Invalid argument')
     TH.expect(() => fraction('1/0').toFraction(true)).to.throw('Division by Zero')

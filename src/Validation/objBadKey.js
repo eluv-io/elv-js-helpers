@@ -1,4 +1,4 @@
-
+'use strict'
 const keys = require('@eluvio/ramda-fork/src/keys')
 
 const failsModelCheck = require('../Boolean/failsModelCheck')
@@ -19,6 +19,7 @@ const find = require('../Functional/find')
  * @returns {(String|undefined)} - The bad key if found, `undefined` otherwise
  * @example
  *
+ * 'use strict'
  * const NonBlankStrModel = require('@eluvio/elv-js-helpers/Model/NonBlankStrModel')
  *
  * const objBadKey = require('@eluvio/elv-js-helpers/Validation/objBadKey')

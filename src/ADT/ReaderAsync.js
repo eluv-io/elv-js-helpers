@@ -1,3 +1,4 @@
+'use strict'
 const ReaderT = require('crocks/Reader/ReaderT')
 
 const Async = require('./Async')

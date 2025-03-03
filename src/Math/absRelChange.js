@@ -1,3 +1,4 @@
+'use strict'
 const growth = require('./growth')
 
 const curry = require('../Functional/curry')

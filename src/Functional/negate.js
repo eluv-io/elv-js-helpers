@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Renamed passthrough for the `not()` [Crocks](https://crocks.dev/docs/functions/logic-functions.html#not) function
  * _(Copyright © 2016, Ian Hofmann-Hicks, ISC license)_
@@ -19,6 +20,7 @@
  * @returns {Function} A function that returns logically inverted output of the original function
  * @example
  *
+ * 'use strict'
  * const negate = require('@eluvio/elv-js-helpers/Functional/negate')
  *
  * const isEmpty = a => a.length === 0

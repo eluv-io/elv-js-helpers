@@ -1,3 +1,4 @@
+'use strict'
 const curry = require('./curry')
 const mergeDeepRight = require('./mergeDeepRight')
 

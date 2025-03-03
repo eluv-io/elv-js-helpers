@@ -1,3 +1,4 @@
+'use strict'
 const defBasicModel = require('../ModelFactory/defBasicModel')
 
 /**
@@ -15,6 +16,7 @@ const defBasicModel = require('../ModelFactory/defBasicModel')
  * @returns {Date} The validated input
  * @example
  *
+ * 'use strict'
  * const DatetimeModel = require('@eluvio/elv-js-helpers/Model/DatetimeModel')
  *
  * // when validation succeeds, returns the input:

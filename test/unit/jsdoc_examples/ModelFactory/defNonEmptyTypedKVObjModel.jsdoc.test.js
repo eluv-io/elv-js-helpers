@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const defNonEmptyTypedKVObjModel = TH.requireSrcFile('ModelFactory/defNonEmptyTypedKVObjModel')
 
 describe('defNonEmptyTypedKVObjModel JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const defObjectModel = TH.requireSrcFile('ModelFactory/defObjectModel')
     const NonBlankStrModel = TH.requireSrcFile('Model/NonBlankStrModel')
     const NonEmptyNonBlankKVModel = defNonEmptyTypedKVObjModel('NonEmptyNonBlankKV', NonBlankStrModel, NonBlankStrModel)

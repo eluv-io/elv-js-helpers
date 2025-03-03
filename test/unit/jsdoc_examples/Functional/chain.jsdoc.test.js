@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const chain = TH.requireSrcFile('Functional/chain')
 
 describe('chain JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const Err = TH.requireSrcFile('ADT/Err')
     const Ok = TH.requireSrcFile('ADT/Ok')
     const map = TH.requireSrcFile('Functional/map')

@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const comparator = TH.requireSrcFile('Functional/comparator')
 
 describe('comparator JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const isLT = TH.requireSrcFile('Boolean/isLT')
     const isGT = TH.requireSrcFile('Boolean/isGT')
     const compAscending = comparator(isGT)

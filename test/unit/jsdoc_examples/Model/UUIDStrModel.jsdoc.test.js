@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const UUIDStrModel = TH.requireSrcFile('Model/UUIDStrModel')
 
 describe('UUIDStrModel JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     TH.expect(() => UUIDStrModel('0')).to.throw(
       `Value is not in UUID format '00000000-0000-0000-0000-000000000000' (got: "0")`
     )

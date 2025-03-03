@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Passthrough for the `liftA3()` [Crocks](https://crocks.dev/) function
  * _(Copyright © 2016, Ian Hofmann-Hicks, ISC license)_
@@ -26,6 +27,7 @@
  * @returns {Function} The lifted function
  * @example
  *
+ * 'use strict'
  * const liftA3 = require('@eluvio/elv-js-helpers/Functional/liftA3')
  *
  * const curry = require('@eluvio/elv-js-helpers/Functional/curry')

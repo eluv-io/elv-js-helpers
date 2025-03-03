@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const assertBounded = TH.requireSrcFile('ModelAssertion/assertBounded')
 
 describe('assertBounded JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const NumberModel = TH.requireSrcFile('Model/NumberModel')
     // Note use of spread operator (...) to unpack the array returned by assertBounded()
     const NumberBetweenZeroAndOneModel = NumberModel.extend()

@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const uuid = TH.requireSrcFile('Misc/uuid')
 
 describe('uuid JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const RE_UUID_LOWER_CASE = TH.requireSrcFile('Validation/RE_UUID_LOWER_CASE')
     const u = uuid()
     u.length.should.eql(36)

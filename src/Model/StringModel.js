@@ -1,3 +1,4 @@
+'use strict'
 const defBasicModel = require('../ModelFactory/defBasicModel')
 
 // noinspection JSValidateTypes
@@ -16,6 +17,7 @@ const defBasicModel = require('../ModelFactory/defBasicModel')
  * @returns {String} The validated input
  * @example
  *
+ * 'use strict'
  * const StringModel = require('@eluvio/elv-js-helpers/Model/StringModel')
  *
  * StringModel('foo') //=> 'foo'

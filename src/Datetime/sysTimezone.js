@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Returns Datetime zone string from current environment
  *
@@ -7,6 +8,7 @@
  * @returns {String}
  * @example
  *
+ * 'use strict'
  * const sysTimezone = require('@eluvio/elv-js-helpers/Datetime/sysTimezone')
  *
  * sysTimezone() //=> 'America/Los_Angeles'

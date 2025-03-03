@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const neighborsPass = TH.requireSrcFile('Boolean/neighborsPass')
 
 describe('neighborsPass JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const xGTEy = (x, y) => x <= y
     neighborsPass(xGTEy, [1, 2, 2, 3]).should.eql(true)
     // single element, has no pairs to check:

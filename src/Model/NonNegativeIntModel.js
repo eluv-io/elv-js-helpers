@@ -1,3 +1,4 @@
+'use strict'
 const defBoundedIntModel = require('../ModelFactory/defBoundedIntModel')
 
 /**
@@ -18,6 +19,7 @@ const defBoundedIntModel = require('../ModelFactory/defBoundedIntModel')
  * @returns {Integer} The validated input
  * @example
  *
+ * 'use strict'
  * const NonNegativeIntModel = require('@eluvio/elv-js-helpers/Model/NonNegativeIntModel')
  *
  * NonNegativeIntModel(42)    //=> 42

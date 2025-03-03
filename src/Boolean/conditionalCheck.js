@@ -1,4 +1,4 @@
-
+'use strict'
 const curry = require('../Functional/curry')
 const negate = require('../Functional/negate')
 const or = require('../Functional/or')
@@ -24,6 +24,7 @@ const or = require('../Functional/or')
  * @returns {Function}
  * @example
  *
+ * 'use strict'
  * const conditionalCheck = require('@eluvio/elv-js-helpers/Boolean/conditionalCheck')
  *
  * const isString = require('@eluvio/elv-js-helpers/Boolean/isString')

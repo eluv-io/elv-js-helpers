@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const base58Encode = TH.requireSrcFile('Conversion/base58Encode')
 
 describe('base58Encode JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const bytes = Uint8Array.from([
       0, 60, 23, 110, 101, 155, 234, 15, 41, 163, 233, 191, 120, 128, 193, 18, 177, 179, 27, 77, 200, 38, 38, 129, 135,
     ])

@@ -1,3 +1,4 @@
+'use strict'
 const base58Decode = require('../Conversion/base58Decode')
 const throwsException = require('./throwsException')
 
@@ -12,6 +13,7 @@ const throwsException = require('./throwsException')
  * @returns {Boolean}
  * @example
  *
+ * 'use strict'
  * const isBase58String = require('@eluvio/elv-js-helpers/Boolean/isBase58String')
  *
  * isBase58String('foo')            //=> true

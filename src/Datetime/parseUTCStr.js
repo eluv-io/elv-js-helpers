@@ -1,3 +1,4 @@
+'use strict'
 const isString = require('../Boolean/isString')
 
 const REGEX_UTC_TIMESTAMP = require('./RE_UTC_TIMESTAMP')
@@ -20,6 +21,7 @@ const _MONTH_LENGTHS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
  * @see utcStrToDate
  * @example
  *
+ * 'use strict'
  * const dateObject = parseUTCStr('2022-01-01T14:00:00Z')
  * dateObject.valueOf()                                  //=> 1641045600000
  *

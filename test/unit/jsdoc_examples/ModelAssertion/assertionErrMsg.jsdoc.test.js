@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const assertionErrMsg = TH.requireSrcFile('ModelAssertion/assertionErrMsg')
 
 describe('assertionErrMsg JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const NumberModel = TH.requireSrcFile('Model/NumberModel')
     const AnswerToEverythingModel = NumberModel.extend()
       .assert(x => x === 42, assertionErrMsg('must equal 42'))

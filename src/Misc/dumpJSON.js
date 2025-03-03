@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Pretty-prints value to console/stdout in JSON format. Like `console.log()`, returns `undefined`.
  *
@@ -6,6 +7,7 @@
  * @sig * -> undefined (PRINTS TO CONSOLE)
  * @example
  *
+ * 'use strict'
  * const dumpJSON = require('@eluvio/elv-js-helpers/Misc/dumpJSON')
  *
  * dumpJSON('A')           //=> OUTPUT: '"A"'

@@ -1,3 +1,4 @@
+'use strict'
 const comparator = require('./comparator')
 
 const Fraction = require('../Conversion/fraction')
@@ -22,6 +23,7 @@ const FractionStrModel = require('../Model/FractionStrModel')
  * @returns {Integer} -1 | 0 | 1
  * @example
  *
+ * 'use strict'
  * const compareFracStr = require('@eluvio/elv-js-helpers/Functional/compareFracStr')
  *
  * compareFracStr('1', '2')        //=> -1

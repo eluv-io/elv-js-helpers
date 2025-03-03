@@ -1,3 +1,4 @@
+'use strict'
 const defBoundedFracStrModel = require('../ModelFactory/defBoundedFracStrModel')
 
 /**
@@ -17,6 +18,7 @@ const defBoundedFracStrModel = require('../ModelFactory/defBoundedFracStrModel')
  * @returns {Number} The validated input
  * @example
  *
+ * 'use strict'
  * const PositiveFracStrModel = require('@eluvio/elv-js-helpers/Model/PositiveFracStrModel')
  *
  * PositiveFracStrModel('42')    //=> '42'

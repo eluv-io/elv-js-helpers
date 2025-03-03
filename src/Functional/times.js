@@ -1,3 +1,4 @@
+'use strict'
 const _times = require('@eluvio/ramda-fork/src/times')
 
 const curry = require('./curry')
@@ -19,6 +20,7 @@ const curry = require('./curry')
  * @returns {Array} List with result of function call(s)
  * @example
  *
+ * 'use strict'
  * const times = require('@eluvio/elv-js-helpers/Functional/times')
  *
  * const double = x => x * 2

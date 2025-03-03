@@ -1,3 +1,4 @@
+'use strict'
 const defObjectModel = require('./defObjectModel')
 const isObject = require('../Boolean/isObject')
 
@@ -25,6 +26,7 @@ const throwIfUndefined = require('../Validation/throwIfUndefined')
  * @returns {Function} Returns an [ObjectModel](http://objectmodel.js.org/) that can be called with an input
  * @example
  *
+ * 'use strict'
  * const defSealedObjModel = require('@eluvio/elv-js-helpers/ModelFactory/defSealedObjModel')
  *
  * const PersonNameModel = defSealedObjModel('PersonName', {first: String, last: String})

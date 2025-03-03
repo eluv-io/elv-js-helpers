@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const assertAfterCheck = TH.requireSrcFile('ModelAssertion/assertAfterCheck')
 
 describe('assertAfterCheck JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const passesModelCheck = TH.requireSrcFile('Boolean/passesModelCheck')
     const NumberModel = TH.requireSrcFile('Model/NumberModel')
     const IntegerModel = NumberModel.extend()

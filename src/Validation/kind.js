@@ -1,3 +1,4 @@
+'use strict'
 const _kindOf = require('kind-of')
 
 const _FORMATTED_KINDS = {
@@ -48,6 +49,7 @@ const _FORMATTED_KINDS = {
  * @returns {String} Name of the item's type
  * @example
  *
+ * 'use strict'
  * const kind = require('@eluvio/elv-js-helpers/Validation/kind')
  *
  * kind(undefined)                //=> 'undefined'

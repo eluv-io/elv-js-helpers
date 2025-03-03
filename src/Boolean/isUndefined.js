@@ -1,3 +1,4 @@
+'use strict'
 const kind = require('../Validation/kind')
 
 /**
@@ -11,6 +12,7 @@ const kind = require('../Validation/kind')
  * @returns {Boolean}
  * @example
  *
+ * 'use strict'
  * const isUndefined = require('@eluvio/elv-js-helpers/Boolean/isUndefined')
  *
  * isUndefined()              //=> true

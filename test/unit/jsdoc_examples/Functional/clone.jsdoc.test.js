@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const clone = TH.requireSrcFile('Functional/clone')
 
 describe('clone JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const defObjectModel = TH.requireSrcFile('ModelFactory/defObjectModel')
     const PersonNameModel = defObjectModel('PersonName', {first: String, last: String})
     const arthur = PersonNameModel({first: 'Arthur', last: 'Dent'})

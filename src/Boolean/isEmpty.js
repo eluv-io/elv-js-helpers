@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Passthrough for the [Ramda `isEmpty` function](https://ramdajs.com/docs/#isEmpty) _(Copyright © Scott Sauyet and Michael Hurley)_
  *
@@ -14,6 +15,7 @@
  * @returns {Boolean}
  * @example
  *
+ * 'use strict'
  * const isEmpty = require('@eluvio/elv-js-helpers/Boolean/isEmpty')
  *
  * isEmpty([42])                //=> false

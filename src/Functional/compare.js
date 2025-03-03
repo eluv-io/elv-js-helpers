@@ -1,3 +1,4 @@
+'use strict'
 const comparator = require('./comparator')
 const flip = require('./flip')
 
@@ -23,6 +24,7 @@ const isLT = require('../Boolean/isLT')
  * @returns {Integer} -1 | 0 | 1
  * @example
  *
+ * 'use strict'
  * const compare = require('@eluvio/elv-js-helpers/Functional/compare')
  *
  * compare(1, 2)            //=> -1

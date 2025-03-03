@@ -1,3 +1,4 @@
+'use strict'
 const defRegexMatchedStrModel = require('../ModelFactory/defRegexMatchedStrModel')
 const RE_UUID_LOWER_CASE = require('../Validation/RE_UUID_LOWER_CASE')
 
@@ -18,6 +19,7 @@ const RE_UUID_LOWER_CASE = require('../Validation/RE_UUID_LOWER_CASE')
  * @returns {String} The validated input
  * @example
  *
+ * 'use strict'
  * const UUIDStrLowerModel = require('@eluvio/elv-js-helpers/Model/UUIDStrLowerModel')
  *
  * UUIDStrLowerModel('0')                                      //=> EXCEPTION: `Value is not in lower case UUID format '00000000-0000-0000-0000-000000000000' (got: "0")`

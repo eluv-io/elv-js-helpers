@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Ignores input and always returns `false`.
  *
@@ -9,6 +10,7 @@
  * @returns {Boolean} `false`
  * @example
  *
+ * 'use strict'
  * const F = require('@eluvio/elv-js-helpers/Functional/F')
  *
  * F(42)   //=> false

@@ -1,3 +1,4 @@
+'use strict'
 const NumberModel = require('../Model/NumberModel')
 
 const assertBounded = require('../ModelAssertion/assertBounded')
@@ -23,6 +24,7 @@ const assertBounded = require('../ModelAssertion/assertBounded')
  * @returns {Model}
  * @example
  *
+ * 'use strict'
  * const defBoundedNumModel = require('@eluvio/elv-js-helpers/ModelFactory/defBoundedNumModel')
  *
  * const HumanHeightMetersModel = defBoundedNumModel('HumanHeightMeters', 0, 3, false, true)

@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const hasNoDuplicates = TH.requireSrcFile('Boolean/hasNoDuplicates')
 
 describe('hasNoDuplicates JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     hasNoDuplicates([]).should.eql(true)
     hasNoDuplicates([1, 2, 3]).should.eql(true)
     hasNoDuplicates([1, 2, 2]).should.eql(false)

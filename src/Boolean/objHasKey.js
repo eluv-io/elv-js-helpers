@@ -1,3 +1,4 @@
+'use strict'
 const curry = require('../Functional/curry')
 const isObject = require('../Boolean/isObject')
 
@@ -14,6 +15,7 @@ const isObject = require('../Boolean/isObject')
  * @returns {Boolean}
  * @example
  *
+ * 'use strict'
  * const objHasKey = require('@eluvio/elv-js-helpers/Boolean/objHasKey')
  *
  * objHasKey('foo', {foo: 'bar'})   //=> true

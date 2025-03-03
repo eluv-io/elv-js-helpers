@@ -1,3 +1,4 @@
+'use strict'
 const isNil = require('../Boolean/isNil')
 
 const assertPropRel = require('./assertPropRel')

@@ -1,3 +1,4 @@
+'use strict'
 const _assocPath = require('@eluvio/ramda-fork/src/assocPath')
 
 const curry = require('./curry')
@@ -32,6 +33,7 @@ const PathArrayModel = defArrayModel('PathArray', PathElementModel)
  * @returns {Object} Shallow copy of `object` with
  * @example
  *
+ * 'use strict'
  * const setPath = require('@eluvio/elv-js-helpers/Functional/setPath')
  *
  * const clone = require('@eluvio/elv-js-helpers/Functional/clone')

@@ -1,3 +1,4 @@
+'use strict'
 const Err = require('../ADT/Err')
 const Ok = require('../ADT/Ok')
 
@@ -25,6 +26,7 @@ const curry = require('../Functional/curry')
  * @returns {function}
  * @example
  *
+ * 'use strict'
  * const validateWithModel = require('@eluvio/elv-js-helpers/Validation/validateWithModel')
  *
  * const PositiveNumModel = require('@eluvio/elv-js-helpers/Model/PositiveNumModel')

@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const pipe = TH.requireSrcFile('Functional/pipe')
 
 describe('pipe JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     // function has only one input, no need to curry
     const trim = str => str.trim()
     // function has only one input, not need to curry

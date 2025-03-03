@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const liftA2Join = TH.requireSrcFile('Functional/liftA2Join')
 
 describe('liftA2Join JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const curry = TH.requireSrcFile('Functional/curry')
     const Err = TH.requireSrcFile('ADT/Err')
     const Ok = TH.requireSrcFile('ADT/Ok')

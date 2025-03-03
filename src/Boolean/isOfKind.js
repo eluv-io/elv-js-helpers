@@ -1,3 +1,4 @@
+'use strict'
 const curry = require('../Functional/curry')
 const kind = require('../Validation/kind')
 
@@ -15,6 +16,7 @@ const kind = require('../Validation/kind')
  * @returns {Boolean}
  * @example
  *
+ * 'use strict'
  * const isOfKind = require('@eluvio/elv-js-helpers/Boolean/isOfKind')
  *
  * isOfKind('Array', [1, 2, 3]) //=> true

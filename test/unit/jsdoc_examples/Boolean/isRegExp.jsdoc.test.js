@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const isRegExp = TH.requireSrcFile('Boolean/isRegExp')
 
 describe('isRegExp JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     isRegExp([1, 2, 3]).should.eql(false)
     // extra arguments ignored:
     isRegExp(1, /foo/).should.eql(false)

@@ -1,3 +1,4 @@
+'use strict'
 const format = require('../Conversion/format')
 
 // assertionErrMsg :: String -> (String -> a -> String -> String)
@@ -28,6 +29,7 @@ const format = require('../Conversion/format')
  * @returns {Function}
  * @example
  *
+ * 'use strict'
  * const NumberModel = require('@eluvio/elv-js-helpers/Model/NumberModel')
  *
  * const assertionErrMsg = require('@eluvio/elv-js-helpers/ModelAssertion/assertionErrMsg')

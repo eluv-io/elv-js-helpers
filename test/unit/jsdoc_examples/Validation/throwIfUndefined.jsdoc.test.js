@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const throwIfUndefined = TH.requireSrcFile('Validation/throwIfUndefined')
 
 describe('throwIfUndefined JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     let u
     const x = 0
     let y = 42

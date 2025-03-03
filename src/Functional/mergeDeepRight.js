@@ -1,3 +1,4 @@
+'use strict'
 const _mergeDeepRight = require('@eluvio/ramda-fork/src/mergeDeepRight')
 
 const curry = require('./curry')

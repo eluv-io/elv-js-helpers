@@ -1,3 +1,4 @@
+'use strict'
 const Err = require('../ADT/Err')
 const Ok = require('../ADT/Ok')
 

@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Throws an exception. Used to allow terser code, e.g. replacing `if`/`else` with a ternary expression.
  *
@@ -8,6 +9,7 @@
  * @returns {Nothing}
  * @example
  *
+ * 'use strict'
  * const throwError = require('@eluvio/elv-js-helpers/Misc/throwError')
  *
  * throwError('clear and helpful error message') //=> EXCEPTION: 'clear and helpful error message'

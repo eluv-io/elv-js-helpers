@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Passthrough for the `toPairs()` [Crocks](https://crocks.dev/) function
  * _(Copyright © 2016, Ian Hofmann-Hicks, ISC license)_
@@ -16,6 +17,7 @@
  * @returns {List} List of Pairs
  * @example
  *
+ * 'use strict'
  * const toPairs = require('@eluvio/elv-js-helpers/Conversion/toPairs')
  *
  * const kvPairs = toPairs({a:1, b:2})

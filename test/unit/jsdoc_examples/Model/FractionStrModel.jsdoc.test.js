@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const FractionStrModel = TH.requireSrcFile('Model/FractionStrModel')
 
 describe('FractionStrModel JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     TH.expect(() => FractionStrModel('foo')).to.throw(
       'Value must be a string in the form of a whole number or a fraction (got: "foo")'
     )

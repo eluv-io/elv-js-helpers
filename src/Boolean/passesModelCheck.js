@@ -1,3 +1,4 @@
+'use strict'
 const curry = require('../Functional/curry')
 const F = require('../Functional/F')
 const T = require('../Functional/T')
@@ -18,6 +19,7 @@ const validateWithModel = require('../Validation/validateWithModel')
  * @returns {Boolean}
  * @example
  *
+ * 'use strict'
  * const passesModelCheck = require('@eluvio/elv-js-helpers/Boolean/passesModelCheck')
  *
  * const PositiveIntModel = require('@eluvio/elv-js-helpers/Model/PositiveIntModel')

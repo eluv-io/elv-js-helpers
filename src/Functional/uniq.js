@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Passthrough for Ramda's `uniq` function _(Copyright © Scott Sauyet and Michael Hurley)_
  *
@@ -15,6 +16,7 @@
  * @returns {Array} New list with only unique elements
  * @example
  *
+ * 'use strict'
  * const uniq = require('@eluvio/elv-js-helpers/Functional/uniq')
  *
  * uniq([1, 2, 3, 2])                 //=> [1, 2, 3]

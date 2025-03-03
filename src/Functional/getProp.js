@@ -1,3 +1,4 @@
+'use strict'
 const _prop = require('@eluvio/ramda-fork/src/prop')
 
 const curry = require('./curry')
@@ -22,6 +23,7 @@ const curry = require('./curry')
  * @returns {*} Value or `undefined`
  * @example
  *
+ * 'use strict'
  * const getProp = require('@eluvio/elv-js-helpers/Functional/getProp')
  *
  * const myObject = {foo: {bar: [1, 2, 3]}}

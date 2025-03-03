@@ -1,3 +1,4 @@
+'use strict'
 const uuid = require('../Misc/uuid')
 
 const uuidMap = new WeakMap()

@@ -1,3 +1,4 @@
+'use strict'
 const isRegExp = require('../Boolean/isRegExp')
 const isString = require('../Boolean/isString')
 
@@ -18,6 +19,7 @@ const escapeForRegExp = require('./escapeForRegExp')
  * @returns {String}
  * @example
  *
+ * 'use strict'
  * const _strOrRegExSrc = require('@eluvio/elv-js-helpers/Conversion/_strOrRegExSrc')
  *
  * const RE_UUID_LOWER_CASE = require('@eluvio/elv-js-helpers/Validation/RE_UUID_LOWER_CASE')

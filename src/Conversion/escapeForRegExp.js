@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Escapes a string for use in a [RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp).
  *
@@ -12,6 +13,7 @@
  * @returns {string}
  * @example
  *
+ * 'use strict'
  * const escapeForRegExp = require('@eluvio/elv-js-helpers/Conversion/escapeForRegExp')
  *
  * escapeForRegExp('foo')       //=> 'foo'

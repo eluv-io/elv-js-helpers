@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Passthrough for the `map()` [Crocks](https://crocks.dev/) function
  * _(Copyright © 2016, Ian Hofmann-Hicks, ISC license)_
@@ -22,6 +23,7 @@
  * @returns {*} The wrapped result
  * @example
  *
+ * 'use strict'
  * const Err = require('@eluvio/elv-js-helpers/ADT/Err')
  * const Ok = require('@eluvio/elv-js-helpers/ADT/Ok')
  *

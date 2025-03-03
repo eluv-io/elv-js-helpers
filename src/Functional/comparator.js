@@ -1,3 +1,4 @@
+'use strict'
 const curry = require('./curry')
 
 /**
@@ -20,6 +21,7 @@ const curry = require('./curry')
  * @returns {Function} - a 2-input comparator function that returns -1, 0, or 1
  * @example
  *
+ * 'use strict'
  * const comparator = require('@eluvio/elv-js-helpers/Functional/comparator')
  *
  * const isLT = require('@eluvio/elv-js-helpers/Boolean/isLT')

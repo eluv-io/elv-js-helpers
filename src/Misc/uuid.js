@@ -1,3 +1,4 @@
+'use strict'
 const { v4: uuidv4 } = require('uuid')
 
 /**
@@ -15,6 +16,7 @@ const { v4: uuidv4 } = require('uuid')
  * @returns {string} The uuid
  * @example
  *
+ * 'use strict'
  * const uuid = require('@eluvio/elv-js-helpers/Misc/uuid')
  *
  * const RE_UUID_LOWER_CASE = require('@eluvio/elv-js-helpers/Validation/RE_UUID_LOWER_CASE')

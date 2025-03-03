@@ -1,3 +1,4 @@
+'use strict'
 const StringModel = require('../Model/StringModel')
 
 const assertMatchesRegex = require('../ModelAssertion/assertMatchesRegex')
@@ -19,6 +20,7 @@ const throwIfUndefined = require('../Validation/throwIfUndefined')
  * @returns {Function} Returns an [ObjectModel](http://objectmodel.js.org/) that can be called with an input
  * @example
  *
+ * 'use strict'
  * const defRegexMatchedStrModel = require('@eluvio/elv-js-helpers/ModelFactory/defRegexMatchedStrModel')
  *
  * const UUIDStringModel = defRegexMatchedStrModel('UUIDString', /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/)

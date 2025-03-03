@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Passthrough for the `constant()` [Crocks combinator](https://crocks.dev/docs/functions/combinators.html)
  * _(Copyright © 2016, Ian Hofmann-Hicks, ISC license)_
@@ -17,6 +18,7 @@
  * @returns {Function} Function that ignores any input and always returns the original value
  * @example
  *
+ * 'use strict'
  * const constant = require('@eluvio/elv-js-helpers/Functional/constant')
  *
  * const always42 = constant(42)

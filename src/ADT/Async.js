@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Passthrough for the `Async` [Crocks Algebraic Data Type](https://crocks.dev/docs/crocks/)
  * _(Copyright © 2016, Ian Hofmann-Hicks, ISC license)_
@@ -18,7 +19,6 @@
  *
  *
  */
-
 const Async = require('crocks/Async')
 
 module.exports = Async

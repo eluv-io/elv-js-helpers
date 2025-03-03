@@ -1,9 +1,12 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const dumpJSON = TH.requireSrcFile('Misc/dumpJSON')
 
 describe('dumpJSON JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
+
     TH.sinon.stub(console, 'log')
     dumpJSON('A')
     try {

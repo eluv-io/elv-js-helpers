@@ -1,3 +1,4 @@
+'use strict'
 const _pluck = require('@eluvio/ramda-fork/src/pluck')
 
 const curry = require('./curry')
@@ -25,6 +26,7 @@ const curry = require('./curry')
  * @returns {Array} List with the specified property or array element from each element in x
  * @example
  *
+ * 'use strict'
  * const pluck = require('@eluvio/elv-js-helpers/Functional/pluck')
  *
  * const arrOfObj = [{a: 1, b:2}, {b:2, c:3}]

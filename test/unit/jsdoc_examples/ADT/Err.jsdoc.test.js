@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const Err = TH.requireSrcFile('ADT/Err')
 
 describe('Err JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const curry = TH.requireSrcFile('Functional/curry')
     const dumpJSON = TH.requireSrcFile('Misc/dumpJSON')
     const liftA2 = TH.requireSrcFile('Functional/liftA2')

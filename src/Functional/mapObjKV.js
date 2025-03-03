@@ -1,3 +1,4 @@
+'use strict'
 const curry = require('./curry')
 /**
  * Creates a new object with top level keys and values transformed by separate functions.
@@ -18,6 +19,7 @@ const curry = require('./curry')
  * @returns {Object}
  * @example
  *
+ * 'use strict'
  * const mapObjKV = require('@eluvio/elv-js-helpers/Functional/mapObjKV')
  *
  * const dumpJSON = require('@eluvio/elv-js-helpers/Misc/dumpJSON')

@@ -1,3 +1,4 @@
+'use strict'
 const isArray = require('../Boolean/isArray')
 
 /**
@@ -11,6 +12,7 @@ const isArray = require('../Boolean/isArray')
  * @returns {array}
  * @example
  *
+ * 'use strict'
  * const wrapNonArray = require('@eluvio/elv-js-helpers/Conversion/wrapNonArray')
  *
  * wrapNonArray(42)      //=> [42]

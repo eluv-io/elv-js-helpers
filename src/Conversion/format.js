@@ -1,3 +1,4 @@
+'use strict'
 const formatUtil = require('@ladjs/format-util')
 const kind = require('../Validation/kind')
 
@@ -20,6 +21,7 @@ const kind = require('../Validation/kind')
  * @returns {String}
  * @example
  *
+ * 'use strict'
  * const format = require('@eluvio/elv-js-helpers/Conversion/format')
  *
  * format(' ')      //=> '" "'

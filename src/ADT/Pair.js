@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Passthrough for the `Pair` [Crocks Algebraic Data Type](https://crocks.dev/docs/crocks/)
  * _(Copyright © 2016, Ian Hofmann-Hicks, ISC license)_
@@ -19,6 +20,7 @@
  * @returns {Pair}
  * @example
  *
+ * 'use strict'
  * const Pair = require('@eluvio/elv-js-helpers/ADT/Pair')
  *
  * const p = Pair(1,2)

@@ -1,3 +1,4 @@
+'use strict'
 const curry = require('./curry')
 
 /**
@@ -14,6 +15,7 @@ const curry = require('./curry')
  * @returns {Function} A 2-input function that preprocesses its inputs
  * @example
  *
+ * 'use strict'
  * const isString = require('@eluvio/elv-js-helpers/Boolean/isString')
  *
  * const addPreprocessFn2 = require('@eluvio/elv-js-helpers/Functional/addPreprocessFn2')

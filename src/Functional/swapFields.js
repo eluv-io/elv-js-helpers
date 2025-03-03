@@ -1,3 +1,4 @@
+'use strict'
 const _swapFields = require('./_swapFields')
 const curry = require('./curry')
 const liftA3 = require('./liftA3')

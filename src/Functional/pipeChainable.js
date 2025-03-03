@@ -1,3 +1,4 @@
+'use strict'
 const isChain = require('crocks/core/isChain')
 const isFunction = require('crocks/core/isFunction')
 
@@ -17,6 +18,7 @@ const kind = require('../Validation/kind')
  * @returns {ADT} A chainable ADT
  * @example
  *
+ * 'use strict'
  * const pipeChainable = require('@eluvio/elv-js-helpers/Functional/pipeChainable')
  *
  * // https://api.dictionaryapi.dev/api/v2/entries/en/aardvark

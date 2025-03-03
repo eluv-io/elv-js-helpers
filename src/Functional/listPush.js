@@ -1,3 +1,4 @@
+'use strict'
 const curry = require('./curry')
 
 const List = require('../ADT/List')
@@ -14,6 +15,7 @@ const List = require('../ADT/List')
  * @returns {List} New Crocks List containing original list elements plus new element at end
  * @example
  *
+ * 'use strict'
  * const listPush = require('@eluvio/elv-js-helpers/Functional/listPush')
  *
  * const List = require('@eluvio/elv-js-helpers/ADT/List')

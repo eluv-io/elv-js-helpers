@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const objHasKey = TH.requireSrcFile('Boolean/objHasKey')
 
 describe('objHasKey JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     objHasKey('foo', {foo: 'bar'}).should.eql(true)
     objHasKey('bar', {foo: 'bar'}).should.eql(false)
     objHasKey('foo', [1, 2, 3]).should.eql(false)

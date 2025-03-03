@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Array of [Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
  * used by `redact()` to decide whether a particular object attribute should have its value redacted.
@@ -8,6 +9,7 @@
  * @category Constant
  * @example
  *
+ * 'use strict'
  * const REDACT_PATTERNS = require('@eluvio/elv-js-helpers/Conversion/REDACT_PATTERNS')
  *
  * const shouldRedact = x => REDACT_PATTERNS.find(pattern => pattern.test(x)) !== undefined;

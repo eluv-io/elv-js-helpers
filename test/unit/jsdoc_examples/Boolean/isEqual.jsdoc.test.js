@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const isEqual = TH.requireSrcFile('Boolean/isEqual')
 
 describe('isEqual JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     isEqual(42, 42).should.eql(true)
     isEqual(42, '42').should.eql(false)
     isEqual([1], [1]).should.eql(false)

@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Returns current datetime as a [Javascript Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
  *
@@ -7,6 +8,7 @@
  * @returns {Date}
  * @example
  *
+ * 'use strict'
  * const now = require('@eluvio/elv-js-helpers/Datetime/now')
  *
  * const isGT = require('@eluvio/elv-js-helpers/Boolean/isGT')

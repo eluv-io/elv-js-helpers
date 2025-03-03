@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Javascript's built-in [Object.fromEntries()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries) function.
  *
@@ -13,6 +14,7 @@
  * @see fromPairs
  * @example
  *
+ * 'use strict'
  * const objFromEntries = require('@eluvio/elv-js-helpers/Conversion/objFromEntries')
  *
  * const kvPairs = [['a', 1], ['b',2]]

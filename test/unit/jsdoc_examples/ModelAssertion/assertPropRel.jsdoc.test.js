@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const assertPropRel = TH.requireSrcFile('ModelAssertion/assertPropRel')
 
 describe('assertPropRel JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const defObjectModel = TH.requireSrcFile('ModelFactory/defObjectModel')
     const isGTE = TH.requireSrcFile('Boolean/isGTE')
     const NumLimitsModel = defObjectModel('NumberLimits', {

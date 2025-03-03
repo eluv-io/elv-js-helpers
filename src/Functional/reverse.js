@@ -1,3 +1,4 @@
+'use strict'
 const _reverse = require('@eluvio/ramda-fork/src/reverse')
 
 /**
@@ -15,6 +16,7 @@ const _reverse = require('@eluvio/ramda-fork/src/reverse')
  * @returns {String | Array} Reversed string or array
  * @example
  *
+ * 'use strict'
  * const reverse = require('@eluvio/elv-js-helpers/Functional/reverse')
  *
  * reverse([1, 2, 3])                 //=> [3, 2, 1]

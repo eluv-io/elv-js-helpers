@@ -1,3 +1,4 @@
+'use strict'
 const _objBadKey = require('../Validation/objBadKey')
 
 /**
@@ -12,6 +13,7 @@ const _objBadKey = require('../Validation/objBadKey')
  * @returns {Function} Constructs an error message for failed key
  * @example
  *
+ * 'use strict'
  * const _objBadKeyErrMsg = require('@eluvio/elv-js-helpers/ModelAssertion/_objBadKeyErrMsg')
  *
  * const defBasicModel = require('@eluvio/elv-js-helpers/ModelFactory/defBasicModel')

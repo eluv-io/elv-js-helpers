@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Passthrough for the `either()` [Crocks point-free function](https://crocks.dev/docs/functions/pointfree-functions.html)
  * _(Copyright © 2016, Ian Hofmann-Hicks, ISC license)_
@@ -21,6 +22,7 @@
  * @returns {Function} Function which takes a Result and returns output of one of the two supplied functions
  * @example
  *
+ * 'use strict'
  * const either = require('@eluvio/elv-js-helpers/Functional/either')
  *
  * const Err = require('@eluvio/elv-js-helpers/ADT/Err')

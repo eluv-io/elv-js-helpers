@@ -1,3 +1,4 @@
+'use strict'
 const kind = require('../Validation/kind')
 const isUndefined = require('../Boolean/isUndefined')
 const mapObjValues = require('../Functional/mapObjValues')
@@ -26,6 +27,7 @@ const REDACT_PATTERNS = require('./REDACT_PATTERNS')
  * @returns {*}
  * @example
  *
+ * 'use strict'
  * const redact = require('@eluvio/elv-js-helpers/Conversion/redact')
  *
  * const data = {
@@ -38,12 +40,21 @@ const REDACT_PATTERNS = require('./REDACT_PATTERNS')
  *
  * console.log(redacted)    //=> OUTPUT: '{"user":"foo","password":"[REDACTED ...word]","key":"[REDACTED]"}'
  *
+ * const arr = [
+ *   {password: 'x'},
+ *   {PRIVATE_KEY: '1234'},
+ *   {foo: 'bar'}
+ * ]
+ *
+ * const redactedArr = JSON.stringify(redact(arr))
+ * console.log(redactedArr)    //=> OUTPUT: '[{"password":"[REDACTED]"},{"PRIVATE_KEY":"[REDACTED]"},{"foo":"bar"}]'
+ *
  */
 const redact = (value, addlPatterns = [], parentKey = null) => {
   const testPatterns = REDACT_PATTERNS.concat(addlPatterns)
   switch(kind(value)) {
     case 'Array':
-      return value.map(redact, addlPatterns)
+      return value.map(v => redact(v,addlPatterns))
     case 'Object':
       return mapObjValues((val, key) => redact(val, addlPatterns, key), value)
     case 'String':

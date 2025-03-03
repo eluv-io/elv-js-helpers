@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const toLocaleString = TH.requireSrcFile('Datetime/toLocaleString')
 
 describe('toLocaleString JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const utcStrToDate = TH.requireSrcFile('Datetime/utcStrToDate')
     const myDate = utcStrToDate('2022-03-01T14:00:00Z')
     const USA_Pacific_short = toLocaleString('en-US', {

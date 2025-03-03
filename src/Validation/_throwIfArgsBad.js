@@ -1,3 +1,4 @@
+'use strict'
 const isFunction = require('../Boolean/isFunction')
 const isObject = require('../Boolean/isObject')
 

@@ -1,3 +1,4 @@
+'use strict'
 const curry = require('../Functional/curry')
 
 /**
@@ -14,6 +15,7 @@ const curry = require('../Functional/curry')
  * @returns {Boolean}
  * @example
  *
+ * 'use strict'
  * const matchesRegex = require('@eluvio/elv-js-helpers/Boolean/matchesRegex')
  *
  * matchesRegex(/a/, 'abc')             //=> true

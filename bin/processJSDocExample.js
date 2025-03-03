@@ -69,6 +69,7 @@ const newUnitTestFileText = (srcFileAbsPath, jsDocAssertions) => {
   const requireStmt = `const ${name} = ${testRequireText(srcFileAbsPath)}`
 
   return `// AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 ${requireStmt}
 

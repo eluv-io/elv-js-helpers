@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const objBadVal = TH.requireSrcFile('Validation/objBadVal')
 
 describe('objBadVal JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const NonBlankStrModel = TH.requireSrcFile('Model/NonBlankStrModel')
     TH.chai.assert.deepEqual(objBadVal(NonBlankStrModel, {foo: 'bar'}), undefined)
     objBadVal(NonBlankStrModel, {foo: ' '}).should.eql(['foo', ' '])

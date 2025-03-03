@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Passthrough for the `chain()` [Crocks](https://crocks.dev/) function
  * _(Copyright © 2016, Ian Hofmann-Hicks, ISC license)_
@@ -20,6 +21,7 @@
  * @returns {*} The wrapped result
  * @example
  *
+ * 'use strict'
  * const chain = require('@eluvio/elv-js-helpers/Functional/chain')
  *
  * const Err = require('@eluvio/elv-js-helpers/ADT/Err')

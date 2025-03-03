@@ -1,3 +1,4 @@
+'use strict'
 const NumberModel = require('./NumberModel')
 
 const passesModelCheck = require('../Boolean/passesModelCheck')
@@ -22,6 +23,7 @@ const assertAfterCheck = require('../ModelAssertion/assertAfterCheck')
  * @returns {Integer} The validated input
  * @example
  *
+ * 'use strict'
  * const IntegerModel = require('@eluvio/elv-js-helpers/Model/IntegerModel')
  *
  * IntegerModel(42)    //=> 42

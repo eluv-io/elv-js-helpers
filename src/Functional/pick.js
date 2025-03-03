@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Passthrough for the `pick()` [Crocks](https://crocks.dev/) helper function
  * _(Copyright © 2016, Ian Hofmann-Hicks, ISC license)_
@@ -18,6 +19,7 @@
  * @returns {Object} A shallow copy of the original object with only the specified keys
  * @example
  *
+ * 'use strict'
  * const pick = require('@eluvio/elv-js-helpers/Functional/pick')
  *
  * const person = {

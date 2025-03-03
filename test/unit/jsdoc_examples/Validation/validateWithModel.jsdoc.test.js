@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const validateWithModel = TH.requireSrcFile('Validation/validateWithModel')
 
 describe('validateWithModel JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const PositiveNumModel = TH.requireSrcFile('Model/PositiveNumModel')
     const resultToPOJO = TH.requireSrcFile('Conversion/ResultToPOJO')
     const goodResult = validateWithModel(PositiveNumModel, 42)

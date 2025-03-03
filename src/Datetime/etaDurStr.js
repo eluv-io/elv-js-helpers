@@ -1,4 +1,4 @@
-
+'use strict'
 const join = require('@eluvio/ramda-fork/src/join')
 const last = require('@eluvio/ramda-fork/src/last')
 const splitWhen = require('@eluvio/ramda-fork/src/splitWhen')
@@ -45,6 +45,7 @@ const _dhms = seconds => [86400, 3600, 60, 1].reduce(
  * @returns {string}
  * @example
  *
+ * 'use strict'
  * const etaDurStr = require('@eluvio/elv-js-helpers/Datetime/etaDurStr')
  *
  * etaDurStr(0)      //=> "0s"

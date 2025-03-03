@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const isResult = TH.requireSrcFile('Boolean/isResult')
 
 describe('isResult JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const Err = TH.requireSrcFile('ADT/Err')
     const Ok = TH.requireSrcFile('ADT/Ok')
     isResult(Err(['invalid query'])).should.eql(true)

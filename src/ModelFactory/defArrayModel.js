@@ -1,5 +1,5 @@
 // noinspection JSValidateTypes
-
+'use strict'
 const {ArrayModel} = require('objectmodel')
 
 const throwIfUndefined = require('../Validation/throwIfUndefined')
@@ -23,6 +23,7 @@ const throwIfUndefined = require('../Validation/throwIfUndefined')
  * @returns {Object} Returns an [ObjectModel](http://objectmodel.js.org/) that can be called with an input
  * @example
  *
+ * 'use strict'
  * const NonNegativeNumModel = require('@eluvio/elv-js-helpers/Model/NonNegativeNumModel')
  *
  * const defArrayModel = require('@eluvio/elv-js-helpers/ModelFactory/defArrayModel')

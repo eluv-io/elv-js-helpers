@@ -1,3 +1,4 @@
+'use strict'
 const curry = require('../Functional/curry')
 
 const isGT = require('./isGT')
@@ -24,6 +25,7 @@ const isGT = require('./isGT')
  * @returns {Boolean}
  * @example
  *
+ * 'use strict'
  * const isGTCustom = require('@eluvio/elv-js-helpers/Boolean/isGTCustom')
  *
  * const strLength = str => str.length

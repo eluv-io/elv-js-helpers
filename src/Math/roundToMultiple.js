@@ -1,3 +1,4 @@
+'use strict'
 const curry = require('../Functional/curry')
 
 // // roundToMultiple :: Number -> Number -> Number

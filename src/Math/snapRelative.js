@@ -1,3 +1,4 @@
+'use strict'
 const absRelChange = require('./absRelChange')
 
 const curry = require('../Functional/curry')

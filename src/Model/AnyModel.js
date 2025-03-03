@@ -1,3 +1,4 @@
+'use strict'
 const {Any} = require('objectmodel')
 
 /**

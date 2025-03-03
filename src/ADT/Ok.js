@@ -1,3 +1,4 @@
+'use strict'
 const Result = require('crocks/Result')
 
 /**
@@ -23,6 +24,7 @@ const Result = require('crocks/Result')
  * @returns {Result}
  * @example
  *
+ * 'use strict'
  * const Ok = require('@eluvio/elv-js-helpers/ADT/Ok')
  *
  * Ok(42).inspect()    //=> 'Ok 42'

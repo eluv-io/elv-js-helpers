@@ -1,3 +1,4 @@
+'use strict'
 const Result = require('crocks/Result')
 const throwIfTrue = require('../Validation/throwIfTrue')
 const wrapNonArray = require('../Conversion/wrapNonArray')
@@ -26,6 +27,7 @@ const wrapNonArray = require('../Conversion/wrapNonArray')
  * @returns {Result}
  * @example
  *
+ * 'use strict'
  * const Err = require('@eluvio/elv-js-helpers/ADT/Err')
  *
  * const curry = require('@eluvio/elv-js-helpers/Functional/curry')

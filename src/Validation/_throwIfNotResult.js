@@ -1,3 +1,4 @@
+'use strict'
 const type = require('crocks/core/type')
 
 const _throwIfFalse = require('./throwIfFalse')
@@ -15,6 +16,7 @@ const isResult = require('../Boolean/isResult')
  * @returns {Result}
  * @example
  *
+ * 'use strict'
  * const _throwIfNotResult = require('@eluvio/elv-js-helpers/Validation/_throwIfNotResult')
  *
  * const Err = require('@eluvio/elv-js-helpers/ADT/Err')

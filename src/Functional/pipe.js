@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Passthrough for the `pipe()` [Crocks helper function](https://crocks.dev/docs/functions/helpers.html)
  * _(Copyright © 2016, Ian Hofmann-Hicks, ISC license)_
@@ -19,6 +20,7 @@
  * @returns {Function} The composed function
  * @example
  *
+ * 'use strict'
  * const pipe = require('@eluvio/elv-js-helpers/Functional/pipe')
  *
  * // function has only one input, no need to curry

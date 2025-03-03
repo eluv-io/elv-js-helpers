@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Modified passthrough for Ramda's [`mergeRight`](https://ramdajs.com/docs/#mergeRight) function _(Copyright © Scott Sauyet and Michael Hurley)_
  *
@@ -19,6 +20,7 @@
  * @returns Object - New object with merged top-level properties
  * @example
  *
+ * 'use strict'
  * const mergeRight = require('@eluvio/elv-js-helpers/Functional/mergeRight')
  *
  * const defaults = {

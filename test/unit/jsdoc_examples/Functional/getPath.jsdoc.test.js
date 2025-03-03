@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const getPath = TH.requireSrcFile('Functional/getPath')
 
 describe('getPath JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const myObject = {foo: {bar: [1, 2, 3]}}
     getPath(['foo'], myObject).should.eql({bar: [1, 2, 3]})
     TH.chai.assert.deepEqual(getPath(['bar'], myObject), undefined)

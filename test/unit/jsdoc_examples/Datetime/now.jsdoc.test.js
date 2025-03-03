@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const now = TH.requireSrcFile('Datetime/now')
 
 describe('now JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const isGT = TH.requireSrcFile('Boolean/isGT')
     const kind = TH.requireSrcFile('Validation/kind')
     const currentDatetime = now()

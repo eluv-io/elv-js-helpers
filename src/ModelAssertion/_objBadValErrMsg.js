@@ -1,3 +1,4 @@
+'use strict'
 const join = require('@eluvio/ramda-fork/src/join')
 
 const _objBadVal = require('../Validation/objBadVal')
@@ -16,6 +17,7 @@ const validateWithModel = require('../Validation/validateWithModel')
  * @returns {Function} Constructs an error message for failed value
  * @example
  *
+ * 'use strict'
  * const passesModelCheck = require('@eluvio/elv-js-helpers/Boolean/passesModelCheck')
  *
  * const _objBadValErrMsg = require('@eluvio/elv-js-helpers/ModelAssertion/_objBadValErrMsg')

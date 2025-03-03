@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Passthrough for the `fromPairs()` [Crocks](https://crocks.dev/) function
  * _(Copyright © 2016, Ian Hofmann-Hicks, ISC license)_
@@ -19,6 +20,7 @@
  * @see objFromEntries, toPairs
  * @example
  *
+ * 'use strict'
  * const fromPairs = require('@eluvio/elv-js-helpers/Conversion/fromPairs')
  *
  * const List = require('@eluvio/elv-js-helpers/ADT/List')

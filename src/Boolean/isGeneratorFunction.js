@@ -1,3 +1,4 @@
+'use strict'
 const kind = require('../Validation/kind')
 
 /**
@@ -12,6 +13,7 @@ const kind = require('../Validation/kind')
  * @returns {Boolean}
  * @example
  *
+ * 'use strict'
  * const isGeneratorFunction = require('@eluvio/elv-js-helpers/Boolean/isGeneratorFunction')
  *
  * function* numbersUpTo(x) {

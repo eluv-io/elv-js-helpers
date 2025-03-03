@@ -1,3 +1,4 @@
+'use strict'
 const roundToMultiple = require('./roundToMultiple')
 
 // // roundEven :: Number -> Number

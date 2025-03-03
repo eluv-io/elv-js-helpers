@@ -1,3 +1,4 @@
+'use strict'
 const kind = require('../Validation/kind')
 
 /**
@@ -11,6 +12,7 @@ const kind = require('../Validation/kind')
  * @returns {Boolean}
  * @example
  *
+ * 'use strict'
  * const isArray = require('@eluvio/elv-js-helpers/Boolean/isArray')
  *
  * isArray([1, 2, 3]) //=> true

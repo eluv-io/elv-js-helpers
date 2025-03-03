@@ -1,3 +1,4 @@
+'use strict'
 const _throwIfArgsBad = require('./_throwIfArgsBad')
 const curry = require('../Functional/curry')
 const tryCatch = require('../Functional/tryCatch')

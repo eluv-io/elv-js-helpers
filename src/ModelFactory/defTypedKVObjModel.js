@@ -1,3 +1,4 @@
+'use strict'
 const defBasicModel = require('./defBasicModel')
 
 const isObject = require('../Boolean/isObject')
@@ -27,6 +28,7 @@ const throwIfUndefined = require('../Validation/throwIfUndefined')
  * @returns {Object} Returns an [ObjectModel](http://objectmodel.js.org/) that can be called with an input
  * @example
  *
+ * 'use strict'
  * const defTypedKVObjModel = require('@eluvio/elv-js-helpers/ModelFactory/defTypedKVObjModel')
  *
  * const NonBlankStrModel = require('@eluvio/elv-js-helpers/Model/NonBlankStrModel')

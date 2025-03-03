@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Passthrough for the `curry()` [Crocks](https://crocks.dev/) function
  * _(Copyright © 2016, Ian Hofmann-Hicks, ISC license)_
@@ -24,6 +25,7 @@
  * @returns {Function} The curried function
  * @example
  *
+ * 'use strict'
  * const curry = require('@eluvio/elv-js-helpers/Functional/curry')
  *
  * const withinBounds = (lower, upper, val) => (val >= lower) && (val <= upper)

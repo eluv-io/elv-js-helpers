@@ -1,3 +1,4 @@
+'use strict'
 const curry = require('../Functional/curry')
 
 const _satisfiesLowerBound = require('./satisfiesLowerBound')
@@ -25,6 +26,7 @@ const _satisfiesUpperBound = require('./satisfiesUpperBound')
  * @returns {Boolean}
  * @example
  *
+ * 'use strict'
  * const satisfiesBetweenBounds = require('@eluvio/elv-js-helpers/Boolean/satisfiesBetweenBounds')
  *
  * const compare = require('@eluvio/elv-js-helpers/Functional/compare')

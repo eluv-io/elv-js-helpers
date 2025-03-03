@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const kind = TH.requireSrcFile('Validation/kind')
 
 describe('kind JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     kind(undefined).should.eql('undefined')
     kind(null).should.eql('null')
     kind(true).should.eql('Boolean')

@@ -1,3 +1,4 @@
+'use strict'
 const curry = require('../Functional/curry')
 const throwError = require('../Misc/throwError')
 
@@ -15,6 +16,7 @@ const throwError = require('../Misc/throwError')
  * @returns {Any}
  * @example
  *
+ * 'use strict'
  * const throwIfFalse = require('@eluvio/elv-js-helpers/Validation/throwIfFalse')
  *
  * const PASSWORD_REGEX_4 = /[A-Z]{4}/

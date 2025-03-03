@@ -1,4 +1,5 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const truthTable = TH.requireSrcFile('Functional/truthTable')
 
@@ -11,6 +12,7 @@ describe('truthTable JSDoc example', () => {
     // |    F    |    T   |  'man'  |
     // |    T    |    F   |  'girl' |
     // |    T    |    T   |  'boy'  |
+    'use strict'
     let isChild = false
     let isMale = false
     truthTable(['woman', 'man', 'girl', 'boy'], [isChild, isMale]).should.eql('woman')

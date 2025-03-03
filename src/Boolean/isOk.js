@@ -1,3 +1,4 @@
+'use strict'
 const isResult = require('./isResult')
 
 const either = require('../Functional/either')
@@ -15,6 +16,7 @@ const T = require('../Functional/T')
  * @returns {Boolean}
  * @example
  *
+ * 'use strict'
  * const isOk = require('@eluvio/elv-js-helpers/Boolean/isOk')
  *
  * const Err = require('@eluvio/elv-js-helpers/ADT/Err')

@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const mapObjKV = TH.requireSrcFile('Functional/mapObjKV')
 
 describe('mapObjKV JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const dumpJSON = TH.requireSrcFile('Misc/dumpJSON')
     const myObj = {
       firstname: 'arthur',

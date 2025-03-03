@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Passthrough for the [fraction.js](https://github.com/infusion/Fraction.js/) constructor
  * _(Copyright © 2017 Robert Eisele, MIT license)_
@@ -15,6 +16,7 @@
  * @returns {Object} A fraction.js object
  * @example
  *
+ * 'use strict'
  * const fraction = require('@eluvio/elv-js-helpers/Conversion/fraction')
  *
  * fraction(4.2).toFraction(true)   //=> '4 1/5'

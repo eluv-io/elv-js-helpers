@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const defNonEmptyArrModel = TH.requireSrcFile('ModelFactory/defNonEmptyArrModel')
 
 describe('defNonEmptyArrModel JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const NonNegativeNumModel = TH.requireSrcFile('Model/NonNegativeNumModel')
     const NonEmptyAgeArrayModel = defNonEmptyArrModel('NonEmptyAgeArray', NonNegativeNumModel)
     NonEmptyAgeArrayModel([42]).should.eql([42])

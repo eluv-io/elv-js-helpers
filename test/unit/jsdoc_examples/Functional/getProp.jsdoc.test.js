@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const getProp = TH.requireSrcFile('Functional/getProp')
 
 describe('getProp JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const myObject = {foo: {bar: [1, 2, 3]}}
     getProp('foo', myObject).should.eql({bar: [1, 2, 3]})
     TH.chai.assert.deepEqual(getProp('bar', myObject), undefined)

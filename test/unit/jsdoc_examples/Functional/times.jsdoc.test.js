@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const times = TH.requireSrcFile('Functional/times')
 
 describe('times JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const double = x => x * 2
     times(double, 3).should.eql([0, 2, 4])
     // function is curried: call with just first param to obtain a more specialized function

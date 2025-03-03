@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const _objBadKeyErrMsg = TH.requireSrcFile('ModelAssertion/_objBadKeyErrMsg')
 
 describe('_objBadKeyErrMsg JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const defBasicModel = TH.requireSrcFile('ModelFactory/defBasicModel')
     const NonBlankStrModel = TH.requireSrcFile('Model/NonBlankStrModel')
     const passesModelCheck = TH.requireSrcFile('Boolean/passesModelCheck')

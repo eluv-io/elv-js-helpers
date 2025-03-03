@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const flip = TH.requireSrcFile('Functional/flip')
 
 describe('flip JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const div = (a, b) => a / b
     div(4, 2).should.eql(2)
     const reciprocalDiv = flip(div)

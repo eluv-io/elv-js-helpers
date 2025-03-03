@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const defRegexMatchedStrModel = TH.requireSrcFile('ModelFactory/defRegexMatchedStrModel')
 
 describe('defRegexMatchedStrModel JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const UUIDStringModel = defRegexMatchedStrModel(
       'UUIDString',
       /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/

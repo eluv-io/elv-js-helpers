@@ -1,3 +1,4 @@
+'use strict'
 const curry = require('../Functional/curry')
 
 /**
@@ -17,6 +18,7 @@ const curry = require('../Functional/curry')
  * @returns {Boolean}
  * @example
  *
+ * 'use strict'
  * const isEqual = require('@eluvio/elv-js-helpers/Boolean/isEqual')
  *
  * isEqual(42, 42)       //=> true

@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const estRemainingDur = TH.requireSrcFile('Datetime/estRemainingDur')
 
 describe('estRemainingDur JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const resultToPOJO = TH.requireSrcFile('Conversion/resultToPOJO')
     estRemainingDur(21, 0.5).inspect().should.eql('Ok 21')
     estRemainingDur(42, 1).inspect().should.eql('Ok 0')

@@ -1,3 +1,4 @@
+'use strict'
 const assertAfterCheck = require('./assertAfterCheck')
 
 const isArray = require('../Boolean/isArray')
@@ -33,6 +34,7 @@ const neighborsPass = require('../Boolean/neighborsPass')
  * @returns {Array} 2-element array [Function, Function]. See description for details.
  * @example
  *
+ * 'use strict'
  * const assertOrdered = require('@eluvio/elv-js-helpers/ModelAssertion/assertOrdered')
  *
  * const defArrayModel = require('@eluvio/elv-js-helpers/ModelFactory/defArrayModel')

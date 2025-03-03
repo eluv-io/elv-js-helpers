@@ -1,3 +1,4 @@
+'use strict'
 const curry = require('./curry')
 
 const isNumber = require('../Boolean/isNumber')
@@ -22,6 +23,7 @@ const isNumber = require('../Boolean/isNumber')
  * @returns {Integer} -1 | 0 | 1
  * @example
  *
+ * 'use strict'
  * const cmpIndexable = require('@eluvio/elv-js-helpers/Functional/cmpIndexable')
  *
  * cmpIndexable([], [42])         //=> -1

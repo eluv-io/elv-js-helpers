@@ -1,3 +1,4 @@
+'use strict'
 const defRegexMatchedStrModel = require('../ModelFactory/defRegexMatchedStrModel')
 
 const REGEX_RATIONAL = require('../Validation/RE_RATIONAL')
@@ -21,6 +22,7 @@ const REGEX_RATIONAL = require('../Validation/RE_RATIONAL')
  * @returns {String} The validated input
  * @example
  *
+ * 'use strict'
  * const FractionStrModel = require('@eluvio/elv-js-helpers/Model/FractionStrModel')
  *
  * FractionStrModel('foo')  //=> EXCEPTION: 'Value must be a string in the form of a whole number or a fraction (got: "foo")'

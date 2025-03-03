@@ -1,5 +1,5 @@
 // noinspection JSValidateTypes
-
+'use strict'
 const defArrayModel = require('./defArrayModel')
 
 const isArray = require('../Boolean/isArray')
@@ -23,6 +23,7 @@ const assertNotEmpty = require('../ModelAssertion/assertNotEmpty')
  * @returns {Object} Returns an [ObjectModel](http://objectmodel.js.org/) that can be called with an input
  * @example
  *
+ * 'use strict'
  * const defNonEmptyArrModel = require('@eluvio/elv-js-helpers/ModelFactory/defNonEmptyArrModel')
  *
  * const NonNegativeNumModel = require('@eluvio/elv-js-helpers/Model/NonNegativeNumModel')

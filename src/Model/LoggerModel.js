@@ -1,3 +1,4 @@
+'use strict'
 const defObjectModel = require('../ModelFactory/defObjectModel')
 const FunctionModel = require('./FunctionModel')
 

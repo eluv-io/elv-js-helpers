@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const addPreprocessFn2 = TH.requireSrcFile('Functional/addPreprocessFn2')
 
 describe('addPreprocessFn2 JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const isString = TH.requireSrcFile('Boolean/isString')
     const strOrNumToNum = x => (isString(x) ? Number(x) : x)
     const add = (x, y) => x + y

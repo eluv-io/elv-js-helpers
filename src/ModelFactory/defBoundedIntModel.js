@@ -1,3 +1,4 @@
+'use strict'
 const IntegerModel = require('../Model/IntegerModel')
 
 const assertBounded = require('../ModelAssertion/assertBounded')
@@ -24,6 +25,7 @@ const assertBounded = require('../ModelAssertion/assertBounded')
  * @returns {Function} Returns an [ObjectModel](http://objectmodel.js.org/) that can be called with an input
  * @example
  *
+ * 'use strict'
  * const defBoundedIntModel = require('@eluvio/elv-js-helpers/ModelFactory/defBoundedIntModel')
  *
  * const CartonEggCountModel = defBoundedIntModel('CartonEggCount', 0, 12, true, true)

@@ -1,3 +1,4 @@
+'use strict'
 const curry = require('../Functional/curry')
 const isObject = require('../Boolean/isObject')
 
@@ -23,6 +24,7 @@ const _objBadKey = require('../Validation/objBadKey')
  * @returns {Boolean}
  * @example
  *
+ * 'use strict'
  * const passesObjKeyCheck = require('@eluvio/elv-js-helpers/Boolean/passesObjKeyCheck')
  *
  * const NonBlankStrModel = require('@eluvio/elv-js-helpers/Model/NonBlankStrModel')

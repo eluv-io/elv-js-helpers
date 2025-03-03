@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const satisfiesBetweenBounds = TH.requireSrcFile('Boolean/satisfiesBetweenBounds')
 
 describe('satisfiesBetweenBounds JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const compare = TH.requireSrcFile('Functional/compare')
     satisfiesBetweenBounds(0, 42, true, true, compare, 42).should.eql(true)
     satisfiesBetweenBounds(0, 42, true, true, compare, 0).should.eql(true)

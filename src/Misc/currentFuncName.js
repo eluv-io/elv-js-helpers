@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Returns name of function that it is called from. Used for introspection/logging
  *
@@ -7,6 +8,7 @@
  * @returns String
  * @example
  *
+ * 'use strict'
  * const currentFuncName = require('@eluvio/elv-js-helpers/Misc/currentFuncName')
  *
  * const MyFunc = () => console.log('Entered function: ' + currentFuncName())

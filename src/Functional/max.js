@@ -1,3 +1,4 @@
+'use strict'
 const _max = require('@eluvio/ramda-fork/src/max')
 const reduce = require('crocks/pointfree/reduce')
 

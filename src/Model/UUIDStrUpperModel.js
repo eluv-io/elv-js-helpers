@@ -1,3 +1,4 @@
+'use strict'
 const defRegexMatchedStrModel = require('../ModelFactory/defRegexMatchedStrModel')
 const RE_UUID_UPPER_CASE = require('../Validation/RE_UUID_UPPER_CASE')
 
@@ -18,6 +19,7 @@ const RE_UUID_UPPER_CASE = require('../Validation/RE_UUID_UPPER_CASE')
  * @returns {String} The validated input
  * @example
  *
+ * 'use strict'
  * const UUIDStrUpperModel = require('@eluvio/elv-js-helpers/Model/UUIDStrUpperModel')
  *
  * UUIDStrUpperModel('0')                                      //=> EXCEPTION: `Value is not in upper case UUID format '00000000-0000-0000-0000-000000000000' (got: "0")`

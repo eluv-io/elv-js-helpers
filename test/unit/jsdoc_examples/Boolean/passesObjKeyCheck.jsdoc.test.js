@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const passesObjKeyCheck = TH.requireSrcFile('Boolean/passesObjKeyCheck')
 
 describe('passesObjKeyCheck JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const NonBlankStrModel = TH.requireSrcFile('Model/NonBlankStrModel')
     passesObjKeyCheck(NonBlankStrModel, {' ': 42}).should.eql(false)
     passesObjKeyCheck(NonBlankStrModel, {foo: 42}).should.eql(true)

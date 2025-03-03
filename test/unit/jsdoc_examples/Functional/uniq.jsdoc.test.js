@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const uniq = TH.requireSrcFile('Functional/uniq')
 
 describe('uniq JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     uniq([1, 2, 3, 2]).should.eql([1, 2, 3])
     const obj1 = {foo: 'bar'}
     const obj2 = {foo: 'bar'}

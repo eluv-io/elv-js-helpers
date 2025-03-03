@@ -1,3 +1,4 @@
+'use strict'
 const _boundDescLower = require('./_boundLowerErrMsg')
 const assertAfterCheck = require('./assertAfterCheck')
 
@@ -32,6 +33,7 @@ const passesModelCheck = require('../Boolean/passesModelCheck')
  * @returns {Array} 2-element array [Function, Function]. See description for details.
  * @example
  *
+ * 'use strict'
  * const compare = require('@eluvio/elv-js-helpers/Functional/compare')
  *
  * const IntegerModel = require('@eluvio/elv-js-helpers/Model/IntegerModel')

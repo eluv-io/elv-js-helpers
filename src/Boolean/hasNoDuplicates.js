@@ -1,3 +1,4 @@
+'use strict'
 const _ramdaSet = require('@eluvio/ramda-fork/src/internal/_Set')
 
 const isArray = require('../Boolean/isArray')
@@ -21,6 +22,7 @@ const throwIfFalse = require('../Validation/throwIfFalse')
  * @returns {Boolean}
  * @example
  *
+ * 'use strict'
  * const hasNoDuplicates = require('@eluvio/elv-js-helpers/Boolean/hasNoDuplicates')
  *
  * hasNoDuplicates([])                       //=> true

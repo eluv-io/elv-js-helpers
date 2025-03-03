@@ -1,3 +1,4 @@
+'use strict'
 const isNil = require('../Boolean/isNil')
 
 const _assertBoundedBetween = require('./assertBoundedBetween')
@@ -39,6 +40,7 @@ const truthTable = require('../Functional/truthTable')
  * @returns {Array} 2-element array [Function, Function | String]. See description for details.
  * @example
  *
+ * 'use strict'
  * const NumberModel = require('@eluvio/elv-js-helpers/Model/NumberModel')
  *
  * const assertBounded = require('@eluvio/elv-js-helpers/ModelAssertion/assertBounded')

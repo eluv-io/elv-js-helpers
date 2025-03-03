@@ -1,3 +1,4 @@
+'use strict'
 const _throwIfArgsBad = require('./_throwIfArgsBad')
 const callerFuncName = require('../Misc/callerFuncName')
 
@@ -19,6 +20,7 @@ const callerFuncName = require('../Misc/callerFuncName')
  * @returns {Any}
  * @example
  *
+ * 'use strict'
  * const throwIfArgsBad = require('@eluvio/elv-js-helpers/Validation/throwIfArgsBad')
  *
  * const defObjectModel = require('@eluvio/elv-js-helpers/ModelFactory/defObjectModel')

@@ -15,6 +15,7 @@ const isResult = require('./isResult')
  * @returns {Boolean}
  * @example
  *
+ * 'use strict'
  * const isErr = require('@eluvio/elv-js-helpers/Boolean/isErr')
  *
  * const Err = require('@eluvio/elv-js-helpers/ADT/Err')

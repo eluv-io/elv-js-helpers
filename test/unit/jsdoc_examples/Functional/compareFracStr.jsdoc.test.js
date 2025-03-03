@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const compareFracStr = TH.requireSrcFile('Functional/compareFracStr')
 
 describe('compareFracStr JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     compareFracStr('1', '2').should.eql(-1)
     compareFracStr('1/2', '1/4').should.eql(1)
     TH.expect(() => compareFracStr(2, 1)).to.throw('expecting String, got Number 2')

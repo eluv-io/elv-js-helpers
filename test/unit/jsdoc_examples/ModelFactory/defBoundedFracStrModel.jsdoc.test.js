@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const defBoundedFracStrModel = TH.requireSrcFile('ModelFactory/defBoundedFracStrModel')
 
 describe('defBoundedFracStrModel JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const PositiveFracModel = defBoundedFracStrModel('PositiveFraction', '0', null, false, null)
     PositiveFracModel('42').should.eql('42')
     PositiveFracModel('22/7').should.eql('22/7')

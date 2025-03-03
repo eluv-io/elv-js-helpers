@@ -1,3 +1,4 @@
+'use strict'
 /**
  * [RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) used for
  * validation of rational numbers expressed as strings of form x, -x, x/y, or -x/y, where x and y are integers and
@@ -13,6 +14,7 @@
  * @category Constant
  * @example
  *
+ * 'use strict'
  * const RE_RATIONAL = require('@eluvio/elv-js-helpers/Validation/RE_RATIONAL')
  *
  * RE_RATIONAL.test('0')                              //=> true

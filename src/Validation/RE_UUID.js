@@ -1,3 +1,4 @@
+'use strict'
 /**
  * [RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) used for
  * validation of UUID strings in format '00000000-0000-0000-0000-000000000000'
@@ -10,6 +11,7 @@
  * @category Constant
  * @example
  *
+ * 'use strict'
  * const RE_UUID = require('@eluvio/elv-js-helpers/Validation/RE_UUID')
  *
  * RE_UUID.test('0')                                      //=> false

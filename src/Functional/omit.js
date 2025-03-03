@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Passthrough for the `omit()` [Crocks](https://crocks.dev/docs/functions/helpers.html#omit) function
  * _(Copyright © 2016, Ian Hofmann-Hicks, ISC license)_
@@ -17,6 +18,7 @@
  * @returns {Object} A shallow copy of object with specified keys removed (as well as any keys pointing to `undefined`)
  * @example
  *
+ * 'use strict'
  * const omit = require('@eluvio/elv-js-helpers/Functional/omit')
  *
  * const myObject = {foo: "f", bar: "b"}

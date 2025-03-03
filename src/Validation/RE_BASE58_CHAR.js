@@ -1,3 +1,4 @@
+'use strict'
 /**
  * [RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) used for
  * validation of a [Base58](https://datatracker.ietf.org/doc/html/draft-msporny-base58-03) character.
@@ -11,6 +12,7 @@
  * @category Constant
  * @example
  *
+ * 'use strict'
  * const RE_BASE58_CHAR = require('@eluvio/elv-js-helpers/Validation/RE_BASE58_CHAR')
  *
  * RE_BASE58_CHAR.test('1')          //=> true

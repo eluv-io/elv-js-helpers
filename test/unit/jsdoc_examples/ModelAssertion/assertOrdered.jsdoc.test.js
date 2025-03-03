@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const assertOrdered = TH.requireSrcFile('ModelAssertion/assertOrdered')
 
 describe('assertOrdered JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const defArrayModel = TH.requireSrcFile('ModelFactory/defArrayModel')
     // Note use of spread operator (...) to unpack the array returned by assertOrdered()
     const OrderedNumArrayModel = defArrayModel('OrderedArray', Number)

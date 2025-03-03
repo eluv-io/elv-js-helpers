@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const isUndefined = TH.requireSrcFile('Boolean/isUndefined')
 
 describe('isUndefined JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     isUndefined().should.eql(true)
     isUndefined(undefined).should.eql(true)
     isUndefined(null).should.eql(false)

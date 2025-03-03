@@ -1,3 +1,4 @@
+'use strict'
 const bs58 = require('bs58')
 /**
  * Passthrough for the `encode()` function from the [bs58](https://github.com/cryptocoinjs/bs58) npm package.
@@ -14,6 +15,7 @@ const bs58 = require('bs58')
  * @returns {String} The base-58 string
  * @example
  *
+ * 'use strict'
  * const base58Encode = require('@eluvio/elv-js-helpers/Conversion/base58Encode')
  *
  * const bytes = Uint8Array.from([

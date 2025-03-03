@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const base58Decode = TH.requireSrcFile('Conversion/base58Decode')
 
 describe('base58Decode JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const bytes = base58Decode('2PDzvA279deFCZe2SV1B6NQQkDE')
     const hexString = Buffer.from(bytes).toString('hex')
 

@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const mergeRight = TH.requireSrcFile('Functional/mergeRight')
 
 describe('mergeRight JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const defaults = {
       children: ['DefaultChild1', 'DefaultChild2'],
       name: 'Anonymous',

@@ -1,3 +1,4 @@
+'use strict'
 const _path = require('@eluvio/ramda-fork/src/path')
 
 const curry = require('./curry')
@@ -21,6 +22,7 @@ const curry = require('./curry')
  * @returns {*} Value or `undefined`
  * @example
  *
+ * 'use strict'
  * const getPath = require('@eluvio/elv-js-helpers/Functional/getPath')
  *
  * const myObject = {foo: {bar: [1, 2, 3]}}

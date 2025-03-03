@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Returns locale string from current environment (see http://www.lingoes.net/en/translator/langcode.htm)
  *
@@ -9,6 +10,7 @@
  * @returns {String}
  * @example
  *
+ * 'use strict'
  * const sysLocale = require('@eluvio/elv-js-helpers/Datetime/sysLocale')
  *
  * sysLocale() //=> 'en-US'

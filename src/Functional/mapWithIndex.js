@@ -1,3 +1,4 @@
+'use strict'
 const addIndex = require('@eluvio/ramda-fork/src/addIndex')
 const map = require('@eluvio/ramda-fork/src/map')
 
@@ -13,6 +14,7 @@ const map = require('@eluvio/ramda-fork/src/map')
  * @returns {Array}
  * @example
  *
+ * 'use strict'
  * const mapWithIndex = require('@eluvio/elv-js-helpers/Functional/mapWithIndex')
  *
  * mapWithIndex((e,i) => `${e}-${i}`, ['a', 'b', 'c']) //=> ['a-0', 'b-1', 'c-2']

@@ -1,3 +1,4 @@
+'use strict'
 const isArray = require('../Boolean/isArray')
 
 const assertAfterCheck = require('../ModelAssertion/assertAfterCheck')

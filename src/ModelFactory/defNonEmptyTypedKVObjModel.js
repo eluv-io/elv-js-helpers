@@ -1,3 +1,4 @@
+'use strict'
 const defTypedKVObjModel = require('./defTypedKVObjModel')
 const assertAfterCheck = require('../ModelAssertion/assertAfterCheck')
 const isObject = require('../Boolean/isObject')
@@ -21,6 +22,7 @@ const isNotEmpty = require('../Boolean/isNotEmpty')
  * @see defTypedKVObjModel
  * @example
  *
+ * 'use strict'
  * const defNonEmptyTypedKVObjModel = require('@eluvio/elv-js-helpers/ModelFactory/defNonEmptyTypedKVObjModel')
  *
  * const defObjectModel = require('@eluvio/elv-js-helpers/ModelFactory/defObjectModel')

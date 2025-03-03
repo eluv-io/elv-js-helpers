@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Returns `true` if `fn()` throws an exception when called.
  * Returns `false` otherwise.
@@ -9,6 +10,7 @@
  * @returns {Boolean}
  * @example
  *
+ * 'use strict'
  * const throwsException = require('@eluvio/elv-js-helpers/Boolean/throwsException')
  *
  * throwsException(() => Object().foo.bar)  //=> true

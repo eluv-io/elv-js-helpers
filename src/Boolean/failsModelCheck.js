@@ -1,3 +1,4 @@
+'use strict'
 const passesModelCheck = require('./passesModelCheck')
 
 const curry = require('../Functional/curry')
@@ -16,6 +17,7 @@ const curry = require('../Functional/curry')
  * @returns {Boolean}
  * @example
  *
+ * 'use strict'
  * const failsModelCheck = require('@eluvio/elv-js-helpers/Boolean/failsModelCheck')
  *
  * const PositiveIntModel = require('@eluvio/elv-js-helpers/Model/PositiveIntModel')

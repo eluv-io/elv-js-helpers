@@ -1,3 +1,4 @@
+'use strict'
 const branch = require('crocks/Pair/branch')
 const snd = require('crocks/Pair/snd')
 
@@ -33,6 +34,7 @@ const pipe = require('../Functional/pipe')
  * @returns {String}
  * @example
  *
+ * 'use strict'
  * const etaTimeStr = require('@eluvio/elv-js-helpers/Datetime/etaTimeStr')
  *
  * const myTime = new Date('2022-01-01T07:30:00Z')

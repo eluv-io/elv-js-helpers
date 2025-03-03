@@ -1,3 +1,4 @@
+'use strict'
 const format = require('./format')
 
 const isArray = require('../Boolean/isArray')
@@ -27,6 +28,7 @@ const _throwIfFalse = require('../Validation/throwIfFalse')
  * @returns {Object}
  * @example
  *
+ * 'use strict'
  * const resultToPOJO = require('@eluvio/elv-js-helpers/Conversion/resultToPOJO')
  *
  * const Err = require('@eluvio/elv-js-helpers/ADT/Err')

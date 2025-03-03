@@ -1,3 +1,4 @@
+'use strict'
 const curry = require('./curry')
 const Err = require('../ADT/Err')
 const Ok = require('../ADT/Ok')
@@ -45,6 +46,7 @@ const isFunction = require('../Boolean/isFunction')
  * @returns {Result}
  * @example
  *
+ * 'use strict'
  * const tryCatch = require('@eluvio/elv-js-helpers/Functional/tryCatch')
  *
  * const resultToPOJO = require('@eluvio/elv-js-helpers/Conversion/resultToPOJO')
@@ -79,7 +81,7 @@ const isFunction = require('../Boolean/isFunction')
  * const badTest = tryCatch(myRegex.test)
  * const badTestResult = badTest('abc')
  * resultToPOJO(badTestResult).ok               //=> false
- * resultToPOJO(badTestResult).errMsgs          //=> ['TypeError: Method RegExp.prototype.exec called on incompatible receiver #<Object>']
+ * resultToPOJO(badTestResult).errMsgs          //=> ['TypeError: Method RegExp.prototype.test called on incompatible receiver undefined']
  *
  *
  * // Using tryCatch like a Javascript try / catch block (immediately executing the function):

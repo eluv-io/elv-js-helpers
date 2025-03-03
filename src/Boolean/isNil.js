@@ -1,3 +1,4 @@
+'use strict'
 const kind = require('../Validation/kind')
 
 const _NIL_KINDS = ['null', 'undefined']
@@ -14,6 +15,7 @@ const _NIL_KINDS = ['null', 'undefined']
  * @returns {Boolean}
  * @example
  *
+ * 'use strict'
  * const isNil = require('@eluvio/elv-js-helpers/Boolean/isNil')
  *
  * isNil()                //=> true

@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const _throwIfNotErr = TH.requireSrcFile('Validation/_throwIfNotErr')
 
 describe('_throwIfNotErr JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const Err = TH.requireSrcFile('ADT/Err')
     const Ok = TH.requireSrcFile('ADT/Ok')
     TH.expect(() => _throwIfNotErr(42)).to.throw('Expected an Err, got: Number (42)')

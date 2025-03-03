@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const assertEmpty = TH.requireSrcFile('ModelAssertion/assertEmpty')
 
 describe('assertEmpty JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const isString = TH.requireSrcFile('Boolean/isString')
     const StringModel = TH.requireSrcFile('Model/StringModel')
     const assertAfterCheck = TH.requireSrcFile('ModelAssertion/assertAfterCheck')

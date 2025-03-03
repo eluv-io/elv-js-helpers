@@ -1,3 +1,4 @@
+'use strict'
 const curry = require('./curry')
 
 const assoc = require('@eluvio/ramda-fork/src/assoc')
@@ -18,6 +19,7 @@ const assoc = require('@eluvio/ramda-fork/src/assoc')
  * @returns {Object}
  * @example
  *
+ * 'use strict'
  * const assocComputed = require('@eluvio/elv-js-helpers/Functional/assocComputed')
  *
  * assocComputed('bar', x => x.foo * 2, {foo: 2}) //=> {foo: 2, bar: 4}

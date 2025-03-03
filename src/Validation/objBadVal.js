@@ -1,3 +1,4 @@
+'use strict'
 const compose = require('crocks/helpers/compose')
 
 const last = require('@eluvio/ramda-fork/src/last')
@@ -21,6 +22,7 @@ const find = require('../Functional/find')
  * @returns {(Array|undefined)} - The key/value pair for the bad value, or undefined if all values valid
  * @example
  *
+ * 'use strict'
  * const NonBlankStrModel = require('@eluvio/elv-js-helpers/Model/NonBlankStrModel')
  *
  * const objBadVal = require('@eluvio/elv-js-helpers/Validation/objBadVal')

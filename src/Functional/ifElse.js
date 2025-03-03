@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Passthrough for the `ifElse()` [Crocks point-free function](https://crocks.dev/docs/functions/pointfree-functions.html)
  * _(Copyright © 2016, Ian Hofmann-Hicks, ISC license)_
@@ -20,6 +21,7 @@
  * @returns {Function} Function which takes a value and returns output of one of the latter two functions
  * @example
  *
+ * 'use strict'
  * const ifElse = require('@eluvio/elv-js-helpers/Functional/ifElse')
  *
  * const isEven = x => x % 2 === 0

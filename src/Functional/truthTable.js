@@ -1,3 +1,4 @@
+'use strict'
 const curry = require('./curry')
 
 const boolsToInt = require('../Conversion/boolsToInt')
@@ -25,6 +26,7 @@ const boolsToInt = require('../Conversion/boolsToInt')
  * // |    T    |    F   |  'girl' |
  * // |    T    |    T   |  'boy'  |
  *
+ * 'use strict'
  * const truthTable = require('@eluvio/elv-js-helpers/Functional/truthTable')
  *
  * let isChild = false

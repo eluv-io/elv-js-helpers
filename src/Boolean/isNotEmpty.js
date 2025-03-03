@@ -1,3 +1,4 @@
+'use strict'
 const isEmpty = require('./isEmpty')
 const negate = require('../Functional/negate')
 
@@ -14,6 +15,7 @@ const negate = require('../Functional/negate')
  * @returns {Boolean}
  * @example
  *
+ * 'use strict'
  * const isNotEmpty = require('@eluvio/elv-js-helpers/Boolean/isNotEmpty')
  *
  * isNotEmpty([42])                //=> true

@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const UTCStrModel = TH.requireSrcFile('Model/UTCStrModel')
 
 describe('UTCStrModel JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     UTCStrModel('2022-01-01T14:00:00Z').should.eql('2022-01-01T14:00:00Z')
     UTCStrModel('2022-01-01T14:00:00.123Z').should.eql('2022-01-01T14:00:00.123Z')
     TH.expect(() => UTCStrModel('2022-13-01T14:00:00Z')).to.throw(

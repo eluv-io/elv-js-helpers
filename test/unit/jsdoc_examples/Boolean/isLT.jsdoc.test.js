@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const isLT = TH.requireSrcFile('Boolean/isLT')
 
 describe('isLT JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     isLT(42, 1).should.eql(true)
     isLT(1, 42).should.eql(false)
     isLT(42, 42).should.eql(false)

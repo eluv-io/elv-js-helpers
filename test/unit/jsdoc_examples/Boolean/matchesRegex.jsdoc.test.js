@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const matchesRegex = TH.requireSrcFile('Boolean/matchesRegex')
 
 describe('matchesRegex JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     matchesRegex(/a/, 'abc').should.eql(true)
     matchesRegex(/a/, 'def').should.eql(false)
     matchesRegex(/a/, 0).should.eql(false)

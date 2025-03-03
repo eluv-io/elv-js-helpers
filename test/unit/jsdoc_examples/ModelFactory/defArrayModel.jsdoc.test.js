@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const defArrayModel = TH.requireSrcFile('ModelFactory/defArrayModel')
 
 describe('defArrayModel JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const NonNegativeNumModel = TH.requireSrcFile('Model/NonNegativeNumModel')
     const AgeArrayModel = defArrayModel('AgeArray', NonNegativeNumModel)
     AgeArrayModel([42]).should.eql([42])

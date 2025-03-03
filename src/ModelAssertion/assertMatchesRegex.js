@@ -1,3 +1,4 @@
+'use strict'
 const assertAfterCheck = require('./assertAfterCheck')
 
 const passesModelCheck = require('../Boolean/passesModelCheck')
@@ -25,6 +26,7 @@ const passesModelCheck = require('../Boolean/passesModelCheck')
  * @returns {Array} 2-element array [Function, Function]. See description for details.
  * @example
  *
+ * 'use strict'
  * const StringModel = require('@eluvio/elv-js-helpers/Model/StringModel')
  *
  * const assertMatchesRegex = require('@eluvio/elv-js-helpers/ModelAssertion/assertMatchesRegex')

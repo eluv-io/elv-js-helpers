@@ -1,3 +1,4 @@
+'use strict'
 const curry = require('../Functional/curry')
 
 /**
@@ -23,6 +24,7 @@ const curry = require('../Functional/curry')
  * @returns {Function}
  * @example
  *
+ * 'use strict'
  * const toLocaleString = require('@eluvio/elv-js-helpers/Datetime/toLocaleString')
  * const utcStrToDate = require('@eluvio/elv-js-helpers/Datetime/utcStrToDate')
  *

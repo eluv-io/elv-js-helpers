@@ -1,3 +1,4 @@
+'use strict'
 const {ArrayModel, BasicModel, ObjectModel} = require('objectmodel')
 
 /**
@@ -12,6 +13,7 @@ const {ArrayModel, BasicModel, ObjectModel} = require('objectmodel')
  * @returns {Boolean}
  * @example
  *
+ * 'use strict'
  * const isModel = require('@eluvio/elv-js-helpers/Boolean/isModel')
  *
  * const defObjectModel = require('@eluvio/elv-js-helpers/ModelFactory/defObjectModel')

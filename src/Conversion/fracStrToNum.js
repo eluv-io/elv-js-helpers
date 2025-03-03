@@ -1,3 +1,4 @@
+'use strict'
 const fraction = require('./fraction')
 
 const FractionStrModel = require('../Model/FractionStrModel')
@@ -13,6 +14,7 @@ const FractionStrModel = require('../Model/FractionStrModel')
  * @returns {Number}
  * @example
  *
+ * 'use strict'
  * const fracStrToNum = require('@eluvio/elv-js-helpers/Conversion/fracStrToNum')
  *
  * fracStrToNum('1')        //=> 1

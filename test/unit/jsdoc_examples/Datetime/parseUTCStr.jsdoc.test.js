@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const parseUTCStr = TH.requireSrcFile('Datetime/parseUTCStr')
 
 describe('parseUTCStr JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const dateObject = parseUTCStr('2022-01-01T14:00:00Z')
     dateObject.valueOf().should.eql(1641045600000)
     const dateObjectMilliseconds = parseUTCStr('2022-01-01T14:00:00.123Z')

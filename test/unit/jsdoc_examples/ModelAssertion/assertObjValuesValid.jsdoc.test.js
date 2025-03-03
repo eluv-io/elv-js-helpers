@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const assertObjValuesValid = TH.requireSrcFile('ModelAssertion/assertObjValuesValid')
 
 describe('assertObjValuesValid JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const NonBlankStrModel = TH.requireSrcFile('Model/NonBlankStrModel')
     const defBasicModel = TH.requireSrcFile('ModelFactory/defBasicModel')
     // Note use of spread operator (...) to unpack the array returned by assertObjValuesValid()

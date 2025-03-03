@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Passthrough for the `or()` [Crocks function](https://crocks.dev/docs/functions/logic-functions.html#or)
  * _(Copyright © 2016, Ian Hofmann-Hicks, ISC license)_
@@ -16,6 +17,7 @@
  * @returns {Function} Function which takes input, passes to both input functions, and then combines return values with logical OR
  * @example
  *
+ * 'use strict'
  * const or = require('@eluvio/elv-js-helpers/Functional/or')
  *
  * const isEven = x => (x % 2) === 0

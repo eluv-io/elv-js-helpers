@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const tryCatch = TH.requireSrcFile('Functional/tryCatch')
 
 describe('tryCatch JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const resultToPOJO = TH.requireSrcFile('Conversion/resultToPOJO')
     // Using tryCatch to create safe versions of functions that may throw exceptions:
     const firstChar = x => x.charAt(0)
@@ -27,7 +29,7 @@ describe('tryCatch JSDoc example', () => {
     const badTestResult = badTest('abc')
     resultToPOJO(badTestResult).ok.should.eql(false)
     resultToPOJO(badTestResult).errMsgs.should.eql([
-      'TypeError: Method RegExp.prototype.exec called on incompatible receiver #<Object>',
+      'TypeError: Method RegExp.prototype.test called on incompatible receiver undefined',
     ])
     // Using tryCatch like a Javascript try / catch block (immediately executing the function):
     // argument(s) listed inside tryCatch:

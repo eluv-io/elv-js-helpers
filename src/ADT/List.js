@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Passthrough for the `List` [Crocks Algebraic Data Type](https://crocks.dev/docs/crocks/)
  * _(Copyright © 2016, Ian Hofmann-Hicks, ISC license)_

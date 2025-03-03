@@ -1,3 +1,4 @@
+'use strict'
 const isRegExp = require('../Boolean/isRegExp')
 
 const uniq = require('../Functional/uniq')
@@ -18,6 +19,7 @@ const _strOrRegExSrc = require('./_strOrRegExSrc')
  * @returns {RegExp}
  * @example
  *
+ * 'use strict'
  * const reFromTemplate = require('@eluvio/elv-js-helpers/Conversion/reFromTemplate')
  *
  * const RE_LETTER = /[a-zA-Z]/

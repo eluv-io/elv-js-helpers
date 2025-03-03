@@ -1,3 +1,4 @@
+'use strict'
 // Version of swapFields without validation, works on 'normal' values rather than ADTs
 
 const assoc = require('@eluvio/ramda-fork/src/assoc')

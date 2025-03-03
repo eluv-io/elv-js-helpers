@@ -1,3 +1,4 @@
+'use strict'
 /**
  * [RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) used for
  * validation of UUID strings in format '00000000-0000-0000-0000-000000000000' using only upper case letters for hex
@@ -12,6 +13,7 @@
  * @category Constant
  * @example
  *
+ * 'use strict'
  * const RE_UUID_UPPER_CASE = require('@eluvio/elv-js-helpers/Validation/RE_UUID_UPPER_CASE')
  *
  * RE_UUID_UPPER_CASE.test('0')                                      //=> false

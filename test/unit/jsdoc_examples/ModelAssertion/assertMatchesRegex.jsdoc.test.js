@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const assertMatchesRegex = TH.requireSrcFile('ModelAssertion/assertMatchesRegex')
 
 describe('assertMatchesRegex JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const StringModel = TH.requireSrcFile('Model/StringModel')
     // Note use of spread operator (...) to unpack the array returned by _assertBoundedUpper()
     const UUIDStringModel = StringModel.extend()

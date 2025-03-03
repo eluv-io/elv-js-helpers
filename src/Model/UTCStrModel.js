@@ -1,3 +1,4 @@
+'use strict'
 const assertAfterCheck = require('../ModelAssertion/assertAfterCheck')
 const assertValidUTCStr = require('../ModelAssertion/assertValidUTCStr')
 const defRegexMatchedStrModel = require('../ModelFactory/defRegexMatchedStrModel')
@@ -23,6 +24,7 @@ const StringModel = require('../Model/StringModel')
  * @returns {String} The validated input
  * @example
  *
+ * 'use strict'
  * const UTCStrModel = require('@eluvio/elv-js-helpers/Model/UTCStrModel')
  *
  * UTCStrModel('2022-01-01T14:00:00Z') //=> '2022-01-01T14:00:00Z'

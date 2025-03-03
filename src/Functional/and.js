@@ -1,3 +1,4 @@
+'use strict'
 /**
  * Passthrough for the `and()` [Crocks function](https://crocks.dev/docs/functions/logic-functions.html#and)
  * _(Copyright © 2016, Ian Hofmann-Hicks, ISC license)_
@@ -16,6 +17,7 @@
  * @returns {Function} Function which takes input, passes to both input functions, and then combines return values with logical AND
  * @example
  *
+ * 'use strict'
  * const and = require('@eluvio/elv-js-helpers/Functional/and')
  *
  * const isEven = x => (x % 2) === 0

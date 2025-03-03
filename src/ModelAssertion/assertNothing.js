@@ -1,3 +1,4 @@
+'use strict'
 // noinspection JSUnusedLocalSymbols
 /* eslint-disable no-unused-vars */
 
@@ -14,6 +15,7 @@ const T = require('../Functional/T')
  * @returns {Array} 2-element array [Function, String]. See description for details.
  * @example
  *
+ * 'use strict'
  * const assertNothing = require('@eluvio/elv-js-helpers/ModelAssertion/assertNothing')
  * const T = require('@eluvio/elv-js-helpers/Functional/T')
  *

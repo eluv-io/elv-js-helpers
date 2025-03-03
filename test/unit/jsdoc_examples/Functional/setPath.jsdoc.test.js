@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const setPath = TH.requireSrcFile('Functional/setPath')
 
 describe('setPath JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const clone = TH.requireSrcFile('Functional/clone')
     const myObject = {foo: {bar: [1, 2, 3]}}
     setPath(['foo'], 42, clone(myObject)).should.eql({foo: 42})

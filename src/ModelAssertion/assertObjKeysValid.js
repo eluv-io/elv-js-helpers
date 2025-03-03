@@ -1,3 +1,4 @@
+'use strict'
 const isNil = require('../Boolean/isNil')
 const T = require('../Functional/T')
 
@@ -26,6 +27,7 @@ const _satisfiesObjKeyCheck = require('../Boolean/passesObjKeyCheck')
  * @returns {Array} 2-element array [Function, Function]. See description for details.
  * @example
  *
+ * 'use strict'
  * const NonBlankStrModel = require('@eluvio/elv-js-helpers/Model/NonBlankStrModel')
  *
  * const assertObjKeysValid = require('@eluvio/elv-js-helpers/ModelAssertion/assertObjKeysValid')

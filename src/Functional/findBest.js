@@ -1,3 +1,4 @@
+'use strict'
 const unless = require('crocks/logic/unless')
 const last = require('@eluvio/ramda-fork/src/last')
 const sort = require('@eluvio/ramda-fork/src/sort')

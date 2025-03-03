@@ -1,3 +1,4 @@
+'use strict'
 const curry = require('../Functional/curry')
 
 // // change :: Number -> Number -> Number
@@ -29,6 +30,7 @@ const curry = require('../Functional/curry')
  * @returns {Number} growth expressed as a proportion of the absolute value of the first value
  * @example
  *
+ * 'use strict'
  * const growth = require('@eluvio/elv-js-helpers/Math/growth')
  *
  * // Positive starting value

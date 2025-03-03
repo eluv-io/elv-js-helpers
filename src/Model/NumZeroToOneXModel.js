@@ -1,3 +1,4 @@
+'use strict'
 const defBoundedNumModel = require('../ModelFactory/defBoundedNumModel')
 
 /**
@@ -17,6 +18,7 @@ const defBoundedNumModel = require('../ModelFactory/defBoundedNumModel')
  * @returns {Number} The validated input
  * @example
  *
+ * 'use strict'
  * const NumZeroToOneXModel = require('@eluvio/elv-js-helpers/Model/NumZeroToOneXModel')
  *
  * NumZeroToOneXModel(0)     //=> 0

@@ -1,3 +1,4 @@
+'use strict'
 const assertAfterCheck = require('./assertAfterCheck')
 const parseUTCStr = require('../Datetime/parseUTCStr')
 const passesModelCheck = require('../Boolean/passesModelCheck')
@@ -25,6 +26,7 @@ const NonBlankStrModel = require('../Model/NonBlankStrModel')
  *
  * @example
  *
+ * 'use strict'
  * const assertValidUTCStr = require('@eluvio/elv-js-helpers/ModelAssertion/assertValidUTCStr')
  *
  * const StringModel = require('@eluvio/elv-js-helpers/Model/StringModel')

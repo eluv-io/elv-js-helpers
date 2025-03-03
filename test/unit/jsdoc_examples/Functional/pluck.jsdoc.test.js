@@ -1,9 +1,11 @@
 // AUTO-GENERATED TEST - DO NOT MODIFY, CHANGES WILL BE OVERWRITTEN DURING BUILD
+'use strict'
 const TH = require('../../../test-helpers')
 const pluck = TH.requireSrcFile('Functional/pluck')
 
 describe('pluck JSDoc example', () => {
   it('should execute correctly as described', () => {
+    'use strict'
     const arrOfObj = [
       {a: 1, b: 2},
       {b: 2, c: 3},

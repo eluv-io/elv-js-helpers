@@ -1,3 +1,4 @@
+'use strict'
 const StringModel = require('./StringModel')
 
 const passesModelCheck = require('../Boolean/passesModelCheck')
@@ -22,6 +23,7 @@ const assertAfterCheck = require('../ModelAssertion/assertAfterCheck')
  * @returns {String} The validated input
  * @example
  *
+ * 'use strict'
  * const NonBlankStrModel = require('@eluvio/elv-js-helpers/Model/NonBlankStrModel')
  *
  * NonBlankStrModel('foo') //=> 'foo'

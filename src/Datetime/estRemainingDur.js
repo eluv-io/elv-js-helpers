@@ -1,3 +1,4 @@
+'use strict'
 const defBoundedNumModel = require('../ModelFactory/defBoundedNumModel')
 const defObjectModel = require('../ModelFactory/defObjectModel')
 const PositiveNumModel = require('../Model/PositiveNumModel')
@@ -25,6 +26,7 @@ const _paramsModel = defObjectModel(
  * @returns {number}
  * @example
  *
+ * 'use strict'
  * const estRemainingDur = require('@eluvio/elv-js-helpers/Datetime/estRemainingDur')
  *
  * const resultToPOJO = require('@eluvio/elv-js-helpers/Conversion/resultToPOJO')
