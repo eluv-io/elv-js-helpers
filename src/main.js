@@ -22,6 +22,7 @@ const Boolean = {
   isEqual: require('./Boolean/isEqual'),
   isEquivalent: require('./Boolean/isEquivalent'),
   isErr: require('./Boolean/isErr'),
+  isFraction: require('./Boolean/isFraction'),
   isFunction: require('./Boolean/isFunction'),
   isGT: require('./Boolean/isGT'),
   isGTCustom: require('./Boolean/isGTCustom'),

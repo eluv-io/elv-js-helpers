@@ -17,9 +17,9 @@
  * 'use strict'
  * const objFromEntries = require('@eluvio/elv-js-helpers/Conversion/objFromEntries')
  *
- * const kvPairs = [['a', 1], ['b',2]]
+ * const kvPairs = [['a', 1], ['b',[['c', 3],['d', 4]]]]
  *
- * objFromEntries(kvPairs)     //=> { a: 1, b: 2 }
+ * objFromEntries(kvPairs)     //=> { a: 1, b: [['c', 3],['d', 4]] }
  *
  */
 const objFromEntries = arr => Object.fromEntries(arr)

@@ -8,8 +8,20 @@ describe('objFromEntries JSDoc example', () => {
     'use strict'
     const kvPairs = [
       ['a', 1],
-      ['b', 2],
+      [
+        'b',
+        [
+          ['c', 3],
+          ['d', 4],
+        ],
+      ],
     ]
-    objFromEntries(kvPairs).should.eql({a: 1, b: 2})
+    objFromEntries(kvPairs).should.eql({
+      a: 1,
+      b: [
+        ['c', 3],
+        ['d', 4],
+      ],
+    })
   })
 })

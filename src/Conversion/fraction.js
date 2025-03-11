@@ -1,4 +1,5 @@
 'use strict'
+const fraction = require('fraction.js')
 /**
  * Passthrough for the [fraction.js](https://github.com/infusion/Fraction.js/) constructor
  * _(Copyright © 2017 Robert Eisele, MIT license)_
@@ -41,6 +42,5 @@
  * fraction('9 3/4').valueOf()      //=> 9.75
  *
  */
-const fraction = require('fraction.js')
 
 module.exports = fraction
