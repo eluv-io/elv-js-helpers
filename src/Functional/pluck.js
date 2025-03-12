@@ -4,7 +4,7 @@ const _pluck = require('@eluvio/ramda-fork/src/pluck')
 const curry = require('./curry')
 
 /**
- * Passthrough for Ramda's `pluck` function _(Copyright © Scott Sauyet and Michael Hurley)_
+ * Passthrough for Ramda's [`pluck`](https://ramdajs.com/docs/#pluck) function _(Copyright © Scott Sauyet and Michael Hurley)_
  *
  * Allows users of `elv-js-helpers` to use the function without adding the [Ramda](https://www.npmjs.com/package/ramda)
  * package as a dependency.
