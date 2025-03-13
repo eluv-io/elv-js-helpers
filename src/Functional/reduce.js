@@ -1,5 +1,4 @@
 'use strict'
-const reduce = require('@eluvio/ramda-fork/src/reduce')
 /**
  * Passthrough for Ramda's [`reduce`](https://ramdajs.com/docs/#reduce) function _(Copyright © Scott Sauyet and Michael Hurley)_
  *
@@ -30,7 +29,7 @@ const reduce = require('@eluvio/ramda-fork/src/reduce')
  *
  * reduce(mult, 1, arrOfInt)     //=> 120
  *
- * // note that choosing proper initial value for accumulator is important:
+ * // note that choosing proper initial value for accumulator is important!
  * reduce(mult, 0, arrOfInt)     //=> 0
  *
  * const append = (a,b) => a.concat([b])
@@ -38,5 +37,7 @@ const reduce = require('@eluvio/ramda-fork/src/reduce')
  * reduce(append, [], arrOfInt)  //=> [1, 2, 3, 4, 5]
  *
  */
+const reduce = require('@eluvio/ramda-fork/src/reduce')
+
 module.exports = reduce
 

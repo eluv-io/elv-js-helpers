@@ -1,5 +1,4 @@
 'use strict'
-const sortBy = require('@eluvio/ramda-fork/src/sortBy')
 /**
  * Passthrough for Ramda's `sortBy` function _(Copyright © Scott Sauyet and Michael Hurley)_
  *
@@ -36,4 +35,6 @@ const sortBy = require('@eluvio/ramda-fork/src/sortBy')
  * ]).map(x => x.name)                //=> ['alpha', 'Bravo', 'charlie']
  *
  */
+const sortBy = require('@eluvio/ramda-fork/src/sortBy')
+
 module.exports = sortBy

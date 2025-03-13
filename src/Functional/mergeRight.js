@@ -1,4 +1,8 @@
 'use strict'
+const _mergeRight = require('@eluvio/ramda-fork/src/mergeRight')
+
+const curry = require('./curry')
+
 /**
  * Modified passthrough for Ramda's [`mergeRight`](https://ramdajs.com/docs/#mergeRight) function _(Copyright © Scott Sauyet and Michael Hurley)_
  *
@@ -42,10 +46,6 @@
  * ensureNameAndChildren({})      //=> {children: ["DefaultChild1", "DefaultChild2"], name: "Anonymous"}
  *
  */
-
-const _mergeRight = require('@eluvio/ramda-fork/src/mergeRight')
-
-const curry = require('./curry')
 
 const mergeRight = curry(
   (originalObj, updates) => originalObj.constructor(_mergeRight(originalObj, updates))
