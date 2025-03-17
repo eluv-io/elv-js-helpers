@@ -19,7 +19,7 @@
     "generate-dep-graph": "echo 'Generating module dependency diagram...' && node ./bin/graphDeps.js",
     "generate-docs": "echo 'Regenerating documentation in ./docs...' && npm run generate-dep-graph && jsdoc --readme README.md --configure .jsdoc.json",
     "generate-docs-debug": "echo 'Regenerating documentation in ./docs (with debug output)...' && npm run generate-dep-graph && export ELV_RAMDOC_DEBUG=1;jsdoc --readme README.md --configure .jsdoc.json",
-    "generate-jsdoc-example-tests": "echo 'Generating unit tests for JSDoc examples...' && cd bin && node generateJSDocUnitTests.js ../src",
+    "generate-jsdoc-example-tests": "echo 'Generating unit tests for JSDoc examples...' && cd bin && node generateJSDocUnitTests.js ../src && cd .. && npm run test",
     "generate-missing-unit-tests": "echo 'Generating missing (non-JSDoc) unit tests...' && cd bin && node createUnitTestDirsAndFiles.js ../src ../test/unit/src",
     "release": "echo 'Incrementing version and publishing to npmjs.com...' && cp package.json ./build/package.json && np",
     "test": "echo 'Running all tests in ./test...' && npm run build-main-js && mocha --recursive \"./test/**/*.test.js\"",

@@ -16,22 +16,31 @@ const generateJSDocUnitTest = srcFileAbsPath => {
   const testFileAbsPath = jsDocUnitTestFilePath(srcFileAbsPath)
   // check if test file already exists
   const existing = fs.lstatSync(testFileAbsPath, {throwIfNoEntry: false})
-  if (existing && !existing.isFile()) throw Error(`${testFileAbsPath} already exists but is not a file.`)
-
-  const example = jsDocExample(srcFileAbsPath)
-  if (!example) {
-    console.warn('    @example not found in ' + srcFileAbsPath + ', skipping...')
-  } else {
-    console.log('  CREATING ' + testFileAbsPath + '...')
-    const test = jsDocTest(example, srcFileAbsPath)
-    const contents = newUnitTestFileText(srcFileAbsPath, test)
-    fs.writeFileSync(testFileAbsPath, contents)
-    // apply `prettier` to fix indentation
-    const result = prettify(testFileAbsPath)
-    if (result.status !== 0) {
-      console.error(`File failed prettification: ${testFileAbsPath}`)
-      console.log(result.output.map(x => x && x.toString()).join('\n'))
+  let buildNeeded = true
+  if (existing) {
+    if (!existing.isFile()) throw Error(`${testFileAbsPath} already exists but is not a file.`)
+    // check if test file is newer than source file
+    const sourceFileStats = fs.lstatSync(srcFileAbsPath)
+    buildNeeded = sourceFileStats.mtimeMs >= existing.mtimeMs
+  }
+  if (buildNeeded) {
+    const example = jsDocExample(srcFileAbsPath)
+    if (!example) {
+      console.warn('    @example not found in ' + srcFileAbsPath + ', skipping...')
+    } else {
+      console.log('  CREATING ' + testFileAbsPath + '...')
+      const test = jsDocTest(example, srcFileAbsPath)
+      const contents = newUnitTestFileText(srcFileAbsPath, test)
+      fs.writeFileSync(testFileAbsPath, contents)
+      // apply `prettier` to fix indentation
+      const result = prettify(testFileAbsPath)
+      if (result.status !== 0) {
+        console.error(`File failed prettification: ${testFileAbsPath}`)
+        console.log(result.output.map(x => x && x.toString()).join('\n'))
+      }
     }
+  } else {
+    console.log('  newer test file already exists, skipping...')
   }
 }
 
@@ -50,7 +59,7 @@ if (!sourceFileOrDir) {
 const sourceAbsPath = path.resolve(sourceFileOrDir)
 
 const relativePath = path.relative(SRC_DIR, sourceAbsPath)
-if(relativePath.startsWith('../')) throw Error(`${sourceAbsPath} is not inside ${SRC_DIR}`)
+if (relativePath.startsWith('../')) throw Error(`${sourceAbsPath} is not inside ${SRC_DIR}`)
 
 const srcFiles = fileListRecursive(
   {fileNameFilter: x => x !== 'main.js' && x.endsWith('.js')},
