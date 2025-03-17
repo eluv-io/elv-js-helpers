@@ -9,11 +9,11 @@
  *
  * @function
  * @category Functional
- * @sig [*] → [*]
+ * @sig [*] → [*] | EXCEPTION
  * @sig String → String
  * @param {List} - an iterable list of elements
  * @returns {Array | String} Array containing all but the first element, or String containing all but the first character
- * @see last, head, tail
+ * @see head, init, last
  * @example
  *
  * 'use strict'
