@@ -1,7 +1,7 @@
 'use strict'
 const now = require('./now')
 /**
- * Returns current datetime as a UTC string in form `YYYY-MM-DDTHH:MM:SSZ` e.g. '2025-01-01T01:00:00Z'
+ * Returns current datetime as a UTC string in ISO 8601 format `YYYY-MM-DDTHH:MM:SSZ` e.g. '2025-01-01T01:00:00Z'
  *
  * @function
  * @category Datetime
@@ -20,8 +20,9 @@ const now = require('./now')
  * kind(currentUTCTimestamp)                            //=> 'String'
  *
  * // string value is larger (later) than 2025-01-01T01:00:00Z:
- * isGT('2025-01-01T01:00:00Z', currentUTCTimestamp)   //=> true
+ * isGT('2025-01-01T01:00:00Z', currentUTCTimestamp)    //=> true
+ * currentUTCTimestamp.endsWith('Z')                    //=> true
  */
-const nowUTCStr = () => now().toUTCString()
+const nowUTCStr = () => now().toISOString()
 
 module.exports = nowUTCStr

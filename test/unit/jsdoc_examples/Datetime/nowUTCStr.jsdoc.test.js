@@ -12,5 +12,6 @@ describe('nowUTCStr JSDoc example', () => {
     kind(currentUTCTimestamp).should.eql('String')
     // string value is larger (later) than 2025-01-01T01:00:00Z:
     isGT('2025-01-01T01:00:00Z', currentUTCTimestamp).should.eql(true)
+    currentUTCTimestamp.endsWith('Z').should.eql(true)
   })
 })
