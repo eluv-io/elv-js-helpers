@@ -38,6 +38,15 @@ const curry = require('./curry')
  *
  * getProp(-1, myArray)     //=> 2
  *
+ * // function is curried, call with fewer arguments to obtain a more specific function
+ *
+ * const getFoo = getProp('foo')
+ *
+ * getFoo(myObject)         //=> {bar: [1, 2, 3]}
+ *
+ * const getFirst = getProp(0)
+ *
+ * getFirst(myArray)        //=> 0
  */
 const getProp = curry(
   (prop, item) => _prop(prop, item)

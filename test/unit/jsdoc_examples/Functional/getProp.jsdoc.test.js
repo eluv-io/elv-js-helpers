@@ -12,5 +12,10 @@ describe('getProp JSDoc example', () => {
     const myArray = [0, 1, 2]
     getProp(0, myArray).should.eql(0)
     getProp(-1, myArray).should.eql(2)
+    // function is curried, call with fewer arguments to obtain a more specific function
+    const getFoo = getProp('foo')
+    getFoo(myObject).should.eql({bar: [1, 2, 3]})
+    const getFirst = getProp(0)
+    getFirst(myArray).should.eql(0)
   })
 })

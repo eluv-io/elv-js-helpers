@@ -84,6 +84,7 @@ const Datetime = {
   etaDurStr: require('./Datetime/etaDurStr'),
   etaTimeStr: require('./Datetime/etaTimeStr'),
   now: require('./Datetime/now'),
+  nowUTCStr: require('./Datetime/nowUTCStr'),
   parseUTCStr: require('./Datetime/parseUTCStr'),
   sysLocale: require('./Datetime/sysLocale'),
   sysTimezone: require('./Datetime/sysTimezone'),
@@ -94,7 +95,6 @@ const Datetime = {
 const Functional = {
   F: require('./Functional/F'),
   T: require('./Functional/T'),
-  _swapFields: require('./Functional/_swapFields'),
   addPreprocessFn2: require('./Functional/addPreprocessFn2'),
   all: require('./Functional/all'),
   and: require('./Functional/and'),
@@ -160,6 +160,7 @@ const Functional = {
   setPath: require('./Functional/setPath'),
   sortBy: require('./Functional/sortBy'),
   swapFields: require('./Functional/swapFields'),
+  swapFieldsResult: require('./Functional/swapFieldsResult'),
   tail: require('./Functional/tail'),
   tap: require('./Functional/tap'),
   times: require('./Functional/times'),

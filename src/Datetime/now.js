@@ -3,7 +3,7 @@
  * Returns current datetime as a [Javascript Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
  *
  * @function
- * @category Conversion
+ * @category Datetime
  * @sig () -> Date
  * @returns {Date}
  * @example
