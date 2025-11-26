@@ -1,11 +1,5 @@
 'use strict'
 const curry = require('../Functional/curry')
-
-// // change :: Number -> Number -> Number
-// // Return change between two numbers, expressed as a proportion of the first value
-// // e.g. returns 0 if the values are the same, 0.5 if the second value is 50% larger
-// // Note that 0 is invalid for oldValue, the relative change is Infinity in that case
-
 /**
  * Calculates change between 2 values, expressed as a proportion of the (absolute value of) first value, e.g.:
  *
