@@ -15,6 +15,7 @@
     "build:dist": "echo 'Building single-file bundles in ./build/dist...' && webpack $WEBPACK_ENV && uglifyjs build/dist/elv-js-helpers.js -m -o build/dist/elv-js-helpers.min.js",
     "build-main-js": "echo 'Rebuilding main.js...' && node ./bin/buildMain.js",
     "check-unit-test-filenames": "echo 'Checking unit test filenames...' && cd bin && node checkUnitTestDirsAndFileNames.js",
+    "clear-build": "echo 'Removing build directory...' && rimraf build",
     "eslint": "eslint --ext .js ./src",
     "generate-dep-graph": "echo 'Generating module dependency diagram...' && node ./bin/graphDeps.js",
     "generate-docs": "echo 'Regenerating documentation in ./docs...' && npm run generate-dep-graph && jsdoc --readme README.md --configure .jsdoc.json",
