@@ -141,6 +141,7 @@ const Functional = {
   mergeDeepLeft: require('./Functional/mergeDeepLeft'),
   mergeDeepRight: require('./Functional/mergeDeepRight'),
   mergeRight: require('./Functional/mergeRight'),
+  mergeRightMulti: require('./Functional/mergeRightMulti'),
   mergeWith: require('./Functional/mergeWith'),
   negate: require('./Functional/negate'),
   objRefUUID: require('./Functional/objRefUUID'),
