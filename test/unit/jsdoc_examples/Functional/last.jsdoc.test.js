@@ -11,7 +11,7 @@ describe('last JSDoc example', () => {
     TH.chai.assert.deepEqual(last([]), undefined)
     last('abc').should.eql('c')
     last('a').should.eql('a')
-    last('').should.eql('')
+    TH.chai.assert.deepEqual(last(''), undefined)
     // NOTE: bad data types are ignored
     TH.chai.assert.deepEqual(last(0), undefined)
     TH.chai.assert.deepEqual(last({foo: 'bar'}), undefined)

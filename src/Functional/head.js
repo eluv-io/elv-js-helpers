@@ -5,8 +5,7 @@
  * Allows users of `elv-js-helpers` to use the function without adding the [Ramda](https://www.npmjs.com/package/ramda)
  * package as a dependency.
  *
- * Returns first element of a list or last character of a string, or `undefined` if there is no first element,
- * and empty string if there is no last character
+ * Returns first element of a list or first character of a string, or `undefined` if there is no first element.
  *
  * @function
  * @category Functional
@@ -26,7 +25,7 @@
  *
  * head('abc')                //=> 'a'
  * head('a')                  //=> 'a'
- * head('')                   //=> ''
+ * head('')                   //=> undefined
  *
  * // NOTE: bad data types are ignored
  * head(0)                    //=> undefined

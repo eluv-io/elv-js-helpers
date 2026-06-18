@@ -18,7 +18,7 @@ const reduce = require('./reduce')
  * @function
  * @category Functional
  * @sig [Object] -> Object
- * @param [Object] - Array of objects to merge
+ * @param {Object[]} objectArray - Array of objects to merge
  * @returns Object - New merged object
  * @see mergeRight
  * @example

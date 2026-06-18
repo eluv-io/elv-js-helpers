@@ -5,8 +5,7 @@
  * Allows users of `elv-js-helpers` to use the function without adding the [Ramda](https://www.npmjs.com/package/ramda)
  * package as a dependency.
  *
- * Returns last element of a list or last character of a string, or `undefined` if there is no last element, and empty
- * string if there is no last character
+ * Returns last element of a list or last character of a string, or `undefined` if there is no last element.
  *
  * @function
  * @category Functional
@@ -26,7 +25,7 @@
  *
  * last('abc')                //=> 'c'
  * last('a')                  //=> 'a'
- * last('')                   //=> ''
+ * last('')                   //=> undefined
  *
  * // NOTE: bad data types are ignored
  * last(0)                    //=> undefined

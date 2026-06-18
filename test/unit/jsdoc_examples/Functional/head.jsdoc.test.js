@@ -11,7 +11,7 @@ describe('head JSDoc example', () => {
     TH.chai.assert.deepEqual(head([]), undefined)
     head('abc').should.eql('a')
     head('a').should.eql('a')
-    head('').should.eql('')
+    TH.chai.assert.deepEqual(head(''), undefined)
     // NOTE: bad data types are ignored
     TH.chai.assert.deepEqual(head(0), undefined)
     TH.chai.assert.deepEqual(head({foo: 'bar'}), undefined)
