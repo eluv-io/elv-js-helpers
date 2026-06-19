@@ -68,5 +68,8 @@
     "kind-of": "^6.0.3",
     "objectmodel": "^4.4.5",
     "uuid": "^9.0.1"
+  },
+  "allowScripts": {
+    "github:eluv-io/ramda-fork#c6443a9943045b368fff0b51e2ee8f12ffc801ec": true
   }
 }

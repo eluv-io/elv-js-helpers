@@ -17,19 +17,21 @@ describe('toLocaleString JSDoc example', () => {
       timeZone: 'America/Los_Angeles',
       timeZoneName: 'short',
     })
-    USA_Pacific_short(myDate).should.eql('Mar 1, 6:00:00 AM PST')
+    // comma placement depends on node version, strip out to guarantee exact result
+    USA_Pacific_short(myDate).replace(/,/g, '').should.eql('Mar 1 6:00:00 AM PST')
     const UK_long = toLocaleString('en-GB', {
       dateStyle: 'full',
       timeStyle: 'long',
       timeZone: 'Europe/London',
     })
-    UK_long(myDate).should.eql('Tuesday, 1 March 2022 at 14:00:00 GMT')
+    // comma placement depends on node version, strip out to guarantee exact result
+    UK_long(myDate).replace(/,/g, '').should.eql('Tuesday 1 March 2022 at 14:00:00 GMT')
     // function is curried, it is possible to pass all arguments at once to define and invoke in one step:
     const options = {
       dateStyle: 'short',
       timeStyle: 'short',
       timeZone: 'America/New_York',
     }
-    toLocaleString('en-US', options, myDate).should.eql('3/1/22, 9:00 AM')
+    toLocaleString('en-US', options, myDate).replace(/,/g, '').should.eql('3/1/22 9:00 AM')
   })
 })

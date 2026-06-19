@@ -21,7 +21,7 @@ describe('toLocaleString', () => {
       }
     )
 
-    USA_Pacific_short(myDate).should.equal('Mar 1, 6:00:00 AM PST')
+    USA_Pacific_short(myDate).replace(/,/g, '').should.equal('Mar 1 6:00:00 AM PST')
 
     const UK_long = toLocaleString(
       'en-GB',
@@ -32,7 +32,7 @@ describe('toLocaleString', () => {
       }
     )
 
-    UK_long(myDate).should.equal('Tuesday, 1 March 2022 at 14:00:00 GMT')
+    UK_long(myDate).replace(/,/g, '').should.equal('Tuesday 1 March 2022 at 14:00:00 GMT')
   })
 
   it('should be curried', () => {
@@ -41,9 +41,11 @@ describe('toLocaleString', () => {
       {
         dateStyle: 'short',
         timeStyle: 'short',
-        timeZone: 'America/New_York'
+        timeZone: 'America/New_York',
       },
       myDate
-    ).should.equal('3/1/22, 9:00 AM')
+    )
+      .replace(/,/g, '')
+      .should.equal('3/1/22 9:00 AM')
   })
 })
