@@ -11,7 +11,7 @@ else
     exit 1
 fi
 
-cp ../{.npmignore,package.json,LICENSE,README.md} .
+cp ../{.npmignore,package.json,package-lock.json,LICENSE,README.md} .
 cp -r ../src/* .
 
 cd ..
