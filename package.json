@@ -10,6 +10,7 @@
   "main": "main.js",
   "sideEffects": false,
   "scripts": {
+    "audit": "echo 'Checking distribution package vulnerabilities' && npm audit --omit=dev",
     "build": "echo 'Deleting and recreating ./build directory...' && npm run build-main-js && rimraf build && ./bin/publish.sh && npm run build:dist",
     "build:analyze": "echo 'Building single-file bundles in ./build/dist... (with bundle size analysis)' && export WEBPACK_ENV='--env analyze' && npm run build",
     "build:dist": "echo 'Building single-file bundles in ./build/dist...' && webpack $WEBPACK_ENV && uglifyjs build/dist/elv-js-helpers.js -m -o build/dist/elv-js-helpers.min.js",
